@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>An Introductory Course in Electrical Circuits and Coding for Deaf and DeafBlind Middle School Students</title>
+<!--Generated on Fri Sep  8 17:49:47 2023 by LaTeXML (version 0.8.3) http://dlmf.nist.gov/LaTeXML/.-->
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<link href="data:text/css,/%2A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%20Core%20CSS%20for%20LaTeXML%20documents%20converted%20to%20%28X%29HTML%20%2A/%0A/%2A%20Generic%20Page%20layout%20%2A/%0A.ltx_page_header%2C%0A.ltx_page_footer%20%7B%20font-size%3A0.8em%3B%20%7D%0A.ltx_page_header%20%2A%5Brel~%3D%22prev%22%5D%2C%0A.ltx_page_footer%20%2A%5Brel~%3D%22prev%22%5D%20%7B%20float%3Aleft%3B%20%7D%0A.ltx_page_header%20%2A%5Brel~%3D%22up%22%5D%2C%0A.ltx_page_footer%20%2A%5Brel~%3D%22up%22%5D%20%20%20%7B%20display%3Ablock%3B%20text-align%3Acenter%3B%20%7D%0A.ltx_page_header%20%2A%5Brel~%3D%22next%22%5D%2C%0A.ltx_page_footer%20%2A%5Brel~%3D%22next%22%5D%20%7B%20%20float%3Aright%3B%20%7D%0A/%2A%20What%20was%20I%20trying%20for%20here%3B%20need%20more%20selective%20rule%21%0A.ltx_page_header%20.ltx_ref%2C%0A.ltx_page_footer%20.ltx_ref%20%7B%0A%20%20%20%20margin%3A0%201em%3B%20%7D%0A%2A/%0A.ltx_page_header%20li%20%7B%0A%20%20%20%20padding%3A0.1em%200.2em%200.1em%201em%3B%7D%0A%0A/%2A%20Main%20content%20%2A/%0A.ltx_page_content%20%7B%20clear%3Aboth%3B%20%7D%0A.ltx_page_header%20%20%7B%20border-bottom%3A1px%20solid%3B%20margin-bottom%3A5px%3B%20%7D%0A.ltx_page_footer%20%20%7B%20clear%3Aboth%3B%20border-top%3A1px%20solid%3B%20margin-top%3A5px%3B%20%20%7D%0A%0A.ltx_page_header%3Aafter%2C%0A.ltx_page_footer%3Aafter%2C%0A.ltx_page_content%3Aafter%20%7B%0A%20%20%20%20content%3A%22.%22%3B%20display%3Ablock%3B%20height%3A0%3B%20clear%3Aboth%3B%20visibility%3Ahidden%3B%20%7D%0A.ltx_page_footer%3Abefore%20%7B%0A%20%20%20%20content%3A%22.%22%3B%20display%3Ablock%3B%20height%3A0%3B%20clear%3Aboth%3B%20visibility%3Ahidden%3B%20%7D%0A%0A.ltx_page_logo%20%20%20%20%20%7B%20font-size%3A80%25%3B%20margin-top%3A%205px%3B%20clear%3Aboth%3B%20float%3Aright%3B%20%7D%0A.ltx_page_logo%20a%20%20%20%7B%20font-variant%3A%20small-caps%3B%20%7D%0A.ltx_page_logo%20img%20%7B%20vertical-align%3A-3px%3B%20%7D%0A%0A/%2A%20if%20shown%20%2A/%0A.ltx_page_navbar%20li%20%7B%20white-space%3Anowrap%3B%20display%3Ablock%3B%20overflow%3Ahidden%3B%20%7D%0A/%2A%20If%20ref%20got%20turned%20into%20span%2C%20it%27s%20%22this%20section%22%2A/%0A.ltx_page_navbar%20li%20span.ltx_ref%20%7B%20white-space%3Anormal%3B%20overflow%3Avisible%3B%20%7D%0A%0A/%2A%20Ought%20to%20be%20easily%20removable/overridable%3F%20%2A/%0A.ltx_pagination.ltx_role_newpage%20%7B%20height%3A2em%3B%20%7D%0A/%2A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%20%20Document%20Structure%3B%20Titles%20%26%20Frontmatter%20%2A/%0A%0A/%2A%20undo%20bold%20here%20to%20remove%20the%20browser%27s%20native%20h%23%20styling%2C%0A%20%20%20at%20let%20all%20other%20styles%20override%20it%20%28with%20more%20specific%20rules%29%2A/%0A.ltx_title%20%7B%20font-size%3A100%25%3B%20font-weight%3Anormal%3B%20%7D%0A%0A/%2A%20Hack%20to%20simulate%20run-in%21%20put%20class%3D%22ltx_runin%22%20on%20a%20title%20or%20tag%0A%20%20%20for%20it%20to%20run-into%20the%20following%20text.%20%2A/%0A.ltx_runin%20%7B%20display%3Ainline%3B%20%7D%0A.ltx_runin%3Aafter%20%7B%20content%3A%22%20%22%3B%20%7D%0A.ltx_runin%20%2B%20.ltx_para%2C%0A.ltx_runin%20%2B%20.ltx_para%20p%2C%0A.ltx_runin%20%2B%20p%20%7B%20display%3Ainline%3B%20%7D%0A%0A.ltx_outdent%20%7B%20margin-left%3A%20-2em%3B%20%7D%0A%0A/%2A%20.ltx_chapter_title%2C%20etc%20should%20be%20in%20ltx-article.css%20etc.%0A%20%2A/%0A.ltx_page_main%20%7B%20margin%3A0px%3B%20padding%3A1em%203em%201em%202em%3B%20%7D%0A.ltx_tocentry%20%20%7B%20list-style-type%3Anone%3B%20%7D%0A%0A/%2A%20support%20for%20common%20author%20block%20layouts.%2A/%0A/%2A%20add%20class%20ltx_authors_1line%20to%20get%20authors%20in%20single%20line%0A%20%20%20with%20pop-up%20affiliation%2C%20etc.%20%2A/%0A.ltx_authors_1line%20.ltx_creator%2C%0A.ltx_authors_1line%20.ltx_author_before%2C%0A.ltx_authors_1line%20.ltx_author_after%20%7B%20display%3Ainline%3B%7D%0A.ltx_authors_1line%20.ltx_author_notes%20%7B%20display%3Ainline-block%3B%20%7D%0A.ltx_authors_1line%20.ltx_author_notes%3Abefore%20%7B%20content%3A%22%2A%22%3B%20color%3Ablue%3B%7D%0A.ltx_authors_1line%20.ltx_author_notes%20span%20%7B%20display%3Anone%3B%20%7D%0A.ltx_authors_1line%20.ltx_author_notes%3Ahover%20span%20%7B%0A%20%20%20%20display%3Ablock%3B%20position%3Aabsolute%3B%20z-index%3A10%3B%0A%20%20%20%20background%3Awhite%3B%20text-align%3Aleft%3B%0A%20%20%20%20border%3A%201px%20solid%20black%3B%20border-radius%3A%200%205px%205px%205px%3B%20box-shadow%3A%205px%205px%2010px%20gray%3B%20%7D%0A%0A/%2A%20add%20class%3Dltx_authors_multiline%20to%20get%20authors%20%26%20affliations%20on%20separate%20lines%2A/%0A.ltx_authors_multiline%20.ltx_creator%2C%0A.ltx_authors_multiline%20.ltx_author_before%2C%0A.ltx_authors_multiline%20.ltx_author_after%2C%0A.ltx_authors_multiline%20.ltx_author_notes%2C%0A.ltx_authors_multiline%20.ltx_author_notes%20.ltx_contact%20%7B%0A%20%20%20%20display%3Ablock%3B%20%7D%0A%0A/%2A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%20%20Para%20level%20%2A/%0A.ltx_float%20%7B%0A%20%20%20%20margin%3A%201ex%203em%201ex%203em%3B%20%7D%20%20%20%20%0Atd.ltx_subfigure%2C%0Atd.ltx_subtable%2C%0Atd.ltx_subfloat%20%7B%20width%3A50%25%3B%20%7D%0A/%2A%20theorems%2C%20figure%2C%20tables%2C%20floats%20captions..%20%2A/%0A/%2A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%20Blocks%2C%20Lists%2C%20Floats%20%2A/%0A.ltx_p%2C%0A.ltx_quote%2C%0A.ltx_block%2C%0A.ltx_para%20%7B%0A%20%20%20%20display%3A%20block%3B%20%7D%0A%0A/%2A%20alignment%20within%20blocks%20%2A/%0A.ltx_align_left%20%20%20%20%20%7B%20text-align%3Aleft%3B%20%7D%0A.ltx_align_right%20%20%20%20%7B%20text-align%3Aright%3B%20%7D%0A.ltx_align_center%20%20%20%7B%20text-align%3Acenter%3B%20%7D%0A.ltx_align_justify%20%20%7B%20text-align%3Ajustify%3B%20%7D%0A.ltx_align_top%20%20%20%20%20%20%7B%20vertical-align%3Atop%3B%20%7D%0A.ltx_align_bottom%20%20%20%7B%20vertical-align%3Abottom%3B%20%7D%0A.ltx_align_middle%20%20%20%7B%20vertical-align%3Amiddle%3B%20%7D%0A.ltx_align_baseline%20%7B%20vertical-align%3Abaseline%3B%20%7D%0A%0A.ltx_align_floatleft%20%20%7B%20float%3Aleft%3B%20%7D%0A.ltx_align_floatright%20%7B%20float%3Aright%3B%20%7D%0A%0A.ltx_td.ltx_align_left%2C%20%20%20.ltx_th.ltx_align_left%2C%0A.ltx_td.ltx_align_right%2C%20%20.ltx_th.ltx_align_right%2C%0A.ltx_td.ltx_align_center%2C%20.ltx_th.ltx_align_center%20%7B%20white-space%3Anowrap%3B%20%7D%0A.ltx_td.ltx_align_left.ltx_wrap%2C%20%20%20.ltx_th.ltx_align_left.ltx_wrap%2C%0A.ltx_td.ltx_align_right.ltx_wrap%2C%20%20.ltx_th.ltx_align_right.ltx_wrap%2C%0A.ltx_td.ltx_align_center.ltx_wrap%2C%20.ltx_th.ltx_align_center.ltx_wrap%2C%0A.ltx_td.ltx_align_justify%2C%20%20.ltx_th.ltx_align_justify%20%7B%20white-space%3Anormal%3B%20%7D%0A%0A.ltx_tabular%20.ltx_tabular%20%7B%20width%3A100%25%3B%20%7D%0A.ltx_inline-block%20%7B%20display%3Ainline-block%3B%20%7D%0A%0A/%2A%20equations%20in%20non-aligned%20mode%20%28not%20normally%20used%29%20%2A/%0A.ltx_eqn_div%20%7B%20display%3Ablock%3B%20width%3A95%25%3B%20text-align%3Acenter%3B%20%7D%0A%0A/%2A%20equations%20in%20aligned%20mode%20%28aligning%20tags%2C%20etc%20as%20well%20as%20equations%29%20%2A/%0A.ltx_eqn_table%20%7B%20display%3Atable%3B%20width%3A100%25%3B%20border-collapse%3Acollapse%3B%20%7D%0A.ltx_eqn_row%20%20%20%7B%20display%3Atable-row%3B%20%7D%0A.ltx_eqn_cell%20%20%7B%20display%3Atable-cell%3B%20width%3Aauto%3B%20%7D%0A%0Atable.ltx_eqn_align%20tr.ltx_equation%20td.ltx_align_left%20%2B%20td.ltx_align_right%20%7B%20padding-left%3A3em%3B%20%7D%0Atable.ltx_eqn_eqnarray%20tr.ltx_eqn_lefteqn%20%2B%20tr%20td.ltx_align_right%20%7B%20min-width%3A2em%3B%20%7D%0A%0A.ltx_eqn_eqno%20%7B%20max-width%3A0em%3B%20overflow%3Avisible%3B%20white-space%3A%20nowrap%3B%20%7D%0A.ltx_eqn_eqno.ltx_align_right%20.ltx_tag%20%7B%20float%3Aright%3B%20%7D%0A%0A.ltx_eqn_center_padleft%2C%0A.ltx_eqn_center_padright%20%7B%20width%3A50%25%3B%20min-width%3A2em%3B%7D%0A.ltx_eqn_left_padleft%2C%0A.ltx_eqn_right_padright%20%7B%20min-width%3A2em%3B%20%7D%0A.ltx_eqn_left_padright%2C%0A.ltx_eqn_right_padleft%20%20%7B%20width%3A100%25%3B%20%7D%0A%0A/%2A%20Various%20lists%20%2A/%0A.ltx_itemize%2C%0A.ltx_enumerate%2C%0A.ltx_description%20%7B%0A%20%20%20%20display%3Ablock%3B%20%7D%0A.ltx_itemize%20.ltx_item%2C%0A.ltx_enumerate%20.ltx_item%20%7B%0A%20%20%20%20display%3A%20list-item%3B%20%7D%0A%0A/%2A%20Position%20the%20tag%20to%20look%20like%20a%20normal%20item%20bullet.%20%2A/%0Ali.ltx_item%20%3E%20.ltx_tag%20%7B%0A%20%20%20%20display%3Ainline-block%3B%20margin-left%3A-1.5em%3B%20min-width%3A1.5em%3B%0A%20%20%20%20text-align%3Aright%3B%20%7D%0A.ltx_item%20.ltx_tag%20%2B%20.ltx_para%2C%0A.ltx_item%20.ltx_tag%20%2B%20.ltx_para%20.ltx_p%20%20%7B%20display%3Ainline%3B%20%7D%0A%0A/%2A%20NOTE%3A%20Need%20to%20try%20harder%20to%20get%20runin%20appearance%3F%20%2A/%0Adl.ltx_description%20dt%20%7B%20margin-right%3A0.5em%3B%20float%3Aleft%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20font-weight%3Abold%3B%20font-size%3A95%25%3B%20%7D%0Adl.ltx_description%20dd%20%7B%20margin-left%3A5em%3B%20%7D%0Adl.ltx_description%20dl.ltx_description%20dd%20%7B%20margin-left%3A3em%3B%20%7D%0A%0A/%2A%20Theorems%20%2A/%0A.ltx_theorem%20%20%7Bmargin%3A1em%200em%201em%200em%3B%20%7D%0A.ltx_title_theorem%20%7B%20font-size%3A100%25%3B%20%7D%0A%0A/%2A%20Bibliographies%20%2A/%0A.ltx_bibliography%20dt%20%7B%20margin-right%3A0.5em%3B%20float%3Aleft%3B%20%7D%0A.ltx_bibliography%20dd%20%7B%20margin-left%3A3em%3B%20%7D%0A/%2A.ltx_biblist%20%7B%20list-style-type%3Anone%3B%20%7D%2A/%0A.ltx_bibitem%20%7B%20list-style-type%3Anone%3B%20%7D%0A.ltx_bibitem%20.ltx_tag%20%7B%20font-weight%3Abold%3B%20margin-left%3A-2em%3B%20width%3A3em%3B%20%7D%0A/%2A.bibitem-tag%20%2B%20div%20%7B%20display%3Ainline%3B%20%7D%2A/%0A.ltx_bib_title%20%7B%20font-style%3Aitalic%3B%20%7D%0A.ltx_bib_article%20.bib-title%20%7B%20font-style%3Anormal%20%21important%3B%20%7D%0A.ltx_bib_journal%20%20%7B%20font-style%3Aitalic%3B%20%7D%0A.ltx_bib_volume%20%7B%20font-weight%3Abold%3B%20%7D%0A%0A/%2A%20Indices%20%2A/%0A.ltx_indexlist%20li%20%7B%20list-style-type%3Anone%3B%20%20%7D%0A.ltx_indexlist%20%7B%20margin-left%3A1em%3B%20padding-left%3A1em%3B%7D%0A%0A/%2A%20Listings%20%2A/%0A.ltx_listing%20%7B%0A%20%20%20%20display%3Ablock%3B%0A%20%20%20%20margin%3A%201ex%203em%201ex%200em%3B%0A%20%20%20%20overflow-x%3Aauto%3B%0A%20%20%20%20text-align%3A%20left%3B%20%7D%0A.ltx_float%20.ltx_listing%20%7B%0A%20%20%20%20margin%3A%200%3B%20%7D%0A.ltx_listingline%20%7B%20white-space%3Anowrap%3B%20min-height%3A1em%3B%20%7D%0A.ltx_lst_numbers_left%20.ltx_listingline%20.ltx_tag%20%7B%0A%20%20%20%20background-color%3Atransparent%3B%0A%20%20%20%20margin-left%3A-3em%3B%20width%3A2.5em%3B%0A%20%20%20%20position%3Aabsolute%3B%20%0A%20%20%20%20text-align%3Aright%3B%20%7D%0A.ltx_lst_numbers_right%20.ltx_listingline%20.ltx_tag%20%7B%0A%20%20%20%20background-color%3Atransparent%3B%0A%20%20%20%20width%3A2.5em%3B%0A%20%20%20%20position%3Aabsolute%3B%20right%3A3em%3B%0A%20%20%20%20text-align%3Aright%3B%20%7D%0A/%2A%0A%20%20%20%20position%3Aabsolute%3B%20left%3A0em%3B%0A%20%20%20%20max-width%3A0em%3B%20text-align%3Aright%3B%20%7D%0A%2A/%0A.ltx_parbox%20%7Btext-indent%3A0em%3B%20%7D%0A%0A/%2A%20NOTE%20that%20it%20is%20CRITICAL%20to%20put%20position%3Arelative%20outside%20%26%20absolute%20inside%21%21%0A%20%20%20I%20wish%20I%20understood%20why%21%0A%20%20%20Outer%20box%20establishes%20resulting%20size%2C%20neutralizes%20any%20outer%20positioning%2C%20etc%3B%0A%20%20%20inner%20establishes%20position%20of%20stuff%20to%20be%20rotated%20%2A/%0A.ltx_transformed_outer%20%7B%0A%20%20%20%20position%3Arelative%3B%20bottom%3A0pt%3Bleft%3A0pt%3B%0A%20%20%20%20overflow%3Avisible%3B%20%7D%0A.ltx_transformed_inner%20%7B%0A%20%20%20%20display%3Ablock%3B%0A%20%20%20%20position%3Aabsolute%3Bbottom%3A0pt%3Bleft%3A0pt%3B%20%7D%0A.ltx_transformed_inner%20%3E%20.ltx_p%20%7Btext-indent%3A0em%3B%20margin%3A0%3B%20padding%3A0%3B%20%7D%0A/%2A%20If%20simulating%20a%20table%20%28html5%29%2C%20try%20to%20get%20rowspan%20to%20work...sorta%3F%20%2A/%0Aspan.ltx_rowspan%20%7B%20position%3Aabsolute%3B%20top%3A0%3B%20bottom%3A0%3B%20%7D%0A%0A/%2A%20by%20default%2C%20p%20doesn%27t%20indent%20%2A/%0A.ltx_p%20%7B%20text-indent%3A0em%3B%20white-space%3Anormal%3B%20%7D%0A/%2A%20explicit%20control%20of%20indentation%20%28on%20ltx_para%29%20%2A/%0A.ltx_indent%20%3E%20.ltx_p%3Afirst-child%20%7B%20text-indent%3A2em%21important%3B%20%7D%0A.ltx_noindent%20%3E%20.ltx_p%3Afirst-child%20%7B%20text-indent%3A0em%21important%3B%20%7D%0A%0A/%2A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%20%20Columns%20%2A/%0A.ltx_page_column1%20%7B%0A%20%20%20%20width%3A44%25%3B%20float%3Aleft%3B%20%7D%20/%2A%20IE%20uses%20%25%20of%20wrong%20container%2A/%0A.ltx_page_column2%20%7B%0A%20%20%20%20width%3A44%25%3B%20float%3Aright%3B%20%7D%0A.ltx_page_columns%20%3E%20.ltx_page_column1%20%7B%0A%20%20%20%20width%3A48%25%3B%20float%3Aleft%3B%20%7D%0A.ltx_page_columns%20%3E%20.ltx_page_column2%20%7B%0A%20%20%20%20width%3A48%25%3B%20float%3Aright%3B%20%7D%0A.ltx_page_columns%3Aafter%20%7B%0A%20%20%20%20content%3A%22.%22%3B%20display%3Ablock%3B%20height%3A0%3B%20clear%3Aboth%3B%20visibility%3Ahidden%3B%20%7D%0A%0A/%2A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%20Borders%20and%20such%20%2A/%0A.ltx_tabular%20%7B%20display%3Ainline-table%3B%20border-collapse%3Acollapse%3B%20%7D%0A.ltx_tabular.ltx_centering%20%7B%20display%3Atable%3B%20%7D%0A.ltx_thead%2C%0A.ltx_tfoot%2C%0A.ltx_tbody%20%20%20%7B%20display%3Atable-row-group%3B%20%7D%0A.ltx_tr%20%20%20%20%20%20%7B%20display%3Atable-row%3B%20%7D%0A.ltx_td%2C%0A.ltx_th%20%20%20%20%20%20%7B%20display%3Atable-cell%3B%20%7D%0A%0A.ltx_framed%20%20%7B%20border%3A1px%20solid%20black%3B%7D%0A.ltx_tabular%20.ltx_td%2C%0A.ltx_tabular%20.ltx_th%20%7B%20padding%3A0.1em%200.5em%3B%20%7D%0A/%2A%20regular%20lines%20%2A/%0A.ltx_border_t%20%20%7B%20border-top%3A1px%20solid%20black%3B%20%7D%0A.ltx_border_r%20%20%7B%20border-right%3A1px%20solid%20black%3B%20%7D%0A.ltx_border_b%20%20%7B%20border-bottom%3A1px%20solid%20black%3B%20%7D%0A.ltx_border_l%20%20%7B%20border-left%3A1px%20solid%20black%3B%20%7D%0A/%2A%20double%20lines%20%2A/%0A.ltx_border_tt%20%7B%20border-top%3A3px%20double%20black%3B%20%7D%0A.ltx_border_rr%20%7B%20border-right%3A3px%20double%20black%3B%20%7D%0A.ltx_border_bb%20%7B%20border-bottom%3A3px%20double%20black%3B%20%7D%0A.ltx_border_ll%20%7B%20border-left%3A3px%20double%20black%3B%20%7D%0A/%2A%20Light%20lines%20%2A/%0A.ltx_border_T%20%20%7B%20border-top%3A1px%20solid%20gray%3B%20%7D%0A.ltx_border_R%20%20%7B%20border-right%3A1px%20solid%20gray%3B%20%7D%0A.ltx_border_B%20%20%7B%20border-bottom%3A1px%20solid%20gray%3B%20%7D%0A.ltx_border_L%20%20%7B%20border-left%3A1px%20solid%20gray%3B%20%7D%0A/%2A%20Framing%20%2A/%0A.ltx_framed_rectangle%20%7B%20border-style%3Asolid%3B%20border-width%3A1px%3B%20%7D%0A.ltx_framed_top%20%20%20%20%20%20%20%7B%20border-top-style%3Asolid%3B%20border-top-width%3A1px%3B%20%7D%0A.ltx_framed_left%20%20%20%20%20%20%7B%20border-left-style%3Asolid%3B%20border-left-width%3A1px%3B%20%7D%0A.ltx_framed_right%20%20%20%20%20%7B%20border-right-style%3Asolid%3B%20border-right-width%3A1px%3B%20%7D%0A.ltx_framed_bottom%2C%0A.ltx_framed_underline%20%7B%20border-bottom-style%3Asolid%3B%20border-bottom-width%3A1px%3B%20%7D%0A.ltx_framed_topbottom%20%7B%20border-top-style%3Asolid%3B%20border-top-width%3A1px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20border-bottom-style%3Asolid%3B%20border-bottom-width%3A1px%3B%20%7D%0A.ltx_framed_leftright%20%7B%20border-left-style%3Asolid%3B%20border-left-width%3A1px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20border-right-style%3Asolid%3B%20border-right-width%3A1px%3B%20%7D%0A%0A/%2A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%20Misc%20%2A/%0A/%2A%20.ltx_verbatim%2A/%0A.ltx_verbatim%20%7B%20text-align%3Aleft%3B%20%7D%0A/%2A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%20Meta%20stuff%2C%20footnotes%20%2A/%0A.ltx_note_content%20%7B%20display%3Anone%3B%20%7D%0A/%2Aright%3A5%25%3B%20%20%2A/%0A.ltx_note_content%20%7B%0A%20%20%20%20%20max-width%3A%2070%25%3B%20font-size%3A90%25%3B%20left%3A15%25%3B%0A%20%20%20%20%20text-align%3Aleft%3B%0A%20%20%20%20%20background-color%3A%20white%3B%20%0A%20%20%20%20%20padding%3A%200.5em%201em%200.5em%201.5em%3B%0A%20%20%20%20%20border%3A%201px%20solid%20black%3B%20border-radius%3A%200%205px%205px%205px%3B%20box-shadow%3A%205px%205px%2010px%20gray%3B%20%7D%0A.ltx_note_mark%20%20%20%20%7B%20color%3Ablue%3B%20%7D%0A.ltx_note_type%20%20%20%20%7B%20font-weight%3A%20bold%3B%20%7D%0A.ltx_note%20%7B%20display%3Ainline-block%3B%20text-indent%3A0%3B%20%7D%20/%2A%20So%20we%20establish%20containing%20block%20%2A/%0A.ltx_note_content%20.ltx_note_mark%20%7B%20position%3Aabsolute%3B%20left%3A0.2em%3B%20top%3A-0.1em%3B%20%7D%0A.ltx_note%3Ahover%20.ltx_note_content%2C%0A.ltx_note%20.ltx_note_content%3Ahover%20%7B%0A%20%20%20display%3Ablock%3B%20position%3Aabsolute%3B%20z-index%3A10%3B%20%7D%0A%0A.ltx_ERROR%20%20%20%20%20%20%20%20%7B%20color%3Ared%3B%20%7D%0A.ltx_rdf%20%20%20%20%20%20%20%20%20%20%7B%20display%3Anone%3B%20%7D%0A.ltx_missing%20%20%20%20%20%20%7B%20color%3Ared%3B%7D%20%0A.ltx_nounicode%20%20%20%20%7B%20color%3Ared%3B%20%7D%0A/%2A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%20SVG%20%28pgf/tikz%20%3F%29%20basics%20%2A/%0A%0A/%2A%20Stuff%20appearing%20in%20svg%3AforeignObject%20%2A/%0A.ltx_svg_fog%20foreignObject%20%20%7B%20margin%3A0%3B%20padding%3A0%3B%20overflow%3Avisible%3B%20%7D%0A.ltx_svg_fog%20foreignObject%20%3E%20p%20%7B%20margin%3A0%3B%20padding%3A0%3B%20display%3Ablock%3B%20%7D%0A/%2A.ltx_svg_fog%20foreignObject%20%3E%20p%20%7B%20margin%3A0%3B%20padding%3A0%3B%20display%3Ablock%3B%20white-space%3Anowrap%3B%20%7D%2A/%0A%0A/%2A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%20Low-level%20Basics%20%2A/%0A/%2A%20Note%20that%20LaTeX%28ML%29%27s%20font%20model%20doesn%27t%20map%20quite%20exactly%20to%20CSS%27s%20%2A/%0A/%2A%20Font%20Families%20%3D%3E%20font-family%20%2A/%0A.ltx_font_serif%20%20%20%20%20%20%7B%20font-family%3A%20serif%3B%20%7D%0A.ltx_font_sansserif%20%20%7B%20font-family%3A%20sans-serif%3B%20%7D%0A.ltx_font_typewriter%20%7B%20font-family%3A%20monospace%3B%20%7D%0A/%2A%20dingbats%20should%20be%20converted%20to%20unicode%3F%20%2A/%0A/%2A%20Math%20font%20families%20handled%20within%20math%3A%20script%2C%20symbol%2C%20fraktur%2C%20blackboard%20%3F%20%2A/%0A/%2A%20Font%20Series%20%3D%3E%20font-weight%20%2A/%0A.ltx_font_bold%20%20%20%20%20%20%20%7B%20font-weight%3A%20bold%3B%20%7D%0A.ltx_font_medium%20%20%20%20%20%7B%20font-weight%3A%20normal%3B%20%7D%0A/%2A%20Font%20Shapes%20%3D%3E%20font-style%20or%20font-variant%20%2A/%0A.ltx_font_italic%20%20%20%20%20%7B%20font-style%3A%20italic%3B%20font-variant%3Anormal%3B%20%7D%0A.ltx_font_upright%20%20%20%20%7B%20font-style%3A%20normal%3B%20font-variant%3Anormal%3B%20%7D%0A.ltx_font_slanted%20%20%20%20%7B%20font-style%3A%20oblique%3B%20font-variant%3Anormal%3B%20%7D%0A.ltx_font_smallcaps%20%20%7B%20font-variant%3A%20small-caps%3B%20font-style%3Anormal%3B%20%7D%0A.ltx_font_oldstyle%20%20%20%7B%20font-variant%3A%20oldstyle-nums%3B%20%20/%2A%20experimental%20css3%20%3F%20Doesn%27t%20seem%20to%20work%21%2A/%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20font-style%3Anormal%3B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20-moz-font-feature-settings%3A%20%22onum%22%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20-ms-font-feature-settings%3A%20%22onum%22%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20-webkit-font-feature-settings%3A%20%22onum%22%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20font-variant-numeric%3A%20oldstyle-nums%3B%20%7D%0A.ltx_font_mathcaligraphic%20%7B%20font-family%3A%20%22Lucida%20Calligraphy%22%2C%20%22Zapf%20Chancery%22%2C%22URW%20Chancery%20L%22%3B%20%7D%0A/%2A%0A%0A.ltx_font_mathscript%20%7B%20%3F%20%7D%0A%2A/%0Acite%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%20font-style%3A%20normal%3B%20%7D%0A%0A.ltx_red%20%20%20%20%20%20%20%20%7B%20color%3Ared%3B%20%7D%0A/%2A.ltx_centering%20%20%7B%20text-align%3Acenter%3B%20margin%3Aauto%3B%20%7D%2A/%0A/%2A.ltx_inline-block.ltx_centering%2C%2A/%0A/%2A%20Hmm....%20is%20this%20right%20in%20general%3F%20%2A/%0A.ltx_centering%20%20%7B%20display%3Ablock%3B%20margin%3Aauto%3B%20text-align%3Acenter%3B%20%7D%0A%0A/%2A%20Dubious%20stuff%20%2A/%0A.ltx_hflipped%20%7B%0A%20%20%20%20display%3Ainline-block%3B%0A%20%20%20%20-moz-transform%3A%20scaleX%28-1%29%3B%0A%20%20%20%20-o-transform%3A%20scaleX%28-1%29%3B%0A%20%20%20%20-webkit-transform%3A%20scaleX%28-1%29%3B%0A%20%20%20%20transform%3A%20scaleX%28-1%29%3B%0A%20%20%20%20filter%3A%20FlipH%3B%0A%20%20%20%20-ms-fliter%3A%20%22FlipH%22%3B%20%7D%0A.ltx_vflipped%20%7B%0A%20%20%20%20display%3Ainline-block%3B%0A%20%20%20%20-moz-transform%3A%20scaleY%28-1%29%3B%0A%20%20%20%20-o-transform%3A%20scaleY%28-1%29%3B%0A%20%20%20%20-webkit-transform%3A%20scaleY%28-1%29%3B%0A%20%20%20%20transform%3A%20scaleY%28-1%29%3B%0A%20%20%20%20filter%3A%20FlipV%3B%0A%20%20%20%20-ms-fliter%3A%20%22FlipV%22%3B%20%7D%0A%0A/%2A%20.ltx_phantom%20handled%20in%20xslt%20%2A/%0A%0A" rel="stylesheet" type="text/css"/><!--URL:LaTeXML.css-->
+<link href="data:text/css,body%20%7B%0A%20%20padding%3A%2010px%2020%25%3B%0A%20%20font-family%3A%20sans-serif%3B%0A%7D%0A%0Abr%20%7B%0A%20%20margin-bottom%3A%2015px%3B%0A%7D%0A%0A.ltx_page_logo%20%7B%0A%20%20display%3A%20none%3B%0A%7D%0A%0A.ltx_ERROR%2C%0A.undefined%20%7B%0A%20%20display%3A%20none%3B%0A%7D%0A.ltx_title_document%20%7B%0A%20%20font-family%3A%20sans-serif%3B%0A%20%20font-weight%3A%20bold%3B%0A%7D%0A%0A.ltx_abstract%20%7B%0A%20%20margin-bottom%3A%203em%3B%0A%7D%0A%0A.ltx_title_abstract%20%7B%0A%20%20font-size%3A%20130%25%20%21important%3B%0A%20%20margin%3A%202em%200%3B%0A%7D%0A%0A%23p1%20%7B%0A%20%20display%3A%20none%3B%0A%7D%0A%0A/%2A%20Footnote%20code%20used%20for%20cleaner%20script%20%2A/%0A.footnote-ref%20%7B%0A%09color%3A%20blue%3B%0A%09vertical-align%3A%20super%3B%0A%09font-size%3A%200.6rem%3B%0A%09text-decoration%3A%20none%3B%0A%7D%0A.footnote%20%7B%0A%09font-size%3A%200.7em%3B%0A%7D%0A%0A.ltx_title_document%20%20%20%20%20%20%7B%20font-size%3A170%25%3B%20text-align%3Acenter%3B%20margin%3A0.5em%200%200.5em%200%3B%20%7D%0A.ltx_authors%2C%0A.ltx_role_author%20%20%20%20%20%20%20%20%20%7B%20text-align%3Acenter%3B%20margin%3A0.5em%200%200.5em%200%3B%20%7D%0A.ltx_role_author%20.ltx_personname%20%20%7B%20font-size%3A%20120%25%3B%20%7D%0A.ltx_date%20%20%20%20%20%20%20%20%7B%20text-align%3Acenter%3B%20font-size%3A%20120%25%3B%20margin%3A0.5em%200%200.5em%200%3B%20%7D%0A.ltx_subtitle%20%20%20%20%7B%20text-align%3Acenter%3B%20font-size%3A%20120%25%3B%20padding-left%3A0.2em%3B%20margin-left%3A-0.5em%3B%20%7D%0A%0A.ltx_title_abstract%20%20%20%20%20%20%7B%20text-align%3Acenter%3B%20font-size%3A%20100%25%3B%20font-weight%3Abold%3B%20%7D%0A.ltx_abstract%20%7B%20margin-left%3A4em%3B%20margin-right%3A4em%3B%20%7D%0A.ltx_title_acknowledgements%2C%0A.ltx_title_keywords%2C%0A.ltx_title_classification%20%7B%0A%20%20%20text-align%3Aleft%3B%20font-size%3A%20100%25%3B%20font-weight%3Abold%3B%20margin%3A0.5%200%200%200%3B%20%7D%0A%0A.ltx_appendix%2C%0A.ltx_section%2C%20%20%20%0A.ltx_subsection%2C%0A.ltx_subsubsection%20%7B%20margin-top%3A1.5em%3B%20%7D%0A.ltx_paragraph%2C%0A.ltx_subparagraph%20%20%20%7B%20margin-top%3A1.0em%3B%20%7D%0A%0A.ltx_title_appendix%2C%0A.ltx_title_section%2C%0A.ltx_title_bibliography%20%20%7B%20font-size%3A140%25%3B%20font-weight%3Abold%3B%20margin-bottom%3A1em%3B%20%7D%0A.ltx_title_subsection%20%20%20%20%7B%20font-size%3A120%25%3B%20font-weight%3Abold%3B%20margin-bottom%3A1em%3B%20%7D%0A.ltx_title_subsubsection%20%7B%20font-size%3A100%25%3B%20font-weight%3Abold%3B%20margin-bottom%3A1em%3B%20%7D%0A%0A/%2A%20Paragraph%20%26%20Subparagraph%20titles%20should%20be%20runin%21%20%2A/%0A.ltx_title_paragraph%20%20%20%7B%20font-size%3A100%25%3B%20font-weight%3Abold%3B%20display%3Ainline%3B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20margin-right%3A1em%3B%20%7D%0A.ltx_paragraph%20.ltx_title%2C%0A.ltx_paragraph%20.ltx_title%20%2B%20.ltx_para%2C%0A.ltx_paragraph%20.ltx_title%20%2B%20.ltx_para%20%3E%20.ltx_p%20%7B%20display%3Ainline%3B%20%7D%0A%0A.ltx_title_subparagraph%20%20%7B%20font-size%3A100%25%3B%20font-weight%3Abold%3B%20display%3Ainline%3B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20margin-left%3A2em%3B%20margin-right%3A1em%3B%20%7D%0A.ltx_subparagraph%20.ltx_title%2C%0A.ltx_subparagraph%20.ltx_title%20%2B%20.ltx_para%2C%0A.ltx_subparagraph%20.ltx_title%20%2B%20.ltx_para%20%3E%20.ltx_p%20%7B%20display%3Ainline%3B%20%7D%0A%0A.ltx_figure%20%20%7B%20text-align%3Acenter%3B%20margin%3Aauto%3B%20margin%3A0.5em%3B%20%7D%0A.ltx_table%20%20%20%7B%20text-align%3Acenter%3B%20margin%3Aauto%3B%20margin%3A0.5em%3B%20%7D%0A%0A/%2A%20experimental%3A%20flex%20model%2C%20to%20center%20short%20captions%2C%20justify%20long%20ones%20%2A/%0A.ltx_table%2C%0A.ltx_figure%20%7B%20display%3Aflex%3B%20flex-direction%3Acolumn%3B%20align-items%3Acenter%3B%20%7D%0A.ltx_table%20.ltx_caption%2C%0A.ltx_figure%20.ltx_caption%20%7B%20text-align%3Ajustify%3B%20%7D%0A%0A/%2A%20first%20p%20in%20para%20gets%20indented%20%2A/%0A.ltx_para%20%3E%20.ltx_p%3Afirst-child%20%7B%20text-indent%3A2em%3B%20%7D%0A/%2A%20except%20the%20initial%20in%20a%20section%20%2A/%0Asection%20%3E%20.ltx_title%20%2B.ltx_para%20%3E%20.ltx_p%2C%0Asection%20%3E%20.ltx_title%20%2B.ltx_date%20%2B.ltx_para%20%3E%20.ltx_p%20%7Btext-indent%3A0em%3B%20%7D%0A%0A.ltx_title_abstract%20%2B%20.ltx_p%20%7Btext-indent%3A2em%3B%20%7D%0A%0A.ltx_itemize%2C%0A.ltx_enumerate%20%7B%20margin-left%3A1em%3B%20%7D%0A%0A.ltx_theorem%20%7B%20margin-top%3A0.5em%3B%20margin-bottom%3A0.5em%3B%20%7D%0A.ltx_theorem%20.ltx_title%20%7B%20margin-bottom%3A0.1em%3B%20%7D%0A.ltx_theorem%20.ltx_title%20%2B%20.ltx_para%2C%0A.ltx_theorem%20.ltx_title%20%2B%20.ltx_para%20.ltx_p%2C%0A.ltx_theorem%20.ltx_title%20%2B%20.ltx_p%20%20%7B%20margin-top%3A0em%3B%20%7D%0A" rel="stylesheet" type="text/css"/><!--URL:ltx-article.css-->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js?config=MML_HTMLorMML" type="text/javascript"></script><!--URL:https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js?config=MML_HTMLorMML-->
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document" lang="en">An Introductory Course in Electrical Circuits and Coding for Deaf and DeafBlind Middle School Students</h1>
+<div class="ltx_authors">
+<span class="ltx_creator ltx_role_author" lang="en">
+<span class="ltx_personname"><span class="ltx_text" style="font-size:120%;color:#0000FF;"> Becca Leininger</span>
+</span><span class="ltx_author_notes"><span></span></span></span>
+<span class="ltx_creator ltx_role_author" lang="en">
+<span class="ltx_personname"><span class="ltx_text" style="font-size:120%;color:#0000FF;">Christina Yang</span>
+</span><span class="ltx_author_notes"><span>
+<span class="ltx_contact ltx_role_affiliation">University of St. Thomas- Minnesota
+</span></span></span></span>
+<span class="ltx_creator ltx_role_author" lang="en">
+<span class="ltx_personname"><span class="ltx_text" style="font-size:120%;color:#0000FF;">Makayla Quinn</span>
+</span><span class="ltx_author_notes"><span>
+<span class="ltx_contact ltx_role_affiliation">University of St. Thomas- Minnesota
+</span></span></span></span>
+<span class="ltx_creator ltx_role_author" lang="en">
+<span class="ltx_personname"><span class="ltx_text" style="font-size:120%;color:#0000FF;">Jeffrey Jalkio</span>
+</span><span class="ltx_author_notes"><span>
+<span class="ltx_contact ltx_role_affiliation">University of St. Thomas- Minnesota
+</span></span></span></span>
+<span class="ltx_creator ltx_role_author" lang="en">
+<span class="ltx_personname"><span class="ltx_text" style="font-size:120%;color:#0000FF;">Rahaf Bahajry</span>
+</span><span class="ltx_author_notes"><span>
+<span class="ltx_contact ltx_role_affiliation">University of St. Thomas- Minnesota
+</span></span></span></span>
+<span class="ltx_creator ltx_role_author" lang="en">
+<span class="ltx_personname"><span class="ltx_text" style="font-size:120%;color:#0000FF;">Mellissa Ingabire</span>
+</span><span class="ltx_author_notes"><span>
+<span class="ltx_contact ltx_role_affiliation">University of St. Thomas- Minnesota
+</span></span></span></span>
+<span class="ltx_creator ltx_role_author" lang="en">
+<span class="ltx_personname"><span class="ltx_text" style="font-size:120%;color:#0000FF;">AnnMarie Thomas</span>
+</span><span class="ltx_author_notes"><span>
+<span class="ltx_contact ltx_role_affiliation">University of St. Thomas- Minnesota
+</span></span></span></span>
+</div>
+<div class="ltx_abstract" lang="en">
+<h6 class="ltx_title ltx_title_abstract">Abstract</h6>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">The Playful Learning Lab collaborated with Metro Deaf School (MDS) to design and deliver an Intro to Electronics and Computer Programming course to Deaf and DeafBlind middle school students. Four sets of 6–8 students went through an approximately 20-day course that met four days a week for 40 minutes per day. The content of the class focused on electrical circuits and computer programming. Lessons covered topics such as conductivity, closed/open circuits, series/parallel circuits, and coding. Students were introduced to the Scratch computer programming language and Makey kits. The development and delivery of the course was a collaborative effort between Metro Deaf School staff and the undergraduate student researchers in the Playful Learning Lab. The class was a project based mix of lectures, projects, and
+hands-on assignments. In this presentation we will share the lessons learned by designing, and delivering, this course.</span>
+<br class="ltx_break"/>
+<br class="ltx_break"/>Keywords: Engineering, Deaf, Circuits</p>
+</div>
+<span class="ltx_ERROR undefined">\addbibresource</span>
+<div class="ltx_para" id="p1">
+<p class="ltx_p">notation.bib
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="ltx_text" lang="en"></span></p>
+</div>
+<span class="ltx_ERROR undefined" lang="en">\toappear</span>
+<div class="ltx_para" id="p2">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold" lang="en">*Corresponding Author, Becca Leininger
+<br class="ltx_break"/><a class="ltx_ref ltx_href ltx_font_medium" href="mailto:%20lein6470@stthomas.edu" title="">(lein6470@stthomas.edu)</a><span class="ltx_text ltx_font_medium">
+<br class="ltx_break"/><span class="ltx_text ltx_font_italic">Submitted Thu Apr 6 2023 
+<br class="ltx_break"/>Accepted Mon Aug 21 2023</span>
+<br class="ltx_break"/><span class="ltx_text ltx_font_italic">Published online </span>
+<br class="ltx_break"/><span class="ltx_text ltx_font_italic">DOI: 10.14448/jsesd.15.0008</span>
+<br class="ltx_break"/></span></span></p>
+</div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<section class="ltx_section" id="Sx1" lang="en">
+<h2 class="ltx_title ltx_title_section"></h2>
+</section>
+<section class="ltx_section" id="Sx2" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">An Introductory Course in Electrical Circuits and Coding for Deaf and DeafBlind Middle Sch-ool Students</h2>
+<div class="ltx_para" id="Sx2.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Metro Deaf School (MDS) in St. Paul, Minnesota is the first Deaf charter school in the United States, opening in 1993. The school serves students in the Twin Cities and Western Wisconsin from ages 2 to 21 who are primarily Deaf, DeafBlind and Hard of Hearing students, often being visual and/or tactile learners. All students who attend MDS have Individualized Education Plans (IEPs) and fall under the </span><span class="ltx_text ltx_font_italic" style="font-size:120%;">special education</span><span class="ltx_text" style="font-size:120%;"> category, defined by the Minnesota Department of Education as students who “have a disability and need specialized instruction” (Minnesota Department of Education, n.d.). At MDS, students are instructed in American Sign Language (ASL) and English is primarily taught through print.</span></p>
+</div>
+<div class="ltx_para" id="Sx2.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The Playful Learning Lab (PLL) is an undergraduate student research lab at the University of Saint Thomas in St. Paul, Minnesota. Members of the PLL come from a variety of majors such as education, engineering, and psychology. Student researchers collaborate to promote learning through play on projects such as Circus Science (Roche et al., 2020), The PLAYground (Monson et al., 2020), and OK GO Sandbox (Schumacher et al., 2020). The PLL frequently collaborates with community partners such as The Minnesota Children’s Museum, Tw-in Cities Trapeze, and Metro Deaf School.</span></p>
+</div>
+<div class="ltx_para" id="Sx2.p3">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The PLL has been working with MDS for over 8 years, starting with after-school STEAM workshops for students to engage in engineering </span>
+<br class="ltx_break"/><span class="ltx_text" style="font-size:120%;">projects outside their normal curriculum (Kas-per et al., 2016). In 2020, the PLL worked with MDS to host an online PLAYground camp for students in the wake of the COVID-19 pandemic (Monson et al., 2021). Ongoing research through this collaboration include teacher workshops exploring the Scratch programming language through videos presented in ASL and </span>
+<br class="ltx_break"/><span class="ltx_text" style="font-size:120%;">LEGO Spike Prime with their students.</span></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx3" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;"> Course Development</h2>
+<div class="ltx_para" id="Sx3.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_italic" style="font-size:120%;">Curriculum Goals</span><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+<div class="ltx_para" id="Sx3.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">In this collaboration, our goal was to design and assist in teaching a 16-21 day Intro to Electronics and Computer Programming class to Deaf and DeafBlind middle school students in four rotations of 7 students each (N=28). These classes provided hands-on materials to encourage learning through play, implemented inquiry-based learning, and gave students the time to explore and undergo their own learning process. The first portion of the class focused on engineering and circuits. This was taught using Squishy Circuits (Peppler et al., 2018; Johnson et al., 2010) and Paper Circuits from Brown Dog Gadgets. The topics covered series and parallel circuits, open and closed circuits, switc-hes, and basic vocabulary including batteries, LEDs, conductors, and insulators. Topics also included safety relating to circuitry.</span></p>
+</div>
+<div class="ltx_para" id="Sx3.p3">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The second portion of the class was centered on the Scratch programming language (Resnick et al., 2009). The first lesson introduced students to the coding language before allowing them to explore the online Scratch community and to create their own coding projects. Video tutorials were used to introduce projects to students and serve as a guide if they needed help. The coding lessons included animating your name, creating a chase game, and a final project of creating their own game using a Makey Makey, an invention kit designed to allow conductive objects to serve as computer control inputs, as a game controller.</span></p>
+</div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<div class="ltx_para" id="Sx3.p4">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_italic" style="font-size:120%;">Planning the Course </span><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+<div class="ltx_para" id="Sx3.p5">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">During the month of January 2022, student researchers and faculty partners began to develop content for the Intro to Electronics and Computer Programming class. The development team, consisting of mechanical and electrical engineering, education, and entrepreneurship perspectives, brainstormed key electrical engineering and computer programming concepts to cover in the course. It was important for our team to include student researchers with varying levels of content knowledge to refine and simplify the curriculum in a way that was appropriate for middle school students. One method of this refining process involved associating key topics with everyday objects and images, connecting potentially abstract content with relatable, concrete concepts. For example, when introducing the idea of electrical current we compared it to water flowing through pipes. This focus on key topics, and key vocabulary words, was supported heavily by the classroom teacher. Because the classroom had open wall space, we created large-print vocabulary posters to put on the wall of the classroom for the students to reference.The teaching team, which included the student researchers, faculty partners, and the classroom teacher, focused the curriculum around pre-existing interactive activities to provide students a way to associate their experiences with the electrical engineering and computer science content.</span></p>
+</div>
+<div class="ltx_para" id="Sx3.p6">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The coding activities utilized in the second half of the course were centered around the lessons and activities on the Scratch website and the Creative Coding Curriculum (Brennan et al., 2011). We selected activities and ideas that would inspire students to have the flexibility to creatively express themselves and develop their problem-solving skills. The diverse backgrounds and disciplines of the teaching team helped to break down the concepts to simple, concrete ideas that could be emphasized in the curriculum as it was being developed. During the planning phase, it was crucial for us to include hands-on activities that would reinforce the content of the curriculum to provide the students the opportunity to learn through play. To evaluate the success of this course, we took two approaches: responding to the needs of the students in real time (further explored in the discussion section) and evaluating interest and confidence in the subjects covered as well as concept knowledge before and after the course.</span></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx4" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;"> Method</h2>
+<div class="ltx_para" id="Sx4.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">On the first day of each of the four rotating sessions of the course, each session with 7 students each (N=28), students were given a presentation on the process of the course and the researcher’s goal of evaluating student interest and confidence in subject skills through the </span>
+<br class="ltx_break"/><span class="ltx_text" style="font-size:120%;">course. They were also given information on assent and consent forms, approved by the Institutional Review Board at the University of St. Thomas, were sent to parents. Students who assented were given a pre-test consisting of fourteen 5-point Likert scale questions on subject interest and confidence, and eight fill-in-the-blank concept questions pertaining to electrical engineering and computer programming with a provided word bank (See Appendix A).</span></p>
+</div>
+<div class="ltx_para" id="Sx4.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The exact same post-test was given on the final days of the class while students were finishing their final projects. The students were informed that these tests would not impact their grade and were for research purposes only. The pre- and post-tests were then analyzed to determine if students’ attitudes and interest towards engineering and computer science changed throughout the course as well as students’ knowledge of the content. The subject interest questions were recoded into disagree (Strongly Disagree and Disagree), not sure (Neither Agree or Disagree), and agree (Strongly Agree and Agree).</span></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx5" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;"> Quantitative Results</h2>
+<div class="ltx_para" id="Sx5.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Due to absences resulting in missing pre- and post-test data, subject interest questions use data from 18 students and the concept questions use data from 13 students. To test the significance of the pre-test scores compared to the post-test scores, we used a paired-samples t-test. We also adopted a significance level of 0.1 due to low statistical power caused by the small number of participants for both the interest questions (N=18) and the concept questions (N=13). There was not a significant change between pre-test (M=45.75, SD=8.17) and post-test (M=45.93, SD=8.27) scores for subject interest and confidence, t(12) = 0.186, p &gt; 0.1, two-sided. To determine changes in interest question responses, we looked at the frequency for each category. Students indicated agreement more often in the post-test (42.6%) than in the pre-test (35.2%) for engineering interest and ability questions (See Figure 1).</span></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx6" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">Figure 1</h2>
+<div class="ltx_para" id="Sx6.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic" style="font-size:120%;">Engineering Question Agreement Frequency</span><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+<figure class="ltx_figure" id="Sx6.fig1"><img alt="" class="ltx_graphics ltx_centering" height="178" id="Sx6.g1" src="1306304e-4e70-11ee-b3fa-0242ac110002/figure%201.png" width="284"/><!--URL:1306304e-4e70-11ee-b3fa-0242ac110002/figure%201.png-->
+</figure>
+<div class="ltx_para" id="Sx6.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Students indicated agreement less often in the post-test (58.3%) than in the pre-test (63.9%) for math interest and ability questions </span>
+<br class="ltx_break"/><span class="ltx_text" style="font-size:120%;">(See Figure 2).</span></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx7" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">Figure 2</h2>
+<div class="ltx_para" id="Sx7.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic" style="font-size:120%;">Computer Science Agreement Frequency</span><span class="ltx_text" style="font-size:120%;">
+</span>
+<br class="ltx_break"/></p>
+</div>
+<figure class="ltx_figure" id="Sx7.fig1"><img alt="" class="ltx_graphics ltx_centering" height="179" id="Sx7.g1" src="1306304e-4e70-11ee-b3fa-0242ac110002/figure%202.png" width="284"/><!--URL:1306304e-4e70-11ee-b3fa-0242ac110002/figure%202.png-->
+</figure>
+<div class="ltx_para" id="Sx7.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">It is important to note that although agreement frequency decreased in the math post-test, there were more of those who were not sure (22.2%) compared to those that disagreed (16.7%).
+Students indicated agreement less often in the post-test (22.2%) than the pre-test (27.8%) for the computer science interest and ability questions (See Figure 3).</span></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx8" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">Figure 3</h2>
+<div class="ltx_para" id="Sx8.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic" style="font-size:120%;">Math Question Agreement Frequency</span><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+<figure class="ltx_figure" id="Sx8.fig1"><img alt="" class="ltx_graphics ltx_centering" height="169" id="Sx8.g1" src="1306304e-4e70-11ee-b3fa-0242ac110002/figure%203.png" width="266"/><!--URL:1306304e-4e70-11ee-b3fa-0242ac110002/figure%203.png-->
+</figure>
+<div class="ltx_para" id="Sx8.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Similar to the math results, there were more students that were not sure (40.7%) in the post-test than students who disagreed (35.2%). Students indicated agreement more often in the post-test (57.4%) than in the pre-test (53.7%) for problem-solving interest and ability questions (See Figure 4).</span></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx9" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">Figure 4</h2>
+<div class="ltx_para" id="Sx9.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic" style="font-size:120%;">Problem-Solving Agreement Frequency</span><span class="ltx_text" style="font-size:120%;">
+</span>
+<br class="ltx_break"/></p>
+</div>
+<figure class="ltx_figure" id="Sx9.fig1"><img alt="" class="ltx_graphics ltx_centering" height="180" id="Sx9.g1" src="1306304e-4e70-11ee-b3fa-0242ac110002/figure%204.png" width="284"/><!--URL:1306304e-4e70-11ee-b3fa-0242ac110002/figure%204.png-->
+</figure>
+<div class="ltx_para" id="Sx9.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">There was a significant increase between the pre-test scores (M=1.08, SD=1.38) and the post-test scores (M=4.46, SD=2.11) for the concept questions, t(12)=6.034, p &lt; 0.1, one-sided (See Figure 5).</span></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx10" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">Figure 5</h2>
+<div class="ltx_para" id="Sx10.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic" style="font-size:120%;">Total Mean Score of Concept Questions</span><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+<figure class="ltx_figure" id="Sx10.fig1"><img alt="" class="ltx_graphics ltx_centering" height="172" id="Sx10.g1" src="1306304e-4e70-11ee-b3fa-0242ac110002/figure%205.png" width="284"/><!--URL:1306304e-4e70-11ee-b3fa-0242ac110002/figure%205.png-->
+</figure>
+<div class="ltx_para" id="Sx10.p2">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic" style="font-size:120%;">Note: Each question was scored as either 0 = incorrect or 1 = correct. There were 8 questions total. The minimum score possible was 0 and the maximum score was 8.</span><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+<div class="ltx_para" id="Sx10.p3">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Students not only had more correct answers in the post-test, but wrote something in the answer space which was frequently left blank in the pre-test. Each concept question had more correct answers after students took the course (See Figure 6).
+</span>
+<br class="ltx_break"/>
+<br class="ltx_break"/></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx11" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">Figure 6</h2>
+<div class="ltx_para" id="Sx11.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic" style="font-size:120%;">Mean Score of Individual Concept Questions</span><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+<figure class="ltx_figure" id="Sx11.fig1"><img alt="" class="ltx_graphics ltx_centering" height="171" id="Sx11.g1" src="1306304e-4e70-11ee-b3fa-0242ac110002/figure%206.png" width="284"/><!--URL:1306304e-4e70-11ee-b3fa-0242ac110002/figure%206.png-->
+</figure>
+</section>
+<section class="ltx_section" id="Sx12" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;"> Discussion</h2>
+<section class="ltx_subsection" id="Sx12.SSx1">
+<h3 class="ltx_title ltx_title_subsection" style="font-size:120%;">Results Summary</h3>
+<div class="ltx_para" id="Sx12.SSx1.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">It can be hypothesized that students answered more questions correctly when the content contained recurring visual images, as in the lessons on circuit types and components.</span></p>
+</div>
+</section>
+<section class="ltx_subsection" id="Sx12.SSx2">
+<h3 class="ltx_title ltx_title_subsection" style="font-size:120%;">Accessibility Learnings</h3>
+<div class="ltx_para" id="Sx12.SSx2.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">As discussed in the Curriculum Goals section, it was important for us to notice student responses to the design of the course and address their learning needs by adapting our teaching methods. Because the course was created by hearing individuals, this step was important to make the course accessible for all students. One example was our slideshow used to teach lessons which needed to be viewer friendly, particularly for DeafBlind students. Our original design utilized an engineering themed slideshow, which was heavy on background images and colors in the templates. This, however, proved to affect the lack of clarity of the slides due to busy design graphics. With guidance from the classroom teacher and a faculty partner, the slides were redesigned - including changing the background and text colors to that more suitable for DeafBlind students, larger font sizes, and clear visuals for important concepts.</span></p>
+</div>
+<div class="ltx_para" id="Sx12.SSx2.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">As the school year progressed and the teaching team was able to teach more students, more adaptations were required to ensure all students could use the materials. In the fourth group of students, for example, one student had difficulty with fine motor skills and was not able to manipulate the supplies to complete the paper circuit activities.</span></p>
+</div>
+<figure class="ltx_figure" id="Sx12.F1"><img alt="" class="ltx_graphics ltx_centering" height="194" id="Sx12.F1.g1" src="1306304e-4e70-11ee-b3fa-0242ac110002/figure%207.png" width="302"/><!--URL:1306304e-4e70-11ee-b3fa-0242ac110002/figure%207.png-->
+<figcaption class="ltx_caption ltx_centering" style="font-size:120%;"><span class="ltx_tag ltx_tag_figure">Figure 7: </span> Demonstration of an accommodation created for a student to be able to participate in the Paper Circuit activities. Student researchers wrapped the conductive tape around popsicle sticks that the student was able to manipulate with the help of their paraprofessional.</figcaption>
+</figure>
+<div class="ltx_para" id="Sx12.SSx2.p3">
+<br class="ltx_break"/>
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">In searching for a solution for this student, our researchers came up with putting the conductive tape on popsicle sticks the student could move around and manipulate much easier (See Figure 7). With the help of the student’s paraprofessional, they were able to complete the activities and explore the circuits using the popsicle sticks to connect the battery to the LEDs.</span></p>
+</div>
+<div class="ltx_para" id="Sx12.SSx2.p4">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Another unexpected change was moving the </span>
+<br class="ltx_break"/><span class="ltx_text" style="font-size:120%;">course online, as the school went to distance learning due to an increase of COVID cases during the first week of the 4th rotation. Two days prior to this change, the teaching team, as well as school teachers and paraprofessionals, packaged and distributed a week’s worth of materials for the students to ensure all students had the tactile tools used to instruct the lessons. This distribution was important as we recognized the possibility of students not having access to the same materials at home as used in the classroom. Additionally, the teaching team had their own set of materials to help the teaching team demonstrate the concepts and activities over Zoom. The flow of the class changed while online to accommodate for technical difficulties and the time needed for students to work at their own pace. We did experience technical difficulties with administering the pre-test for rotation 4 through Kami, which allowed students to annotate a digital version of the test accessibly.</span></p>
+</div>
+<div class="ltx_para" id="Sx12.SSx2.p5">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">For this online format, the teaching team spent some time on the first day going through our bag of materials as a class, which engaged the students and sparked excitement and curiosity for the activities we would be working on. While sharing the slides on the screen, a team member angled their camera to demonstrate the concepts taught using Squishy Circuits dou-gh and LEDs. With the adjustment in the duration of the class, we were intentional about giving students additional time to participate in the activities at home. When we saw that students were stuck while building, the classroom teacher pointed out different approaches students took and emphasized the idea that there was no “right way” to approach the activities in class. This creative thinking was embraced by the students. One student, for example, did not have insulating dough in their materials, so they came up with the innovative idea of using a plastic lid as their insulator in our Squishy Circuits activity.</span></p>
+</div>
+</section>
+</section>
+<section class="ltx_section" id="Sx13" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;"> Limitations</h2>
+<div class="ltx_para" id="Sx13.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_italic" style="font-size:120%;">The Course</span><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+<div class="ltx_para" id="Sx13.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">To begin, we wanted to note that these Deaf and Hard of Hearing students were assessed by a survey and course created by hearing individuals. While we intended to create a course that was optimal for these students, we recognize that there may have been shortcomings in the resources and content.The ASL signs needed to teach the content were not widely known in the community we worked with. This allowed for us to collaborate with the classroom teacher to create ASL signs to describe series and parallel circuits, some of the most common vocabulary used in the class. When the students were taking the post-test, many of them were able to explain the concepts correctly in ASL, but could not remember the English word to write on the test. Similarly, we observed that students were better able to understand concepts when multiple visuals were present and repeated throughout the content. Especially in the lessons on circuit types and components, more students were able to correctly identify the circuit images in the post test out of the other concept questions. We correlate this finding to the increased and repeated use of visuals in the lessons on circuits and the importance of visuals in successful learning of Deaf and Hard of Hearing students.</span></p>
+</div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<div class="ltx_para" id="Sx13.p3">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_italic" style="font-size:120%;">The Study</span><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+<div class="ltx_para" id="Sx13.p4">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Due to the COVID-19 pandemic, the class had unpredictable student absences leading to incomplete data collection for all 28 students. This reduced number of participants could impact the validity of the results as well as the differences in instruction received in the first week of rotations 1-3 (in-person) vs rotation 4 (online). The questions for the subject interest section of the pre- and post-tests were created by the authors, and there may be a limitation in inference validity. The present study represents a first attempt to represent the success and need for this course in Deaf and DeafBlind education. We feel that further research examining accessible teaching methods and data collection may open possibilities for further work and research.</span></p>
+</div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+</section>
+<section class="ltx_section" id="Sx14" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;"> Conclusion</h2>
+<div class="ltx_para" id="Sx14.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The development and implementation of the Introduction to Electronics and Computer Programming course was a stepping stone to accessible STEM and computer science courses for Deaf and Hard of Hearing students. We gained valuable insights on how students feel about the topics they are taught and the influence of our instruction methods on the students and their learning. Through our research, we reinforced the idea that Deaf and Hard of Hearing students benefit from the inclusion of multiple visuals when learning content, especially new content in complex content areas. Students also benefit when they have the full signing vocabulary of the content area, something that is sometimes lacking in STEM content (Bigham et al., 2008). Deaf and Hard of Hearing students require attentive and accessible materials to assist them in learning and understanding content, and we hope to continue to meet these needs through empowering children with playful education.</span></p>
+</div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+</section>
+<section class="ltx_section" id="Sx15" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;"> Acknowledgements</h2>
+<div class="ltx_para" id="Sx15.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The authors would like to thank the many individuals and groups that assisted with this work and paper. This includes Dr. Douglas Orzolek for consulting on pedagogy, Dr. Elise Amel for her assistance in data analysis, Maria Johnson for creating the slides used in this course, and all members of the Playful Learning Lab who assisted with materials preparation and review. We are grateful to Metro Deaf School educator Sandy Culpepper for working closely with us on this course, and Dr. Susan Outlaw for her partnership on this collaboration. Brown Dog Gadgets and Squishy Circuits donated materials that were used in this program. We also thank the Google Computer Science Education Research program for funding that made this work possible.</span></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx16" lang="en">
+<h2 class="ltx_title ltx_title_section"> References</h2>
+<div class="ltx_para" id="Sx16.p1">
+<p class="ltx_p">Bigham, J. P., Otero, D. S., DeWitt, J. N., Cavender, A. C., &amp; Ladner, R. E. (2008). ASL-STEM forum: A bottom-up approach to enabling American Sign Language to grow in STEM fields. <span class="ltx_text ltx_font_italic">Second International AAAI Conference on Weblogs and Social Media</span>, 2(1)176-177. 
+<br class="ltx_break"/>https://doi.org/10.1609/icwsm.v2i1.18638</p>
+</div>
+<div class="ltx_para" id="Sx16.p2">
+<p class="ltx_p">Brennan, K., Balch, C., &amp; Chung, M. (2014). <span class="ltx_text ltx_font_italic"> Creative computing: A design-based introduction to computational thinking</span>. Harvard Graduate School of Education. 
+<br class="ltx_break"/>https://creativecomputing.gse.harvard.edu/guide/</p>
+</div>
+<div class="ltx_para" id="Sx16.p3">
+<p class="ltx_p">Johnson, S., &amp; Thomas, AM. (2010). Squishy Circuits: A tangible medium for electronics education. ACM Conference on Computer Human Interactions, Atlanta, GA.</p>
+</div>
+<div class="ltx_para" id="Sx16.p4">
+<p class="ltx_p">Kasper, B., Haugh, A., Kasper, N., Gunderson, B., Thomas, AM., &amp; Besser, D. (2016). Design, implementation, and assessment of an after-school engineering program for deaf students. ASEE Annual Conference, New Orleans, LA.</p>
+</div>
+<div class="ltx_para" id="Sx16.p5">
+<p class="ltx_p">Monson, E., Schumacher, K., &amp; Thomas, A. M. (2021). The playground: An online summer camp for deaf and hard of hearing children. <span class="ltx_text ltx_font_italic">Journal of Science Education for Students with Disabilities</span>, 24(1), 1–6. 
+<br class="ltx_break"/>https://doi.org/10.14448/jsesd.13.0008</p>
+</div>
+<div class="ltx_para" id="Sx16.p6">
+<p class="ltx_p">Minnesota Department of Education (n.d.). <span class="ltx_text ltx_font_italic">Special education</span>.https://education.mn.gov/MDE/fam/sped/</p>
+</div>
+<div class="ltx_para" id="Sx16.p7">
+<p class="ltx_p">Peppler, K., Wohlwend, K., Thompson, N., Tan, V., &amp; Thomas, AM. (2018). Squishing circuits: Circuitry learning with electronics and playdough in early childhood. Journal of Science Education and Technology, 28(2), pp. 118-132. https://doi.org/10.1007/s10956-018-9752-2</p>
+</div>
+<div class="ltx_para" id="Sx16.p8">
+<p class="ltx_p">Resnick, M., Maloney, J., Monroy-Hernández, A., Rusk, N., Eastmond, E., Brennan, K., Millner, A., Rosenbaum, E., Silver, J., Silverman, B., &amp; Kafai, Y. (2009). Scratch: Programming for all. <span class="ltx_text ltx_font_italic">Communications of the ACM</span>, 52(11), 60-67. 
+<br class="ltx_break"/>https://doi.org/10.1145/1592761.1592779</p>
+</div>
+<div class="ltx_para" id="Sx16.p9">
+<p class="ltx_p">Roche, P., Goldbach, C. J., Putman, A., Jalkio, J. A., Kimball, K., &amp; Thomas, A. M. P. (2020). Circus science. <span class="ltx_text ltx_font_italic">Proceedings of the Fourteenth International Conference on Tangible, Embedded, and Embodied Interaction</span>. 
+<br class="ltx_break"/>https://doi.org/10.1145/3374920.3374986</p>
+</div>
+<div class="ltx_para" id="Sx16.p10">
+<p class="ltx_p">Schumacher, K., Roche, M., Verschoor, E., French, H., Eggersgluss, A., Harjamaki, M. K., Fagot, M., Jalkio, J., Thomas, A. M., Goldbach, C., Besser, D., &amp; Bensen, A. (2020). Using music videos to inspire engineering.<span class="ltx_text ltx_font_italic"> 2020 ASEE Virtual Annual Conference Content Access Proceedings</span>. https://doi.org/10.18260/1-2–35466</p>
+</div>
+</section>
+<section class="ltx_section" id="Sx17" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;"> Appendix A</h2>
+<div class="ltx_para" id="Sx17.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Subject Interest Questions</span></p>
+</div>
+<section class="ltx_subsection" id="Sx17.SSx1">
+<h3 class="ltx_title ltx_title_subsection" style="font-size:120%;">Engineering Questions</h3>
+<div class="ltx_para" id="Sx17.SSx1.p1">
+<ol class="ltx_enumerate" id="Sx17.I1">
+<li class="ltx_item" id="Sx17.I1.i1" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text" style="font-size:120%;">1.</span></span>
+<div class="ltx_para" id="Sx17.I1.i1.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">I could be an engineer.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx17.I1.i2" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text" style="font-size:120%;">2.</span></span>
+<div class="ltx_para" id="Sx17.I1.i2.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">I like engineering.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx17.I1.i3" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text" style="font-size:120%;">3.</span></span>
+<div class="ltx_para" id="Sx17.I1.i3.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">I am good at engineering.</span></p>
+</div>
+</li>
+</ol>
+</div>
+</section>
+<section class="ltx_subsection" id="Sx17.SSx2">
+<h3 class="ltx_title ltx_title_subsection" style="font-size:120%;">Computer Science Questions</h3>
+<div class="ltx_para" id="Sx17.SSx2.p1">
+<ol class="ltx_enumerate" id="Sx17.I2">
+<li class="ltx_item" id="Sx17.I2.i1" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text" style="font-size:120%;">1.</span></span>
+<div class="ltx_para" id="Sx17.I2.i1.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">I could be a computer programmer.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx17.I2.i2" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text" style="font-size:120%;">2.</span></span>
+<div class="ltx_para" id="Sx17.I2.i2.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">I like computer programming.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx17.I2.i3" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text" style="font-size:120%;">3.</span></span>
+<div class="ltx_para" id="Sx17.I2.i3.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">I am good at computer programming.</span></p>
+</div>
+</li>
+</ol>
+</div>
+</section>
+<section class="ltx_subsection" id="Sx17.SSx3">
+<h3 class="ltx_title ltx_title_subsection" style="font-size:120%;">Math Questions</h3>
+<div class="ltx_para" id="Sx17.SSx3.p1">
+<ol class="ltx_enumerate" id="Sx17.I3">
+<li class="ltx_item" id="Sx17.I3.i1" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text" style="font-size:120%;">1.</span></span>
+<div class="ltx_para" id="Sx17.I3.i1.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">I like math.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx17.I3.i2" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text" style="font-size:120%;">2.</span></span>
+<div class="ltx_para" id="Sx17.I3.i2.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">I am good at math.</span></p>
+</div>
+</li>
+</ol>
+</div>
+</section>
+<section class="ltx_subsection" id="Sx17.SSx4">
+<h3 class="ltx_title ltx_title_subsection" style="font-size:120%;">Problem Solving Questions</h3>
+<div class="ltx_para" id="Sx17.SSx4.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic" style="font-size:120%;">Note:</span><span class="ltx_text" style="font-size:120%;"> Underlined words were fill-in-the-blank with answers being present in a word bank. I like learning how things work.
+</span></p>
+<ol class="ltx_enumerate" id="Sx17.I4">
+<li class="ltx_item" id="Sx17.I4.i1" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text" style="font-size:120%;">1.</span></span>
+<div class="ltx_para" id="Sx17.I4.i1.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">I am good at learning how things work.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx17.I4.i2" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text" style="font-size:120%;">2.</span></span>
+<div class="ltx_para" id="Sx17.I4.i2.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">I like using my hands to make things.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx17.I4.i3" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text" style="font-size:120%;">3.</span></span>
+<div class="ltx_para" id="Sx17.I4.i3.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">I am good at using my hands to make things.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx17.I4.i4" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text" style="font-size:120%;">4.</span></span>
+<div class="ltx_para" id="Sx17.I4.i4.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">I like problem solving.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx17.I4.i5" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text" style="font-size:120%;">5.</span></span>
+<div class="ltx_para" id="Sx17.I4.i5.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">I am good at problem solving.</span></p>
+</div>
+</li>
+</ol>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic" style="font-size:120%;">Note:</span><span class="ltx_text" style="font-size:120%;"> All questions were rated on a 5-point Likert scale where 1 = “Strongly Disagree” and 5 = “Strongly Agree”.</span></p>
+</div>
+</section>
+<section class="ltx_subsection" id="Sx17.SSx5">
+<h3 class="ltx_title ltx_title_subsection" style="font-size:120%;">Concept Questions</h3>
+<div class="ltx_para" id="Sx17.SSx5.p1">
+<ol class="ltx_enumerate" id="Sx17.I5">
+<li class="ltx_item" id="Sx17.I5.i1" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text" style="font-size:120%;">1.</span></span>
+<div class="ltx_para" id="Sx17.I5.i1.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Electricity flows in a </span><span class="ltx_text ltx_framed_underline" style="font-size:120%;">circle</span><span class="ltx_text" style="font-size:120%;">.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx17.I5.i2" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text" style="font-size:120%;">2.</span></span>
+<div class="ltx_para" id="Sx17.I5.i2.p1">
+<p class="ltx_p"><span class="ltx_text ltx_framed_underline" style="font-size:120%;">Conductors</span><span class="ltx_text" style="font-size:120%;"> are materials that allow electricity to flow.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx17.I5.i3" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text" style="font-size:120%;">3.</span></span>
+<div class="ltx_para" id="Sx17.I5.i3.p1">
+<p class="ltx_p"><span class="ltx_text ltx_framed_underline" style="font-size:120%;">Insulators</span><span class="ltx_text" style="font-size:120%;"> are materials that do not allow electricity to flow.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx17.I5.i4" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text" style="font-size:120%;">4.</span></span>
+<div class="ltx_para" id="Sx17.I5.i4.p1">
+<p class="ltx_p"><span class="ltx_text ltx_framed_underline" style="font-size:120%;">LEDs</span><span class="ltx_text" style="font-size:120%;"> are a part of a circuit that light up when electricity flows through them.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx17.I5.i5" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text" style="font-size:120%;">5.</span></span>
+<div class="ltx_para" id="Sx17.I5.i5.p1">
+<p class="ltx_p"><span class="ltx_text ltx_framed_underline" style="font-size:120%;">Switches</span><span class="ltx_text" style="font-size:120%;"> are a part of a circuit that can change from open to closed or from closed to open.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx17.I5.i6" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text" style="font-size:120%;">6.</span></span>
+<div class="ltx_para" id="Sx17.I5.i6.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">In coding, a </span><span class="ltx_text ltx_framed_underline" style="font-size:120%;">loop</span><span class="ltx_text" style="font-size:120%;"> will repeat your code.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx17.I5.i7" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text" style="font-size:120%;">7.</span></span>
+<div class="ltx_para" id="Sx17.I5.i7.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Label what kind of circuit the picture shows. </span><span class="ltx_text ltx_framed_underline" style="font-size:120%;">Series</span><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+<figure class="ltx_figure" id="Sx17.I5.i7.fig1"><img alt="" class="ltx_graphics ltx_centering" height="91" id="Sx17.I5.i7.g1" src="1306304e-4e70-11ee-b3fa-0242ac110002/image%201.png" width="142"/><!--URL:1306304e-4e70-11ee-b3fa-0242ac110002/image%201.png-->
+</figure>
+</li>
+<li class="ltx_item" id="Sx17.I5.i8" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text" style="font-size:120%;">8.</span></span>
+<div class="ltx_para" id="Sx17.I5.i8.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Label what kind of circuit the picture shows. </span><span class="ltx_text ltx_framed_underline" style="font-size:120%;">Parallel</span><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+<figure class="ltx_figure" id="Sx17.I5.i8.fig1"><img alt="" class="ltx_graphics ltx_centering" height="170" id="Sx17.I5.i8.g1" src="1306304e-4e70-11ee-b3fa-0242ac110002/image%202.png" width="142"/><!--URL:1306304e-4e70-11ee-b3fa-0242ac110002/image%202.png-->
+</figure>
+</li>
+</ol>
+</div>
+<div class="ltx_para" id="Sx17.SSx5.p2">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic" style="font-size:120%;">Note:</span><span class="ltx_text" style="font-size:120%;"> Underlined words were fill-in-the-blank with answers being present in a word bank.
+</span></p>
+</div>
+</section>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Fri Sep  8 17:49:47 2023 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img alt="[LOGO]" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg=="/><!--URL:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==--></a>
+</div></footer>
+<section></section></div>
+<script src="data:application/javascript,function%20handleScroll%28%29%20%7B%0A%20%20%20%20setTimeout%28%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20window.scrollBy%280%2C%20-100%29%3B%0A%20%20%20%7D%2C%20500%29%3B%0A%7D%0A%0Alet%20ele%20%3D%20document.getElementsByClassName%28%22ltx_page_main%22%29%5B0%5D%3B%0Alet%20imgElement%20%3D%20document.createElement%28%22img%22%29%3B%0AimgElement.setAttribute%28%22src%22%2C%20%22headerImage.png%22%29%3B%0AimgElement.setAttribute%28%22alt%22%2C%20%22banner%22%29%3B%0AimgElement.setAttribute%28%22style%22%2C%20%22width%3A100%25%20%21important%3Bmin-height%3Aauto%3B%22%29%3B%0Aele.insertBefore%28imgElement%2C%20ele.firstChild%29%3B%0A%0Avar%20docs%20%3D%20document.getElementsByClassName%28%22ltx_note%20ltx_role_footnote%22%29%3B%0Alet%20cnt%20%3D%200%3B%0Alet%20footnotes%20%3D%20%5B%5D%3B%0Alet%20doc%20%3D%20docs%5Bcnt%5D%3B%0Awhile%20%28cnt%20%3C%20docs.length%29%20%7B%0A%20%20%20%20footnotes.push%28doc.id%29%3B%0A%20%20%20%20let%20inner%20%3D%20doc.childNodes%5B1%5D%3B%0A%20%20%20%20let%20txt%20%3D%20inner.childNodes%5B0%5D.textContent%3B%0A%20%20%20%20txt%20%3D%20txt.replace%28/%20%20%2B/g%2C%20%22%20%22%29%3B%0A%20%20%20%20txt%20%3D%20txt.replace%28/%5Cn/%2C%20%22%20%22%29%3B%0A%20%20%20%20if%20%28cnt%20%3E%209%29%20footnotes.push%28txt.slice%282%29%29%3B%0A%20%20%20%20else%20footnotes.push%28txt.slice%281%29%29%3B%0A%20%20%20%20cnt%2B%2B%3B%0A%20%20%20%20doc.innerHTML%20%3D%20%60%3Ca%20href%3D%22%23fn-%24%7Bcnt%7D%22%20onClick%3D%22handleScroll%28%29%22%3E%60%20%2B%20doc.innerHTML%20%2B%20%22%3C/a%3E%22%3B%0A%20%20%20%20doc%20%3D%20docs%5Bcnt%5D%3B%0A%7D%0A%0Aif%20%28footnotes.length%20%3E%200%29%20%7B%0A%20%20%20%20ele%20%3D%20document.getElementsByTagName%28%22article%22%29%5B0%5D%3B%0A%20%20%20%20let%20outer%20%3D%20document.createElement%28%22div%22%2C%20%7B%20class%3A%20%22footnotes-display%22%20%7D%29%3B%0A%20%20%20%20let%20heading%20%3D%20document.createElement%28%22h3%22%29%3B%0A%20%20%20%20heading.appendChild%28document.createTextNode%28%22Footnotes%22%29%29%3B%0A%20%20%20%20outer.appendChild%28heading%29%3B%0A%0A%20%20%20%20let%20j%20%3D%200%3B%0A%20%20%20%20for%20%28let%20i%20%3D%201%3B%20i%20%3C%20footnotes.length%3B%20i%20%2B%3D%202%29%20%7B%0A%20%20%20%20%20%20%20%20let%20p%20%3D%20document.createElement%28%22p%22%29%3B%0A%20%20%20%20%20%20%20%20p.setAttribute%28%22id%22%2C%20%22fn-%22%20%2B%20%28j%20%2B%201%29%29%3B%0A%20%20%20%20%20%20%20%20let%20newC%20%3D%20document.createTextNode%28%20footnotes%5Bi%5D%29%3B%0A%20%20%20%20%20%20%20%20p.appendChild%28newC%29%3B%0A%20%20%20%20%20%20%20%20outer.appendChild%28p%29%3B%0A%20%20%20%20%20%20%20%20j%2B%2B%3B%0A%20%20%20%20%7D%0A%20%20%20%20ele.appendChild%28outer%29%3B%0A%7D%0A">
+</script><!--URL:index.js-->
+</body>
+</html><!--Generated by HTMLArk 2023-09-08 17:49:47.804840. Original URL 1306304e-4e70-11ee-b3fa-0242ac110002/index.html-->
