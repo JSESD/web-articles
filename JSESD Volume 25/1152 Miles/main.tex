@@ -1,4 +1,5 @@
-\documentclass[11pt]{sig-alternate}
+\documentclass[11.5pt]{sig-alternate}
+\usepackage[defaultlines=3,all]{nowidow}
 \usepackage{hyperref}
 \usepackage{tabularx}
 \usepackage{graphicx}
@@ -15,12 +16,15 @@
 \addbibresource{notation.bib}
 \usepackage{authblk}
 \usepackage{caption}
-\usepackage{subcaption}
 \usepackage{graphicx,subfigure}
 \usepackage{authblk}
-
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage{cuted}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
+\usepackage{lipsum}
+\usepackage{xurl}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 \setlength\headheight{80.0pt}
@@ -28,13 +32,13 @@
 \chead{%
   \ifcase\value{page}
   % empty test for page = 0
-  \or \includegraphics[width=\textwidth]{JSESD_JournalBanner_Perspectives-1.png}% page=1
-  \or \includegraphics[width=\textwidth]{JSESD_JournalBanner_Perspectives-1.png}% page = 2
-  \or \includegraphics[width=\textwidth]{JSESD_JournalBanner_Perspectives-1.png}% page = 3
-  \or \includegraphics[width=\textwidth]{JSESD_JournalBanner_Perspectives-1.png}% page = 4
-  \or \includegraphics[width=\textwidth]{JSESD_JournalBanner_Perspectives-1.png}% page = 5
+  \or \includegraphics[width=\textwidth]{headerImage.png}% page=1
+  \or \includegraphics[width=\textwidth]{headerImage.png}% page = 2
+  \or \includegraphics[width=\textwidth]{headerImage.png}% page = 3
+  \or \includegraphics[width=\textwidth]{headerImage.png}% page = 4
+  \or \includegraphics[width=\textwidth]{headerImage.png}% page = 5
   \else
-  \includegraphics[width=\textwidth]{JSESD_JournalBanner_Perspectives-1.png}
+  \includegraphics[width=\textwidth]{headerImage.png}
   \fi
 }
 %\chead{\includegraphics[width=\textwidth]{headerImage.png}}
@@ -84,21 +88,23 @@ DOI: 10.14448/jsesd.13.0004}
 \maketitle
 \begin{@twocolumnfalse} 
 
+    
 \begin{abstract}
-     \textit{Students with blindness or visual impairments (BVI) need to participate in scientific laboratory experiences at the K12 level to be successful in college-level science courses. These K12 level students need instruction to actively conduct science experiments and not only allow sighted students to conduct them. While it may be a challenge, with appropriate assistive and supportive technologies, students with BVI can be successful in conducting scientific investigations to address Next Generation Science Standards. The Discoveries in Earth Science (DES) program provides engaging accommodations adaptive to the needs of elementary, middle, and high school grade students with BVI to successfully prepare for careers in STEM. \\
-     \\
-     Young students with blindness or visual impairments (BVI) have limited opportunities to participate in hands-on science activities (Supalo, 2012). Heard (2016) recommends that students with BVI participate in scientific laboratory experiences at the K12 level. K12 level students with BVI need to conduct science experiments personally and actively, otherwise, students with BVI would be at an educational disadvantage compared to their sighted peers (Supalo et al., 2007). While it may be a challenge, with appropriate accommodations such as braille labeled equipment or tools with audio assistance, young students with vision loss can be successful in conducting scientific investigations. \\
-     \\
-     A deficit of opportunities for students with BVI may stem from a dearth of knowledge of accommodations or adaptations for students with BVI or come from concern that students with BVI would be exposed to unsafe conditions or activities (Boval and Kennedy, 2018, Chapter 8). Previous work has shown that students with BVI can be successful in conducting safe scientific research and investigations with appropriate assistive technologies and modified resources (Miles Zambone, 2017). The Discoveries in Earth Science (DES) program affords accessibility to Earth science for elementary, middle, and high school students with BVI via private foundation funding and public university support.}
+\item 
+    \begin{large}
+    \textit{Students with blindness or visual impairments (BVI) need to participate in scientific laboratory experiences at the K12 level to be successful in college-level science courses. These K12 level students need instruction to actively conduct science experiments and not only allow sighted students to conduct them. While it may be a challenge, with appropriate assistive and supportive technologies, students with BVI can be successful in conducting scientific investigations to address Next Generation Science Standards.  The Discoveries in Earth Science (DES) program provides engaging accommodations adaptive to the needs of elementary, middle, and high school grade students with BVI to successfully prepare for careers in STEM.}\\
+    \end{large}
 \end{abstract}
+
 \end{@twocolumnfalse}
 
 %% ABSTRACT
 
 
 %% AUTHOR INFORMATION
-\\ \\ \\
-\textbf{*Corresponding Author, Rhea G. Miles} \href{mailto:milesr@ecu.edu}{(milesr@ecu.edu)} \\
+
+\textbf{*Corresponding Author, Rhea G. Miles}\\ 
+\href{mailto:milesr@ecu.edu}{(milesr@ecu.edu)} \\
 \textit{Submitted April 15, 2021 }\\
 \textit{Accepted April 04, 2022} \\
 \textit{Published online October 1, 2022} \\
@@ -110,8 +116,13 @@ DOI: 10.14448/jsesd.13.0004}
 
 \vspace{5mm}
 \section*{\vspace{140mm}}
-\section*{Theoretical Framework}
 \begin{large}
+\section*{Introduction}
+Young students with blindness or visual impairments (BVI) have limited opportunities to participate in hands-on science activities (Supalo, 2012). Heard (2016) recommends that students with BVI participate in scientific laboratory experiences at the K12 level. K12 level students with BVI need to conduct science experiments personally and actively, otherwise, students with BVI would be at an educational disadvantage compared to their sighted peers (Supalo et al., 2007). While it may be a challenge, with appropriate accommodations such as braille labeled equipment or tools with audio assistance, young students with vision loss can be successful in conducting scientific investigations. 
+
+A deficit of opportunities for students with BVI may stem from a dearth of knowledge of accommodations or adaptations for students with BVI or come from concern that students with BVI would be exposed to unsafe conditions or activities (Boval and Kennedy, 2018, Chapter 8). Previous work has shown that students with BVI can be successful in conducting safe scientific research and investigations with appropriate assistive technologies and modified resources (Miles Zambone, 2017). The Discoveries in Earth Science (DES) program affords accessibility to Earth science for elementary, middle, and high school students with BVI via private foundation funding and public university support.
+
+\section*{Theoretical Framework}
 
 There is a misconception that all students with disabilities (SWD), including those with BVI, are also cognitively impaired and this may be the case for some students in this population, but not all (Kahn et al., 2014). As reported by Joyce et al. (2020), special accommodation in communication via technological support, flexibility in scheduling activities, and flexibility in the time allotted to complete tasks can provide opportunities for SWD to learn science. Additionally, educators are responsible for facilitating as many accommodations and modifications as possible to facilitate high-quality instruction and learning (Kahn et al., 2014).
 
@@ -121,7 +132,7 @@ Additional challenges include major limitations to opportunities to programs tha
 
 As it states in the Next Generation Science Standards (NGSS) all students are “capable of engaging in scientific practices and constructing meaning in both science classrooms and informal settings.” (NGSS, 2013). The mantra “ Science for all” includes SWD to achieve the goals of NGSS. Furthermore, hands-on science activities assist SWD to attain and retain accurate scientific concepts (Scruggs, et al., 2017, Chapter 37). This supports the conceptual change theory which addresses changing a person from a naïve understanding of science to a more accurate one (Lynch et al., 2007). As Miller and Januszyk (2014) also report, a primary aim of NGSS is to have all students learning science and to reduce disparities in student outcomes across diverse groups, including those with disabilities. 
 
-The NGSS emphasizes inquiry-based methods where students conduct science investigations in the natural world (Wild & Koehler, 2017). This includes hands-on laboratory-based experiences which also support constructivist theories founded on scientific experimentation which involves students exploring problems to solve which are meaningful to them (Eliot, 2006).   A constructivist approach can promote a positive attitude and assist with developing self-efficacy which can also be effective for students with BVI (Wild & Koehler, 2017; Hilson et al., 2016; Wild, Hilson, & Farrand, 2013; Wild, Hilson & Hobson, 2013; Wild & Trundle, 2010a; Wild & Trundle, 2010b). NGSS also promotes access to modified lab equipment and the shared expertise of science educators and teachers of the visually impaired (TVI). For example, Carabajal et al. 2017, research show that students with BVI with appropriate accommodations can successfully, comprehend and perform geoscience activities. These findings underscore the goals of the DES program. Given that there is a gap in access to science learning for students with BVI as envisioned by the NGSS, we developed the DES program to support BVI student learning and engagement. 
+The NGSS emphasizes inquiry-based methods where students conduct science investigations in the natural world (Wild \& Koehler, 2017). This includes hands-on laboratory-based experiences which also support constructivist theories founded on scientific experimentation which involves students exploring problems to solve which are meaningful to them (Eliot, 2006).   A constructivist approach can promote a positive attitude and assist with developing self-efficacy which can also be effective for students with BVI (Wild \& Koehler, 2017; Hilson et al., 2016; Wild, Hilson, \& Farrand, 2013; Wild, Hilson \& Hobson, 2013; Wild \& Trundle, 2010a; Wild \& Trundle, 2010b). NGSS also promotes access to modified lab equipment and the shared expertise of science educators and teachers of the visually impaired (TVI). For example, Carabajal et al. 2017, research show that students with BVI with appropriate accommodations can successfully, comprehend and perform geoscience activities. These findings underscore the goals of the DES program. Given that there is a gap in access to science learning for students with BVI as envisioned by the NGSS, we developed the DES program to support BVI student learning and engagement. 
 
 \section*{Discoveries in Earth Science (DES) Program}
 
@@ -138,9 +149,11 @@ Several methods were used to recruit participants for the DES program. First, di
 
 A total of six students responded to the recruitment efforts, but only four students actively participated in the program. The student participants were all classified as blind or visually impaired and were served by the vision specialists at their schools. Three of the students that participated in the program were male, and one was female as presented in Table 1. Of these participants, two were black and two were Caucasian. The student participants were from grades 2 through 9.
 
-\begin{table}[]
+\begin{table}[h]
+\centering
 \caption{\textit{Information for students that participated in the DES program.}}
 \label{tab:my-table}
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{|l|l|l|}
 \hline
 Race/Ethnicity & Grade & Gender \\ \hline
@@ -149,6 +162,7 @@ Caucasian      & 2nd   & Male   \\ \hline
 Black          & 2nd   & Male   \\ \hline
 Caucasian      & 9th   & Female \\ \hline
 \end{tabular}
+}
 \end{table}
 
 \section*{\textit{Description of DES Participants}}
@@ -183,28 +197,27 @@ A Water Level Meter is an instrument that is used to measure the depth to the wa
 \section*{\textit{Adaptations/Accommodations}}
 
 The participant had to practice holding the measuring tape between the appropriate fingers and then loosen fingers to drop the line into the groundwater well.  When a sound was heard to indicate that the tape measure had reached the water in the well, the participant would pinch the tape measure to mark the depth of the water table as illustrated in Figure 1.
-
-{\begin{figure}[htp] 
-    \leftmargin
-    \includegraphics[width=8.5cm]{figure1.png}
+\\
+\begin{figure}[htp] 
+    \centering
+    \includegraphics[width=8cm]{figure1.png}
     \caption{Participant using water level meter to make  groundwater level well measurement and sample recorded data }
     \label{hands-on Bohr model using Styrofoam}
 \end{figure}
-}
+
 
 Next, the participant would pull the measuring tape out of the well and ask for assistance of another DES participant to grab the other end while also holding on to the tape measure.  Since the numbers and units on the tape measure on the water level meter were very small and difficult to view, the DES participant would use a talking tape measure to determine the depth of water in the well. The talking tape measure was then lined up next to the water level meter, and the measurement was provided through audio sound on the device. The participant then had to record the well number and depth of the water from the top of the well on a “Groundwater Level Activity” sheet presented in Figure 1. A participant also had the option to save the data in the talking tape measure, however each participant was required to record information on a data sheet. Participants recorded data on a sheet where information was written using 20-point font. DES program personnel provided additional assistance by pointing to where a participant would fill in information on the data sheet.  
-
+\newpage
 \section*{Water Sampler}
 
 In addition to collecting water in groundwater wells, participants also collected water from a stream and river. The DES participants used a Water Sampler, which is a sample bottle attached to a long yellow pole, to collect water samples as shown in Figure 2.
-
-{\begin{figure}[htp] 
-    \leftmargin
-    \includegraphics[width=60mm]{figure2.png}
+\\
+\begin{figure}[h] 
+    \centering
+    \includegraphics[width=\columnwidth]{figure2.png}
     \caption{Using water sampler device }
     \label{hands-on Bohr model using Styrofoam}
 \end{figure}
-}
 
 \section*{\textit{LabQuest Talk 2 and Probes}}
  
@@ -214,7 +227,7 @@ The DES participants analyzed water samples collected in the field using Vernier
 
 With minimum assistance from staff the DES participants were guided to use the probe and glassware to familiarize themselves with collecting and analyzing data. The DES participants learned to select and use the appropriate probes for temperature, salinity, pH, and conductivity measurements.  After taking the measurements, the participants listened to the readings before recording data on their data sheet as seen in Figure 3.
 {\begin{figure}[htp] 
-    \leftmargin
+    \centering
     \includegraphics[width=8.5cm]{figure3.png}
     \caption{Participant listening to Lab Probe Talk 2 Device and recorded data }
     \label{Lab Probe Talk 2 Device and recorded data }
@@ -229,47 +242,47 @@ DES participants were first introduced to rocks through a Rock Identification Ki
   
 As shown in Figure 4.a, all participants used magnifiers to better identify a rock.  Additionally, in lieu of visual prompts to help participants identify the rocks and complete their data sheets as presented in Figures 4.a and 4.b, students were prompted tactually to guide their hands in exploring rocks and to direct them in recording their data in the appropriate section on their data sheets. Participants marked and recorded data in boxes which were a different color from the background paper.
 
-\begin{figure}
-    \begin{subfigure}[a]{0.5\textwidth}
-        \leftmargin
-        \includegraphics[width=70mm]{figure4_1.png}
-        \caption{Figure 4a: Participant completed data sheet for \\identifying sedimentary, metamorphic, and igneous rocks }
+\begin{figure}[h]
+   \renewcommand{\thefigure}{4a}
+        \centering
+        \includegraphics[width=8cm]{figure4_1.png}
+        \caption{Participant completed data sheet for \\identifying sedimentary, metamorphic, and igneous rocks }
         \label{Participant completed data sheet }
-    \end{subfigure}
-    \hfill
-\\
-    \begin{subfigure}[b]{0.5\textwidth}
-        \leftmargin
-        \includegraphics[width=70mm]{figure4_2.png}
-        \caption{ Figure 4b: Participant rock identification of unknown \\rock samples }
-        \label{ Participant rock identification of unknown rock samples }
-    \end{subfigure}
+    \end{figure}
 
+    \begin{figure}[h]
+      \renewcommand{\thefigure}{4b}
+        \centering
+        \includegraphics[width=8cm]{figure4_2.png}
+        \caption{Participant rock identification of unknown \\rock samples }
+        \label{ Participant rock identification of unknown rock samples}
 \end{figure}
-
+\newpage
 \section*{\textit{Mineral Identification }}
 Participants learned from DES personnel how to determine the following information for mineral identification which included: color streak, cleavage, cleavage plane, luster, hardness, reacts with acid (fizzes) and magnetism. 
 
 \section*{\textit{Adaptation/Accommodations}}
  Color streak was determined using a Colorino device that identifies colors. This talking device let the user know the color of the sample. A traditional streak on a plate or paper was not done since the streak was too small for the participants to “see” and Colorino would not work properly on less than a 5 cm by 5 cm area surface. Thus, the Colorino probe was placed directly onto the mineral and the color would be said aloud by this audible device. The participants would mark the appropriate box in the data sheet to identify a given mineral. All participants were able to mark a box to identify a mineral if the box was a different color from the background paper.  Participants marked and recorded data in boxes which were a different color from the background paper. Refer to Figure 5 for completed participant data sheet.
-{\begin{figure}[htp] 
-    \leftmargin
-    \includegraphics[width=8cm]{figure5.png}
+\begin{figure}[htp] 
+  \renewcommand{\thefigure}{5}
+    \centering
+    \includegraphics[width=8 cm]{figure5.png}
     \caption{Participant completed mineral data sheet.}
     \label{Participant completed mineral data sheet. }
 \end{figure}
-}
+
 \section*{\textit{Braille Protractor}}
  
 A braille protractor with a pivoting wand was used to measure interface angles of various minerals as shown in Figure 6. 
 
-{\begin{figure}[htp] 
-    \leftmargin
-    \includegraphics[width=60mm]{figure6.png}
+\begin{figure}[htp] 
+  \renewcommand{\thefigure}{6}
+    \centering
+    \includegraphics[width=8 cm]{figure6.png}
     \caption{Participant using braille protractor and completed data  }
     \label{ participant using braille protractor and completed data  }
 \end{figure}
-}
+
 The American Printing House (APH) braille protractor has large print and raised dots every 5 degrees for the 180-degree protractor. Since the lines on the braille protractor were also bold and the numbers were 18-point font, even participants who could not read braille could use the device. 
 \section*{\textit{Adaptation/Accommodations}}
 The participants were trained to use the instrument on models with predefined angles by helping them locate the pivoting wand and getting acquainted with the units of measurement. Once students had sufficient practice with the instrument, they progressed to measuring angles of minerals themselves. 
@@ -280,7 +293,8 @@ n Each DES participant was asked to draw and describe a given fossil on a given 
 
  Fossils from a Fossil kit were made into three dimensional (3D) models which were enlarged by 3 times their original size using a MakerBot 3D printer.  Additionally, two of the four participants used a document camera to further magnify the fossils to complete the data sheets as shown in Figure 7.
 {\begin{figure}[htp] 
-    \leftmargin
+  \renewcommand{\thefigure}{7}
+    \centering
     \includegraphics[width=7.75cm]{figure7.png}
     \caption{Participant recording characteristics of fossils and sample completed data sheets for recording information about fossils }
     \label{ Participant recording characteristics of fossils and sample completed data sheets for recording information about fossils }
@@ -292,7 +306,8 @@ n Each DES participant was asked to draw and describe a given fossil on a given 
 DES participants also learned the basic skills for reading topographic maps which included determining latitude and longitude using raised relief maps as shown in Figure 8. The participants also used the maps to determine the cardinal directions on a map: east, west, north, and south.  
 
 {\begin{figure}[htp] 
-    \leftmargin
+  \renewcommand{\thefigure}{8}
+    \centering
     \includegraphics[width=7.5cm]{figure8.png}
     \caption{Participant reading topographic raised relief map of North Carolina and sample completed data sheet }
     \label{ Participant reading topographic raised relief map of North Carolina and sample completed data sheet  }
@@ -303,38 +318,55 @@ Large braille stickers were placed on the topographic maps to indicate map direc
 
 \section*{\textit{Augmented Reality Sandbox}}
 An Augmented Reality Sandbox consisted of a table filled with sand, a scanner, and a projector. The scanner detected the height and placement of the sand in the basin, calculated the appropriate projection, and transmitted the information to the projector, which then projected topographic lines and colors onto the corresponding sand below. The participants were asked to use their hands to make models of landforms such as Mt. St Helens, Mt. Rainier, and the Grand Canyon in the augmented reality sandbox.  
+\newpage
+\section*{\textit{Adaptation/Accommodations}}
+ DES participants would wrap their hands around a 3-D model of the landform of interest. After a few minutes feeling the features of the 3D model, the participants would then recreate the landform in the augmented reality sandbox as seen in Figure 9.  
 
-{\begin{figure}[htp] 
-    \leftmargin
-    \includegraphics[width=60mm]{figure9.png}
+\begin{figure}[h] 
+  \renewcommand{\thefigure}{9}
+    \centering
+    \includegraphics[width=\columnwidth]{figure9.png}
     \caption{Participant using augmented reality sandbox }
     \label{ Participant using augmented reality sandbox }
 \end{figure}
-}
-\section*{\textit{Adaptation/Accommodations}}
- DES participants would wrap their hands around a 3-D model of the landform of interest. After a few minutes feeling the features of the 3D model, the participants would then recreate the landform in the augmented reality sandbox as seen in Figure 9.  
+ 
 \section*{\textit{Other Summer Activities}}
 Interestingly, there were several other activities that did or did not require assistive or supportive devices such as talking calculators; however, the participants did not remember them. For example, DES participants and staff traveled to a fossil museum where an accommodation included having the names of the fossils written in braille to allow DES participants to identify them.  The participants were also given Styrofoam and plastic models to demonstrate the orientation of layers in rocks and faulting resulting from deformation of rock units. Additionally, participants used playdough to better understand the concepts of superposition and foliation. Furthermore, participants used fault blocks models, physical models, sandpaper, aluminum foil, and braille stickers to distinguish the three major fault types (reverse, normal, and strike slip) and recognize different types of folds (synform and antiform).  They appeared to have fun and enjoyed their DES experiences but did not mention all of their experiences.
+
 \section*{\textit{Safety}}
 The majority of DES investigations did not require the use of gloves or safety goggles. Only one investigation when DES participants were using dilute acid to test for the presence of carbonates required the use of safety goggles and gloves. DES investigations during the summer and academic year were designed to require minimum protection for eyes, hands, or body for the elementary, middle and high school participants. The participants used personal protective equipment where appropriate. 
+
 \section*{\textit{Safety Academic Year Sessions}}
 After participating in the 3-week summer program, all four of the participants were encouraged to conduct individual investigations during the academic year. Three of the four participants designed and developed individual science fair projects during the academic year. They used assistive or supportive technologies to conduct their individual projects. Of the four participants, only two, Ben and Opal developed projects that were presented at the regional science fair in the state.  
+
 \section*{\textit{Ben’s Project}} 
 Ben wanted to investigate what type of rocks were where he lived for his Science Fair project as shown in Figure 10.  Ben’s investigation focused on determining whether the rocks in the nearby park were metamorphic. He used several techniques to identify rocks and the minerals in the rocks. 
 
-{\begin{figure}[htp] 
-    \leftmargin
-    \includegraphics[width=8.5cm]{figure10.png}
+\begin{figure}[htp] 
+  \renewcommand{\thefigure}{10}
+    \centering
+    \includegraphics[width=\columnwidth]{figure10.png}
     \caption{Ben’s  final science fair project }
     \label{ Ben’s  final science fair project }
 \end{figure}
-}
+
 \section*{\textit{Adaptation/Accommodations}}
  Ben went to two nearby parks and searched for rocks on the ground. When he found a rock, he applied the process of rock identification described above to try to identify the rock.
+ \newpage
 \section*{\textit{Opal’s Project}} 
 For Opal’s science fair project as seen in Figure 11, Opal focused on collecting local stream water and comparing it with filtered water (bottle and tap water) to determine whether the water samples were in the appropriate ranges for safe drinking water. She used a LabQuest Talk 2  and probes to measure the salinity, conductivity, temperature, and pH of the water samples.  In addition, she used the AM 12 LaMotte: The TESTABS Water Investigation Kit to measure alkalinity, dissolved oxygen, ammonia, iron, nitrates, chloride, and phosphate levels in the water samples. These kits included tablets that changed color depending on the properties of water samples being analyzed.  
+
+\begin{figure}[h] 
+  \renewcommand{\thefigure}{11}
+    \centering
+    \includegraphics[width=\columnwidth]{figure11.png}
+    \caption{Opal’s final science fair project}
+    \label{Opal’s final science fair project}
+\end{figure}
+
 \section*{\textit{Adaptation/Accommodations}} 
 To complete her investigation the test tabs were handed to Opal to use. After designated tablets were added, a talking timer was set to indicate when to observe the color changes of the water samples.  Any changes to color were verbalized to Opal, after which she was able to record information in her data table. Opal earned first place in the regional competition. Unfortunately, the state science and engineering fair was canceled due to the COVID-19 pandemic.
+
 \section*{\textit{Challenges of DES Program}}
 Additionally, participants did respond favorably to many of the assistive and supportive technologies, but naturally, there were some challenges faced by participants of the DES program. Measuring with the braille graduated cylinders to determine volume was not as user-friendly as was expected as only one participant could read braille. Additionally, the precision of the audible instruments to measure volume could not measure small changes in the water displacement volumes of small rocks or minerals. Challenges faced in the program were related to the inadequacies of the devices and tools for students with BVI used in the activities rather than the participant unfamiliarity with the tools.
 
@@ -344,118 +376,139 @@ As noted above, the DES program’s summer and academic year activities served t
 
 Even though this study is limited to the small population who participated in the DES program, findings are applicable to other students with BVI and formal classroom use. The DES program provided participants with BVI the opportunity to fully engage in science by using assistive and supportive technologies to conduct and collect data themselves as seen in Figures 1 through 9.  After participation in a science fair, some participants developed communication skills and a desire to want to conduct scientific investigations.  This program’s outcomes also inform classroom teachers about inclusive pedagogy for this population.  Assistive and supportive technologies are available for students with BVI for classroom teachers to include in their implementation of strategies in science instruction. The results from the engagement of a small population of students in the DES program show promise for a larger participant population where additional metrics for attitudes and learning outcomes might inform a broader population of students with BVI. The DES program aligns with Miyauchi’s (2020) research which focuses on a) identifying effective instructional approaches and practices and b) providing the participants with supportive and assistive technology. 
 
-Unfortunately, not all students with BVI have access to technologies and teacher instruction as previously described for the DES program.  When students with visual impairments are physically in the science education environment, they often do not participate in science experiments (Koehler & Wild, 2019; Miles & Zambone, 2017)  Although students with visual impairment are capable of studying all academic subjects like their peers, they are known to be excluded from participating in all subject-related activities, particularly in mathematics, science, physical education (Kahn et al., 2014) and advanced-placement science classes (Koehler & Wild, 2019). Moreover, “students with visual impairment choose courses based not on their ability and interests, but on accessibility” (Miyauchi, 2020, p.2).  In our study, we found that the DES program provided greater accessibility to science through the activities implemented with assistive and supportive technologies (see Figures 1-9).
+Unfortunately, not all students with BVI have access to technologies and teacher instruction as previously described for the DES program.  When students with visual impairments are physically in the science education environment, they often do not participate in science experiments (Koehler \& Wild, 2019; Miles \& Zambone, 2017)  Although students with visual impairment are capable of studying all academic subjects like their peers, they are known to be excluded from participating in all subject-related activities, particularly in mathematics, science, physical education (Kahn et al., 2014) and advanced-placement science classes (Koehler \& Wild, 2019). Moreover, “students with visual impairment choose courses based not on their ability and interests, but on accessibility” (Miyauchi, 2020, p.2).  In our study, we found that the DES program provided greater accessibility to science through the activities implemented with assistive and supportive technologies (see Figures 1-9).
 
 Furthermore, as discussed in Miyauchi’s work:  “ the level of accessibility of the course depends heavily on the subject teacher’s knowledge and willingness” to provide instruction to students with BVI (Miyauchi,2020,  p. 2 ). Miyauchi’s research (2020) accounts for this limited access as related to teachers having little or no: 1) pedagogical strategies other than a generic set that is highly reliant on visual instruction and demonstration 2) tools, particularly assistive technology such as laboratory tools with voice output; and 3) external support such as a trained TVI with science knowledge or sufficient time for the student and teacher to work together.  The DES program further provided possibilities for students to work together with teachers. Eventually, DES participants gained confidence and knowledge to conduct scientific experiments using the assistive and supportive resources to complete scientific projects.  As advocated by Edelson et al. (2021) and Griffiths et al. (2020) the outcomes of the DES program addressed the goals of the NGSS by making learning about science more meaningful and assisting with better preparing students with blind or visual impairments for the STEM workforce.  
 
 \include{} 
-\section*{References}\par 
+\section*{References}
+\par 
 
 \leftskip 0.25in
 \parindent -0.25in 
 %%%
 
-Boval, J. & Kennedy, S. (2018) Laboratory Safety for All: Accommodating students with disabilities in chemistry teaching laboratories. In: Sweet, E., Gower, W.S. & Heltzel, C. E. Accessibility in the Laboratory. Washington, D.C.: American Chemical Society. doi: 10.1021/bk-2018-1272.ch008
+Boval, J. \& Kennedy, S. (2018) Laboratory Safety for All: Accommodating students with disabilities in chemistry teaching laboratories. In: Sweet, E., Gower, W.S. \& Heltzel, C. E. \textit{Accessibility in the Laboratory}. Washington, D.C.: American Chemical Society. doi: 10.1021/bk-2018-1272.ch008
 
-Carabajal, I.G., Marshall, A.M., &  Atchison C.L., (2017). A Synthesis of Instructional Strategies in Geoscience Education Literature That Address Barriers to Inclusion for Students With Disabilities. Journal of Geoscience Education, 65(4), 531-541. doi: 10.5408/16-211.1
+Carabajal, I.G., Marshall, A.M., \&  Atchison C.L., (2017). A Synthesis of Instructional Strategies in Geoscience Education Literature That Address Barriers to Inclusion for Students With Disabilities. \textit{Journal of Geoscience Education, 65}(4), 531-541. doi: 10.5408/16-211.1
 
-Edelson, D.C., Reiser, B.J. , McNeill, K.L., Mohan, A., Novak, N., Mohan, L. A. Affolter, A., McGill, T. A. W., Bracey, Z.E.B., Noll, J.D., Kowalski, S.M., Novak, D., Lo, A.S.,  Landel, C., Krumm, A., Penuel, W., Van Horne, K., González-Howard, M., & Suárez, E. (2021). Developing Research-Based Instructional Materials to Support Large-Scale Transformation of Science Teaching and Learning: The Approach of the OpenSciEd Middle School Program. Journal of Science 
-Teacher Education, 32(7), 780-804, 
-doi: 10.1080/
-1046560X.2021.1877457
+Edelson, D.C., Reiser, B.J. , McNeill, K.L., Mohan, A., Novak, N., Mohan, L. A. Affolter, A., McGill, T. A. W., Bracey, Z.E.B., Noll, J.D., Kowalski, S.M., Novak, D., Lo, A.S.,  Landel, C., Krumm, A., Penuel, W., Van Horne, K., González-Howard, M., \& Suárez, E. (2021). Developing Research-Based Instructional Materials to Support Large-Scale Transformation of Science Teaching and Learning: The Approach of the OpenSciEd Middle School Program. \textit{Journal of Science Teacher Education}, 32(7), 780-804, \\doi: 10.1080/1046560X.2021.1877457
 
-Eliot, M. H. (2006). The effect of guided inquiry-based instruction in secondary science for students with learning disabilities (Publication No. 3221043) [Doctoral Dissertation, University of San Francisco]. ProQuest Dissertations & Theses Global.(304903235)\\ https://www.proquest.com/dissertations- \\theses/effect-guided-inquiry-based-\\ instruction-secondary/docview/304903235\\ /se-2?accountid=10639.
+Eliot, M. H. (2006). \textit{The effect of guided inquiry-based instruction in secondary science for students with learning disabilities} (Publication No. 3221043) [Doctoral Dissertation, University of San Francisco]. ProQuest Dissertations \& Theses Global.(304903235). \url{https://www.proquest.com/dissertations-theses/effect-guided-inquiry-based-instruction-secondary/docview/304903235/se-2?accountid=10639}
 
-Griffiths, A. J., Nash, A. M., Maupin, Z., & Mathur, S. K. (2020). Her Voice: Engaging and Preparing Girls with Disabilities for Science, Technology, Engineering, and Math Careers. International Electronic Journal of Elementary Education, 12(3), 293-301.
-Heard, B. (2016) Evaluating college biology laboratory accommodations for students with blindness and visual impairment [ Doctoral  dissertation, University of New England]. Dune: Digital Tune. All Theses And Dissertations (48). https://dune.une.edu/theses/48
+Griffiths, A. J., Nash, A. M., Maupin, Z., \& Mathur, S. K. (2020). Her Voice: Engaging and Preparing Girls with Disabilities for Science, Technology, Engineering, and Math Careers. \textit{International Electronic Journal of Elementary Education, 12}(3), 293-301.
 
-Hilson, M., Hobson, S., & Wild, T. (2016). Conceptual Understandings of Students with Visual Impairments about Biodiversity across Ecosystems. Journal of Blindness Innovation and Research, 6(2). Retrieved from https://nfb.org/images/nfb/publications\\/jbir/jbir16/jbir060204.html. 
+Heard, B. (2016) Evaluating college biology laboratory accommodations for students with blindness and visual impairment [Doctoral  dissertation, University of New England]. Dune: Digital Tune. \textit{All Theses And Dissertations }(48). \url{https://dune.une.edu/theses/48}
 
-Holbrook, M. C., McCarthy, T., & Kamei-Hannan, C. (Eds.). (2017). Foundations of Education: History and theory of teaching children and youths with visual impairments (3rd ed., Vol. 1, pp 1-346). New York: American Foundation for the Blind Press. https://eastcarolina.summon.serialssolutions.\\com/search?q=Foundations+of+Education\%\\3B+History+and+theory+#!/search?ho=t&l=\\en&q=Foundations\% 20of\%20Education;\% \\20History\% 20and\% 20theory\% 20
+Hilson, M., Hobson, S., \& Wild, T. (2016). Conceptual Understandings of Students with Visual Impairments about Biodiversity across Ecosystems. \textit{Journal of Blindness Innovation and Research, 6}(2). Retrieved from \url{https://nfb.org/images/nfb/publications/jbir/jbir16/jbir060204.html}.
 
-Joyce, J.,  Harrison, J.R., & Gitomer, D.H. (2020) Modifications and accommodations: a preliminary investigation into changes in classroom artifact quality, International Journal of Inclusive Education, 24(2), 181-201, doi: 10.1080/13603116.2018.1453876
+Holbrook, M. C., McCarthy, T., \& Kamei-Hannan, C. (Eds.). (2017). \textit{Foundations of Education: History and theory of teaching children and youths with visual impairments }(3rd ed., Vol. 1, pp 1-346). New York: American Foundation for the Blind Press. \url{https://eastcarolina.summon.serialssolutions.com/search?q=Foundations+of+Education%3B+History+and+theory+#!/search?ho=t&l=en&q=Foundations%20of%20Education;%20History%20and%20theory%20}
 
-Kahn, S., & Lewis, A. R. (2014). Survey on teaching science to K-12 students with disabilities: Teacher preparedness and attitudes. Journal of Science Teacher Education, 25(8), 885-910. doi: 10.1007/s10972-014-9406-z
-\newpage
-Kahn, S., Wild, T., Woolsey, M. L., & Haegele, J. A. (2014). Let's get physical. Science and Children, 51(5), 37-43. Retrieved from https://www.proquest.com/scholarly-\\journals/lets-get-physical/docview/\\1477880284/se-2?accountid=10639
+Joyce, J.,  Harrison, J.R., \& Gitomer, D.H. (2020) Modifications and accommodations: a preliminary investigation into changes in classroom artifact quality, \textit{International Journal of Inclusive Education, 24}(2), 181-201, doi: 10.1080/13603116.2018.1453876
 
-Koehler, K., & Wild, T. (2019) Students with visual impairments. Journal of Science Education for Students with Disabilities, 22(1),1-17.
+Kahn, S., \& Lewis, A. R. (2014). Survey on teaching science to K-12 students with disabilities: Teacher preparedness and attitudes. Journal of Science Teacher Education, 25(8), 885-910. doi: 10.1007/s10972-014-9406-z
 
-Lynch, S., Taymans, J., Watson, W. A., \\Ochsendorf, R. J., Pyke, C., & Szesze, M. J. (2007). Effectiveness of a Highly Rated Science Curriculum Unit for Students with Disabilities in General Education Classrooms. Exceptional Children, 73(2), 202–223. https://\\doi.org/10.1177/001440290707300205
+Kahn, S., Wild, T., Woolsey, M. L., \& Haegele, J. A. (2014).\textit{ Let's get physical. Science and Children, 51}(5), 37-43. Retrieved from \url{https://www.proquest.com/scholarly-journals/lets-get-physical/docview/1477880284/se-2?accountid=10639}
 
-Miles, R. L., & Zambone, A. M. (2017). Seeing science: Visually impaired students can conduct independent science investigations. The Science Teacher, 84(4), 43–46.
+Koehler, K., \& Wild, T. (2019) Students with visual impairments. \textit{Journal of Science Education for Students with Disabilities, 22}(1),1-17.
 
-Miller, E. & Januszyk, R. (2014). The NGSS Case studies: All standard, all students. Science and Children, 51(5), 10-13.
+Lynch, S., Taymans, J., Watson, W. A., \\Ochsendorf, R. J., Pyke, C., \& Szesze, M. J. (2007). Effectiveness of a Highly Rated Science Curriculum Unit for Students with Disabilities in General Education Classrooms. \textit{Exceptional Children, 73}(2), 202–223. \url{https://doi.org/10.1177/001440290707300205}
 
-Miyauchi, H. (2020). A systematic review on inclusive education of students with visual impairment. Education Sciences, 10 (11), 1-15.
+Miles, R. L., \& Zambone, A. M. (2017). Seeing science: Visually impaired students can conduct independent science investigations. \textit{The Science Teacher, 84}(4), 43–46.
+
+Miller, E. \& Januszyk, R. (2014). The NGSS Case studies: All standard, all students. \textit{Science and Children, 51}(5), 10-13.
+
+Miyauchi, H. (2020). A systematic review on inclusive education of students with visual impairment. \textit{Education Sciences, 10} (11), 1-15.
 
 NGSS Lead States. (2013). Next generation science standards: For states, by states. Washington, DC: The National Academic Press.
 
-Patton, M. Q. (2002). Qualitative Research & Evaluation Methods (3rd ed.). London: Sage publications.
+Patton, M. Q. (2002).\textit{ Qualitative Research \& Evaluation Methods }(3rd ed.). London: Sage publications.
 
-Scruggs, T.E., Mastropieri, M.A., Brigham, F.J., Milma, R.M. (2017). Science and Social Studies. In J. D. Kauffman, D. P. Hallahan, P.C. Pullen (Eds.), Handbook of Special Education( 2nd  ed.). New York: Routledge Press. doi: https://doi.org/10.4324/\\9781315517698
+Scruggs, T.E., Mastropieri, M.A., Brigham, F.J., Milma, R.M. (2017). Science and Social Studies. In J. D. Kauffman, D. P. Hallahan, P.C. Pullen (Eds.), \textit{Handbook of Special Education}(2nd ed.). New York: Routledge Press. doi: \url{https://doi.org/10.4324/9781315517698}
 
-Spradley, J. (1980). Participant Observation. Fort Worth: Harcourt Brace Jovanovich.
+Spradley, J. (1980). \textit{Participant Observation}. Fort Worth: Harcourt Brace Jovanovich.
 
-Supalo, C., Mallouk, T.E., Amorosi, C. Rankel, L., Wohlers,D.H., Roth, A., & Greenberg, A., (2007). Talking Tools to Assist Students Who are Blind in Laboratory Courses, Journal of Science Education for Students with Disabilities, 12(1), 27-32.
+Supalo, C., Mallouk, T.E., Amorosi, C. Rankel, L., Wohlers,D.H., Roth, A., \& Greenberg, A., (2007). Talking Tools to Assist Students Who are Blind in Laboratory Courses, \textit{Journal of Science Education for Students with Disabilities, 12}(1), 27-32.
 
-Supalo, C. (2012). The Next Generation Laboratory Interface for Students with Blindness or Low Vision in the Science Laboratory, Journal of Science Education for Students with Disabilities, 16 (1),34-39. 
+Supalo, C. (2012). The Next Generation Laboratory Interface for Students with Blindness or Low Vision in the Science Laboratory, \textit{Journal of Science Education for Students with Disabilities, 16}(1),34-39. 
 
-Swanson, A & Steere, N. (1981). Safety considerations for physically handicapped individuals in the chemistry laboratory. Journal of Chemical Education, 58(3), 234.
+Swanson, A \& Steere, N. (1981). Safety considerations for physically handicapped individuals in the chemistry laboratory.\textit{ Journal of Chemical Education, 58}(3), 234.
 
-Tesch, R. (1990). Qualitative research: Analysis types and software tools. New York: Flamer          Press.
+Tesch, R. (1990). \textit{Qualitative research: Analysis types and software tools}. New York: Flamer          Press.
 
-Wild, T. & Koehler, K. (2017). Science education. In Holbrook, C., KameiHannan, C, & McCarthy, T. (Eds.) Foundations of education volume II (2nd ed.). New York: AFB Press.
+Wild, T. \& Koehler, K. (2017). Science education. In Holbrook, C., KameiHannan, C, \& McCarthy, T. (Eds.) \textit{Foundations of education volume II }(2nd ed.). New York: AFB Press.
 
-Wild, T., Hilson, M. & Farrand, K. (2013). Conceptual understandings of geological concepts by students with visual impairments. Journal of Geoscience Education, 61, 222-230. 
+Wild, T., Hilson, M. \& Farrand, K. (2013). Conceptual understandings of geological concepts by students with visual impairments. \textit{Journal of Geoscience Education, 61}, 222-230. 
 
-Wild, T., Hilson, M., Hobson, S. (2013). Conceptual understandings of sound by elementary students with visual impairments. Journal of Visual Impairment and Blindness, 107(2), 107-116. 
-\newpage
-Wild, T. & Trundle, K. (April, 2010a). Talking turkey: Teaching about America’s greatest conservation story with children with visual impairments. Journal of Visual Impairment & Blindness, 104(4), 198-201. 
+Wild, T., Hilson, M., Hobson, S. (2013). Conceptual understandings of sound by elementary students with visual impairments. \textit{Journal of Visual Impairment and Blindness, 107}(2), 107-116. 
 
-Wild, T & Trundle, K. (February, 2010b). Conceptual understandings of seasonal change by middle school students with visual impairments. Journal of Visual Impairment & Blindness, 104(2), 107-118.
+Wild, T. \& Trundle, K. (April, 2010a). Talking turkey: Teaching about America’s greatest conservation story with children with visual impairments. \textit{Journal of Visual Impairment \& Blindness, 104}(4), 198-201. 
 
+Wild, T \& Trundle, K. (February, 2010b). Conceptual understandings of seasonal change by middle school students with visual impairments. \textit{Journal of Visual Impairment \& Blindness, 104}(2), 107-118.
 
+\clearpage
 
-\include{} 
+\section*{Appendix A}
+Participant perceptions about memorable activities during the summer DES session. \\
 
+\textbf{Participant response categorized as related to assistive technologies}
+\begin{table}[h]
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Most memorable} & \textbf{Response (s)} \\ \hline
+Related to LabQuest Talk 2 & \begin{tabular}[c]{@{}l@{}}“ Once we got back to the \\ room with the sample, we \\ worked with it to see how \\ much saltiness was in there, \\ how much saltiness to create \\ electricity, and pH and the \\ participant also said, \\ “Temperature was my \\ favorite probe.\\ ” Another participants said,\\ “Today we learned about beach \\ water …The salt, measuring it” \\ and a third participant responded ” \\ test the water for pH, salinity, \\ temperature (favorite) and conductivity.”\end{tabular} \\ \hline
+Related to   Braille protractor & \begin{tabular}[c]{@{}l@{}}“ I like that we used \\ protractors to measures \\ angles of stuff like shapes.”\end{tabular} \\ \hline
+\end{tabular}%
+}
+\end{table}
+\clearpage
 
-\endleftskipleftskip 
-\endparindentparindentparindentparindent
-
-\newpage
-
-\section*{Appendix A}\par 
-
-Participant perceptions about memorable activities during the summer DES session. 
-
-
-\begin{figure}[htp]
-    \centering
-    \includegraphics[width=8cm]{Table1.png}
-
-\end{figure}
-
-\newpage
-
-\section*{Appendix B}\par 
+\section*{Appendix B}
 
 Participant responses categorized as related to supportive technologies
-\begin{figure}[htp]
-    \centering
-    \includegraphics[width=8cm]{Table2.png}
 
-\end{figure}
+\begin{table}[h!]
+\resizebox{15cm}{!}{%
+\begin{tabular}{|l|l|}
+\hline
+\begin{tabular}[c]{@{}l@{}}Related to Water Level Meter and \\ Talking  Tape measure\end{tabular} & \begin{tabular}[c]{@{}l@{}}“My favorite was the water \\ level meter” and the another \\ said “We went outside and   \\ got water “in ground water” \\ pipes and measured.\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Related to Water collection \\ device\end{tabular} & \begin{tabular}[c]{@{}l@{}}“Went to collect water \\ samples with yellow\\ (pole for) water collecting.”\end{tabular} \\ \hline
+Related to Rock identification & \begin{tabular}[c]{@{}l@{}}“ My favorite activity was \\ everything like measuring   \\ rocks ”,“The most fun thing \\ today was studying rocks and \\ I got to identify   rocks” ,\\ “When we put the acid on \\ the marble, it fizzed.”\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Related to Augmented  \\ Reality Sandbox\end{tabular} & \begin{tabular}[c]{@{}l@{}}“The most fun thing was \\ doing the landscapes” and \\ “We learned that volcanoes \\ could shoot  out their pipes \\ out of nowhere even if they \\ are asleep.”\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Related to Fossil \\ Identification\end{tabular} & \begin{tabular}[c]{@{}l@{}}The most fun that we did \\ today was the fossils because \\ we got to draw.\end{tabular} \\ \hline
+Related   to Topographic Maps & \begin{tabular}[c]{@{}l@{}}We learned about the map… \\ about north, east, south,  \\ and west” and another participant \\ commented “Most fun thing \\ was reading the  maps.\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Related to Mineral \\ Identification\end{tabular} & “   We got to use the acid... cool” \\ \hline
+\end{tabular}%
+}
+\end{table}
+\clearpage
 
-\newpage
-
-\section*{Appendix C}\par 
+\section*{Appendix C}
 
 Materials, name of place, and link to purchase memorable assistive and supportive technologies.
-\begin{figure}[htp]
-    \centering
-    \includegraphics[width=9cm]{Table3.png}
 
-\end{figure}
+\begin{table}[h]
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|lll|}
+\hline
+\multicolumn{1}{|l|}{\textbf{Materials}} & \multicolumn{1}{l|}{\textbf{Place of purchase}} & \textbf{Link  to purchase item} \\ \hline
+\multicolumn{3}{|c|}{\textbf{Assistive}} \\ \hline
+\multicolumn{1}{|l|}{LabQuest  Talk 2} & \multicolumn{1}{l|}{Vernier} & \begin{tabular}[c]{@{}l@{}}https://www.vernier.com talking /video/ -labquest-\\ \\ hardware-overview-independence-science/\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Braille   Protractor} & \multicolumn{1}{l|}{Alp.org} & \begin{tabular}[c]{@{}l@{}}Braille-Large   Print Protractor | American \\ Printing House (aph.org)\end{tabular} \\ \hline
+\multicolumn{3}{|c|}{\textbf{Supportive}} \\ \hline
+\multicolumn{1}{|l|}{Water   Level Meter} & \multicolumn{1}{l|}{Fondriest} & \begin{tabular}[c]{@{}l@{}}https://www.fondriest.com/solinst-model-1\\ 01-p2-probe-water-level-meters.htm\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Talking   Tape Measure} & \multicolumn{1}{l|}{MaxiAids} & \begin{tabular}[c]{@{}l@{}}https://www.maxiaids.com/talking-\\ tape-measure-english\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Rock   Identification Kit} & \multicolumn{1}{l|}{Home   Science Tools} & \begin{tabular}[c]{@{}l@{}}https://www.homesciencetools.com/product/\\ \\ introductory-rock-collection-15-specimens/\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Fossil   Identification Kit} & \multicolumn{1}{l|}{Ward’s   Science} & \begin{tabular}[c]{@{}l@{}}https://www.wardsci.com/store/product/887\\ 7969/ward-s-introductory-fossil-collection\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Topographic   Relief \\Maps of Grand Canyon,\\ MtRainier,\end{tabular}} & \multicolumn{1}{l|}{Map   shop} & \begin{tabular}[c]{@{}l@{}}https://www.mapshop.com/grand-canyon\\-regional-raised-map\\ \\ https://www.mapshop.com/mt-rainier-\\ national-park-raised-relief-map\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Mineral kit} & \multicolumn{1}{l|}{Home   Science Tools} & \begin{tabular}[c]{@{}l@{}}https://www.homesciencetools.com/\\ product/mineral-study-kit-15-specimens/?\\ gclid=CjwKCAiAqvXTBRBuEiwAE54dc\\ K0x5VgdtskwOEqvk2g9dj3YhMQexzR4v\\ cQidAZOE7LgM2Is9DK\_9RoCpMUQAvD\_BwE\end{tabular} \\ \hline
+
+\multicolumn{1}{|l|}{Augmented Reality Sandbox} & \multicolumn{1}{l|}{Reactive Digital Systems} & \begin{tabular}[c]{@{}l@{}}http://www.topobox.co/?\_vsrefdom=adwords\\gclid=CjwKCAjw9uKIBhA8EiwAYPUS3NNO\\ qwltSQsaotFyp3rQhm3-UgVuc2-slqrKDpvo4r27\\ 2igLFwFR7RoCL0oQAvD\_BwE\end{tabular} \\ \hline
+
+\end{tabular}%
+}
+\end{table}
+
 \end{large}
 \end{document}
