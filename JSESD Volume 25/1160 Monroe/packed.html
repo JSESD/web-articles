@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>Implementing Tactile Learning to Aid Students Understanding of the Bohr Model</title>
+<!--Generated on Wed Feb  7 18:01:24 2024 by LaTeXML (version 0.8.3) http://dlmf.nist.gov/LaTeXML/.-->
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<link href="data:text/css,/%2A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%20Core%20CSS%20for%20LaTeXML%20documents%20converted%20to%20%28X%29HTML%20%2A/%0A/%2A%20Generic%20Page%20layout%20%2A/%0A.ltx_page_header%2C%0A.ltx_page_footer%20%7B%20font-size%3A0.8em%3B%20%7D%0A.ltx_page_header%20%2A%5Brel~%3D%22prev%22%5D%2C%0A.ltx_page_footer%20%2A%5Brel~%3D%22prev%22%5D%20%7B%20float%3Aleft%3B%20%7D%0A.ltx_page_header%20%2A%5Brel~%3D%22up%22%5D%2C%0A.ltx_page_footer%20%2A%5Brel~%3D%22up%22%5D%20%20%20%7B%20display%3Ablock%3B%20text-align%3Acenter%3B%20%7D%0A.ltx_page_header%20%2A%5Brel~%3D%22next%22%5D%2C%0A.ltx_page_footer%20%2A%5Brel~%3D%22next%22%5D%20%7B%20%20float%3Aright%3B%20%7D%0A/%2A%20What%20was%20I%20trying%20for%20here%3B%20need%20more%20selective%20rule%21%0A.ltx_page_header%20.ltx_ref%2C%0A.ltx_page_footer%20.ltx_ref%20%7B%0A%20%20%20%20margin%3A0%201em%3B%20%7D%0A%2A/%0A.ltx_page_header%20li%20%7B%0A%20%20%20%20padding%3A0.1em%200.2em%200.1em%201em%3B%7D%0A%0A/%2A%20Main%20content%20%2A/%0A.ltx_page_content%20%7B%20clear%3Aboth%3B%20%7D%0A.ltx_page_header%20%20%7B%20border-bottom%3A1px%20solid%3B%20margin-bottom%3A5px%3B%20%7D%0A.ltx_page_footer%20%20%7B%20clear%3Aboth%3B%20border-top%3A1px%20solid%3B%20margin-top%3A5px%3B%20%20%7D%0A%0A.ltx_page_header%3Aafter%2C%0A.ltx_page_footer%3Aafter%2C%0A.ltx_page_content%3Aafter%20%7B%0A%20%20%20%20content%3A%22.%22%3B%20display%3Ablock%3B%20height%3A0%3B%20clear%3Aboth%3B%20visibility%3Ahidden%3B%20%7D%0A.ltx_page_footer%3Abefore%20%7B%0A%20%20%20%20content%3A%22.%22%3B%20display%3Ablock%3B%20height%3A0%3B%20clear%3Aboth%3B%20visibility%3Ahidden%3B%20%7D%0A%0A.ltx_page_logo%20%20%20%20%20%7B%20font-size%3A80%25%3B%20margin-top%3A%205px%3B%20clear%3Aboth%3B%20float%3Aright%3B%20%7D%0A.ltx_page_logo%20a%20%20%20%7B%20font-variant%3A%20small-caps%3B%20%7D%0A.ltx_page_logo%20img%20%7B%20vertical-align%3A-3px%3B%20%7D%0A%0A/%2A%20if%20shown%20%2A/%0A.ltx_page_navbar%20li%20%7B%20white-space%3Anowrap%3B%20display%3Ablock%3B%20overflow%3Ahidden%3B%20%7D%0A/%2A%20If%20ref%20got%20turned%20into%20span%2C%20it%27s%20%22this%20section%22%2A/%0A.ltx_page_navbar%20li%20span.ltx_ref%20%7B%20white-space%3Anormal%3B%20overflow%3Avisible%3B%20%7D%0A%0A/%2A%20Ought%20to%20be%20easily%20removable/overridable%3F%20%2A/%0A.ltx_pagination.ltx_role_newpage%20%7B%20height%3A2em%3B%20%7D%0A/%2A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%20%20Document%20Structure%3B%20Titles%20%26%20Frontmatter%20%2A/%0A%0A/%2A%20undo%20bold%20here%20to%20remove%20the%20browser%27s%20native%20h%23%20styling%2C%0A%20%20%20at%20let%20all%20other%20styles%20override%20it%20%28with%20more%20specific%20rules%29%2A/%0A.ltx_title%20%7B%20font-size%3A100%25%3B%20font-weight%3Anormal%3B%20%7D%0A%0A/%2A%20Hack%20to%20simulate%20run-in%21%20put%20class%3D%22ltx_runin%22%20on%20a%20title%20or%20tag%0A%20%20%20for%20it%20to%20run-into%20the%20following%20text.%20%2A/%0A.ltx_runin%20%7B%20display%3Ainline%3B%20%7D%0A.ltx_runin%3Aafter%20%7B%20content%3A%22%20%22%3B%20%7D%0A.ltx_runin%20%2B%20.ltx_para%2C%0A.ltx_runin%20%2B%20.ltx_para%20p%2C%0A.ltx_runin%20%2B%20p%20%7B%20display%3Ainline%3B%20%7D%0A%0A.ltx_outdent%20%7B%20margin-left%3A%20-2em%3B%20%7D%0A%0A/%2A%20.ltx_chapter_title%2C%20etc%20should%20be%20in%20ltx-article.css%20etc.%0A%20%2A/%0A.ltx_page_main%20%7B%20margin%3A0px%3B%20padding%3A1em%203em%201em%202em%3B%20%7D%0A.ltx_tocentry%20%20%7B%20list-style-type%3Anone%3B%20%7D%0A%0A/%2A%20support%20for%20common%20author%20block%20layouts.%2A/%0A/%2A%20add%20class%20ltx_authors_1line%20to%20get%20authors%20in%20single%20line%0A%20%20%20with%20pop-up%20affiliation%2C%20etc.%20%2A/%0A.ltx_authors_1line%20.ltx_creator%2C%0A.ltx_authors_1line%20.ltx_author_before%2C%0A.ltx_authors_1line%20.ltx_author_after%20%7B%20display%3Ainline%3B%7D%0A.ltx_authors_1line%20.ltx_author_notes%20%7B%20display%3Ainline-block%3B%20%7D%0A.ltx_authors_1line%20.ltx_author_notes%3Abefore%20%7B%20content%3A%22%2A%22%3B%20color%3Ablue%3B%7D%0A.ltx_authors_1line%20.ltx_author_notes%20span%20%7B%20display%3Anone%3B%20%7D%0A.ltx_authors_1line%20.ltx_author_notes%3Ahover%20span%20%7B%0A%20%20%20%20display%3Ablock%3B%20position%3Aabsolute%3B%20z-index%3A10%3B%0A%20%20%20%20background%3Awhite%3B%20text-align%3Aleft%3B%0A%20%20%20%20border%3A%201px%20solid%20black%3B%20border-radius%3A%200%205px%205px%205px%3B%20box-shadow%3A%205px%205px%2010px%20gray%3B%20%7D%0A%0A/%2A%20add%20class%3Dltx_authors_multiline%20to%20get%20authors%20%26%20affliations%20on%20separate%20lines%2A/%0A.ltx_authors_multiline%20.ltx_creator%2C%0A.ltx_authors_multiline%20.ltx_author_before%2C%0A.ltx_authors_multiline%20.ltx_author_after%2C%0A.ltx_authors_multiline%20.ltx_author_notes%2C%0A.ltx_authors_multiline%20.ltx_author_notes%20.ltx_contact%20%7B%0A%20%20%20%20display%3Ablock%3B%20%7D%0A%0A/%2A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%20%20Para%20level%20%2A/%0A.ltx_float%20%7B%0A%20%20%20%20margin%3A%201ex%203em%201ex%203em%3B%20%7D%20%20%20%20%0Atd.ltx_subfigure%2C%0Atd.ltx_subtable%2C%0Atd.ltx_subfloat%20%7B%20width%3A50%25%3B%20%7D%0A/%2A%20theorems%2C%20figure%2C%20tables%2C%20floats%20captions..%20%2A/%0A/%2A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%20Blocks%2C%20Lists%2C%20Floats%20%2A/%0A.ltx_p%2C%0A.ltx_quote%2C%0A.ltx_block%2C%0A.ltx_para%20%7B%0A%20%20%20%20display%3A%20block%3B%20%7D%0A%0A/%2A%20alignment%20within%20blocks%20%2A/%0A.ltx_align_left%20%20%20%20%20%7B%20text-align%3Aleft%3B%20%7D%0A.ltx_align_right%20%20%20%20%7B%20text-align%3Aright%3B%20%7D%0A.ltx_align_center%20%20%20%7B%20text-align%3Acenter%3B%20%7D%0A.ltx_align_justify%20%20%7B%20text-align%3Ajustify%3B%20%7D%0A.ltx_align_top%20%20%20%20%20%20%7B%20vertical-align%3Atop%3B%20%7D%0A.ltx_align_bottom%20%20%20%7B%20vertical-align%3Abottom%3B%20%7D%0A.ltx_align_middle%20%20%20%7B%20vertical-align%3Amiddle%3B%20%7D%0A.ltx_align_baseline%20%7B%20vertical-align%3Abaseline%3B%20%7D%0A%0A.ltx_align_floatleft%20%20%7B%20float%3Aleft%3B%20%7D%0A.ltx_align_floatright%20%7B%20float%3Aright%3B%20%7D%0A%0A.ltx_td.ltx_align_left%2C%20%20%20.ltx_th.ltx_align_left%2C%0A.ltx_td.ltx_align_right%2C%20%20.ltx_th.ltx_align_right%2C%0A.ltx_td.ltx_align_center%2C%20.ltx_th.ltx_align_center%20%7B%20white-space%3Anowrap%3B%20%7D%0A.ltx_td.ltx_align_left.ltx_wrap%2C%20%20%20.ltx_th.ltx_align_left.ltx_wrap%2C%0A.ltx_td.ltx_align_right.ltx_wrap%2C%20%20.ltx_th.ltx_align_right.ltx_wrap%2C%0A.ltx_td.ltx_align_center.ltx_wrap%2C%20.ltx_th.ltx_align_center.ltx_wrap%2C%0A.ltx_td.ltx_align_justify%2C%20%20.ltx_th.ltx_align_justify%20%7B%20white-space%3Anormal%3B%20%7D%0A%0A.ltx_tabular%20.ltx_tabular%20%7B%20width%3A100%25%3B%20%7D%0A.ltx_inline-block%20%7B%20display%3Ainline-block%3B%20%7D%0A%0A/%2A%20equations%20in%20non-aligned%20mode%20%28not%20normally%20used%29%20%2A/%0A.ltx_eqn_div%20%7B%20display%3Ablock%3B%20width%3A95%25%3B%20text-align%3Acenter%3B%20%7D%0A%0A/%2A%20equations%20in%20aligned%20mode%20%28aligning%20tags%2C%20etc%20as%20well%20as%20equations%29%20%2A/%0A.ltx_eqn_table%20%7B%20display%3Atable%3B%20width%3A100%25%3B%20border-collapse%3Acollapse%3B%20%7D%0A.ltx_eqn_row%20%20%20%7B%20display%3Atable-row%3B%20%7D%0A.ltx_eqn_cell%20%20%7B%20display%3Atable-cell%3B%20width%3Aauto%3B%20%7D%0A%0Atable.ltx_eqn_align%20tr.ltx_equation%20td.ltx_align_left%20%2B%20td.ltx_align_right%20%7B%20padding-left%3A3em%3B%20%7D%0Atable.ltx_eqn_eqnarray%20tr.ltx_eqn_lefteqn%20%2B%20tr%20td.ltx_align_right%20%7B%20min-width%3A2em%3B%20%7D%0A%0A.ltx_eqn_eqno%20%7B%20max-width%3A0em%3B%20overflow%3Avisible%3B%20white-space%3A%20nowrap%3B%20%7D%0A.ltx_eqn_eqno.ltx_align_right%20.ltx_tag%20%7B%20float%3Aright%3B%20%7D%0A%0A.ltx_eqn_center_padleft%2C%0A.ltx_eqn_center_padright%20%7B%20width%3A50%25%3B%20min-width%3A2em%3B%7D%0A.ltx_eqn_left_padleft%2C%0A.ltx_eqn_right_padright%20%7B%20min-width%3A2em%3B%20%7D%0A.ltx_eqn_left_padright%2C%0A.ltx_eqn_right_padleft%20%20%7B%20width%3A100%25%3B%20%7D%0A%0A/%2A%20Various%20lists%20%2A/%0A.ltx_itemize%2C%0A.ltx_enumerate%2C%0A.ltx_description%20%7B%0A%20%20%20%20display%3Ablock%3B%20%7D%0A.ltx_itemize%20.ltx_item%2C%0A.ltx_enumerate%20.ltx_item%20%7B%0A%20%20%20%20display%3A%20list-item%3B%20%7D%0A%0A/%2A%20Position%20the%20tag%20to%20look%20like%20a%20normal%20item%20bullet.%20%2A/%0Ali.ltx_item%20%3E%20.ltx_tag%20%7B%0A%20%20%20%20display%3Ainline-block%3B%20margin-left%3A-1.5em%3B%20min-width%3A1.5em%3B%0A%20%20%20%20text-align%3Aright%3B%20%7D%0A.ltx_item%20.ltx_tag%20%2B%20.ltx_para%2C%0A.ltx_item%20.ltx_tag%20%2B%20.ltx_para%20.ltx_p%20%20%7B%20display%3Ainline%3B%20%7D%0A%0A/%2A%20NOTE%3A%20Need%20to%20try%20harder%20to%20get%20runin%20appearance%3F%20%2A/%0Adl.ltx_description%20dt%20%7B%20margin-right%3A0.5em%3B%20float%3Aleft%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20font-weight%3Abold%3B%20font-size%3A95%25%3B%20%7D%0Adl.ltx_description%20dd%20%7B%20margin-left%3A5em%3B%20%7D%0Adl.ltx_description%20dl.ltx_description%20dd%20%7B%20margin-left%3A3em%3B%20%7D%0A%0A/%2A%20Theorems%20%2A/%0A.ltx_theorem%20%20%7Bmargin%3A1em%200em%201em%200em%3B%20%7D%0A.ltx_title_theorem%20%7B%20font-size%3A100%25%3B%20%7D%0A%0A/%2A%20Bibliographies%20%2A/%0A.ltx_bibliography%20dt%20%7B%20margin-right%3A0.5em%3B%20float%3Aleft%3B%20%7D%0A.ltx_bibliography%20dd%20%7B%20margin-left%3A3em%3B%20%7D%0A/%2A.ltx_biblist%20%7B%20list-style-type%3Anone%3B%20%7D%2A/%0A.ltx_bibitem%20%7B%20list-style-type%3Anone%3B%20%7D%0A.ltx_bibitem%20.ltx_tag%20%7B%20font-weight%3Abold%3B%20margin-left%3A-2em%3B%20width%3A3em%3B%20%7D%0A/%2A.bibitem-tag%20%2B%20div%20%7B%20display%3Ainline%3B%20%7D%2A/%0A.ltx_bib_title%20%7B%20font-style%3Aitalic%3B%20%7D%0A.ltx_bib_article%20.bib-title%20%7B%20font-style%3Anormal%20%21important%3B%20%7D%0A.ltx_bib_journal%20%20%7B%20font-style%3Aitalic%3B%20%7D%0A.ltx_bib_volume%20%7B%20font-weight%3Abold%3B%20%7D%0A%0A/%2A%20Indices%20%2A/%0A.ltx_indexlist%20li%20%7B%20list-style-type%3Anone%3B%20%20%7D%0A.ltx_indexlist%20%7B%20margin-left%3A1em%3B%20padding-left%3A1em%3B%7D%0A%0A/%2A%20Listings%20%2A/%0A.ltx_listing%20%7B%0A%20%20%20%20display%3Ablock%3B%0A%20%20%20%20margin%3A%201ex%203em%201ex%200em%3B%0A%20%20%20%20overflow-x%3Aauto%3B%0A%20%20%20%20text-align%3A%20left%3B%20%7D%0A.ltx_float%20.ltx_listing%20%7B%0A%20%20%20%20margin%3A%200%3B%20%7D%0A.ltx_listingline%20%7B%20white-space%3Anowrap%3B%20min-height%3A1em%3B%20%7D%0A.ltx_lst_numbers_left%20.ltx_listingline%20.ltx_tag%20%7B%0A%20%20%20%20background-color%3Atransparent%3B%0A%20%20%20%20margin-left%3A-3em%3B%20width%3A2.5em%3B%0A%20%20%20%20position%3Aabsolute%3B%20%0A%20%20%20%20text-align%3Aright%3B%20%7D%0A.ltx_lst_numbers_right%20.ltx_listingline%20.ltx_tag%20%7B%0A%20%20%20%20background-color%3Atransparent%3B%0A%20%20%20%20width%3A2.5em%3B%0A%20%20%20%20position%3Aabsolute%3B%20right%3A3em%3B%0A%20%20%20%20text-align%3Aright%3B%20%7D%0A/%2A%0A%20%20%20%20position%3Aabsolute%3B%20left%3A0em%3B%0A%20%20%20%20max-width%3A0em%3B%20text-align%3Aright%3B%20%7D%0A%2A/%0A.ltx_parbox%20%7Btext-indent%3A0em%3B%20%7D%0A%0A/%2A%20NOTE%20that%20it%20is%20CRITICAL%20to%20put%20position%3Arelative%20outside%20%26%20absolute%20inside%21%21%0A%20%20%20I%20wish%20I%20understood%20why%21%0A%20%20%20Outer%20box%20establishes%20resulting%20size%2C%20neutralizes%20any%20outer%20positioning%2C%20etc%3B%0A%20%20%20inner%20establishes%20position%20of%20stuff%20to%20be%20rotated%20%2A/%0A.ltx_transformed_outer%20%7B%0A%20%20%20%20position%3Arelative%3B%20bottom%3A0pt%3Bleft%3A0pt%3B%0A%20%20%20%20overflow%3Avisible%3B%20%7D%0A.ltx_transformed_inner%20%7B%0A%20%20%20%20display%3Ablock%3B%0A%20%20%20%20position%3Aabsolute%3Bbottom%3A0pt%3Bleft%3A0pt%3B%20%7D%0A.ltx_transformed_inner%20%3E%20.ltx_p%20%7Btext-indent%3A0em%3B%20margin%3A0%3B%20padding%3A0%3B%20%7D%0A/%2A%20If%20simulating%20a%20table%20%28html5%29%2C%20try%20to%20get%20rowspan%20to%20work...sorta%3F%20%2A/%0Aspan.ltx_rowspan%20%7B%20position%3Aabsolute%3B%20top%3A0%3B%20bottom%3A0%3B%20%7D%0A%0A/%2A%20by%20default%2C%20p%20doesn%27t%20indent%20%2A/%0A.ltx_p%20%7B%20text-indent%3A0em%3B%20white-space%3Anormal%3B%20%7D%0A/%2A%20explicit%20control%20of%20indentation%20%28on%20ltx_para%29%20%2A/%0A.ltx_indent%20%3E%20.ltx_p%3Afirst-child%20%7B%20text-indent%3A2em%21important%3B%20%7D%0A.ltx_noindent%20%3E%20.ltx_p%3Afirst-child%20%7B%20text-indent%3A0em%21important%3B%20%7D%0A%0A/%2A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%20%20Columns%20%2A/%0A.ltx_page_column1%20%7B%0A%20%20%20%20width%3A44%25%3B%20float%3Aleft%3B%20%7D%20/%2A%20IE%20uses%20%25%20of%20wrong%20container%2A/%0A.ltx_page_column2%20%7B%0A%20%20%20%20width%3A44%25%3B%20float%3Aright%3B%20%7D%0A.ltx_page_columns%20%3E%20.ltx_page_column1%20%7B%0A%20%20%20%20width%3A48%25%3B%20float%3Aleft%3B%20%7D%0A.ltx_page_columns%20%3E%20.ltx_page_column2%20%7B%0A%20%20%20%20width%3A48%25%3B%20float%3Aright%3B%20%7D%0A.ltx_page_columns%3Aafter%20%7B%0A%20%20%20%20content%3A%22.%22%3B%20display%3Ablock%3B%20height%3A0%3B%20clear%3Aboth%3B%20visibility%3Ahidden%3B%20%7D%0A%0A/%2A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%20Borders%20and%20such%20%2A/%0A.ltx_tabular%20%7B%20display%3Ainline-table%3B%20border-collapse%3Acollapse%3B%20%7D%0A.ltx_tabular.ltx_centering%20%7B%20display%3Atable%3B%20%7D%0A.ltx_thead%2C%0A.ltx_tfoot%2C%0A.ltx_tbody%20%20%20%7B%20display%3Atable-row-group%3B%20%7D%0A.ltx_tr%20%20%20%20%20%20%7B%20display%3Atable-row%3B%20%7D%0A.ltx_td%2C%0A.ltx_th%20%20%20%20%20%20%7B%20display%3Atable-cell%3B%20%7D%0A%0A.ltx_framed%20%20%7B%20border%3A1px%20solid%20black%3B%7D%0A.ltx_tabular%20.ltx_td%2C%0A.ltx_tabular%20.ltx_th%20%7B%20padding%3A0.1em%200.5em%3B%20%7D%0A/%2A%20regular%20lines%20%2A/%0A.ltx_border_t%20%20%7B%20border-top%3A1px%20solid%20black%3B%20%7D%0A.ltx_border_r%20%20%7B%20border-right%3A1px%20solid%20black%3B%20%7D%0A.ltx_border_b%20%20%7B%20border-bottom%3A1px%20solid%20black%3B%20%7D%0A.ltx_border_l%20%20%7B%20border-left%3A1px%20solid%20black%3B%20%7D%0A/%2A%20double%20lines%20%2A/%0A.ltx_border_tt%20%7B%20border-top%3A3px%20double%20black%3B%20%7D%0A.ltx_border_rr%20%7B%20border-right%3A3px%20double%20black%3B%20%7D%0A.ltx_border_bb%20%7B%20border-bottom%3A3px%20double%20black%3B%20%7D%0A.ltx_border_ll%20%7B%20border-left%3A3px%20double%20black%3B%20%7D%0A/%2A%20Light%20lines%20%2A/%0A.ltx_border_T%20%20%7B%20border-top%3A1px%20solid%20gray%3B%20%7D%0A.ltx_border_R%20%20%7B%20border-right%3A1px%20solid%20gray%3B%20%7D%0A.ltx_border_B%20%20%7B%20border-bottom%3A1px%20solid%20gray%3B%20%7D%0A.ltx_border_L%20%20%7B%20border-left%3A1px%20solid%20gray%3B%20%7D%0A/%2A%20Framing%20%2A/%0A.ltx_framed_rectangle%20%7B%20border-style%3Asolid%3B%20border-width%3A1px%3B%20%7D%0A.ltx_framed_top%20%20%20%20%20%20%20%7B%20border-top-style%3Asolid%3B%20border-top-width%3A1px%3B%20%7D%0A.ltx_framed_left%20%20%20%20%20%20%7B%20border-left-style%3Asolid%3B%20border-left-width%3A1px%3B%20%7D%0A.ltx_framed_right%20%20%20%20%20%7B%20border-right-style%3Asolid%3B%20border-right-width%3A1px%3B%20%7D%0A.ltx_framed_bottom%2C%0A.ltx_framed_underline%20%7B%20border-bottom-style%3Asolid%3B%20border-bottom-width%3A1px%3B%20%7D%0A.ltx_framed_topbottom%20%7B%20border-top-style%3Asolid%3B%20border-top-width%3A1px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20border-bottom-style%3Asolid%3B%20border-bottom-width%3A1px%3B%20%7D%0A.ltx_framed_leftright%20%7B%20border-left-style%3Asolid%3B%20border-left-width%3A1px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20border-right-style%3Asolid%3B%20border-right-width%3A1px%3B%20%7D%0A%0A/%2A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%20Misc%20%2A/%0A/%2A%20.ltx_verbatim%2A/%0A.ltx_verbatim%20%7B%20text-align%3Aleft%3B%20%7D%0A/%2A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%20Meta%20stuff%2C%20footnotes%20%2A/%0A.ltx_note_content%20%7B%20display%3Anone%3B%20%7D%0A/%2Aright%3A5%25%3B%20%20%2A/%0A.ltx_note_content%20%7B%0A%20%20%20%20%20max-width%3A%2070%25%3B%20font-size%3A90%25%3B%20left%3A15%25%3B%0A%20%20%20%20%20text-align%3Aleft%3B%0A%20%20%20%20%20background-color%3A%20white%3B%20%0A%20%20%20%20%20padding%3A%200.5em%201em%200.5em%201.5em%3B%0A%20%20%20%20%20border%3A%201px%20solid%20black%3B%20border-radius%3A%200%205px%205px%205px%3B%20box-shadow%3A%205px%205px%2010px%20gray%3B%20%7D%0A.ltx_note_mark%20%20%20%20%7B%20color%3Ablue%3B%20%7D%0A.ltx_note_type%20%20%20%20%7B%20font-weight%3A%20bold%3B%20%7D%0A.ltx_note%20%7B%20display%3Ainline-block%3B%20text-indent%3A0%3B%20%7D%20/%2A%20So%20we%20establish%20containing%20block%20%2A/%0A.ltx_note_content%20.ltx_note_mark%20%7B%20position%3Aabsolute%3B%20left%3A0.2em%3B%20top%3A-0.1em%3B%20%7D%0A.ltx_note%3Ahover%20.ltx_note_content%2C%0A.ltx_note%20.ltx_note_content%3Ahover%20%7B%0A%20%20%20display%3Ablock%3B%20position%3Aabsolute%3B%20z-index%3A10%3B%20%7D%0A%0A.ltx_ERROR%20%20%20%20%20%20%20%20%7B%20color%3Ared%3B%20%7D%0A.ltx_rdf%20%20%20%20%20%20%20%20%20%20%7B%20display%3Anone%3B%20%7D%0A.ltx_missing%20%20%20%20%20%20%7B%20color%3Ared%3B%7D%20%0A.ltx_nounicode%20%20%20%20%7B%20color%3Ared%3B%20%7D%0A/%2A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%20SVG%20%28pgf/tikz%20%3F%29%20basics%20%2A/%0A%0A/%2A%20Stuff%20appearing%20in%20svg%3AforeignObject%20%2A/%0A.ltx_svg_fog%20foreignObject%20%20%7B%20margin%3A0%3B%20padding%3A0%3B%20overflow%3Avisible%3B%20%7D%0A.ltx_svg_fog%20foreignObject%20%3E%20p%20%7B%20margin%3A0%3B%20padding%3A0%3B%20display%3Ablock%3B%20%7D%0A/%2A.ltx_svg_fog%20foreignObject%20%3E%20p%20%7B%20margin%3A0%3B%20padding%3A0%3B%20display%3Ablock%3B%20white-space%3Anowrap%3B%20%7D%2A/%0A%0A/%2A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%20Low-level%20Basics%20%2A/%0A/%2A%20Note%20that%20LaTeX%28ML%29%27s%20font%20model%20doesn%27t%20map%20quite%20exactly%20to%20CSS%27s%20%2A/%0A/%2A%20Font%20Families%20%3D%3E%20font-family%20%2A/%0A.ltx_font_serif%20%20%20%20%20%20%7B%20font-family%3A%20serif%3B%20%7D%0A.ltx_font_sansserif%20%20%7B%20font-family%3A%20sans-serif%3B%20%7D%0A.ltx_font_typewriter%20%7B%20font-family%3A%20monospace%3B%20%7D%0A/%2A%20dingbats%20should%20be%20converted%20to%20unicode%3F%20%2A/%0A/%2A%20Math%20font%20families%20handled%20within%20math%3A%20script%2C%20symbol%2C%20fraktur%2C%20blackboard%20%3F%20%2A/%0A/%2A%20Font%20Series%20%3D%3E%20font-weight%20%2A/%0A.ltx_font_bold%20%20%20%20%20%20%20%7B%20font-weight%3A%20bold%3B%20%7D%0A.ltx_font_medium%20%20%20%20%20%7B%20font-weight%3A%20normal%3B%20%7D%0A/%2A%20Font%20Shapes%20%3D%3E%20font-style%20or%20font-variant%20%2A/%0A.ltx_font_italic%20%20%20%20%20%7B%20font-style%3A%20italic%3B%20font-variant%3Anormal%3B%20%7D%0A.ltx_font_upright%20%20%20%20%7B%20font-style%3A%20normal%3B%20font-variant%3Anormal%3B%20%7D%0A.ltx_font_slanted%20%20%20%20%7B%20font-style%3A%20oblique%3B%20font-variant%3Anormal%3B%20%7D%0A.ltx_font_smallcaps%20%20%7B%20font-variant%3A%20small-caps%3B%20font-style%3Anormal%3B%20%7D%0A.ltx_font_oldstyle%20%20%20%7B%20font-variant%3A%20oldstyle-nums%3B%20%20/%2A%20experimental%20css3%20%3F%20Doesn%27t%20seem%20to%20work%21%2A/%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20font-style%3Anormal%3B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20-moz-font-feature-settings%3A%20%22onum%22%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20-ms-font-feature-settings%3A%20%22onum%22%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20-webkit-font-feature-settings%3A%20%22onum%22%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20font-variant-numeric%3A%20oldstyle-nums%3B%20%7D%0A.ltx_font_mathcaligraphic%20%7B%20font-family%3A%20%22Lucida%20Calligraphy%22%2C%20%22Zapf%20Chancery%22%2C%22URW%20Chancery%20L%22%3B%20%7D%0A/%2A%0A%0A.ltx_font_mathscript%20%7B%20%3F%20%7D%0A%2A/%0Acite%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%20font-style%3A%20normal%3B%20%7D%0A%0A.ltx_red%20%20%20%20%20%20%20%20%7B%20color%3Ared%3B%20%7D%0A/%2A.ltx_centering%20%20%7B%20text-align%3Acenter%3B%20margin%3Aauto%3B%20%7D%2A/%0A/%2A.ltx_inline-block.ltx_centering%2C%2A/%0A/%2A%20Hmm....%20is%20this%20right%20in%20general%3F%20%2A/%0A.ltx_centering%20%20%7B%20display%3Ablock%3B%20margin%3Aauto%3B%20text-align%3Acenter%3B%20%7D%0A%0A/%2A%20Dubious%20stuff%20%2A/%0A.ltx_hflipped%20%7B%0A%20%20%20%20display%3Ainline-block%3B%0A%20%20%20%20-moz-transform%3A%20scaleX%28-1%29%3B%0A%20%20%20%20-o-transform%3A%20scaleX%28-1%29%3B%0A%20%20%20%20-webkit-transform%3A%20scaleX%28-1%29%3B%0A%20%20%20%20transform%3A%20scaleX%28-1%29%3B%0A%20%20%20%20filter%3A%20FlipH%3B%0A%20%20%20%20-ms-fliter%3A%20%22FlipH%22%3B%20%7D%0A.ltx_vflipped%20%7B%0A%20%20%20%20display%3Ainline-block%3B%0A%20%20%20%20-moz-transform%3A%20scaleY%28-1%29%3B%0A%20%20%20%20-o-transform%3A%20scaleY%28-1%29%3B%0A%20%20%20%20-webkit-transform%3A%20scaleY%28-1%29%3B%0A%20%20%20%20transform%3A%20scaleY%28-1%29%3B%0A%20%20%20%20filter%3A%20FlipV%3B%0A%20%20%20%20-ms-fliter%3A%20%22FlipV%22%3B%20%7D%0A%0A/%2A%20.ltx_phantom%20handled%20in%20xslt%20%2A/%0A%0A" rel="stylesheet" type="text/css"/><!--URL:LaTeXML.css-->
+<link href="data:text/css,body%20%7B%0A%20%20padding%3A%2010px%2020%25%3B%0A%20%20font-family%3A%20sans-serif%3B%0A%7D%0A%0Abr%20%7B%0A%20%20margin-bottom%3A%2015px%3B%0A%7D%0A%0A.ltx_page_logo%20%7B%0A%20%20display%3A%20none%3B%0A%7D%0A%0A.ltx_ERROR%2C%0A.undefined%20%7B%0A%20%20display%3A%20none%3B%0A%7D%0A.ltx_title_document%20%7B%0A%20%20font-family%3A%20sans-serif%3B%0A%20%20font-weight%3A%20bold%3B%0A%7D%0A%0A.ltx_abstract%20%7B%0A%20%20margin-bottom%3A%203em%3B%0A%7D%0A%0A.ltx_title_abstract%20%7B%0A%20%20font-size%3A%20130%25%20%21important%3B%0A%20%20margin%3A%202em%200%3B%0A%7D%0A%0A%23p1%20%7B%0A%20%20display%3A%20none%3B%0A%7D%0A%0A/%2A%20Footnote%20code%20used%20for%20cleaner%20script%20%2A/%0A.footnote-ref%20%7B%0A%09color%3A%20blue%3B%0A%09vertical-align%3A%20super%3B%0A%09font-size%3A%200.6rem%3B%0A%09text-decoration%3A%20none%3B%0A%7D%0A.footnote%20%7B%0A%09font-size%3A%200.7em%3B%0A%7D%0Abody%20%7B%0A%20%20padding%3A%2010px%2020%25%3B%0A%20%20font-family%3A%20sans-serif%3B%0A%7D%0A%0Abr%20%7B%0A%20%20margin-bottom%3A%2015px%3B%0A%7D%0A%0A.ltx_page_logo%20%7B%0A%20%20display%3A%20none%3B%0A%7D%0A%0A.ltx_ERROR%2C%0A.undefined%20%7B%0A%20%20display%3A%20none%3B%0A%7D%0A.ltx_title_document%20%7B%0A%20%20font-family%3A%20sans-serif%3B%0A%20%20font-weight%3A%20bold%3B%0A%7D%0A%0A.ltx_abstract%20%7B%0A%20%20margin-bottom%3A%203em%3B%0A%7D%0A%0A.ltx_title_abstract%20%7B%0A%20%20font-size%3A%20130%25%20%21important%3B%0A%20%20margin%3A%202em%200%3B%0A%7D%0A%0A%23p1%20%7B%0A%20%20display%3A%20none%3B%0A%7D%0A%0A/%2A%20Footnote%20code%20used%20for%20cleaner%20script%20%2A/%0A.footnote-ref%20%7B%0A%09color%3A%20blue%3B%0A%09vertical-align%3A%20super%3B%0A%09font-size%3A%200.6rem%3B%0A%09text-decoration%3A%20none%3B%0A%7D%0A.footnote%20%7B%0A%09font-size%3A%200.7em%3B%0A%7D%0A%0A.ltx_title_document%20%20%20%20%20%20%7B%20font-size%3A170%25%3B%20text-align%3Acenter%3B%20margin%3A0.5em%200%200.5em%200%3B%20%7D%0A.ltx_authors%2C%0A.ltx_role_author%20%20%20%20%20%20%20%20%20%7B%20text-align%3Acenter%3B%20margin%3A0.5em%200%200.5em%200%3B%20%7D%0A.ltx_role_author%20.ltx_personname%20%20%7B%20font-size%3A%20120%25%3B%20%7D%0A.ltx_date%20%20%20%20%20%20%20%20%7B%20text-align%3Acenter%3B%20font-size%3A%20120%25%3B%20margin%3A0.5em%200%200.5em%200%3B%20%7D%0A.ltx_subtitle%20%20%20%20%7B%20text-align%3Acenter%3B%20font-size%3A%20120%25%3B%20padding-left%3A0.2em%3B%20margin-left%3A-0.5em%3B%20%7D%0A%0A.ltx_title_abstract%20%20%20%20%20%20%7B%20text-align%3Acenter%3B%20font-size%3A%20100%25%3B%20font-weight%3Abold%3B%20%7D%0A.ltx_abstract%20%7B%20margin-left%3A4em%3B%20margin-right%3A4em%3B%20%7D%0A.ltx_title_acknowledgements%2C%0A.ltx_title_keywords%2C%0A.ltx_title_classification%20%7B%0A%20%20%20text-align%3Aleft%3B%20font-size%3A%20100%25%3B%20font-weight%3Abold%3B%20margin%3A0.5%200%200%200%3B%20%7D%0A%0A.ltx_appendix%2C%0A.ltx_section%2C%20%20%20%0A.ltx_subsection%2C%0A.ltx_subsubsection%20%7B%20margin-top%3A1.5em%3B%20%7D%0A.ltx_paragraph%2C%0A.ltx_subparagraph%20%20%20%7B%20margin-top%3A1.0em%3B%20%7D%0A%0A.ltx_title_appendix%2C%0A.ltx_title_section%2C%0A.ltx_title_bibliography%20%20%7B%20font-size%3A140%25%3B%20font-weight%3Abold%3B%20margin-bottom%3A1em%3B%20%7D%0A.ltx_title_subsection%20%20%20%20%7B%20font-size%3A120%25%3B%20font-weight%3Abold%3B%20margin-bottom%3A1em%3B%20%7D%0A.ltx_title_subsubsection%20%7B%20font-size%3A100%25%3B%20font-weight%3Abold%3B%20margin-bottom%3A1em%3B%20%7D%0A%0A/%2A%20Paragraph%20%26%20Subparagraph%20titles%20should%20be%20runin%21%20%2A/%0A.ltx_title_paragraph%20%20%20%7B%20font-size%3A100%25%3B%20font-weight%3Abold%3B%20display%3Ainline%3B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20margin-right%3A1em%3B%20%7D%0A.ltx_paragraph%20.ltx_title%2C%0A.ltx_paragraph%20.ltx_title%20%2B%20.ltx_para%2C%0A.ltx_paragraph%20.ltx_title%20%2B%20.ltx_para%20%3E%20.ltx_p%20%7B%20display%3Ainline%3B%20%7D%0A%0A.ltx_title_subparagraph%20%20%7B%20font-size%3A100%25%3B%20font-weight%3Abold%3B%20display%3Ainline%3B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20margin-left%3A2em%3B%20margin-right%3A1em%3B%20%7D%0A.ltx_subparagraph%20.ltx_title%2C%0A.ltx_subparagraph%20.ltx_title%20%2B%20.ltx_para%2C%0A.ltx_subparagraph%20.ltx_title%20%2B%20.ltx_para%20%3E%20.ltx_p%20%7B%20display%3Ainline%3B%20%7D%0A%0A.ltx_figure%20%20%7B%20text-align%3Acenter%3B%20margin%3Aauto%3B%20margin%3A0.5em%3B%20%7D%0A.ltx_table%20%20%20%7B%20text-align%3Acenter%3B%20margin%3Aauto%3B%20margin%3A0.5em%3B%20%7D%0A%0A/%2A%20experimental%3A%20flex%20model%2C%20to%20center%20short%20captions%2C%20justify%20long%20ones%20%2A/%0A.ltx_table%2C%0A.ltx_figure%20%7B%20display%3Aflex%3B%20flex-direction%3Acolumn%3B%20align-items%3Acenter%3B%20%7D%0A.ltx_table%20.ltx_caption%2C%0A.ltx_figure%20.ltx_caption%20%7B%20text-align%3Ajustify%3B%20%7D%0A%0A/%2A%20first%20p%20in%20para%20gets%20indented%20%2A/%0A.ltx_para%20%3E%20.ltx_p%3Afirst-child%20%7B%20text-indent%3A2em%3B%20%7D%0A/%2A%20except%20the%20initial%20in%20a%20section%20%2A/%0Asection%20%3E%20.ltx_title%20%2B.ltx_para%20%3E%20.ltx_p%2C%0Asection%20%3E%20.ltx_title%20%2B.ltx_date%20%2B.ltx_para%20%3E%20.ltx_p%20%7Btext-indent%3A0em%3B%20%7D%0A%0A.ltx_title_abstract%20%2B%20.ltx_p%20%7Btext-indent%3A2em%3B%20%7D%0A%0A.ltx_itemize%2C%0A.ltx_enumerate%20%7B%20margin-left%3A1em%3B%20%7D%0A%0A.ltx_theorem%20%7B%20margin-top%3A0.5em%3B%20margin-bottom%3A0.5em%3B%20%7D%0A.ltx_theorem%20.ltx_title%20%7B%20margin-bottom%3A0.1em%3B%20%7D%0A.ltx_theorem%20.ltx_title%20%2B%20.ltx_para%2C%0A.ltx_theorem%20.ltx_title%20%2B%20.ltx_para%20.ltx_p%2C%0A.ltx_theorem%20.ltx_title%20%2B%20.ltx_p%20%20%7B%20margin-top%3A0em%3B%20%7D%0A" rel="stylesheet" type="text/css"/><!--URL:ltx-article.css-->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js?config=MML_HTMLorMML" type="text/javascript"></script><!--URL:https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js?config=MML_HTMLorMML-->
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document" lang="en">Implementing Tactile Learning to Aid Students 
+<br class="ltx_break"/>Understanding of the Bohr Model</h1>
+<div class="ltx_authors">
+<span class="ltx_creator ltx_role_author" lang="en">
+<span class="ltx_personname"><span class="ltx_text" style="font-size:120%;color:#0000FF;"> Christin B. Monroe</span>
+</span><span class="ltx_author_notes"><span>
+<span class="ltx_contact ltx_role_affiliation"><span class="ltx_text" style="font-size:120%;">Landmark College</span>
+</span></span></span></span>
+<span class="ltx_creator ltx_role_author" lang="en">
+<span class="ltx_personname"><span class="ltx_text" style="font-size:120%;color:#0000FF;"> Andrew Stein</span>
+</span><span class="ltx_author_notes"><span>
+<span class="ltx_contact ltx_role_affiliation"><span class="ltx_text" style="font-size:120%;">Landmark College</span>
+</span></span></span></span>
+<span class="ltx_creator ltx_role_author" lang="en">
+<span class="ltx_personname"><span class="ltx_text" style="font-size:120%;color:#0000FF;"> Cynthia Tolman</span>
+</span><span class="ltx_author_notes"><span>
+<span class="ltx_contact ltx_role_affiliation"><span class="ltx_text" style="font-size:120%;">Landmark College</span>
+</span></span></span></span>
+</div>
+<div class="ltx_abstract" lang="en">
+<h6 class="ltx_title ltx_title_abstract">Abstract</h6>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic" style="font-size:120%;">It is essential for introductory level chemistry students to understand atomic models and how atoms interact to form chemical bonds. The tactile model in this article utilizes marbles to represent subatomic particles, a cup to represent the nucleus and wooden rings to simulate the electron orbitals. These inexpensive items can be combined to construct models in which students can build foundational knowledge of atomic structure and how subatomic particles interact. Students were asked to provide feedback comparing the use of this tactile model to atomic computer simulations, videos and their textbook regarding the method they felt was most useful to learn atomic structure.
+<br class="ltx_break"/></span></p>
+</div>
+<span class="ltx_ERROR undefined">\addbibresource</span>
+<div class="ltx_para" id="p1">
+<p class="ltx_p">notation.bib
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="ltx_text" lang="en">
+</span></p>
+</div>
+<span class="ltx_ERROR undefined" lang="en">\toappear</span>
+<div class="ltx_para" id="p2">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold" lang="en">*Corresponding Author, Christin Monroe
+<br class="ltx_break"/><a class="ltx_ref ltx_href ltx_font_medium" href="mailto:christinmonroe@landmark.edu" title="">(christinmonroe@landmark.edu)</a><span class="ltx_text ltx_font_medium">
+<br class="ltx_break"/><span class="ltx_text ltx_font_italic">Submitted March 15, 2022 
+<br class="ltx_break"/>Accepted April 20, 2022</span>
+<br class="ltx_break"/><span class="ltx_text ltx_font_italic">Published online July 15, 2022</span>
+<br class="ltx_break"/><span class="ltx_text ltx_font_italic">DOI: 10.14448/jsesd.14.0003</span>
+<br class="ltx_break"/></span></span></p>
+</div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<section class="ltx_section" id="Sx1" lang="en">
+<h2 class="ltx_title ltx_title_section"></h2>
+</section>
+<section class="ltx_section" id="Sx2" lang="en">
+<h2 class="ltx_title ltx_title_section">Background</h2>
+<section class="ltx_subsection" id="Sx2.SSx1">
+<h3 class="ltx_title ltx_font_italic ltx_title_subsection" style="font-size:120%;">Definition of Neurodiversity</h3>
+<div class="ltx_para" id="Sx2.SSx1.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Neurodiversity is a social ideal based on a biological fact. The human brain is the most complex thing on Earth, and every brain is different. Neurodiversity is about what that should mean. Instead of separating people into normal and abnormal, neurodiversity asks us to accept variation. To us, it means that autism, ADHD, and learning disabilities are valuable forms of humanity that enrich culture. New ideas, insights, and unique ways of viewing the world come from diverse minds. This is a strength. (Center for Neurodiversity, n.d.)</span></p>
+</div>
+</section>
+<section class="ltx_subsection" id="Sx2.SSx2">
+<h3 class="ltx_title ltx_font_italic ltx_title_subsection" style="font-size:120%;">The Use of Models in Education</h3>
+<div class="ltx_para" id="Sx2.SSx2.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Chemistry students tend to struggle with the abstract nature of the atomic structure because these structures can only be seen with the most powerful electron microscopes.(Netzell, 2014) Instead, models can aid students with visualizing and manipulating challenging microscopic structures. Following the discoveries of JJ Thompson and Ernest Rutherford in the mid-19th and early 20th centuries, respectively, the Bohr atom was developed in 1913 by Niels Bohr.(Neth et al. 2018) There has been some controversy as to whether the Bohr atom should be introduced and emphasized in Chemistry curriculum (for both secondary and postsecondary students), due to the possible misconceptions that can result.(Netzell, 2014),(Georgios &amp; Georgios, 2009) Also, there is no agreement on a methodology to teach atomic structure.(Derman et al., 2019)</span></p>
+</div>
+<div class="ltx_para" id="Sx2.SSx2.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">However, the Bohr atom can be an effective visual teaching aid as long as: 1) it is sufficiently compared and contrasted with other models, particularly the Schrödinger model and 2) limitations and potential misconceptions are identified and explored prior to introducing of the model.(McKagan et al., 2008) The Bohr model can also be used to help students make predictions about chemical behaviors.(Derman et al., 2019)</span></p>
+</div>
+<div class="ltx_para" id="Sx2.SSx2.p3">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">A tactile Bohr atom model, made of marbles and inexpensive wood, allows students to visualize atoms isotopes and ions as large as neodymium with 60 electron divots within the same inclusive model.</span></p>
+</div>
+<div class="ltx_para" id="Sx2.SSx2.p4">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Likely due to the rise in popularity of computer-generated models, there are few physical model kits that can be used in the classroom to teach the Bohr model in a tactile way.(Smiar &amp; Mendez, 2016) One study shows how 3D printed models of the Bohr atom can be created.(Smiar &amp; Mendez, 2016) 3D printing can be time consuming and limited to one atom at a time. The model kit presented herein is similar to others utilizing household materials to represent various chemical concepts, such as the octet rule (Lin et al., 2018) and periodicity (in the periodic table)(Melaku et al., 2016).</span></p>
+</div>
+<div class="ltx_para" id="Sx2.SSx2.p5">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Demonstrated use of models can help students gain an understanding of how scientists practice their thought-processes. (McKagan et al., 2008) Models have also been shown to increase communication and boost student understanding of complex scientific concepts.(Harrison &amp; Treagust, 2000) The simplicity of this model and the way in which it gives students the ability to physically manipulate it themselves (with explicit instructions) can decrease cognitive load. Decreasing cognitive load can lead to enhanced learning, especially for students with learning differences. (Carlson et al., 2003) Students with language disabilities can also greatly benefit from the incorporation of visual and tactile models. (Hudson, 2017)</span></p>
+</div>
+<div class="ltx_para" id="Sx2.SSx2.p6">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The model presented in this article shows a multimodal approach where students are able to use the Bohr atom to: 1) manipulate the model using tactile functionality, 2) demonstrate their understanding by drawing the models they have created and 3) engage in dialogue with the instructor and their peers.</span></p>
+</div>
+</section>
+<section class="ltx_subsection" id="Sx2.SSx3">
+<h3 class="ltx_title ltx_font_italic ltx_title_subsection" style="font-size:120%;">Inspiration and Development</h3>
+<div class="ltx_para" id="Sx2.SSx3.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Cynthia Tolman, the developer of the hands-on Bohr model, was inspired to create this model to provide students with a three-dimensional tool. The idea for making the models three-dimensional rather than flat allows the lower energy levels to be physically lower, showing that excited electrons “fall" to a lower energy level when they re-emit their excess energy as light.</span></p>
+</div>
+<div class="ltx_para" id="Sx2.SSx3.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The first model was made from Styrofoam which was cut by hand into rings with an exacto knife, shown in figure 1. The Styrofoam was messy to work with and took a long time to cut through with the tools available. A second attempt using cardboard was easier to make but too flimsy for classroom use, shown in figure 2. The final design uses a CNC milling machine with “Easel" software from Inventables. The design can be cut in wood or plastic and multiple models can be cut fairly quickly. The base is three stair-step blocks upon which the rings are glued or screwed. A plastic cup fits into the center ring to represent the nucleus and as in the previous designs, colored marbles represent protons, neutrons and electrons.</span></p>
+</div>
+<figure class="ltx_figure" id="Sx2.SSx3.fig1"><img alt="" class="ltx_graphics ltx_centering" height="459" id="Sx2.SSx3.g1" src="dd8e8692-c5e2-11ee-ae7b-0242ac110002/figure%201_1.jpg" width="541"/><!--URL:dd8e8692-c5e2-11ee-ae7b-0242ac110002/figure%201_1.jpg-->
+</figure>
+<figure class="ltx_figure" id="Sx2.F1"><img alt="" class="ltx_graphics ltx_centering" height="492" id="Sx2.F1.g1" src="dd8e8692-c5e2-11ee-ae7b-0242ac110002/figure%201_2.jpg" width="541"/><!--URL:dd8e8692-c5e2-11ee-ae7b-0242ac110002/figure%201_2.jpg-->
+<figcaption class="ltx_caption ltx_centering" style="font-size:120%;"><span class="ltx_tag ltx_tag_figure">Figure 1: </span><span class="ltx_text ltx_font_italic">Second iteration of the hands-on Bohr model using Styrofoam and colored marbles.</span></figcaption>
+</figure>
+</section>
+</section>
+<section class="ltx_section" id="Sx3" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">Uses of the Model</h2>
+<section class="ltx_subsection" id="Sx3.SSx1">
+<h3 class="ltx_title ltx_font_italic ltx_title_subsection" style="font-size:120%;">Representing Subatomic Particles </h3>
+<div class="ltx_para" id="Sx3.SSx1.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Having a general understanding of the structure of the atom is critical to understanding central chemical concepts. The proper placement and understanding of how subatomic particles (protons, neutrons, and electrons) are related to one another in the atomic model is essential to understanding how and why ions form and the mechanics involved in the formation of ionic compounds. The microscopic nature of subatomic particles prevents their direct observation which can be a challenging for students who thrive with visual and tactile learning.</span></p>
+</div>
+<div class="ltx_para" id="Sx3.SSx1.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">In this model, each subatomic particle is represented by a different colored marble (protons: pink, electrons: blue and neutrons: clear). Students are initially instructed to build a hydrogen atom and a deuterium atom placing proton(s) and neutron(s) in the central cup representing the nucleus and electron(s) in the outer rings that surround the nucleus, as shown in Figure 3.</span></p>
+</div>
+<figure class="ltx_figure" id="Sx3.F2"><img alt="" class="ltx_graphics ltx_centering" height="367" id="Sx3.F2.g1" src="dd8e8692-c5e2-11ee-ae7b-0242ac110002/figure%202.png" width="541"/><!--URL:dd8e8692-c5e2-11ee-ae7b-0242ac110002/figure%202.png-->
+<figcaption class="ltx_caption ltx_centering" style="font-size:120%;"><span class="ltx_tag ltx_tag_figure">Figure 2: </span><span class="ltx_text ltx_font_italic">Third iteration of the hands-on Bohr model using cardboard and colored marbles.</span></figcaption>
+</figure>
+</section>
+<section class="ltx_subsection" id="Sx3.SSx2">
+<h3 class="ltx_title ltx_font_italic ltx_title_subsection" style="font-size:120%;">Ions vs. Isotopes</h3>
+<div class="ltx_para" id="Sx3.SSx2.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Understanding how changing the numbers of different subatomic particles affects the identity of the element is often challenging for students, especially when differentiating between ions (modifying the number of electrons) and isotopes (modifying the number of neutrons). Students can be asked to change the number of protons, neutrons and electrons using this model. Changing the number of protons changes the identity of the atom, and keeping the protons in the nucleus (central cup) visually demonstrates that gain/ loss of protons is very unlikely. Changing the number of neutrons in the nucleus leads to the formation of a different isotope, but this is another process that does not commonly happen. Electrons, that surround the nucleus, are the easiest subatomic particle to add/ subtract and the removal/ addition of electrons is the only way to change the overall charge of the ion. If the total protons and electrons are not equal, the atom is either positively charged (cation) or negative charged (anion).</span></p>
+</div>
+<figure class="ltx_figure" id="Sx3.SSx2.fig1"><img alt="" class="ltx_graphics ltx_centering" height="405" id="Sx3.SSx2.g1" src="dd8e8692-c5e2-11ee-ae7b-0242ac110002/figure%203_1.png" width="541"/><!--URL:dd8e8692-c5e2-11ee-ae7b-0242ac110002/figure%203_1.png-->
+</figure>
+<figure class="ltx_figure" id="Sx3.F3"><img alt="" class="ltx_graphics ltx_centering" height="405" id="Sx3.F3.g1" src="dd8e8692-c5e2-11ee-ae7b-0242ac110002/figure%203_2.png" width="541"/><!--URL:dd8e8692-c5e2-11ee-ae7b-0242ac110002/figure%203_2.png-->
+<figcaption class="ltx_caption ltx_centering" style="font-size:120%;"><span class="ltx_tag ltx_tag_figure">Figure 3: </span><span class="ltx_text ltx_font_italic">Two isotopes of hydrogen. Top: protium and Bottom: deuterium. Marbles represent subatomic particles. Blue represents electrons, pink represents protons and clear represents neutrons.</span></figcaption>
+</figure>
+</section>
+<section class="ltx_subsection" id="Sx3.SSx3">
+<h3 class="ltx_title ltx_font_italic ltx_title_subsection" style="font-size:120%;">Ion Formation Examples</h3>
+<div class="ltx_para" id="Sx3.SSx3.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Ions form to attain stable (electron) configurations by gaining or losing of electrons. After students are introduced to the concept of valance electrons and stable electron configurations, they can use the models to predict chemical behaviors. For example, the types of ions that would form to attain the most stable electron configuration. This model allows students to use visual cues to observe how electrons surround the nucleus.</span></p>
+</div>
+<div class="ltx_para" id="Sx3.SSx3.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Figure 4 shows a lithium atom in comparison to a lithium ion. When students observe the lithium atom, they work through the process of determining how best to achieve a stable electron configuration, either removal of 1 electron or addition of 7 electrons.</span></p>
+</div>
+<figure class="ltx_figure" id="Sx3.F4"><img alt="" class="ltx_graphics ltx_centering" height="405" id="Sx3.F4.g1" src="dd8e8692-c5e2-11ee-ae7b-0242ac110002/figure%204_1.png" width="541"/><!--URL:dd8e8692-c5e2-11ee-ae7b-0242ac110002/figure%204_1.png-->
+<figcaption class="ltx_caption ltx_centering" style="font-size:120%;"><span class="ltx_tag ltx_tag_figure">Figure 4: </span><span class="ltx_text ltx_font_italic">Comparison of a lithium atom (left) to a lithium ion (right).</span></figcaption>
+</figure>
+<figure class="ltx_figure" id="Sx3.SSx3.fig1"><img alt="" class="ltx_graphics ltx_centering" height="406" id="Sx3.SSx3.g1" src="dd8e8692-c5e2-11ee-ae7b-0242ac110002/figure%204_2.png" width="541"/><!--URL:dd8e8692-c5e2-11ee-ae7b-0242ac110002/figure%204_2.png-->
+</figure>
+</section>
+<section class="ltx_subsection" id="Sx3.SSx4">
+<h3 class="ltx_title ltx_font_italic ltx_title_subsection" style="font-size:120%;">Quantization and Atomic Spectra</h3>
+<div class="ltx_para" id="Sx3.SSx4.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The concept of quantization (the idea that electrons can only absorb and emit certain energy levels and discrete energy levels) can first be introduced by showing the atomic spectra of various elements to students. Each element has a unique atomic spectrum, and each element has a unique distribution of electrons. In the Bohr model, there are specific locations where electrons can be located surrounding the nucleus, and this helps students grasp the quantization concept. In the model, there are divots on each energy level (circle surrounding the nucleus) that hold the electron marbles and represent the locations that electrons can occupy. The limitation of introducing quantization in this model is that all energy levels surrounding the nucleus are distributed evenly, but, the energy levels that surround the nucleus are not evenly distributed. This is a limitation that needs to be clearly stated as students are introduced to this concept. This can also be connected to atomic orbitals and the idea that no two electrons can occupy the same space. In this model, all energy levels are distributed evenly around the nucleus which is helpful conceptually but does not represent true electron distribution. This limits the introduction of quantization and requires an explicit explanation.</span></p>
+</div>
+</section>
+<section class="ltx_subsection" id="Sx3.SSx5">
+<h3 class="ltx_title ltx_font_italic ltx_title_subsection" style="font-size:120%;">Excited vs.Ground States</h3>
+<div class="ltx_para" id="Sx3.SSx5.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The Bohr model can also be used to teach students to visualize the differences between an excited state vs. a ground state electron configuration. Students are first introduced to the idea that it takes energy to move negatively charge electrons away from the positively charged nucleus, because opposite charges attract. When enough energy is put into the system it will excite an electron, and it will move into a higher energy level (farther from the nucleus). As this concept is introduced it is again helpful to show students the atomic spectra of an element, so they can try to connect the unique spectra observed to the allowed excited states for a given element.</span></p>
+</div>
+<figure class="ltx_figure" id="Sx3.F5"><img alt="" class="ltx_graphics ltx_centering" height="405" id="Sx3.F5.g1" src="dd8e8692-c5e2-11ee-ae7b-0242ac110002/figure%205.png" width="541"/><!--URL:dd8e8692-c5e2-11ee-ae7b-0242ac110002/figure%205.png-->
+<figcaption class="ltx_caption ltx_centering" style="font-size:120%;"><span class="ltx_tag ltx_tag_figure">Figure 5: </span><span class="ltx_text ltx_font_italic">A hydrogen atom in an excited state.</span></figcaption>
+</figure>
+</section>
+</section>
+<section class="ltx_section" id="Sx4" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">Assessment of Student Learning</h2>
+<div class="ltx_para" id="Sx4.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">This model has been used with both introductory biology and introductory chemistry students. Student learning was assessed by having students draw the Bohr models for at least three of the atoms they were asked to create. It has been shown that drawings are an effective way of determining students strengths and weaknesses in learning.(Gunstone, R. F., &amp; White, 2000) Students can also be provided with a pre-made drawing for them to fill in the proper placements of electrons.</span></p>
+</div>
+<div class="ltx_para" id="Sx4.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">To assess student understanding of prediction of chemical properties, students were asked to use the model to identify valance electrons and whether the ion donates or accepts electrons to form a stable electron configuration.</span></p>
+</div>
+<div class="ltx_para" id="Sx4.p3">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">During these exercises, instructors are encouraged to circulate throughout the room to provide feedback to students as they place the marbles and fill in the written handout to represent the assigned atom.</span></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx5" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">Response from Students</h2>
+<div class="ltx_para" id="Sx5.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">All procedures and materials were approved by a college IRB.</span></p>
+</div>
+<div class="ltx_para" id="Sx5.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">All students that were asked to participate in the Likert style survey (see Appendix) have been diagnosed as neurodiverse, as previously defined. Students were asked in class to complete a written survey. Of the 24 students in the class, 15 (63% response rate) participated in the survey. The results of the 26 Likert scale sets of questions are summarized in Figure 6. Students found the hands-on model and computer simulations to be beneficial, with 74-77% of respondents “strongly agreeing” or “agreeing” that the resources were helpful. Only 60% of respondents found reading assignments helpful. By a large margin, more students (30%) strongly agreed that the hands-on model was useful, compared to 15% for computer simulations and 14% for reading assignments. 87% of respondents either agreed or strongly agreed that having access to all three resources would be their choice. 100% of respondents agreed or strongly agreed that the hands-on Bohr model helped them understand atomic structure.</span></p>
+</div>
+<figure class="ltx_figure" id="Sx5.fig1"><img alt="" class="ltx_graphics ltx_centering" height="275" id="Sx5.g1" src="dd8e8692-c5e2-11ee-ae7b-0242ac110002/figure%206_1%20crop.png" width="541"/><!--URL:dd8e8692-c5e2-11ee-ae7b-0242ac110002/figure%206_1%20crop.png-->
+</figure>
+<figure class="ltx_figure" id="Sx5.F6"><img alt="" class="ltx_graphics ltx_centering" height="259" id="Sx5.F6.g1" src="dd8e8692-c5e2-11ee-ae7b-0242ac110002/figure%206_2.png" width="541"/><!--URL:dd8e8692-c5e2-11ee-ae7b-0242ac110002/figure%206_2.png-->
+<figcaption class="ltx_caption ltx_centering" style="font-size:120%;"><span class="ltx_tag ltx_tag_figure">Figure 6: </span><span class="ltx_text ltx_font_italic">Responses to survey questions given as the fraction of respondents selecting each Likert scale rating (participation count n=15). The top graph represents a summary of student responses assessing the usefulness of each teaching method to their learning style. The bottom graph represents responses to assess the usefulness of the hands-on Bohr model for each of the listed categories.</span></figcaption>
+</figure>
+<figure class="ltx_figure" id="Sx5.F7"><img alt="" class="ltx_graphics ltx_centering" height="358" id="Sx5.F7.g1" src="dd8e8692-c5e2-11ee-ae7b-0242ac110002/figure%207.png" width="541"/><!--URL:dd8e8692-c5e2-11ee-ae7b-0242ac110002/figure%207.png-->
+<figcaption class="ltx_caption ltx_centering" style="font-size:120%;"><span class="ltx_tag ltx_tag_figure">Figure 7: </span><span class="ltx_text ltx_font_italic">Etch patterns for proton (middle; represented by pink marbles that have single or double perpendicular etching around the center of the marble) and neutrons (right; represented by colorless marbles with circular flat edges on each side of the marble). Electrons (left; represented blue non-etched marble).</span></figcaption>
+</figure>
+</section>
+<section class="ltx_section" id="Sx6" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">Future Directions</h2>
+<div class="ltx_para" id="Sx6.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The Bohr atomic model discussed in this paper was presented at the 2015 Annual Flipped Learning and the 2021 Inclusion in Science Learning in a New Direction (ISLAND) conferences, where it received positive feedback and comments. Some of the feedback related to expanding the sensory experience for students utilizing the Bohr model. Currently, ideas of etching the marbles are being considered to incorporate the sense of touch into the learning experience. This would also allow for students with visual impairments to benefit from the model.</span></p>
+</div>
+<div class="ltx_para" id="Sx6.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Figure 7 shows some initial ideas of how the marbles would be modified. Blue marbles, which depict electrons, would remain unchanged, for two reasons: 1) the marbles representing the electrons must be able to fit into the grooves of the atomic structure and 2) electrons are typically depicted as spheres or circles in textbooks, so the goal is to be as consistent as possible with traditional textbook depictions.</span></p>
+</div>
+<div class="ltx_para" id="Sx6.p3">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Pink marbles (representing protons) could be etched through the center of the marble, or have two perpendicular rings that are etched into the marble, as depicted in figure 7a. The perpendicular etches resemble a “plus sign”, which would make it easy for students to associate the crossed-etched marbles with protons. Colorless marbles (representing neutrons) could have two or four sides etched, show in figure 7b. Each side would have a circular flat edge, resembling a zero. The circular flat edge would help students associate the marbles with the neutral (net zero) charge of neutrons.</span></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx7" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">Conclusions</h2>
+<div class="ltx_para" id="Sx7.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">This article demonstrates that a tactile and manipulatable Bohr atom model can aid students with of visualizing microscopic subatomic particles. This model can be used with students of diverse learning styles to understand a variety of concepts including: 1) subatomic particle placement in the atom, 2) distinguishing between ions and isotopes, 3) relating quantization to atomic spectra and 4) distinguishing between ground and excited states of atoms and ions. Overall, the student surveyed felt they learned best using either computational models or the hands-on model to reading assignments. Based upon the data, using a universal model, where students are exposed to multiple methods for teaching the Bohr model appears to be the most beneficial, based upon student feedback.</span></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx8" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">Acknowledgements</h2>
+<div class="ltx_para" id="Sx8.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The authors would like to thank Dr. Brian Young and Dr. Kim Coleman for their guidance and feedback on this project. The authors also thank Jennifer Lann for her research assistance for this project.</span></p>
+</div>
+<div class="ltx_para" id="Sx8.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">This material is based upon work supported by the National Science Foundation under Grant No 1643326 and 2129912.</span></p>
+</div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+</section>
+<section class="ltx_section" id="Sx9" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">References</h2>
+<div class="ltx_para" id="Sx9.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Carlson, R., Chandler, P., &amp; Sweller, J. (2003). Learning and Understanding Science Instructional Material. </span><span class="ltx_text ltx_font_italic" style="font-size:120%;">Journal of Educational Psychology, 95</span><span class="ltx_text" style="font-size:120%;">(3), 629–640. </span><a class="ltx_ref ltx_url ltx_font_typewriter" href="https://doi.org/10.1037/0022-0663.95.3.629" style="font-size:120%;" title="">https://doi.org/10.1037/0022-0663.95.3.629</a><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+<div class="ltx_para" id="Sx9.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Center for Neurodiversity. (n.d.). </span><a class="ltx_ref ltx_url ltx_font_typewriter" href="https://www.landmark.edu/center-for-neurodiversity" style="font-size:120%;" title="">https://www.landmark.edu/center-for-neurodiversity</a><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+<div class="ltx_para" id="Sx9.p3">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Derman, A., Koçak, N., &amp; Eilks, I. (2019). Insights into components of prospective science teachers’ mental models and their preferred visual representations of atoms. </span><span class="ltx_text ltx_font_italic" style="font-size:120%;">Education Sciences, 9</span><span class="ltx_text" style="font-size:120%;">(2), 1–19. </span><a class="ltx_ref ltx_url ltx_font_typewriter" href="https://doi.org/10.3390/educsci9020154" style="font-size:120%;" title="">https://doi.org/10.3390/educsci9020154</a><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+<div class="ltx_para" id="Sx9.p4">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Neth, E. J., Flowers, P., Theopold, K., Langley, R., &amp; Robinson, W. R. (2018). Chemistry: Atoms First (OpenStax).</span></p>
+</div>
+<div class="ltx_para" id="Sx9.p5">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Georgios, T., &amp; Georgios, P. (2009). High-school students’ conceptual difficulties and attempts at conceptual change: the case of basic quantum concepts. </span><span class="ltx_text ltx_font_italic" style="font-size:120%;">International Journal of Science Education, 31</span><span class="ltx_text" style="font-size:120%;">(7), 895–930.</span></p>
+</div>
+<div class="ltx_para" id="Sx9.p6">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Gunstone, R. F., &amp; White, R. (2000). Goals, methods and achievements of research in science education. In </span><span class="ltx_text ltx_font_italic" style="font-size:120%;">In Improving Science Education: The Contribution of Research</span><span class="ltx_text" style="font-size:120%;"> (pp. 293–307).</span></p>
+</div>
+<div class="ltx_para" id="Sx9.p7">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Harrison, A. G., &amp; Treagust, D. F. (2000). A typology of school science models. </span><span class="ltx_text ltx_font_italic" style="font-size:120%;">International Journal of Science Education, 22</span><span class="ltx_text" style="font-size:120%;">(9), 1011–1026. </span><a class="ltx_ref ltx_url ltx_font_typewriter" href="https://doi.org/10.1080/095006900416884" style="font-size:120%;" title="">https://doi.org/10.1080/095006900416884</a><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+<div class="ltx_para" id="Sx9.p8">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Hudson, D. (2017). How to support dyslexic students. </span><span class="ltx_text ltx_font_italic" style="font-size:120%;">Education in Chemistry.</span><span class="ltx_text" style="font-size:120%;"> </span><a class="ltx_ref ltx_url ltx_font_typewriter" href="https://edu.rsc.org/ideas/learning-difficulties-and-chemistry/3008085.article" style="font-size:120%;" title="">https://edu.rsc.org/ideas/learning-difficulties-and-chemistry/3008085.article</a><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+<div class="ltx_para" id="Sx9.p9">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Lin, H. J., Lehoang, J., Kwan, I., Baghaee, A., Ha-chen, S. J., Moss, T., &amp; Woods, J. D. (2018). </span><span class="ltx_text ltx_font_italic" style="font-size:120%;">Article Lego Bricks and the Octet Rule: Molecular Models for Biochemical Pathways with Plastic, Interlocking Toy Bricks</span><span class="ltx_text" style="font-size:120%;">. August 2017, 54–57. </span><a class="ltx_ref ltx_url ltx_font_typewriter" href="https://doi.org/10.1002/bmb.21090" style="font-size:120%;" title="">https://doi.org/10.1002/bmb.21090</a><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+<div class="ltx_para" id="Sx9.p10">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">McKagan, S. B., Perkins, K. K., &amp; Wieman, C. E. (2008). Why we should teach the Bohr model and how to teach it effectively. </span><span class="ltx_text ltx_font_italic" style="font-size:120%;">Physical Review Special Topics - Physics Education Research, 4</span><span class="ltx_text" style="font-size:120%;">(1), 1–10. </span><a class="ltx_ref ltx_url ltx_font_typewriter" href="https://doi.org/10.1103/PhysRevSTPER.4.010103" style="font-size:120%;" title="">https://doi.org/10.1103/PhysRevSTPER.4.010103</a><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+<div class="ltx_para" id="Sx9.p11">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Melaku, S., Schreck, J. O., Griffin, K., &amp; Dabke, R. B. (2016). Interlocking Toy Building Blocks as Hands-On Learning Modules for Blind and Visually Impaired Chemistry Students. </span><span class="ltx_text ltx_font_italic" style="font-size:120%;">Journal of Chemical Education, 93</span><span class="ltx_text" style="font-size:120%;">(6), 1049–1055. </span><a class="ltx_ref ltx_url ltx_font_typewriter" href="https://doi.org/10.1021/acs.jchemed.5b00252" style="font-size:120%;" title="">https://doi.org/10.1021/acs.jchemed.5b00252</a><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+<div class="ltx_para" id="Sx9.p12">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Netzell, E. (2014). </span><span class="ltx_text ltx_font_italic" style="font-size:120%;">Using models and representations in learning and teaching about the atom</span><span class="ltx_text" style="font-size:120%;">. 1–74. </span><a class="ltx_ref ltx_url ltx_font_typewriter" href="http://www.diva-portal.org/smash/get/diva2:807576/FULLTEXT01.pdf" style="font-size:120%;" title="">http://www.diva-portal.org/smash/get/diva2:807576/FULLTEXT01.pdf</a><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+<div class="ltx_para" id="Sx9.p13">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Smiar, K., &amp; Mendez, J. D. (2016). Creating and Using Interactive, 3D-Printed Models to Improve Student Comprehension of the Bohr Model of the Atom, Bond Polarity, and Hybridization. </span><span class="ltx_text ltx_font_italic" style="font-size:120%;">Journal of Chemical Education, 93</span><span class="ltx_text" style="font-size:120%;">(9), 1591–1594. </span><a class="ltx_ref ltx_url ltx_font_typewriter" href="https://doi.org/10.1021/acs.jchemed.6b00297" style="font-size:120%;" title="">https://doi.org/10.1021/acs.jchemed.6b00297</a><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+</section>
+<section class="ltx_section" id="Sx10" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">Supplementary Information</h2>
+<section class="ltx_subsection" id="Sx10.SSx1">
+<h3 class="ltx_title ltx_font_italic ltx_title_subsection" style="font-size:120%;">CNC Patterns</h3>
+<div class="ltx_para" id="Sx10.SSx1.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Material type: Two-Color HDPE</span>
+<br class="ltx_break"/><span class="ltx_text" style="font-size:120%;">Material dimensions: 12 in x 12 in x 0.25 in</span>
+<br class="ltx_break"/><span class="ltx_text" style="font-size:120%;">Bit: 0.125 in, Straight cut</span>
+<br class="ltx_break"/></p>
+</div>
+<figure class="ltx_figure" id="Sx10.SSx1.fig1"><img alt="" class="ltx_graphics ltx_centering" height="550" id="Sx10.SSx1.g1" src="dd8e8692-c5e2-11ee-ae7b-0242ac110002/CNC%20pattern%201.png" width="550"/><!--URL:dd8e8692-c5e2-11ee-ae7b-0242ac110002/CNC%20pattern%201.png-->
+</figure>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<div class="ltx_para" id="Sx10.SSx1.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Material type: One-Color HDPE</span>
+<br class="ltx_break"/><span class="ltx_text" style="font-size:120%;">Material dimensions: 24 in x 12 in x 0.5 in</span>
+<br class="ltx_break"/><span class="ltx_text" style="font-size:120%;">Bit: 0.125 in, Straight cut</span></p>
+</div>
+<figure class="ltx_figure" id="Sx10.SSx1.fig2"><img alt="" class="ltx_graphics ltx_centering" height="282" id="Sx10.SSx1.g2" src="dd8e8692-c5e2-11ee-ae7b-0242ac110002/CNC%20pattern%202.png" width="541"/><!--URL:dd8e8692-c5e2-11ee-ae7b-0242ac110002/CNC%20pattern%202.png-->
+</figure>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<div class="ltx_para" id="Sx10.SSx1.p3">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Material type: One-Color HDPE</span>
+<br class="ltx_break"/><span class="ltx_text" style="font-size:120%;">Material dimensions: 24 in x 12 in x 0.5 in</span>
+<br class="ltx_break"/><span class="ltx_text" style="font-size:120%;">Bit: 0.125 in, Straight cut</span>
+<br class="ltx_break"/></p>
+</div>
+<figure class="ltx_figure" id="Sx10.SSx1.fig3"><img alt="" class="ltx_graphics ltx_centering" height="423" id="Sx10.SSx1.g3" src="dd8e8692-c5e2-11ee-ae7b-0242ac110002/CNC%20pattern%203.png" width="541"/><!--URL:dd8e8692-c5e2-11ee-ae7b-0242ac110002/CNC%20pattern%203.png-->
+</figure>
+<div class="ltx_pagination ltx_role_newpage"></div>
+</section>
+<section class="ltx_subsection" id="Sx10.SSx2">
+<h3 class="ltx_title ltx_font_italic ltx_title_subsection" style="font-size:120%;">Student Consent Form</h3>
+<section class="ltx_subsubsection" id="Sx10.SSx2.SSSx1">
+<h4 class="ltx_title ltx_title_subsubsection" style="font-size:120%;">Consent Form</h4>
+</section>
+<section class="ltx_subsubsection" id="Sx10.SSx2.SSSx2">
+<h4 class="ltx_title ltx_font_bold ltx_title_subsubsection" style="font-size:120%;">DESCRIPTION OF STUDY</h4>
+<div class="ltx_para" id="Sx10.SSx2.SSSx2.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">My name is Dr. Christin Monroe and I am a Visiting Assistant Professor of Chemistry at Landmark College. I am conducting a study with the purpose of comparing the use of tactile learning techniques vs. computer simulations for learning about atomic structure. I am asking for your voluntary consent to complete a single survey that should last no longer than 15 minutes. The goal of this study is to understand which techniques are more meaningful for students learning about atomic structure, not to evaluate your abilities.</span></p>
+</div>
+</section>
+<section class="ltx_subsubsection" id="Sx10.SSx2.SSSx3">
+<h4 class="ltx_title ltx_font_bold ltx_title_subsubsection" style="font-size:120%;">SURVEY</h4>
+<div class="ltx_para" id="Sx10.SSx2.SSSx3.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">If you agree to participate, after the completion of the atomic structure component of Introduction to Chemistry or Principles of Chemistry I/II you will be asked to take a short survey that will last no longer than 15 minutes that will ask you to compare computer simulations about atomic structure to the hands-on Bohr model. All surveys will be submitted anonymously. You will only be asked to compare the two types of learning with your own learning style.</span></p>
+</div>
+</section>
+<section class="ltx_subsubsection" id="Sx10.SSx2.SSSx4">
+<h4 class="ltx_title ltx_font_bold ltx_title_subsubsection" style="font-size:120%;">RISKS</h4>
+<div class="ltx_para" id="Sx10.SSx2.SSSx4.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">There are no known risks to participating in this study.</span></p>
+</div>
+</section>
+<section class="ltx_subsubsection" id="Sx10.SSx2.SSSx5">
+<h4 class="ltx_title ltx_font_bold ltx_title_subsubsection" style="font-size:120%;">BENEFITS</h4>
+<div class="ltx_para" id="Sx10.SSx2.SSSx5.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Your feedback will contribute to the academic conversation regarding how the atom is taught in the undergraduate chemistry classroom. If you are interested, you will be provided access to the final report once this study has been completed and documented.</span></p>
+</div>
+</section>
+<section class="ltx_subsubsection" id="Sx10.SSx2.SSSx6">
+<h4 class="ltx_title ltx_font_bold ltx_title_subsubsection" style="font-size:120%;">CONFIDENTIALITY</h4>
+<div class="ltx_para" id="Sx10.SSx2.SSSx6.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">All data collected in this study will remain confidential, and all person-identifiable data (e.g. IP address tracking) will disabled so you cannot be personally identified. Data from this study will be kept in a password protected account in SurveyMonkey or in a locked file cabinet in a locked room until it is destroyed. Data will not be retained for more than 5 years.</span></p>
+</div>
+</section>
+<section class="ltx_subsubsection" id="Sx10.SSx2.SSSx7">
+<h4 class="ltx_title ltx_font_bold ltx_title_subsubsection" style="font-size:120%;">PARTICIPATION</h4>
+<div class="ltx_para" id="Sx10.SSx2.SSSx7.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Your participation is voluntary, and you may withdraw from the study for any reason at any time. There is no penalty for withdrawing from the study or choosing not to participate.</span></p>
+</div>
+</section>
+<section class="ltx_subsubsection" id="Sx10.SSx2.SSSx8">
+<h4 class="ltx_title ltx_font_bold ltx_title_subsubsection" style="font-size:120%;">CONTACT</h4>
+<div class="ltx_para" id="Sx10.SSx2.SSSx8.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">This study is being conducted by the History Department at Landmark College. The lead evaluator is Dr. Christin Monroe, who can be reached by calling 802.387.1640, or by email at </span><a class="ltx_ref ltx_href" href="mailto:csupalo@ets.org" style="font-size:120%;" title="">(christinmonroe@landmark.edu)</a><span class="ltx_text" style="font-size:120%;">.</span></p>
+</div>
+<div class="ltx_para" id="Sx10.SSx2.SSSx8.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">If you have questions about the research process or your rights as a human subject, please contact Dr. Adam Lalor, Chair, Institutional Review Board of Landmark College, at 802-387-6735 or </span><a class="ltx_ref ltx_url ltx_font_typewriter" href="https://intranet.landmark.edu/research-office/irb.cfm." style="font-size:120%;" title="">https://intranet.landmark.edu/research-office/irb.cfm.</a><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+</section>
+<section class="ltx_subsubsection" id="Sx10.SSx2.SSSx9">
+<h4 class="ltx_title ltx_font_bold ltx_title_subsubsection" style="font-size:120%;">CONSENT</h4>
+<div class="ltx_para" id="Sx10.SSx2.SSSx9.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">I have read this form and indicate my decision to participate or not participate as follows:</span>
+<br class="ltx_break"/></p>
+</div>
+<div class="ltx_para" id="Sx10.SSx2.SSSx9.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">I am 18 years old or over</span>
+<br class="ltx_break"/></p>
+</div>
+<div class="ltx_para" id="Sx10.SSx2.SSSx9.p3">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">I </span><span class="ltx_text ltx_font_bold" style="font-size:120%;">agree</span><span class="ltx_text" style="font-size:120%;"> to participate in this study.</span>
+<br class="ltx_break"/></p>
+</div>
+<div class="ltx_para" id="Sx10.SSx2.SSSx9.p4">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">I </span><span class="ltx_text ltx_font_bold" style="font-size:120%;">do not agree</span><span class="ltx_text" style="font-size:120%;"> to participate in this study.</span>
+<br class="ltx_break"/></p>
+</div>
+<div class="ltx_para" id="Sx10.SSx2.SSSx9.p5">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Signature:</span>
+<br class="ltx_break"/></p>
+</div>
+<div class="ltx_para" id="Sx10.SSx2.SSSx9.p6">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Date:</span>
+<br class="ltx_break"/></p>
+</div>
+<div class="ltx_para" id="Sx10.SSx2.SSSx9.p7">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Print name:</span>
+<br class="ltx_break"/></p>
+</div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+</section>
+</section>
+<section class="ltx_subsection" id="Sx10.SSx3">
+<h3 class="ltx_title ltx_font_italic ltx_title_subsection" style="font-size:120%;">Likert Student Questionnaire</h3>
+<figure class="ltx_table" id="Sx10.SSx3.tab1">
+<div class="ltx_block" style="width:433.6pt;vertical-align:-0.0pt;">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td"></td>
+<td class="ltx_td ltx_border_r"></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center"><span class="ltx_text" style="font-size:120%;">Strongly</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center"><span class="ltx_text" style="font-size:120%;">Agree</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">Agree</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">Disagree</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center"><span class="ltx_text" style="font-size:120%;">Strongly</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center"><span class="ltx_text" style="font-size:120%;">Disagree</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center"><span class="ltx_text" style="font-size:120%;">Neither</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center"><span class="ltx_text" style="font-size:120%;">or N/A</span></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">I find it easy to visualize microscopic</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">concepts (i.e., cells, atoms, chemical</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">reactions) when using text and computer</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">simulations.</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">After reading the textbook, I felt I had</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">a strong understanding of atomic structure.</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">I find computer simulations make it easier</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">to understand microscopic concepts.</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">If given a choice, I would prefer to use</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">hands on activities to learn about</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">microscopic concepts.</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">5.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">I do not feel that I can fully understand</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">a microscopic concept unless the</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">lesson involves a model that involves</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">tactile learning techniques.</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">6.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">If given a choice, I would prefer to use</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">computer simulations to learn about</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">microscopic concepts.</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">7.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">After watching videos I felt I had a strong</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">understanding of atomic structure.</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">8.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">I find that hands-on activities make it</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">easier to understand microscopic concepts.</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">9.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">If given a choice, I would prefer to use</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">all three (text, hands-on activities and</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">computer simulations to learn) about</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">microscopic concepts.</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">10.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">Before using the computer simulation I</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">understood atomic structure.</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">11.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">After using the computer simulation I</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">understood atomic structure.</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">12.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">Before using the hands-on Bohr model I</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">understood atomic structure.</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">13.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">After using the hands-on Bohr model I</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">understood atomic structure.</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">14.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">The computer simulation helped me to</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">understand how ions form.</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">15.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">The hands-on Bohr model helped me to</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">understand how ions form.</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">16.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">Before using the hands-on Bohr model I</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">understood how subatomic particles</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">(protons, neutrons, electrons) were placed</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">around the nucleus.</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">17.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">I learn best when a variety of techniques</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">are combined to teach microscopic</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">concepts.</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">18.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">Before using the hands-on Bohr model I</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">understood the concept of quantization.</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">19.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">I find I learn best when working with</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">models using my hands.</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">20.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">After using the hands-on Bohr model I</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">understood the concept of quantization.</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">21.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">I find I learn best when watching videos.</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">22.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">Using the hands-on Bohr model helped</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">me to understand the difference between</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">ground and excited states.</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">23.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">I find I learn best when reading the</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">textbook.</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">24.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">I find I learn best when doing computer</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">simulations.</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">25.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">I find microscopic concepts easier to</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">understand when I have a hands-on</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">model that allows me to visualize the</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">concept.</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">26.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">I find it challenging to learn concepts</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">taught on the computer (such as</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">interactive videos and simulations).</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">27.</span></td>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r ltx_border_t">
+<table class="ltx_tabular ltx_align_middle">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">Before using the hands-on Bohr model I</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">DID NOT feel that I understood atomic</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text" style="font-size:120%;">structure.</span></td>
+</tr>
+</table>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">4</span></td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">2</span></td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">1</span></td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t"><span class="ltx_text" style="font-size:120%;">0</span></td>
+</tr>
+</table>
+</div>
+</figure>
+</section>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Wed Feb  7 18:01:24 2024 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img alt="[LOGO]" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg=="/><!--URL:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==--></a>
+</div></footer>
+<section></section></div>
+<script src="data:application/javascript,function%20handleScroll%28%29%20%7B%0A%20%20%20%20setTimeout%28%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20window.scrollBy%280%2C%20-100%29%3B%0A%20%20%20%7D%2C%20500%29%3B%0A%7D%0A%0Alet%20ele%20%3D%20document.getElementsByClassName%28%22ltx_page_main%22%29%5B0%5D%3B%0Alet%20imgElement%20%3D%20document.createElement%28%22img%22%29%3B%0AimgElement.setAttribute%28%22src%22%2C%20%22headerImage.png%22%29%3B%0AimgElement.setAttribute%28%22alt%22%2C%20%22banner%22%29%3B%0AimgElement.setAttribute%28%22style%22%2C%20%22width%3A100%25%20%21important%3Bmin-height%3Aauto%3B%22%29%3B%0Aele.insertBefore%28imgElement%2C%20ele.firstChild%29%3B%0A%0Avar%20docs%20%3D%20document.getElementsByClassName%28%22ltx_note%20ltx_role_footnote%22%29%3B%0Alet%20cnt%20%3D%200%3B%0Alet%20footnotes%20%3D%20%5B%5D%3B%0Alet%20doc%20%3D%20docs%5Bcnt%5D%3B%0Awhile%20%28cnt%20%3C%20docs.length%29%20%7B%0A%20%20%20%20footnotes.push%28doc.id%29%3B%0A%20%20%20%20let%20inner%20%3D%20doc.childNodes%5B1%5D%3B%0A%20%20%20%20let%20txt%20%3D%20inner.childNodes%5B0%5D.textContent%3B%0A%20%20%20%20txt%20%3D%20txt.replace%28/%20%20%2B/g%2C%20%22%20%22%29%3B%0A%20%20%20%20txt%20%3D%20txt.replace%28/%5Cn/%2C%20%22%20%22%29%3B%0A%20%20%20%20if%20%28cnt%20%3E%209%29%20footnotes.push%28txt.slice%282%29%29%3B%0A%20%20%20%20else%20footnotes.push%28txt.slice%281%29%29%3B%0A%20%20%20%20cnt%2B%2B%3B%0A%20%20%20%20doc.innerHTML%20%3D%20%60%3Ca%20href%3D%22%23fn-%24%7Bcnt%7D%22%20onClick%3D%22handleScroll%28%29%22%3E%60%20%2B%20doc.innerHTML%20%2B%20%22%3C/a%3E%22%3B%0A%20%20%20%20doc%20%3D%20docs%5Bcnt%5D%3B%0A%7D%0A%0Aif%20%28footnotes.length%20%3E%200%29%20%7B%0A%20%20%20%20ele%20%3D%20document.getElementsByTagName%28%22article%22%29%5B0%5D%3B%0A%20%20%20%20let%20outer%20%3D%20document.createElement%28%22div%22%2C%20%7B%20class%3A%20%22footnotes-display%22%20%7D%29%3B%0A%20%20%20%20let%20heading%20%3D%20document.createElement%28%22h3%22%29%3B%0A%20%20%20%20heading.appendChild%28document.createTextNode%28%22Footnotes%22%29%29%3B%0A%20%20%20%20outer.appendChild%28heading%29%3B%0A%0A%20%20%20%20let%20j%20%3D%200%3B%0A%20%20%20%20for%20%28let%20i%20%3D%201%3B%20i%20%3C%20footnotes.length%3B%20i%20%2B%3D%202%29%20%7B%0A%20%20%20%20%20%20%20%20let%20p%20%3D%20document.createElement%28%22p%22%29%3B%0A%20%20%20%20%20%20%20%20p.setAttribute%28%22id%22%2C%20%22fn-%22%20%2B%20%28j%20%2B%201%29%29%3B%0A%20%20%20%20%20%20%20%20let%20newC%20%3D%20document.createTextNode%28%20footnotes%5Bi%5D%29%3B%0A%20%20%20%20%20%20%20%20p.appendChild%28newC%29%3B%0A%20%20%20%20%20%20%20%20outer.appendChild%28p%29%3B%0A%20%20%20%20%20%20%20%20j%2B%2B%3B%0A%20%20%20%20%7D%0A%20%20%20%20ele.appendChild%28outer%29%3B%0A%7D%0A">
+</script><!--URL:index.js-->
+</body>
+</html><!--Generated by HTMLArk 2024-02-07 18:01:25.483059. Original URL dd8e8692-c5e2-11ee-ae7b-0242ac110002/index.html-->
