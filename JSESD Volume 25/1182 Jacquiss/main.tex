@@ -1,0 +1,287 @@
+\documentclass[11.5pt]{sig-alternate}
+\usepackage[defaultlines=3,all]{nowidow}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{blindtext}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{lastpage}
+\usepackage{comment}
+\usepackage{dirtytalk}
+\usepackage{xcolor}
+\usepackage{hanging}
+\usepackage{wrapfig}
+\usepackage[backend=biber, style=apa]{biblatex}
+\addbibresource{notation.bib}
+\usepackage{authblk}
+\usepackage{caption}
+\usepackage{graphicx,subfigure}
+\usepackage{authblk}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage{cuted}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{lipsum}
+\usepackage{xurl}
+\usepackage{hyperref}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength\headheight{80.0pt}
+\addtolength{\textheight}{-80.0pt}
+\chead{%
+  \ifcase\value{page}
+  % empty test for page = 0
+  \or \includegraphics[width=\textwidth]{headerImage.png}% page = 1
+  \or \includegraphics[width=\textwidth]{headerImage.png }% page = 2
+  \or \includegraphics[width=\textwidth]{headerImage.png}% page = 3
+  \or \includegraphics[width=\textwidth]{headerImage.png}% page = 4
+  \or \includegraphics[width=\textwidth]{headerImage.png}% page = 5
+  \else
+  \includegraphics[width=\textwidth]{headerImage.png}
+  \fi}
+
+
+%\chead{\includegraphics[width=\textwidth]{headerImage.png}}
+\fancyfoot[LE,LO]{Alternative Techniques for Blind Low Vision Students Enrolled in
+Coding Courses\\
+DOI: 10.14448/jsesd.14.0010}
+\fancyfoot[CE,CO]{{ }}
+\fancyfoot[RE,RO]{\thepage}
+\pagenumbering{arabic}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue
+}
+ 
+\let\oldabstract\abstract
+\let\oldendabstract\endabstract
+\makeatletter
+\renewenvironment{abstract}
+{\renewenvironment{quotation}%
+               {\list{}{\addtolength{\leftmargin}{1em} % change this value to add or remove length to the the default
+                        \listparindent 1.5em%
+                        \itemindent    \listparindent%
+                        \rightmargin   \leftmargin%
+                        \parsep        \z@ \@plus\p@}%
+                \item\relax}%
+               {\endlist}%
+\oldabstract}
+{\oldendabstract}
+\makeatother
+
+% Left align captions
+\captionsetup{justification   = raggedright,
+              singlelinecheck = false}
+
+
+\begin{document}
+
+\title{Alternative Techniques for Blind Low Vision \\Students Enrolled in Coding Courses}
+
+\author[1]{\large \color{blue} Robert Jaquiss}
+
+\affil[1]{Independence Science}
+
+\toappear{}
+
+\maketitle
+\begin{@twocolumnfalse} 
+\begin{abstract}
+\begin{large}
+\item 
+ \textit {BLV (blind low vision) students face difficulties when taking coding classes. Individual Development Environments (IDE) can be inaccessible which make it difficult if not impossible for BLV students to complete coursework. Alternative techniques are described which will allow a BLV student to successfully complete coursework. The author has found the Command Line Interface (CLI) is often a recommended alternative to a Windows based IDE interface. Many blind computer programmers use the Windows and Linux command interfaces which are described as part of this discussion.}
+\\
+\\
+\textbf{Editor’s note:} \textit{The author is a long-time computer programmer who is blind. He has been actively involved in the access technology industry along with the National Federation of the Blind for a number of decades. The author shares his extensive knowledge of the challenges that have presented themselves to persons who are blind or vision impaired who wish to pursue career paths in computer science. This manuscript is based on a presentation that he delivered at the 2021 ISLAND conference. A page providing more resources is at: \url{https://independencescience.com/computer-science-resources/.}}
+
+\end{large}    
+\end{abstract}
+\end{@twocolumnfalse}
+
+%% ABSTRACT
+
+
+%% AUTHOR INFORMATION
+
+
+\textbf{*Corresponding Author, Robert Jaquiss }\\
+\href{mailto:rjaquiss@IndependenceScience.com }{(rjaquiss@IndependenceScience.com)}\\
+\textit{Submitted Sun Jan 15 2023 }\\
+\textit{Accepted Tue Mar 21 2023 }\\
+\textit{Published online Tue Mar 21 2023}\\
+\textit{DOI:10.14448/jsesd.14.0010}\\
+\pagebreak
+\pagebreak
+
+\vspace{5mm}
+\section*{\vspace{140mm}}
+\begin{large}
+
+\section*{Brief Historical Background}
+The term coding was formerly known as computer programming. Historically, IBM created and established a hierarchy of job positions of which the coder was the lowest. The coder performed the task of coding, writing the actual code that was punched into cards to create a program. The coder's task was not a very creative task compared to that of the program analyst, senior programmer or programmer who designed the software.
+
+BLV people have been involved in the computer industry since the 1960s. The ACM (Association of Computer Machinery) formed SICCAPH which was later renamed SIGCAPH Special Interest Group on Computers and the Physically Handicapped. It should be noted that SIGCAPH comprised persons with other disabilities than blindness.
+
+BLV persons who read braille were provided braille output by means of modifying line printers such as the IBM 1403 and daisy wheel printers. The line printers were modified by placing a piece of stretched elastic between the paper and print hammers. Daisy wheel printers such as the Diablo 630 or 1630 could be modified by stretching a piece of laboratory tubing over the platen. In either case braille was produced by using the period to create braille dots on the back side of printer paper. The braille was legible, but not very long lasting. In the late 1960s, MIT developed the MIT BrailleEmboss.
+
+According to an article; Duxbury Systems -- Early History of Braille Translators and Embossers \footnote{Duxbury Systems -- Early History of Braille Translators and Embossers
+\url{https://www.duxburysystems.com/bthist.asp} Retrieved Sept. 2, 2021.}; at a conference in 1969, four braille embossers were shown. The MIT BrailleEmboss was the only full-page embosser. The other three produced by Carbonneau, Morrison and Knox produced braille on paper tape.
+
+In the 1970s, Triformation Systems (later known as Enabling Technologies) created the BD-3. LED-1 and LED-120 braille embossers. The BD-3 embossed braille on the same type of paper tape used in machines such as the ASR33 teletype. The LED-1 and LED-120 were able to emboss braille on continuous form braille paper. The latter two machines contained keyboards and were used in the same way teletypes were used for interacting with computers. By late 1976, four full-page embossers had been developed: the MIT BrailleEmboss, the Triformation LED-1 and LED-120, and the French Sagem Embosser. 
+
+The late Dr. Tim (T. V.) Cranmer developed the Cranmer Modified Perkins Brailler. This device was a substantial modification of a Perkins Brailler and could produce braille on a few pages at a time. Thiel later produced the Thiel Beta X3 embosser which could also be used like a teletype. Telesensory Systems Inc. also known as TSI produced the Optacon with an accessory which could be used to read a CRT display. It was possible to read a CRT screen with an Optacon, but this was very tiring.
+
+In 1975, Handitech in Germany produced the first single line braille display.Other companies such as Tieman, and Papenmeier also produced braille displays. Most braille displays used piezoelectric crystals to raise the pins on the braille display. This technology has been the predominate technology until the present day.
+
+Duxbury Systems has created a site: Documents on Automated Braille Production \url{https://www.duxburysystems.com/braille\_tech.asp} This site contains a wealth of information on the history of braille translators and automated production.
+
+Contemporaneously with the development of \\braille displays and embossers was the development of speech synthesizer hardware. In the past, the usual form of speech synthesizer hardware was a card which was inserted into a PC. The decTalk and some other systems used an RS232C connection to connect a PC with an external box. The latter configuration proved to not be as responsive as did internal cards. Both IBM type PCs and Apple iie™ systems could be made accessible. MSDOS and Apple systems could be configured to work with teletype type machines.
+
+Until the advent of the Apple Macintosh™ and Microsoft Windows ™ GUI operating systems, BLV persons could easily work with IBM PCs, Apple iie™ and large mainframe computers. The character based CLI interface works well with braille displays. The BLV user can easily read the input that is typed and the output that is displayed.
+
+In 1984, Apple introduced the Apple Macintosh. The Apple Macintosh used a GUI interface and was inaccessible by the BLV community. In 1990, Microsoft introduced Windows 3.0 which was also inaccessible (See Christoph Dernbach The history of the Apple Macintosh)\footnote{The History of the Apple Macintosh February 10, 2021 by Christoph Dernbach \url{https://www.mac-history.net/featured-2/2021-02-10/the-history-of-the-apple-macintosh} Retrieved August 31, 2021.
+}. 
+
+In the early 90s, a software package from Slim-ware Bridge made it marginally possible to use Windows 3. In 1995, F.H. Papenmeier introduced a system using the Braillex braille display, hardware interface and software to make Windows 3 more accessible. In 1998 Windows 95 became marginally accessible. Windows 98 became accessible in 2000 and Windows 2000 became accessible in 2002. Windows XP became accessible a few months after its initial release. In the past few years, Microsoft has provided screen access software companies access to beta versions of their products. This has greatly decreased the time between the public release of a Windows system and that system being accessible.
+
+Screen access software developers face the difficult task of knowing what is on the screen and where specific icons and text are located. The access software then has the task of converting a visual presentation into text which can be either spoken, displayed as braille, or displayed and spoken together.
+
+\section*{The Challenge for BLV Students}
+BLV students, like their sighted peers, need ST-EM education. The ADA and IDEA mandate that disabled students receive accommodations in order to take courses of study. An effort known as The Hour Of Code \footnote{Hour of Code \url{https://hourofcode.com/us} Reprieved Sept. 4, 2021.} has been created to expose all K-12 students to computer coding as a way to increase awareness of Computer Science. Significant difficulties are encountered when BLV students wish to take part in coding courses. Sighted students can make use of icon type low code or no code-based systems to create applications. The Hour Of Code site does provide information on how to provide accessible alternative activities for the Hour Of Code. For BLV students, the alternative activities require the use of the Quorum language.\footnote{The Quorum Programming Language. \url{https://quorumlanguage.com/} Retrieved Aug. 2, 2021.} See the articles: Astronomy Hour of Code Activity 1 | Quorum Programming Language\footnote{Astronomy Hour of Code Activity 1 | Quorum Programming Language \url{https://quorumlanguage.com/hourofcode/astro1.html} Retrieved Sept. 4, 2021.} and Hour of Code: Part 1 | Quorum Programming Language \footnote{Hour of Code: Part 1 | Quorum Programming Language \url{https://quorumlanguage.com/hourofcode/part1.html} Retrieved Sept. 4, 2021.}. And the American Printing House for the Blind (APH) has two helpful articles: Road to Code\footnote{Road to Code \url{https://www.aph.org/aphs-road-to-code/} Retrieved Sept. 3, 2021.} and Coding With Mantis Q40\footnote{Coding With Mantis Q40 \url{https://www.aph.org/coding-with-the-mantis-q40/} Retrieved Sept. 4, 2021.} Professional level systems allow for the creation of complex business applications. The problem with low and no code systems is that they are icon driven. The user uses a mouse or touch screen to drag and drop icons within a WYSIWIG screen. The system then generates the actual application. See the articles: What is Low-Code? A Quick Introduction to Low-Code Development\footnote{What is Low-Code? A Quick Introduction to Low-Code Development \url{https://www.mendix.com/low-code-guide/} Retrieved Sept. 4, 2021.}, Ten Best Low-Code Development Platforms in 2021\footnote{10 Best Low-Code Development Platforms in 2021 \url{https://www.softwaretestinghelp.com/low-code-development-platforms/} Retrieved Sept. 4, 2021.}, Best No-Code Development Platforms Software in 2021\footnote{Best No-Code Development Platforms Software in 2021 \url{https://www.g2.com/categories/no-code-development-platforms} Retrieved Sept. 4, 2021.}, and The Home of No-Code: A curated directory of resources and tools for non-techs\footnote{The Home of No-Code: A curated directory of resources and tools for non-techs \url{https://www.nocode.tech/} Retrieved Sept. 4, 2021.}.
+\\
+\section*{Make Preparations In Advance }
+The Quorum language and offerings from APH will certainly provide a BLV student an introduction to coding. BLV students and professionals need to learn other languages. Many mainstream applications such as those from Microsoft are accessible. Problems arise when specialized applications such as IDEs are utilized. BLV students can find themselves faced with trying to learn a new difficult to use application and keep up with schoolwork.
+
+This author suggests the following strategies:
+
+\begin{enumerate}
+    \item Plan ahead, the further the better. As much as possible plan out when each course required for a degree or certificate will be taken.
+    \item Find out what software will be used for each course.
+    \item Remember that if a course is to be taken two or three years in the future, the more likely the software used for the course will change.
+    \item Arrange for textbooks with as much lead time as possible. Coding courses like other STEM courses are difficult to read orally. A braille display and/or embossed braille will make the content very much easier to learn.
+    \item Be prepared to use human readers to help with coursework. Making good use of time is important. Struggling with an inaccessible system will lead to frustration and possible failure to complete a course.
+    \item Long before taking a course, try out the software and hardware that is to be used and determine if it is accessible. Talk with the instructor about possible alternatives.
+\end{enumerate}
+
+\section*{Getting Started with Coding}
+Learning any language will require the use of reference materials and tutorials. Fortunately reference materials for computer languages, operating systems, networking hardware and Computer Science are available in accessible formats. The two leading sources for accessible materials are BookShare and Learning Ally. Some other sources are APH (American Printing House for the Blind), ATI (Access Technology Institute), NBP (National Braille Press) and Your Tech Vision. (See the Independence Science web site: \url{http://www.independencescience.com} page on coding for more information.) Three IDEs are usable by BLV persons. These are: Visual Studio Code or Vscode\footnote{Visual Studio Code or Vscode \url{https://code.visualstudio.com/} Retrieved Sept. 6, 2021.}, Eclipse and Sodbeans. This author has not seen recent references to the Eclipse IDE, Eclipse may have been superseded by Vscode.
+
+Unix® and Linux® systems traditionally provide a Command Line Interface (CLI). This interface is sometimes referred to as the console. CLI interfaces work very well with the technology used by BLV persons. Braille displays can be connected to Unix® and Linux® systems using the Brltty \footnote{Brltty \url{https://brltty.app/} Retrieved Aug. 23, 2021.} package. In earlier years, a PC running MSDOS with a braille display could be connected using Telnet or PCNFS. Today, the packages Putty and SSH can be used along with a terminal emulator.
+
+The Gnome desktop can be used by BLV persons using the ORCA \footnote{Orca Screen Reader \url{https://help.gnome.org/users/orca/stable/} \url{https://en.wikipedia.org/wiki/Orca_\%28assistive_technology\%29}Retrieved Sept. 6, 2021.} screen reader. Emacs is made accessible using Emacspeak. \footnote{Emacspeak Mail List \url{https://www.emacspeak.org/} Emacs - Wikipedia \url{https://en.wikipedia.org/wiki/Emacs} Retrieved Sept. 6, 2021.} (See the Independence Science web site: \url{http://www.independencescience.com} page on coding for more information.)
+
+\section*{A Common Approach}
+Since IDEs can be difficult to use, one common approach for BLV persons is to use the CLI. On Windows, start the Cmd system. On Windows 7, Cmd is located under the Accessories menu displaying the name Command Prompt. An alternative is to press the Windows-key+r, then press <enter>. When done correctly, the user will see, ``C:>".
+
+The user can then use Notepad or other editor to code a program. Programs can be compiled directly from the command line. Some examples are:
+
+\begin{itemize}
+    \item Python demo.py
+    \begin{itemize}
+        \item The above command will compile and run the code within the file demo.py.
+    \end{itemize}
+    \item Cc –c demo.c
+    \begin{itemize}
+        \item The above command will compile a program in the C language.
+    \end{itemize}
+    \item Javac demo.java
+    \item Java demo
+    \begin{itemize}
+        \item The above two commands will compile a Java program. 
+        \item The second command runs the program presuming it compiled without errors.
+        \item When an error occurs either with compilation or when running a program, it can be difficult to read the error messages.
+        \item One technique to solve this challenge is to use the following type of batch file.
+    \end{itemize}
+    \item @echo off -- rem Run a Python program. python demo.py> demo\_output.txt 2>\&1
+    \begin{itemize}
+        \item The above batch file will run the Python compiler using demo.py for the Python code.
+        \item The >demo\_output.txt directs the output to be saved in the file demo\_output.txt.
+        \item The 2>\&1 at the end of the command line directs any error messages to also be saved in the demo\_output.txt file.
+        \item Notepad can be used to review the output and possible error messages.
+    \end{itemize}
+\end{itemize}
+
+The Notepad++ program provides a more advanced editing system. Plugins are available for several languages. Notepad++ can be set up to allow the user to compile and run a program.
+\raggedbottom
+\\
+\section*{The Advantages of Braille}
+Coding is by nature a precise activity. The proper syntax of a language must be entered correctly. Omitting a comma, semicolon or brace will cause an error. Variables are case sensitive. In languages such as Python, Java and Go, there are conventions for when and where to capitalize the letters used in class, object and method names. C and Java use braces (\{ \}) to delimit blocks of code. Within a pair of braces, the code is expected to be indented from the left margin. Proper indentation is considered so important that code beautifier software is used to read programs and properly format them. In C and Java, indentation will not hinder compilation of a program. Python is the exception. The indentation from the left margin is part of the program syntax. A block of code must be properly indented in order for it to compile correctly.
+
+The standard eight dot cell used in most braille displays allows uppercase letters to be displayed using one cell. This is especially important when dealing with columnar material. This author has for some years used an eighty-cell braille display for coding. The advantage of an eighty-cell display is that normal lines of code don't wrap to the next line. A braille embosser can be a useful tool for producing reference printouts of programs and manuals.
+\\
+\section*{Conclusion}
+In conclusion, coding can be accessible to BLV persons. A BLV person can by using alternative techniques successfully take a coding course and pursue a career in computer related technologies. Like other STEM subjects, a knowledge of braille is absolutely essential. For reading manuals, a forty-cell braille display will make it possible to read brailled materials. For coding, an eighty-cell braille display will allow lines of code and other information to be displayed without breaking up lines of text. An eighty-cell braille display allows for displaying in braille the same material as a sighted person sees in print.
+
+For more information, See the Independence Science web site: \url{https://independencescience.com/computer-science-resources/} page on coding for more information.
+\raggedbottom
+
+
+\include{} 
+\section*{ References}\par 
+
+\leftskip 0.25in
+\parindent -0.25in 
+
+Duxbury Systems -- Early History of Braille Translators and Embossers. \url{https://www.duxburysystems.com/bthist.asp} Retrieved Sept. 2, 2021.
+
+The History of the Apple Macintosh February 10, 2021 by Christoph Dernbach. \url{https://www.mac-history.net/feat-ured-2/2021-02-10/the-history-of-the-apple-macintosh} Retrieved August 31, 2021.
+
+Hour of Code. \url{https://hourofcode.com/us} Reprieved Sept. 4, 2021.
+
+The Quorum Programming Language. \url{https://quorumlang-uage.com/} Retrieved Aug. 2, 2021. 
+  
+Astronomy Hour of Code Activity 1 | Quorum Programming Language. \url{https://quorumlanguage.com/hourofcode/as-tro1.html} Retrieved Sept. 4, 2021.
+
+Hour of Code: Part 1 | Quorum Programming Language. \url{https://quorumlanguage.com/hourofcode/part1.html} Retrieved Sept. 4, 2021.
+
+Road to Code. \url{https://www.aph.org/aphs-road-to-code/Retrieved} Sept. 3, 2021.
+  
+Coding With Mantis Q40. \url{https://www.aph.org/coding-with-the-mantis-q40/} Retrieved Sept. 4, 2021.
+
+What is Low-Code? A Quick Introduction to Low-Code Development. \url{https://www.mendix.com/low-code-guide/} Retrieved Sept. 4, 2021.
+
+10 Best Low-Code Development Platforms in 2021. \url{https://www.softwaretestinghelp.com/low-code-develo-pment-platforms/} Retrieved Sept. 4, 2021.
+
+Best No-Code Development Platforms Software in 2021. \url{https://www.g2.com/categories/no-code-develo-pment-platforms} Retrieved Sept. 4, 2021.
+  
+The Home of No-Code: A curated directory of resources and tools for non-techs. \url{https://www.nocode.tech/} Retrieved Sept. 4, 2021.
+
+Visual Studio Code or Vscode. \url{https://code.visualstudio.com/} Retrieved Sept. 6, 2021.
+  
+Brltty. \url{https://brltty.app/} Retrieved Aug. 23, 2021.
+ 
+Orca Screen Reader. \url{https://help.gnome.org/users/orca/sta-ble/} \url{https://en.wikipedia.org/wiki/Orca\_\%28assistive\_technology\%29} Retrieved Sept. 6, 2021.
+  
+Emacspeak Mail List. \url{https://www.emacspeak.org/} 
+
+Emacs - Wikipedia. \url{https://en.wikipedia.org/wiki/Emacs} Retrieved Sept. 6, 2021
+
+\clearpage
+\section*{Appendix: Definition of Terms}
+
+\begin{itemize}
+    \item \textbf{ACM:} Association of Computer Machinery
+    \item \textbf{ADA:} Americans with Disability Act
+    \item \textbf{APH:} American Printing House for the Blind
+    \item \textbf{BLV:} Blind or Low Vision 
+    \item \textbf{Braille display:} A braille display consists of a line of refreshable braille cells. The user can feel what is displayed. Typical sizes of displays contain 12, 20, 32, 40 or 80 braille cells.
+    \item \textbf{CLI:} Command Line Interface; MSDOS, Linux and UNIX are examples.
+    \item \textbf{CRT:} Cathode Ray Tube, the same technology which was used in older television sets.
+    \item \textbf{Daisy wheel:} A daisy wheel printer uses a rotating wheel containing a type font. The wheel rotates to the desired position and a solenoid strikes the character causing it to be printed on the page.
+    \item \textbf{Duxbury:} Duxbury software available from Duxbury Systems is a package used to translate documents into braille. Duxbury can read a variety of document formats.
+    \item \textbf{GUI:} Graphical User Interface
+    \item \textbf{IDE:} Individual Development Environment, Eclipse, NetBeans and Sodbeans are some examples.
+    \item \textbf{IDEA:} Individuals with Disabilities Education Act
+    \item \textbf{MSDOS:} Microsoft Disk Operating System. This was the operating system used on IBM type PCs starting in 1981. MSDOS is the successor to a package known as 86DOS. IBM sold essentially the same system for IBM branded PCs calling it PC DOS.
+    \item \textbf{Optacon:} A device produced by Telesensory Systems Inc. that allowed a BLV person to feel the actual shape of a character. It leveraged the use of a handheld camera that was connected to a second device via a wire. This secondary device consisted of a multi-pin matrix that produced raised print letters for the blind person to feel with one finger at a time. The Optacon could be used to read textbooks, worksheets, food packages, or a CRT screen.
+    \item \textbf{RS232C:} The RS232C protocol is used by computers to send data to peripherals in a serial form. Rs232 interfaces are rarely used at this time. They will likely be encountered when working with older equipment.
+    \item \textbf{SICCAPH:} Special Interest Committee on Computers and the Physically Handicapped
+    \item \textbf{SIGCAPH:} Special Interest Group on Computers and the Physically Handicapped
+    \item \textbf{Teletype:} A teletype consists of a keyboard, ink printer, and paper tape reader and punch. Programs could be written by typing on the keyboard with the tape punch enabled. The tape reader could then be used to read the program into a computer. Teletypes were also used for working directly with a computer.
+    \item \textbf{TSI:} Telesensory Systems Inc.
+    \item \textbf{WYSIWIG:} What You See Is What You Get.The word processor such as Microsoft Word® is an example.
+\end{itemize}
+ 
+\end{large}
+\end{document}
