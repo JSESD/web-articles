@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Alternative Techniques for Blind Low Vision Students Enrolled in Coding Courses</title>
+<!--Generated on Fri Feb 23 21:01:26 2024 by LaTeXML (version 0.8.3) http://dlmf.nist.gov/LaTeXML/.-->
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<link href="LaTeXML.css" rel="stylesheet" type="text/css"/>
+<link href="ltx-article.css" rel="stylesheet" type="text/css"/>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document" lang="en">Alternative Techniques for Blind Low Vision 
+<br class="ltx_break"/>Students Enrolled in Coding Courses</h1>
+<div class="ltx_authors">
+<span class="ltx_creator ltx_role_author" lang="en">
+<span class="ltx_personname"><span class="ltx_text" style="font-size:120%;color:#0000FF;"> Robert Jaquiss</span>
+</span><span class="ltx_author_notes"><span>
+<span class="ltx_contact ltx_role_affiliation">Independence Science
+</span></span></span></span>
+</div>
+<div class="ltx_abstract" lang="en">
+<h2 class="ltx_title ltx_title_abstract">Abstract</h2>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic" style="font-size:120%;">BLV (blind low vision) students face difficulties when taking coding classes. Individual Development Environments (IDE) can be inaccessible which make it difficult if not impossible for BLV students to complete coursework. Alternative techniques are described which will allow a BLV student to successfully complete coursework. The author has found the Command Line Interface (CLI) is often a recommended alternative to a Windows based IDE interface. Many blind computer programmers use the Windows and Linux command interfaces which are described as part of this discussion.<span class="ltx_text ltx_font_upright">
+  <br class="ltx_break"/>
+<br class="ltx_break"/><span class="ltx_text ltx_font_bold">Editor’s note:</span> </span>The author is a long-time computer programmer who is blind. He has been actively involved in the access technology industry along with the National Federation of the Blind for a number of decades. The author shares his extensive knowledge of the challenges that have presented themselves to persons who are blind or vision impaired who wish to pursue career paths in computer science. This manuscript is based on a presentation that he delivered at the 2021 ISLAND conference. A page providing more resources is at: <a class="ltx_ref ltx_url" href="https://independencescience.com/computer-science-resources/." title="">https://independencescience.com/computer-science-resources/.</a><span class="ltx_text ltx_font_upright"></span></span></p>
+</div>
+<span class="ltx_ERROR undefined">\addbibresource</span>
+<div class="ltx_para" id="p1">
+<p class="ltx_p">notation.bib
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="ltx_text" lang="en"></span></p>
+</div>
+<span class="ltx_ERROR undefined" lang="en">\toappear</span>
+<div class="ltx_para" id="p2">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold" lang="en">*Corresponding Author, Robert Jaquiss 
+<br class="ltx_break"/><a class="ltx_ref ltx_href ltx_font_medium" href="mailto:rjaquiss@IndependenceScience.com" title="">(rjaquiss@IndependenceScience.com)</a>
+<br class="ltx_break"/><span class="ltx_text ltx_font_medium ltx_font_italic">Submitted Sun Jan 15 2023 
+<br class="ltx_break"/>Accepted Tue Mar 21 2023 
+<br class="ltx_break"/>Published online Tue Mar 21 2023
+<br class="ltx_break"/>DOI:10.14448/jsesd.14.0010
+<br class="ltx_break"/></span></span></p>
+</div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<section class="ltx_section" id="Sx1" lang="en">
+<h2 class="ltx_title ltx_title_section"></h2>
+</section>
+<section class="ltx_section" id="Sx2" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">Brief Historical Background</h2>
+<div class="ltx_para" id="Sx2.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The term coding was formerly known as computer programming. Historically, IBM created and established a hierarchy of job positions of which the coder was the lowest. The coder performed the task of coding, writing the actual code that was punched into cards to create a program. The coder’s task was not a very creative task compared to that of the program analyst, senior programmer or programmer who designed the software.</span></p>
+</div>
+<div class="ltx_para" id="Sx2.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">BLV people have been involved in the computer industry since the 1960s. The ACM (Association of Computer Machinery) formed SICCAPH which was later renamed SIGCAPH Special Interest Group on Computers and the Physically Handicapped. It should be noted that SIGCAPH comprised persons with other disabilities than blindness.
+</span></p>
+</div>
+<div class="ltx_para" id="Sx2.p3">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">BLV persons who read braille were provided braille output by means of modifying line printers such as the IBM 1403 and daisy wheel printers. The line printers were modified by placing a piece of stretched elastic between the paper and print hammers. Daisy wheel printers such as the Diablo 630 or 1630 could be modified by stretching a piece of laboratory tubing over the platen. In either case braille was produced by using the period to create braille dots on the back side of printer paper. The braille was legible, but not very long lasting. In the late 1960s, MIT developed the MIT BrailleEmboss.</span></p>
+</div>
+<div class="ltx_para" id="Sx2.p4">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">According to an article; Duxbury Systems – Early History of Braille Translators and Embossers </span><a class="footnote-ref" href="#fn-1" id="fn-ref-1">1</a><span class="ltx_text" style="font-size:120%;">; at a conference in 1969, four braille embossers were shown. The MIT BrailleEmboss was the only full-page embosser. The other three produced by Carbonneau, Morrison and Knox produced braille on paper tape.</span></p>
+</div>
+<div class="ltx_para" id="Sx2.p5">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">In the 1970s, Triformation Systems (later known as Enabling Technologies) created the BD-3. LED-1 and LED-120 braille embossers. The BD-3 embossed braille on the same type of paper tape used in machines such as the ASR33 teletype. The LED-1 and LED-120 were able to emboss braille on continuous form braille paper. The latter two machines contained keyboards and were used in the same way teletypes were used for interacting with computers. By late 1976, four full-page embossers had been developed: the MIT BrailleEmboss, the Triformation LED-1 and LED-120, and the French Sagem Embosser.</span></p>
+</div>
+<div class="ltx_para" id="Sx2.p6">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The late Dr. Tim (T. V.) Cranmer developed the Cranmer Modified Perkins Brailler. This device was a substantial modification of a Perkins Brailler and could produce braille on a few pages at a time. Thiel later produced the Thiel Beta X3 embosser which could also be used like a teletype. Telesensory Systems Inc. also known as TSI produced the Optacon with an accessory which could be used to read a CRT display. It was possible to read a CRT screen with an Optacon, but this was very tiring.</span></p>
+</div>
+<div class="ltx_para" id="Sx2.p7">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">In 1975, Handitech in Germany produced the first single line braille display.Other companies such as Tieman, and Papenmeier also produced braille displays. Most braille displays used piezoelectric crystals to raise the pins on the braille display. This technology has been the predominate technology until the present day.</span></p>
+</div>
+<div class="ltx_para" id="Sx2.p8">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Duxbury Systems has created a site: Documents on Automated Braille Production </span><a class="ltx_ref ltx_url" href="https://www.duxburysystems.com/braille_tech.asp" style="font-size:120%;" title="">https://www.duxburysystems.com/braille_tech.asp</a><span class="ltx_text" style="font-size:120%;"> This site contains a wealth of information on the history of braille translators and automated production.</span></p>
+</div>
+<div class="ltx_para" id="Sx2.p9">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Contemporaneously with the development of braille displays and embossers was the development of speech synthesizer hardware. In the past, the usual form of speech synthesizer hardware was a card which was inserted into a PC. The decTalk and some other systems used an RS232C connection to connect a PC with an external box. The latter configuration proved to not be as responsive as did internal cards. Both IBM type PCs and Apple iie™ systems could be made accessible. MSDOS and Apple systems could be configured to work with teletype type machines.</span></p>
+</div>
+<div class="ltx_para" id="Sx2.p10">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Until the advent of the Apple Macintosh™ and Microsoft Windows ™ GUI operating systems, BLV persons could easily work with IBM PCs, Apple iie™ and large mainframe computers. The character based CLI interface works well with braille displays. The BLV user can easily read the input that is typed and the output that is displayed.</span></p>
+</div>
+<div class="ltx_para" id="Sx2.p11">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">In 1984, Apple introduced the Apple Macintosh. The Apple Macintosh used a GUI interface and was inaccessible by the BLV community. In 1990, Microsoft introduced Windows 3.0 which was also inaccessible (See Christoph Dernbach The history of the Apple Macintosh)</span><a class="footnote-ref" href="#fn-2" id="fn-ref-2">2</a><span class="ltx_text" style="font-size:120%;">.</span></p>
+</div>
+<div class="ltx_para" id="Sx2.p12">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">In the early 90s, a software package from Slim-ware Bridge made it marginally possible to use Windows 3. In 1995, F.H. Papenmeier introduced a system using the Braillex braille display, hardware interface and software to make Windows 3 more accessible. In 1998 Windows 95 became marginally accessible. Windows 98 became accessible in 2000 and Windows 2000 became accessible in 2002. Windows XP became accessible a few months after its initial release. In the past few years, Microsoft has provided screen access software companies access to beta versions of their products. This has greatly decreased the time between the public release of a Windows system and that system being accessible.</span></p>
+</div>
+<div class="ltx_para" id="Sx2.p13">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Screen access software developers face the difficult task of knowing what is on the screen and where specific icons and text are located. The access software then has the task of converting a visual presentation into text which can be either spoken, displayed as braille, or displayed and spoken together.</span></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx3" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">The Challenge for BLV Students</h2>
+<div class="ltx_para" id="Sx3.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">BLV students, like their sighted peers, need ST-EM education. The ADA and IDEA mandate that disabled students receive accommodations in order to take courses of study. An effort known as The Hour Of Code </span><a class="footnote-ref" href="#fn-3" id="fn-ref-3">3</a><span class="ltx_text" style="font-size:120%;"> has been created to expose all K-12 students to computer coding as a way to increase awareness of Computer Science. Significant difficulties are encountered when BLV students wish to take part in coding courses. Sighted students can make use of icon type low code or no code-based systems to create applications. The Hour Of Code site does provide information on how to provide accessible alternative activities for the Hour Of Code. For BLV students, the alternative activities require the use of the Quorum language.</span><a class="footnote-ref" href="#fn-4" id="fn-ref-4">4</a><span class="ltx_text" style="font-size:120%;"> See the articles: Astronomy Hour of Code Activity 1 | Quorum Programming Language</span><a class="footnote-ref" href="#fn-5" id="fn-ref-5">5</a><span class="ltx_text" style="font-size:120%;"> and Hour of Code: Part 1 | Quorum Programming Language </span><a class="footnote-ref" href="#fn-6" id="fn-ref-6">6</a><span class="ltx_text" style="font-size:120%;">. And the American Printing House for the Blind (APH) has two helpful articles: Road to Code</span><a class="footnote-ref" href="#fn-7" id="fn-ref-7">7</a><span class="ltx_text" style="font-size:120%;"> and Coding With Mantis Q40</span><a class="footnote-ref" href="#fn-8" id="fn-ref-8">8</a><span class="ltx_text" style="font-size:120%;"> Professional level systems allow for the creation of complex business applications. The problem with low and no code systems is that they are icon driven. The user uses a mouse or touch screen to drag and drop icons within a WYSIWIG screen. The system then generates the actual application. See the articles: What is Low-Code? A Quick Introduction to Low-Code Development</span><a class="footnote-ref" href="#fn-9" id="fn-ref-9">9</a><span class="ltx_text" style="font-size:120%;">, Ten Best Low-Code Development Platforms in 2021</span><a class="footnote-ref" href="#fn-10" id="fn-ref-10">10</a><span class="ltx_text" style="font-size:120%;">, Best No-Code Development Platforms Software in 2021</span><a class="footnote-ref" href="#fn-11" id="fn-ref-11">11</a><span class="ltx_text" style="font-size:120%;">, and The Home of No-Code: A curated directory of resources and tools for non-techs</span><a class="footnote-ref" href="#fn-12" id="fn-ref-12">12</a><span class="ltx_text" style="font-size:120%;">.
+</span>
+<br class="ltx_break"/></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx4" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">Make Preparations In Advance </h2>
+<div class="ltx_para" id="Sx4.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The Quorum language and offerings from APH will certainly provide a BLV student an introduction to coding. BLV students and professionals need to learn other languages. Many mainstream applications such as those from Microsoft are accessible. Problems arise when specialized applications such as IDEs are utilized. BLV students can find themselves faced with trying to learn a new difficult to use application and keep up with schoolwork.</span></p>
+</div>
+<div class="ltx_para" id="Sx4.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">This author suggests the following strategies:</span></p>
+</div>
+<div class="ltx_para" id="Sx4.p3">
+<ol class="ltx_enumerate" id="Sx4.I1">
+<li class="ltx_item" id="Sx4.I1.i1" style="list-style-type:decimal; font-size:120%;">
+<div class="ltx_para" id="Sx4.I1.i1.p1">
+<p class="ltx_p"><span class="ltx_p">Plan ahead, the further the better. As much as possible plan out when each course required for a degree or certificate will be taken.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx4.I1.i2" style="list-style-type:decimal; font-size:120%;">
+<div class="ltx_para" id="Sx4.I1.i2.p1">
+<p class="ltx_p"><span class="ltx_p">Find out what software will be used for each course.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx4.I1.i3" style="list-style-type:decimal; font-size:120%;">
+<div class="ltx_para" id="Sx4.I1.i3.p1">
+<p class="ltx_p"><span class="ltx_p">Remember that if a course is to be taken two or three years in the future, the more likely the software used for the course will change.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx4.I1.i4" style="list-style-type:decimal; font-size:120%;">
+<div class="ltx_para" id="Sx4.I1.i4.p1">
+<p class="ltx_p"><span class="ltx_p">Arrange for textbooks with as much lead time as possible. Coding courses like other STEM courses are difficult to read orally. A braille display and/or embossed braille will make the content very much easier to learn.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx4.I1.i5" style="list-style-type:decimal; font-size:120%;">
+<div class="ltx_para" id="Sx4.I1.i5.p1">
+<p class="ltx_p"><span class="ltx_p">Be prepared to use human readers to help with coursework. Making good use of time is important. Struggling with an inaccessible system will lead to frustration and possible failure to complete a course.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx4.I1.i6" style="list-style-type:decimal; font-size:120%;">
+<div class="ltx_para" id="Sx4.I1.i6.p1">
+<p class="ltx_p"><span class="ltx_p">Long before taking a course, try out the software and hardware that is to be used and determine if it is accessible. Talk with the instructor about possible alternatives.</span></p>
+</div>
+</li>
+</ol>
+</div>
+</section>
+<section class="ltx_section" id="Sx5" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">Getting Started with Coding</h2>
+<div class="ltx_para" id="Sx5.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Learning any language will require the use of reference materials and tutorials. Fortunately reference materials for computer languages, operating systems, networking hardware and Computer Science are available in accessible formats. The two leading sources for accessible materials are BookShare and Learning Ally. Some other sources are APH (American Printing House for the Blind), ATI (Access Technology Institute), NBP (National Braille Press) and Your Tech Vision. (See the Independence Science web site: </span><a class="ltx_ref ltx_url" href="http://www.independencescience.com" style="font-size:120%;" title="">http://www.independencescience.com</a><span class="ltx_text" style="font-size:120%;"> page on coding for more information.) Three IDEs are usable by BLV persons. These are: Visual Studio Code or Vscode</span><a class="footnote-ref" href="#fn-13" id="fn-ref-13">13</a><span class="ltx_text" style="font-size:120%;">, Eclipse and Sodbeans. This author has not seen recent references to the Eclipse IDE, Eclipse may have been superseded by Vscode.</span></p>
+</div>
+<div class="ltx_para" id="Sx5.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Unix® and Linux® systems traditionally provide a Command Line Interface (CLI). This interface is sometimes referred to as the console. CLI interfaces work very well with the technology used by BLV persons. Braille displays can be connected to Unix® and Linux® systems using the Brltty </span><a class="footnote-ref" href="#fn-14" id="fn-ref-14">14</a><span class="ltx_text" style="font-size:120%;"> package. In earlier years, a PC running MSDOS with a braille display could be connected using Telnet or PCNFS. Today, the packages Putty and SSH can be used along with a terminal emulator.</span></p>
+</div>
+<div class="ltx_para" id="Sx5.p3">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The Gnome desktop can be used by BLV persons using the ORCA </span><a class="footnote-ref" href="#fn-15" id="fn-ref-15">15</a><span class="ltx_text" style="font-size:120%;"> screen reader. Emacs is made accessible using Emacspeak. </span><a class="footnote-ref" href="#fn-16" id="fn-ref-16">16</a><span class="ltx_text" style="font-size:120%;"> (See the Independence Science web site: </span><a class="ltx_ref ltx_url" href="http://www.independencescience.com" style="font-size:120%;" title="">http://www.independencescience.com</a><span class="ltx_text" style="font-size:120%;"> page on coding for more information.)</span></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx6" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">A Common Approach</h2>
+<div class="ltx_para" id="Sx6.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Since IDEs can be difficult to use, one common approach for BLV persons is to use the CLI. On Windows, start the Cmd system. On Windows 7, Cmd is located under the Accessories menu displaying the name Command Prompt. An alternative is to press the Windows-key+r, then press &lt;enter&gt;. When done correctly, the user will see, <q>C:&gt;</q>.</span></p>
+</div>
+<div class="ltx_para" id="Sx6.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The user can then use Notepad or other editor to code a program. Programs can be compiled directly from the command line. Some examples are:</span></p>
+</div>
+<div class="ltx_para" id="Sx6.p3">
+<ul class="ltx_itemize" id="Sx6.I2">
+<li class="ltx_item" id="Sx6.I2.i1" style="list-style-type:disc;">
+<div class="ltx_para" id="Sx6.I2.i1.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;">Python demo.py</span></p>
+<ul class="ltx_itemize" id="Sx6.I2.I1">
+<li class="ltx_item" id="Sx6.I2.i1.i1" style="list-style-type:circle;">
+<div class="ltx_para" id="Sx6.I2.i1.i1.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;">The above command will compile and run the code within the file demo.py.</span></p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li class="ltx_item" id="Sx6.I2.i2" style="list-style-type:disc;">
+<div class="ltx_para" id="Sx6.I2.i2.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;">Cc –c demo.c</span></p>
+<ul class="ltx_itemize" id="Sx6.I2.I2">
+<li class="ltx_item" id="Sx6.I2.i2.i1" style="list-style-type:circle;">
+<div class="ltx_para" id="Sx6.I2.i2.i1.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;">The above command will compile a program in the C language.</span></p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li class="ltx_item" id="Sx6.I2.i3" style="list-style-type:disc;">
+<div class="ltx_para" id="Sx6.I2.i3.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;">Javac demo.java</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx6.I2.i4" style="list-style-type:disc;">
+<div class="ltx_para" id="Sx6.I2.i4.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;">Java demo</span></p>
+<ul class="ltx_itemize" id="Sx6.I2.I3">
+<li class="ltx_item" id="Sx6.I2.i4.i1" style="list-style-type:circle;">
+<div class="ltx_para" id="Sx6.I2.i4.i1.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;">The above two commands will compile a Java program.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx6.I2.i4.i2" style="list-style-type:circle;">
+<div class="ltx_para" id="Sx6.I2.i4.i2.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;">The second command runs the program presuming it compiled without errors.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx6.I2.i4.i3" style="list-style-type:circle;">
+<div class="ltx_para" id="Sx6.I2.i4.i3.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;">When an error occurs either with compilation or when running a program, it can be difficult to read the error messages.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx6.I2.i4.i4" style="list-style-type:circle;">
+<div class="ltx_para" id="Sx6.I2.i4.i4.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;">One technique to solve this challenge is to use the following type of batch file.</span></p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li class="ltx_item" id="Sx6.I2.i5" style="list-style-type:disc;">
+<div class="ltx_para" id="Sx6.I2.i5.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;">@echo off – rem Run a Python program. python demo.py&gt; demo_output.txt 2&gt;&amp;1</span></p>
+<ul class="ltx_itemize" id="Sx6.I2.I4">
+<li class="ltx_item" id="Sx6.I2.i5.i1" style="list-style-type:circle;">
+<div class="ltx_para" id="Sx6.I2.i5.i1.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;">The above batch file will run the Python compiler using demo.py for the Python code.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx6.I2.i5.i2" style="list-style-type:circle;">
+<div class="ltx_para" id="Sx6.I2.i5.i2.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;">The &gt;demo_output.txt directs the output to be saved in the file demo_output.txt.
+</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx6.I2.i5.i3" style="list-style-type:circle;">
+<div class="ltx_para" id="Sx6.I2.i5.i3.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;">The 2&gt;&amp;1 at the end of the command line directs any error messages to also be saved in the demo_output.txt file.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx6.I2.i5.i4" style="list-style-type:circle;">
+<div class="ltx_para" id="Sx6.I2.i5.i4.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;">Notepad can be used to review the output and possible error messages.</span></p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ltx_para" id="Sx6.p4">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The Notepad++ program provides a more advanced editing system. Plugins are available for several languages. Notepad++ can be set up to allow the user to compile and run a program.
+</span>
+<br class="ltx_break"/></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx7" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">The Advantages of Braille</h2>
+<div class="ltx_para" id="Sx7.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Coding is by nature a precise activity. The proper syntax of a language must be entered correctly. Omitting a comma, semicolon or brace will cause an error. Variables are case sensitive. In languages such as Python, Java and Go, there are conventions for when and where to capitalize the letters used in class, object and method names. C and Java use braces ({ }) to delimit blocks of code. Within a pair of braces, the code is expected to be indented from the left margin. Proper indentation is considered so important that code beautifier software is used to read programs and properly format them. In C and Java, indentation will not hinder compilation of a program. Python is the exception. The indentation from the left margin is part of the program syntax. A block of code must be properly indented in order for it to compile correctly.</span></p>
+</div>
+<div class="ltx_para" id="Sx7.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The standard eight dot cell used in most braille displays allows uppercase letters to be displayed using one cell. This is especially important when dealing with columnar material. This author has for some years used an eighty-cell braille display for coding. The advantage of an eighty-cell display is that normal lines of code don’t wrap to the next line. A braille embosser can be a useful tool for producing reference printouts of programs and manuals.
+</span>
+<br class="ltx_break"/></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx8" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">Conclusion</h2>
+<div class="ltx_para" id="Sx8.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">In conclusion, coding can be accessible to BLV persons. A BLV person can by using alternative techniques successfully take a coding course and pursue a career in computer related technologies. Like other STEM subjects, a knowledge of braille is absolutely essential. For reading manuals, a forty-cell braille display will make it possible to read brailled materials. For coding, an eighty-cell braille display will allow lines of code and other information to be displayed without breaking up lines of text. An eighty-cell braille display allows for displaying in braille the same material as a sighted person sees in print.</span></p>
+</div>
+<div class="ltx_para" id="Sx8.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">For more information, See the Independence Science web site: </span><a class="ltx_ref ltx_url" href="https://independencescience.com/computer-science-resources/" style="font-size:120%;" title="">https://independencescience.com/computer-science-resources/</a><span class="ltx_text" style="font-size:120%;"> page on coding for more information.</span></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx9" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">References</h2>
+<div class="ltx_para" id="Sx9.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Duxbury Systems – Early History of Braille Translators and Embossers. </span><a class="ltx_ref ltx_url " href="https://www.duxburysystems.com/bthist.asp" style="font-size:120%;" title="">https://www.duxburysystems.com/bthist.asp</a><span class="ltx_text" style="font-size:120%;"> Retrieved Sept. 2, 2021.</span></p>
+</div>
+<div class="ltx_para" id="Sx9.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The History of the Apple Macintosh February 10, 2021 by Christoph Dernbach. </span><a class="ltx_ref ltx_url " href="https://www.mac-history.net/feat-ured-2/2021-02-10/the-history-of-the-apple-macintosh" style="font-size:120%;" title="">https://www.mac-history.net/feat-ured-2/2021-02-10/the-history-of-the-apple-macintosh</a><span class="ltx_text" style="font-size:120%;"> Retrieved August 31, 2021.</span></p>
+</div>
+<div class="ltx_para" id="Sx9.p3">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Hour of Code. </span><a class="ltx_ref ltx_url " href="https://hourofcode.com/us" style="font-size:120%;" title="">https://hourofcode.com/us</a><span class="ltx_text" style="font-size:120%;"> Reprieved Sept. 4, 2021.</span></p>
+</div>
+<div class="ltx_para" id="Sx9.p4">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The Quorum Programming Language. </span><a class="ltx_ref ltx_url " href="https://quorumlang-uage.com/" style="font-size:120%;" title="">https://quorumlang-uage.com/</a><span class="ltx_text" style="font-size:120%;"> Retrieved Aug. 2, 2021.</span></p>
+</div>
+<div class="ltx_para" id="Sx9.p5">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Astronomy Hour of Code Activity 1 | Quorum Programming Language. </span><a class="ltx_ref ltx_url " href="https://quorumlanguage.com/hourofcode/as-tro1.html" style="font-size:120%;" title="">https://quorumlanguage.com/hourofcode/as-tro1.html</a><span class="ltx_text" style="font-size:120%;"> Retrieved Sept. 4, 2021.</span></p>
+</div>
+<div class="ltx_para" id="Sx9.p6">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Hour of Code: Part 1 | Quorum Programming Language. </span><a class="ltx_ref ltx_url " href="https://quorumlanguage.com/hourofcode/part1.html" style="font-size:120%;" title="">https://quorumlanguage.com/hourofcode/part1.html</a><span class="ltx_text" style="font-size:120%;"> Retrieved Sept. 4, 2021.</span></p>
+</div>
+<div class="ltx_para" id="Sx9.p7">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Road to Code. </span><a class="ltx_ref ltx_url " href="https://www.aph.org/aphs-road-to-code/Retrieved" style="font-size:120%;" title="">https://www.aph.org/aphs-road-to-code/Retrieved</a><span class="ltx_text" style="font-size:120%;"> Sept. 3, 2021.</span></p>
+</div>
+<div class="ltx_para" id="Sx9.p8">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Coding With Mantis Q40. </span><a class="ltx_ref ltx_url " href="https://www.aph.org/coding-with-the-mantis-q40/" style="font-size:120%;" title="">https://www.aph.org/coding-with-the-mantis-q40/</a><span class="ltx_text" style="font-size:120%;"> Retrieved Sept. 4, 2021.</span></p>
+</div>
+<div class="ltx_para" id="Sx9.p9">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">What is Low-Code? A Quick Introduction to Low-Code Development. </span><a class="ltx_ref ltx_url " href="https://www.mendix.com/low-code-guide/" style="font-size:120%;" title="">https://www.mendix.com/low-code-guide/</a><span class="ltx_text" style="font-size:120%;"> Retrieved Sept. 4, 2021.</span></p>
+</div>
+<div class="ltx_para" id="Sx9.p10">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">10 Best Low-Code Development Platforms in 2021. </span><a class="ltx_ref ltx_url " href="https://www.softwaretestinghelp.com/low-code-develo-pment-platforms/" style="font-size:120%;" title="">https://www.softwaretestinghelp.com/low-code-develo-pment-platforms/</a><span class="ltx_text" style="font-size:120%;"> Retrieved Sept. 4, 2021.</span></p>
+</div>
+<div class="ltx_para" id="Sx9.p11">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Best No-Code Development Platforms Software in 2021. </span><a class="ltx_ref ltx_url " href="https://www.g2.com/categories/no-code-develo-pment-platforms" style="font-size:120%;" title="">https://www.g2.com/categories/no-code-develo-pment-platforms</a><span class="ltx_text" style="font-size:120%;"> Retrieved Sept. 4, 2021.</span></p>
+</div>
+<div class="ltx_para" id="Sx9.p12">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The Home of No-Code: A curated directory of resources and tools for non-techs. </span><a class="ltx_ref ltx_url " href="https://www.nocode.tech/" style="font-size:120%;" title="">https://www.nocode.tech/</a><span class="ltx_text" style="font-size:120%;"> Retrieved Sept. 4, 2021.</span></p>
+</div>
+<div class="ltx_para" id="Sx9.p13">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Visual Studio Code or Vscode. </span><a class="ltx_ref ltx_url " href="https://code.visualstudio.com/" style="font-size:120%;" title="">https://code.visualstudio.com/</a><span class="ltx_text" style="font-size:120%;"> Retrieved Sept. 6, 2021.</span></p>
+</div>
+<div class="ltx_para" id="Sx9.p14">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Brltty. </span><a class="ltx_ref ltx_url " href="https://brltty.app/" style="font-size:120%;" title="">https://brltty.app/</a><span class="ltx_text" style="font-size:120%;"> Retrieved Aug. 23, 2021.</span></p>
+</div>
+<div class="ltx_para" id="Sx9.p15">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Orca Screen Reader. </span><a class="ltx_ref ltx_url " href="https://help.gnome.org/users/orca/sta-ble/" style="font-size:120%;" title="">https://help.gnome.org/users/orca/sta-ble/</a><span class="ltx_text" style="font-size:120%;"> </span><a class="ltx_ref ltx_url " href="https://en.wikipedia.org/wiki/Orca_%28assistive_technology%29" style="font-size:120%;" title="">https://en.wikipedia.org/wiki/Orca_%28assistive_technology%29</a><span class="ltx_text" style="font-size:120%;"> Retrieved Sept. 6, 2021.</span></p>
+</div>
+<div class="ltx_para" id="Sx9.p16">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Emacspeak Mail List. </span><a class="ltx_ref ltx_url " href="https://www.emacspeak.org/" style="font-size:120%;" title="">https://www.emacspeak.org/</a><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+<div class="ltx_para" id="Sx9.p17">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Emacs - Wikipedia. </span><a class="ltx_ref ltx_url " href="https://en.wikipedia.org/wiki/Emacs" style="font-size:120%;" title="">https://en.wikipedia.org/wiki/Emacs</a><span class="ltx_text" style="font-size:120%;"> Retrieved Sept. 6, 2021</span></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx10" lang="en">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">Appendix: Definition of Terms</h2>
+<div class="ltx_para" id="Sx10.p1">
+<ul class="ltx_itemize" id="Sx10.I3">
+<li class="ltx_item" id="Sx10.I3.i1" style="list-style-type:disc;">
+<div class="ltx_para" id="Sx10.I3.i1.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;"><strong>ACM:</strong> Association of Computer Machinery</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx10.I3.i2" style="list-style-type:disc;">
+<div class="ltx_para" id="Sx10.I3.i2.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;"><strong>ADA:</strong> Americans with Disability Act</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx10.I3.i3" style="list-style-type:disc;">
+<div class="ltx_para" id="Sx10.I3.i3.p1">
+	<p class="ltx_p"><span class="ltx_p" style="font-size:120%;"><strong>APH:</strong> American Printing House for the Blind</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx10.I3.i4" style="list-style-type:disc;">
+<div class="ltx_para" id="Sx10.I3.i4.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;"><strong>BLV:</strong> Blind or Low Vision</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx10.I3.i5" style="list-style-type:disc;">
+<div class="ltx_para" id="Sx10.I3.i5.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;"><strong>Braille display:</strong> A braille display consists of a line of refreshable braille cells. The user can feel what is displayed. Typical sizes of displays contain 12, 20, 32, 40 or 80 braille cells.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx10.I3.i6" style="list-style-type:disc;">
+<div class="ltx_para" id="Sx10.I3.i6.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;"><strong>CLI:</strong> Command Line Interface; MSDOS, Linux and UNIX are examples.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx10.I3.i7" style="list-style-type:disc;">
+<div class="ltx_para" id="Sx10.I3.i7.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;"><strong>CRT:</strong> Cathode Ray Tube, the same technology which was used in older television sets.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx10.I3.i8" style="list-style-type:disc;">
+<div class="ltx_para" id="Sx10.I3.i8.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;"><strong>Daisy wheel:</strong> A daisy wheel printer uses a rotating wheel containing a type font. The wheel rotates to the desired position and a solenoid strikes the character causing it to be printed on the page.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx10.I3.i9" style="list-style-type:disc;">
+<div class="ltx_para" id="Sx10.I3.i9.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;"><strong>Duxbury:</strong> Duxbury software available from Duxbury Systems is a package used to translate documents into braille. Duxbury can read a variety of document formats.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx10.I3.i10" style="list-style-type:disc;">
+<div class="ltx_para" id="Sx10.I3.i10.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;"><strong>GUI:</strong> Graphical User Interface</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx10.I3.i11" style="list-style-type:disc;">
+<div class="ltx_para" id="Sx10.I3.i11.p1">
+	<p class="ltx_p"><span class="ltx_p" style="font-size:120%;"><strong>IDE:</strong> Individual Development Environment, Eclipse, NetBeans and Sodbeans are some examples.
+</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx10.I3.i12" style="list-style-type:disc;">
+<div class="ltx_para" id="Sx10.I3.i12.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;"><strong>IDEA:</strong> Individuals with Disabilities Education Act</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx10.I3.i13" style="list-style-type:disc;">
+<div class="ltx_para" id="Sx10.I3.i13.p1">
+	<p class="ltx_p"><span class="ltx_p" style="font-size:120%;"><strong>MSDOS:</strong> Microsoft Disk Operating System. This was the operating system used on IBM type PCs starting in 1981. MSDOS is the successor to a package known as 86DOS. IBM sold essentially the same system for IBM branded PCs calling it PC DOS.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx10.I3.i14" style="list-style-type:disc;">
+<div class="ltx_para" id="Sx10.I3.i14.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;"><strong>Optacon:</strong> A device produced by Telesensory Systems Inc. that allowed a BLV person to feel the actual shape of a character. It leveraged the use of a handheld camera that was connected to a second device via a wire. This secondary device consisted of a multi-pin matrix that produced raised print letters for the blind person to feel with one finger at a time. The Optacon could be used to read textbooks, worksheets, food packages, or a CRT screen.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx10.I3.i15" style="list-style-type:disc;">
+<div class="ltx_para" id="Sx10.I3.i15.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;"><strong>RS232C:</strong> The RS232C protocol is used by computers to send data to peripherals in a serial form. Rs232 interfaces are rarely used at this time. They will likely be encountered when working with older equipment.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx10.I3.i16" style="list-style-type:disc;">
+<div class="ltx_para" id="Sx10.I3.i16.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;"><strong>SICCAPH:</strong> Special Interest Committee on Computers and the Physically Handicapped</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx10.I3.i17" style="list-style-type:disc;">
+<div class="ltx_para" id="Sx10.I3.i17.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;"><strong>SIGCAPH:</strong> Special Interest Group on Computers and the Physically Handicapped</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx10.I3.i18" style="list-style-type:disc;">
+<div class="ltx_para" id="Sx10.I3.i18.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;"><strong>Teletype:</strong> A teletype consists of a keyboard, ink printer, and paper tape reader and punch. Programs could be written by typing on the keyboard with the tape punch enabled. The tape reader could then be used to read the program into a computer. Teletypes were also used for working directly with a computer.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx10.I3.i19" style="list-style-type:disc;">
+<div class="ltx_para" id="Sx10.I3.i19.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;"><strong>TSI:</strong> Telesensory Systems Inc.</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx10.I3.i20" style="list-style-type:disc;">
+<div class="ltx_para" id="Sx10.I3.i20.p1">
+<p class="ltx_p"><span class="ltx_p" style="font-size:120%;"><strong>WYSIWIG:</strong> What You See Is What You Get.The word processor such as Microsoft Word® is an example.</span></p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Fri Feb 23 21:01:26 2024 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img alt="[LOGO]" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg=="/></a>
+</div></footer>
+<section><p class="footnote" id="fn-1"><a class="footnote-ref" href="#fn-ref-1">1</a><span class="ltx_tag ltx_tag_note"><span class="ltx_text" style="font-size:120%;">1</span></span><span class="ltx_text" style="font-size:120%;">Duxbury Systems – Early History of Braille Translators and Embossers
+</span><a class="ltx_ref ltx_url " href="https://www.duxburysystems.com/bthist.asp" style="font-size:120%;" title="">https://www.duxburysystems.com/bthist.asp</a><span class="ltx_text" style="font-size:120%;"> Retrieved Sept. 2, 2021.</span></p><p class="footnote" id="fn-2"><a class="footnote-ref" href="#fn-ref-2">2</a><span class="ltx_tag ltx_tag_note"><span class="ltx_text" style="font-size:120%;">2</span></span><span class="ltx_text" style="font-size:120%;">The History of the Apple Macintosh February 10, 2021 by Christoph Dernbach </span><a class="ltx_ref ltx_url " href="https://www.mac-history.net/featured-2/2021-02-10/the-history-of-the-apple-macintosh" style="font-size:120%;" title="">https://www.mac-history.net/featured-2/2021-02-10/the-history-of-the-apple-macintosh</a><span class="ltx_text" style="font-size:120%;"> Retrieved August 31, 2021.
+</span></p><p class="footnote" id="fn-3"><a class="footnote-ref" href="#fn-ref-3">3</a><span class="ltx_tag ltx_tag_note"><span class="ltx_text" style="font-size:120%;">3</span></span><span class="ltx_text" style="font-size:120%;">Hour of Code </span><a class="ltx_ref ltx_url " href="https://hourofcode.com/us" style="font-size:120%;" title="">https://hourofcode.com/us</a><span class="ltx_text" style="font-size:120%;"> Reprieved Sept. 4, 2021.</span></p><p class="footnote" id="fn-4"><a class="footnote-ref" href="#fn-ref-4">4</a><span class="ltx_tag ltx_tag_note"><span class="ltx_text" style="font-size:120%;">4</span></span><span class="ltx_text" style="font-size:120%;">The Quorum Programming Language. </span><a class="ltx_ref ltx_url " href="https://quorumlanguage.com/" style="font-size:120%;" title="">https://quorumlanguage.com/</a><span class="ltx_text" style="font-size:120%;"> Retrieved Aug. 2, 2021.</span></p><p class="footnote" id="fn-5"><a class="footnote-ref" href="#fn-ref-5">5</a><span class="ltx_tag ltx_tag_note"><span class="ltx_text" style="font-size:120%;">5</span></span><span class="ltx_text" style="font-size:120%;">Astronomy Hour of Code Activity 1 | Quorum Programming Language </span><a class="ltx_ref ltx_url " href="https://quorumlanguage.com/hourofcode/astro1.html" style="font-size:120%;" title="">https://quorumlanguage.com/hourofcode/astro1.html</a><span class="ltx_text" style="font-size:120%;"> Retrieved Sept. 4, 2021.</span></p><p class="footnote" id="fn-6"><a class="footnote-ref" href="#fn-ref-6">6</a><span class="ltx_tag ltx_tag_note"><span class="ltx_text" style="font-size:120%;">6</span></span><span class="ltx_text" style="font-size:120%;">Hour of Code: Part 1 | Quorum Programming Language </span><a class="ltx_ref ltx_url " href="https://quorumlanguage.com/hourofcode/part1.html" style="font-size:120%;" title="">https://quorumlanguage.com/hourofcode/part1.html</a><span class="ltx_text" style="font-size:120%;"> Retrieved Sept. 4, 2021.</span></p><p class="footnote" id="fn-7"><a class="footnote-ref" href="#fn-ref-7">7</a><span class="ltx_tag ltx_tag_note"><span class="ltx_text" style="font-size:120%;">7</span></span><span class="ltx_text" style="font-size:120%;">Road to Code </span><a class="ltx_ref ltx_url " href="https://www.aph.org/aphs-road-to-code/" style="font-size:120%;" title="">https://www.aph.org/aphs-road-to-code/</a><span class="ltx_text" style="font-size:120%;"> Retrieved Sept. 3, 2021.</span></p><p class="footnote" id="fn-8"><a class="footnote-ref" href="#fn-ref-8">8</a><span class="ltx_tag ltx_tag_note"><span class="ltx_text" style="font-size:120%;">8</span></span><span class="ltx_text" style="font-size:120%;">Coding With Mantis Q40 </span><a class="ltx_ref ltx_url " href="https://www.aph.org/coding-with-the-mantis-q40/" style="font-size:120%;" title="">https://www.aph.org/coding-with-the-mantis-q40/</a><span class="ltx_text" style="font-size:120%;"> Retrieved Sept. 4, 2021.</span></p><p class="footnote" id="fn-9"><a class="footnote-ref" href="#fn-ref-9">9</a><span class="ltx_tag ltx_tag_note"><span class="ltx_text" style="font-size:120%;">9</span></span><span class="ltx_text" style="font-size:120%;">What is Low-Code? A Quick Introduction to Low-Code Development </span><a class="ltx_ref ltx_url " href="https://www.mendix.com/low-code-guide/" style="font-size:120%;" title="">https://www.mendix.com/low-code-guide/</a><span class="ltx_text" style="font-size:120%;"> Retrieved Sept. 4, 2021.</span></p><p class="footnote" id="fn-10"><a class="footnote-ref" href="#fn-ref-10">10</a><span class="ltx_tag ltx_tag_note"><span class="ltx_text" style="font-size:120%;">10</span></span><span class="ltx_text" style="font-size:120%;">10 Best Low-Code Development Platforms in 2021 </span><a class="ltx_ref ltx_url " href="https://www.softwaretestinghelp.com/low-code-development-platforms/" style="font-size:120%;" title="">https://www.softwaretestinghelp.com/low-code-development-platforms/</a><span class="ltx_text" style="font-size:120%;"> Retrieved Sept. 4, 2021.</span></p><p class="footnote" id="fn-11"><a class="footnote-ref" href="#fn-ref-11">11</a><span class="ltx_tag ltx_tag_note"><span class="ltx_text" style="font-size:120%;">11</span></span><span class="ltx_text" style="font-size:120%;">Best No-Code Development Platforms Software in 2021 </span><a class="ltx_ref ltx_url " href="https://www.g2.com/categories/no-code-development-platforms" style="font-size:120%;" title="">https://www.g2.com/categories/no-code-development-platforms</a><span class="ltx_text" style="font-size:120%;"> Retrieved Sept. 4, 2021.</span></p><p class="footnote" id="fn-12"><a class="footnote-ref" href="#fn-ref-12">12</a><span class="ltx_tag ltx_tag_note"><span class="ltx_text" style="font-size:120%;">12</span></span><span class="ltx_text" style="font-size:120%;">The Home of No-Code: A curated directory of resources and tools for non-techs </span><a class="ltx_ref ltx_url " href="https://www.nocode.tech/" style="font-size:120%;" title="">https://www.nocode.tech/</a><span class="ltx_text" style="font-size:120%;"> Retrieved Sept. 4, 2021.</span></p><p class="footnote" id="fn-13"><a class="footnote-ref" href="#fn-ref-13">13</a><span class="ltx_tag ltx_tag_note"><span class="ltx_text" style="font-size:120%;">13</span></span><span class="ltx_text" style="font-size:120%;">Visual Studio Code or Vscode </span><a class="ltx_ref ltx_url " href="https://code.visualstudio.com/" style="font-size:120%;" title="">https://code.visualstudio.com/</a><span class="ltx_text" style="font-size:120%;"> Retrieved Sept. 6, 2021.</span></p><p class="footnote" id="fn-14"><a class="footnote-ref" href="#fn-ref-14">14</a><span class="ltx_tag ltx_tag_note"><span class="ltx_text" style="font-size:120%;">14</span></span><span class="ltx_text" style="font-size:120%;">Brltty </span><a class="ltx_ref ltx_url " href="https://brltty.app/" style="font-size:120%;" title="">https://brltty.app/</a><span class="ltx_text" style="font-size:120%;"> Retrieved Aug. 23, 2021.</span></p><p class="footnote" id="fn-15"><a class="footnote-ref" href="#fn-ref-15">15</a><span class="ltx_tag ltx_tag_note"><span class="ltx_text" style="font-size:120%;">15</span></span><span class="ltx_text" style="font-size:120%;">Orca Screen Reader </span><a class="ltx_ref ltx_url " href="https://help.gnome.org/users/orca/stable/" style="font-size:120%;" title="">https://help.gnome.org/users/orca/stable/</a><span class="ltx_text" style="font-size:120%;"> </span><a class="ltx_ref ltx_url " href="https://en.wikipedia.org/wiki/Orca_%28assistive_technology%29" style="font-size:120%;" title="">https://en.wikipedia.org/wiki/Orca_%28assistive_technology%29</a><span class="ltx_text" style="font-size:120%;">Retrieved Sept. 6, 2021.</span></p><p class="footnote" id="fn-16"><a class="footnote-ref" href="#fn-ref-16">16</a><span class="ltx_tag ltx_tag_note"><span class="ltx_text" style="font-size:120%;">16</span></span><span class="ltx_text" style="font-size:120%;">Emacspeak Mail List </span><a class="ltx_ref ltx_url " href="https://www.emacspeak.org/" style="font-size:120%;" title="">https://www.emacspeak.org/</a><span class="ltx_text" style="font-size:120%;"> Emacs - Wikipedia </span><a class="ltx_ref ltx_url " href="https://en.wikipedia.org/wiki/Emacs" style="font-size:120%;" title="">https://en.wikipedia.org/wiki/Emacs</a><span class="ltx_text" style="font-size:120%;"> Retrieved Sept. 6, 2021.</span></p></section></div>
+
+      <script src="index.js">
+        </script>
+    </body>
+    
+</html>
