@@ -1,0 +1,115 @@
+\documentclass[11pt]{sig-alternate}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{blindtext}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{lastpage}
+\usepackage{comment}
+\usepackage{dirtytalk}
+\usepackage{xcolor}
+\usepackage{hanging}
+\usepackage{wrapfig}
+\usepackage[backend=biber, style=apa]{biblatex}
+\addbibresource{notation.bib}
+\usepackage{authblk}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx,subfigure}
+\usepackage{authblk}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{titlesec}
+\titleformat{\section}[block]{\Large\bfseries\filcenter}{}{1em}{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength\headheight{40.0pt}
+\addtolength{\textheight}{-20.0pt}
+\chead{%
+  \ifcase\value{page}
+  % empty test for page = 0
+  \or \includegraphics[width=\textwidth]{headerImage.png}% page=1
+  \else
+  \includegraphics[width=\textwidth]{headerImage.png}
+  \fi
+}
+%\chead{\includegraphics[width=\textwidth]{headerImage.png}}
+\fancyfoot[RE,RO]{\thepage}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue
+}
+\let\oldabstract\abstract
+\let\oldendabstract\endabstract
+\makeatletter
+\renewenvironment{abstract}
+{\renewenvironment{quotation}%
+               {\list{}{\addtolength{\leftmargin}{1em} % change this value to add or remove length to the the default
+                        \listparindent 1.5em%
+                        \itemindent    \listparindent%
+                        \rightmargin   \leftmargin%
+                        \parsep        \z@ \@plus\p@}%
+                \item\relax}%
+               {\endlist}%
+\oldabstract}
+{\oldendabstract}
+\makeatother
+
+% Left align captions
+\captionsetup{justification   = raggedright,
+              singlelinecheck = false}
+
+\begin{document}
+\begin{large}
+\twocolumn[
+\begin{@twocolumnfalse}
+
+\section*{Call For Manuscripts!}
+
+\subsection*{Journal of Science Education for Students with Disabilities (JSESD)}
+
+The \textit{Journal of Science Education for Students with Disabilities} is a peer-reviewed, open access, multi-disciplinary online journal with an international focus. We publish articles that reflect the best of research and practice related to inclusive science education, including works submitted by science and special education researchers, teacher educators, and teachers. Interesting topics have included innovative curricular ideas, instructional adaptations, research-based modifications, best practices, and management strategies in science education. \textit{JSESD} adopts the philosophical perspective that \textbf{all} students can achieve in science, and that science benefits from the full participation of \textbf{all} students.
+
+Below are types of articles that we are interested in publishing (this is not an exhaustive list):
+\begin{itemize}
+    \item Research Articles (Theoretical or Empirical)
+    \item Position Papers
+    \item Teaching Techniques Reflecting Classroom Best Practices
+    \item Product Reviews
+    \item Perspectives
+    \item Conference Proceedings
+\end{itemize}
+
+\subsection*{Submission:}
+\begin{itemize}
+    \item Manuscripts should be submitted online at \url{http://scholarworks.rit.edu/jsesd/}.
+\end{itemize}
+
+\subsection*{Submission Requirements:}
+
+\begin{itemize}
+    \item Title page with author information, including names, titles, affiliations, addresses, email, phone.
+    \item Electronic copy of the manuscript in Microsoft Word™.
+    \item Style must follow American Psychological Association (APA) 6th guidelines.
+    \item Maximum page length: 25 double-spaced pages including references.
+    \item The manuscript submitted to \textit{JSESD} must not have been submitted, either in part or wholly, elsewhere.
+\end{itemize}
+\end{@twocolumnfalse}]
+
+\subsection*{Contact Information:}
+
+Michele Hollingsworth Koomen, Ph.D.\\
+Editor, \textit{JSESD}\\
+\href{mailto:michelejkoomen@gmail.com}{michelejkoomen@gmail.com}
+
+Thomastine A. Sarchet-Maher, Ed.D.\\
+Editor, \textit{JSESD}\\
+\href{mailto:tasbka@rit.edu}{tasbka@rit.edu}
+
+Jessica Williams, Ph.D.\\
+Editor, \textit{JSESD}\\
+\href{mailto:jwtnmp@rit.edu}{jwtnmp@rit.edu}
+
+\end{large}
+\end{document}
