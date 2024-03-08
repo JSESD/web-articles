@@ -1,0 +1,308 @@
+\documentclass[11pt]{sig-alternate}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{blindtext}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{lastpage}
+\usepackage{comment}
+\usepackage{dirtytalk}
+\usepackage{xcolor}
+\usepackage{hanging}
+\usepackage{wrapfig}
+\usepackage[backend=biber, style=apa]{biblatex}
+\addbibresource{notation.bib}
+\usepackage{authblk}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx,subfigure}
+\usepackage{authblk}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage{cuted}
+\usepackage{fancyhdr}
+\usepackage{xurl}
+\usepackage{hyperref}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength\headheight{80.0pt}
+\addtolength{\textheight}{-80.0pt}
+\chead{%
+  \ifcase\value{page}
+  % empty test for page = 0
+  \or \includegraphics[width=\textwidth]{headerImage.png}% page=1
+  \or \includegraphics[width=\textwidth]{headerImage.png}% page = 2
+  \or \includegraphics[width=\textwidth]{headerImage.png}% page = 3
+  \or \includegraphics[width=\textwidth]{headerImage.png}% page = 4
+  \or \includegraphics[width=\textwidth]{headerImage.png}% page = 5
+  \else
+  \includegraphics[width=\textwidth]{headerImage.png}
+  \fi
+}
+%\chead{\includegraphics[width=\textwidth]{headerImage.png}}
+\fancyfoot[LE,LO]{Elevating the Voices for All Learners through Shared Stories of Science Learning\\           
+DOI: 10.14448/jsesd.13.0003}
+\fancyfoot[CE,CO]{{ }}
+\fancyfoot[RE,RO]{\thepage}
+\pagenumbering{arabic}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue
+}
+ 
+\let\oldabstract\abstract
+\let\oldendabstract\endabstract
+\makeatletter
+\renewenvironment{abstract}
+{\renewenvironment{quotation}%
+               {\list{}{\addtolength{\leftmargin}{1em} % change this value to add or remove length to the the default
+                        \listparindent 1.5em%
+                        \itemindent    \listparindent%
+                        \rightmargin   \leftmargin%
+                        \parsep        \z@ \@plus\p@}%
+                \item\relax}%
+               {\endlist}%
+\oldabstract}
+{\oldendabstract}
+\makeatother
+
+% Left align captions
+\captionsetup{justification   = raggedright,
+              singlelinecheck = false}
+              
+\begin{document}
+
+
+\title{Elevating the Voices for All Learners \\through Shared Stories of Science Learning}
+
+\author[1]{\large \color{blue} Lauren Madden}
+\author[1]{\large \color{blue} Amy K. Schuler}
+\author[1]{\large \color{blue} Stuart Z. Carroll}
+
+\affil[1]{The College of New Jersey}
+
+\toappear{}
+
+\maketitle
+\begin{@twocolumnfalse} 
+
+\begin{abstract}
+\begin{large}
+\item 
+     \textit{This study examines the science learning experiences across the lifespan of two groups of college students:  adults with intellectual and/or developmental disabilities in a post-secondary inclusive program, and adults in a preservice secondary education teacher candidate program. Data, in the form of personal narrative }science stories\textit{ were collected using a paired-interview approach in which students from each group interviewed one another about their science learning across their lifespans, and recorded responses using an online form. Across the stories, several clear themes emerged.  Similarities and differences were found across and within the groups and are shared in a narrative format. Trends that emerged both across and within groups are shared, and recommendations are made for current and future teachers for best practices in teaching science to all students, including those with a variety of disabilities. }
+     \\
+     \\
+     \textbf{Keywords:} college students, recommendations for teachers, narrative 
+     \end{large}
+\end{abstract}
+\end{@twocolumnfalse}
+
+%% ABSTRACT
+
+
+%% AUTHOR INFORMATION
+\textbf{*Corresponding Author, Lauren Madden}\\
+\href{mailto:maddenl@tcnj.edu}{(maddenl@tcnj.edu)}\\
+\textit{Submitted April 12, 2020}\\
+\textit{Accepted September 22, 2020} \\
+\textit{Published online April 23, 2021}\\
+\textit{DOI: 10.14448/jsesd.13.0003} \\
+
+
+\pagebreak
+\pagebreak
+
+\vspace{5mm}
+\section*{\vspace{140mm}}
+\begin{large}
+\section*{Introduction}
+Across the US, increased attention has been paid to science teaching and learning throughout the K-12 span with the widespread adoption of the Next Generation Science Standards (NGSS). Yet, little is known about how individuals with disabilities experience science learning. This study seeks to better understand the science learning experiences of all students, including individuals with intellectual disabilities, from the perspective of those individuals. Thou\-gh a body of literature around best practices for teaching science to individuals with disabilities exists, including modified instruction in both science content and process skills (Abels \& Marvic, 2013; Bakken, Mastropieri \& Scruggs, 1997; Dexter \& Hughs, 2011; Jiminez, Browder, Spooner, \& Debase, 2012; Scruggs \& Mastropieri, 2000; Spooner, Knight, Browder, \& Smith, 2012), much of the suggested practices are based on research done \textit{on} these individuals rather than research \textit{by} or \textit{with} these individuals. As a result the voices of individuals with disabilities are sometimes muted, interpreted, or changed by researchers or teachers. To help clarify and amplify the voices of the individuals with disabilities in our work, we present narratives that are crafted using their own words, alongside those of their peers. 
+
+\section*{Literature Review}
+Recent research (e.g. Hwang \& Taylor, 2016) suggests that integrating science into other content areas, including the arts, and using a STEM-based design approach such as the engineering design process, can engage individuals with disabilities in science learning. These authors emphasize the similarities in the engineering design process and universal design for learning, which is widely considered a best practice in inclusive teaching. Other authors suggest that graphic organizers and purposeful scaffolding of skills, content, and vocabulary can help improve inquiry-based experiences in science learning for individuals with disabilities (Abels, 2015; Jiminez et al, 2012). Taken together, these strategies offer practical ideas for enhancing students’ engagement in science, from the perspective of the educational researcher or classroom teacher. 
+
+Our study builds on previous work (Madden, Schuler, Friedman, Kohler \& Panday, 2018) whi\-ch offered recommendations for current and future science teachers to best meet the needs of individuals with intellectual and/or developmental disabilities using the \textit{first person lived experiences} of three such individuals. In the initial study, three young women with intellectual disabilities enrolled in a four-year residential post-secondary certificate program on the campus of The College of New Jersey shared their own science learning experiences and recommendations for current and future science teachers. The three young women worked with their program director and a science educator to craft their first person narratives. Across the three stories several clear themes emerged. These included: (1) they felt frustrated with science instruction that was too heavily focused on reading, (2) they preferred clear instructions, (3) their hands-on experiences in science were most memorable, and (4) that the assistance of a teacher or aide was critical in their successes in learning science. 
+
+The trends that emerged in the science learning experiences for these three young women echoed those shared by others, specifically in the first section of Koomen, Kahn, Atchison, and Wild’s edited volume, \textit{Towards Inclusion of All Learners through Science Teacher Education}, which our work was part of. For example, Koomen (2018) shared Alejandro’s\footnote{Alejandro is the pseudonym for an individual with cerebral palsy featured in this book chapter.} frustration with science instruction focused on reading and vocabulary. Similarly, Koester’s (2018) work shared science learning experiences of individuals with disabilities through poetry and reader’s theater. One individual’s poems emphasized the importance of offering clear instructions wh\-ile several others commented on memorable science learning experiences such as the dissection of a frog and keeping a moon log. One poem shared the importance of a teacher recognizing and honoring the differences in how he learned. 
+
+Our first study offered three clear recommendations to current and future teachers which seemed simple and perhaps predictable. These were: (1) listen to your students, (2) check in with your students frequently, and (3) show enthusiasm for the content. Sadly, these themes also came across in the science learning experiences of other individuals with disabilities. For example, Alejandro, the individual working with Koomen (2018) shared that he felt it was important for teachers to like children and their content. The poems created by individuals with disabilities in Koester’s piece also offered recommendations for teachers, most notably in \\\textit{Funny Girl:} “I NEED YOU TO FIGURE OUT /ANOTHER WAY!/.../Your kind of science ma\-kes my brain hurt.” 
+
+Taken together, the science learning experiences of individuals with disabilities are often told by others, and demonstrate that we need to learn more about these individuals in order to teach all students well. 
+
+\section*{Study Context}
+The current study expanded the number of voices by using a paired interviewing approach. Students enrolled in two different programs at our institution--one designed specifically for adults with intellectual disabilities (The Career and Community Studies Program, CCS) and another traditional undergraduate teacher preparation program in secondary education (Educational Administration and Secondary Education, EASE)--were paired and asked to interview one another about their experiences learning science. The CCS program is a four year Comprehensive Transition/Post-Secondary Program that is recognized by the US Department of Education. This program offers young adults with intellectual and/or developmental disabilities the opportunity to participate in a liberal learning college experience with a focused outcome on independent living and career readiness. The EASE program is a four-year dual major degree in which students graduate with a bachelor’s degree in their content area major and secondary education. Table 1 below describes the two groups of students.
+
+
+\begin{table*}[h!]
+\centering
+\captionsetup{font=large, labelfont=bf}
+\caption{\textbf{\textit{Description of Both Groups of Students}}}
+\label{tab:table-1}
+\resizebox{15cm}{!}{%
+\begin{tabular}{ll}
+\hline
+\textbf{\begin{tabular}[c]{@{}l@{}}Career \& Community \\ Studies (CCS)\end{tabular}} &
+  \textbf{\begin{tabular}[c]{@{}l@{}}Educational Administration \& \\ Secondary Education (EASE)\end{tabular}} \\ \hline
+\multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}4-year residential program \\ for individuals with \\ developmental and/or \\ intellectual disabilities.\end{tabular}} &
+  \begin{tabular}[c]{@{}l@{}}4-year undergraduate dual degree \\ (BA or BS) program for individuals \\ seeking to teach at the middle or \\ high school level.\end{tabular} \\ \hline
+\multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Students have a range of \\ prior educational and \\ background experiences \\ including fully inclusive \\ attendance at public K-12 \\ schools and attendance at \\ fully segregated special \\ education schools, both \\ private and public.\end{tabular}} &
+  \begin{tabular}[c]{@{}l@{}}Students have a range of prior \\ educational and background \\ experiences including fully \\ inclusive attendance at public \\ K-12 schools and attendance \\ at fully segregated special \\ education schools, both \\ private and public.\end{tabular} \\ \hline
+\multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Students don’t have a \\ declared major.\end{tabular}} &
+  \begin{tabular}[c]{@{}l@{}}Students’ content area majors \\ include Biology, Chemistry, \\ English, History, Mathematics, \\ Physics, Spanish, and Technology.\end{tabular} \\ \hline
+\multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Students had varied K-12 \\ science experiences; none \\ had attended or audited \\ a college science class.\end{tabular}} &
+  \begin{tabular}[c]{@{}l@{}}Students had varied science \\ backgrounds ranging from \\ just one required general \\ education science course at \\ the college level to a dual \\ major in a science field.\end{tabular} \\ \hline
+\multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Ages range from 19-25 \\ (average age $\sim$22)\end{tabular}} &
+  \begin{tabular}[c]{@{}l@{}}Ages range from 19-22 \\ (average age $\sim$20)\end{tabular} \\ \hline
+\end{tabular}%
+}
+\end{table*}
+
+The students from both programs participated in the Finer Things course, which is designed using universal design principles so that CCS and EASE students can have a shared learning experience built around two-week modules in various academic and arts-based disciplines. This is a required course for CCS students in their Sophomore year, and gives them a positive learning experience with age peers. For the EASE students it served as a practicum in their Sophomore Psychology of Learning class, as it provides them with the opportunity to really connect with people who learn differently from themselves without being in the role of tutor or mentor. The science module was one of the several two-week modules that make up the course. 
+ 
+\section*{Theoretical Perspectives}
+Coyle (2018) noted : “We tend to use \textit{story} casually, as if stories and narratives were ephemeral decorations for some unchanging underlying reality. The deeper neurological truth is that stories do not cloak reality but create it, triggering cascades of perception and motivation.” (p. 182) We believe that stories are powerful tools for meaning-making and self-reflection and that allowing individuals to share their own perspectives, especially to one-another can help build an understanding of shared experiences. Building from this sentiment, our work uses a narrative approach to make meaning of individuals’ science learning experiences. Riessman (2008) noted, “in narrative study, particularites and context come to the fore. Human agency and the imagination of storytellers (and listeners and readers) can be interrogated, allowing research to include many voices and subjectivities.” (p. 13) 
+
+\section*{Methodology}
+ 
+The participants in this study were paired and interviewed one another to tell and document their stories of science learning. As Riessman (2008) stated on page 24, “Storytelling in interviews can occur at the most unexpected times, even in answer to fixed-response questions.” 
+
+The interviews took place within the context of the \textit{Finer Things} course. At the conclusion of a two-week science unit (everyday chemistry in the fall, the science of water in the spring) the students were paired (one partner from each program) and given an online survey to use to collect demographic information (program, age, hometown, and a pseudonym) and to interview one another. A different set of students from each program participated in the fall 2017 and spring 2018 semesters. They were encouraged to discuss their responses to the questions which were:
+
+\begin{enumerate}
+    \item When you think about your experience learning science in school, what comes to mind? 
+    \begin{itemize}
+       \item 	What do you remember about science in elementary school?
+       \item What do you remember about science in middle school?
+       \item What do you remember about science in high school?
+      \item What do you remember about science in college?
+    \end{itemize}
+       \item What things did you like in science class?
+    \begin{itemize}
+       \item 	What kinds of things did the teachers do that help you learn?
+       \item What kinds of activities do you remember that you enjoy?
+       \item What topics were interesting to you?
+    \end{itemize}
+       \item What things did you dislike in science class?
+    \begin{itemize}
+        \item What kinds of things did the teachers do that hurt your learning?
+       \item What kinds of activities do you remember that you disliked?
+       \item What topics were boring or frustrating to you?
+    \end{itemize}
+   \item What do you like about science?
+    \item Do you have any hobbies or interests related to science? (Gardening, animals, weather, technology, etc.)
+    \item Do you think any parts of science are frustrating? Which ones?
+    \item How would you describe yourself as a learner?
+    \item What suggestions do you have for future teachers to help them best work with students like you in science class?
+    \item What else do you want to tell me about science? 
+\end{enumerate}
+
+A total of 17 students from the CCS program and 18 from the EASE program participated in the interviews and agreed to share their responses with us. The study’s three authors read through the responses for each student, then categorized them deductively using themes that emerged in the Madden et al’s (2018) prior study as codes. These themes were supported by similar findings from other authors (e.g. Koester, 2018) in Koomen et al.’s 2018 edited volume. Additional codes that emerged from the current study were also documented. The codes regarding science learning preferences for individuals with disabilities based on our prior study were:
+
+\begin{itemize}
+    \item Avoided heavy reading material or mathematical formulas (Reading/Math)
+    \item Included clear and specific instructions \\(Clear Instructions)
+    \item Incorporated hands-on exploration and can\-onical experiments such as building volcanoes or growing butterflies (Hands-on)
+    \item One-on-one assistance either during or outside of class by a teacher or aide (One-on-one)
+\end{itemize}
+
+The codes regarding recommendations for future and current science teachers based on our prior work were:
+\begin{itemize}
+    \item Listen to your students
+    \item Check in with students frequently
+    \item Show enthusiasm for your content 
+\end{itemize}
+
+The entire dataset was coded by the three authors collaboratively. Discussion took place until agreement was reached. After discussion, several new codes emerged, specifically related to recommendations for future teachers. We marked and coded for these new trends as well. These were:
+\begin{itemize}
+    \item Prepare well for class
+    \item Provide models, frameworks, and examples when teaching
+\end{itemize}
+
+To summarize, we used the codes (about prior learning experiences and recommendations for teachers) from our prior study to code the dataset together. After discussion, it became clear that the new recommendations for teachers emerged. We then re-coded the entire dataset for instances of these new codes. After the two rounds of coding and organizing our data, we used a narrative approach to tell the story of the participants’ science learning.
+
+\section*{Finding Science Stories Among the Two Groups}
+Aside from the difference in the particular program, there were some other clear differences between the groups. Yet, they had more in common than different, as they learned while interviewing one another. Many of the themes that emerged for the three CCS students in our earlier work (Madden et al, 2018) emerged across both groups, though sometimes in different ways. What follows is some unpacking of each key theme, followed by a discussion of how the groups experienced science learning across their lifespans. 
+
+\subsection*{Reading and mathematics-focused science instruction}
+When recalling their own science stories, both groups frequently mentioned their dislike for reading, writing, and mathematics-focused instruction. In the words of DL, an EASE student: “I was not a big fan of writing lab reports, although I enjoyed doing most labs,” early on in the interview and later, “The parts of science that deal with math are frustrating for me. I am better at conceptual work rather than work based in formulas.” Melissa, another EASE student had similar sentiments, “I did not enjoy science in high school. Earth science and biology were not too bad, but physics and chemistry were taught poorly to me and the addition of math into science threw me for a loop.” Similarly RW a CCS student reported that he didn’t like, “learning how to use the balance scale; [I] didn't like when math was involved.” Eddie, a CCS student also shared that he disliked, “just reading textbooks.” Al, a CCS student concurred that textbook reading was frustrating for him in science class. Momo, another CCS student offered direct advice to teachers that teachers should make readings clearer and highlight the most important information. 
+
+\subsection*{Clear guidance from teachers}
+Another theme that came up frequently with both the EASE and CCS students was the importance of clarity in instructions from teachers, including the importance of timing. Melissa, an EASE student asked that teachers, “Go slower and be more attentive to student's needs,” While C, another EASE student, hoped that her own science teachers would, “Review information carefully and not too fast.” Momo, a CCS student reported feeling frustrated when a teacher did not take the time to explain the math required to master certain science concepts. Brittany, another CCS student suggested that teachers should, “Be patient with any students who may need extended time on assignments.’
+
+\subsubsection*{Concrete Examples and Organizational Tools}
+The CCS students suggested that their own science learning would be enhanced with some concrete examples and organizational tools. \\Breesie, a CCS student suggested teachers, “use images and diagrams,” while Al, another CCS student, requested that teachers send notes the night before class. Aaron, a CCS student also liked the visual tools science teachers used in his prior learning experiences, “I liked how they put stuff on the boards to write out the experiments.” These types of suggestions did not come up as frequently from the group of students from the EASE program. 
+
+\subsection*{Hands-on or canonical experiments}
+
+Across both groups, participants often referred to specific hands-on experiences, canonical experiments, or field trips, as Sam, an EASE student commented on, “watching the transformation of caterpillars into butterflies,” in elementary school. Students from both groups also mentioned field trips as valuable to their science learning, both through specific examples (e.g. a trip to a mine or local science museum) or just learning outside of the classroom in general. KK, a CCS student, and VL and NN, EASE students all recalled making volcanoes with baking soda and vinegar. Similarly, three CCS students and five EASE students commented on memorable experiences dissecting in middle or high school. Several students also recalled specific discrepant events or other lessons that stuck with them such as RW, a CCS student who remembered learning about sound waves using a slinky. 
+
+\subsection*{Connecting with students}
+
+Several of the EASE students directly stated the importance of teachers connecting with students. For example, Kelly described a teacher she had that impressed her, “She connected with the students. Wanted students to succeed...took all the time one would need so the student would understand and never stopped challenging students.” Dakota, another EASE student discussed the way in which a former teacher had made an effort to connect science instruction to students’ life with an emphasis on health. Many EASE students also reported teachers’ willingness to stay after school and offer to support students outside the classroom too. 
+
+The idea of connecting directly with students did not come out in the data related to the CCS group, though one student, Breesie, offered that she preferred learning science “one-on-one.” This theme of having one-on-one assistance was a clear trend in our earlier work (Madden et al, 2018), but aside from this one comment, did not emerge this time from the CCS students as important. 
+
+\subsection*{Science Across the Lifespan}
+\subsubsection*{In the early years}
+
+Not surprisingly, one clear difference between both groups of students was their recollection of elementary science- with nearly half of the CCS students (8/17) reporting that they did not know or did not remember what science they learned in elementary school. Just one EASE student (of 18) responded in the same way. Several EASE students noted the repetitive nature of elementary science, such as DL, who reported, “I remember learning the same things every year.” Some students in the EASE group recalled learning science only some of the time (as the subject sometimes alternates with social studies in elementary school) as well. Am\-ong those who responded in both groups, specific topics were listed more so than teaching strategies or approaches. For example, many respondents reported learning about the solar system, weather, plants, and animals in the elementary years. A few listed hands-on experiments in general, or specific examples such as the butterfly life cycle.
+
+
+\subsubsection*{Middle grades}
+
+By middle school, just two CCS students responded that they didn’t know or didn’t remember what they learned in science. Participants from both groups listed topics once again (e.g. erosion, forces, animals) but more often cited instructional strategies and learning experiences like dissection, projects, and learning through video. Several students from both groups mentioned specific examples of activities, such as Florence, a CCS student who remembered, “pulling the tablecloth without breaking the plates,” and Fred, an EASE student who recalled, “building a popsicle stick bridge.” A few EASE students made more overarching statements about their middle school science experiences, such as Dakota who noted, “I loved middle school science. We did lots of labs, entered in a science fair competition, dissected a pig, a shark, and a frog, and my teacher really inspired me to want to pursue a science career.”
+
+\subsection*{High school experiences}
+
+The high school science learning experiences for the students differed quite a bit both within and between groups. Students in the CCS group tended to list general topics, like planets or the human body along with instructional strategies such as tests, experiments, and lectures. Several CCS students described some specific learning activities from their high school courses, such as Aaron who described “We did some experiments in biology like dissecting a frog, opened the stomach and learned about the digestive system. The EASE students’ responses for science at the high school level had more variety. Some described struggles or boredom in high school science, such as John who described, “Struggling with chemistry and being told the answers to my physics quizzes by the teacher.” Others reported very strong positive experiences such as Jane: “I took biology, chemistry, and physics in high school. My biology and physics teachers were amazing, and had us do interactive activities and labs to enhance our learning.” Still others listed subjects like biology and physics, or specific topics, like the human body when describing high school science. 
+
+\subsection*{College experiences}
+For all but one CCS student, who took an astronomy course as part of her program, the only science they experienced in college was through modules in the \textit{Finer Things} course, and as such, described those experiences during the interviews (i.e. the chemistry of baking chocolate chip cookies and the properties of water). More often the EASE students had taken science in college, though a few had not yet done so. It should be noted that the science background for the EASE students is quite varied and was dependent on their content area (i.e. English majors would not have had more than one or two science courses while biology majors would have had many). They responded much in the same way that they did regarding their high school experiences, with lists of course titles and few reflections on their successes or struggles. 
+
+\section*{Discussion \& Conclusion}
+Across both groups of students, when asked to reflect on their experiences learning science at the elementary, middle school, high school, and college level, the two groups had many shared experiences. It should be noted, however, that certain trends did emerge that were specific to each group. Among the CCS students, one-off activities were often listed, and many did not remember much about their early experiences. On the other hand, the EASE students more often discussed the broader content or topic, such as Dakota’s response about her college science learning: “I am currently enjoying my science classes in college. I love biology and chemistry and I am currently in organic chemistry which is very challenging but I enjoy it.” Some of these differences could be attributed to the EASE students who are pursuing science content area teacher certifications and therefore have taken more advanced science coursework. However, not all EASE students were studying science. 
+
+The theme of using hands-on exploration came forth in both groups as they began to discuss the things teachers did to help them learn science. R.W., a student in the CCS program talked about the way her fifth grade teacher, “did a lot of hands on things, [and] gave us the opportunity to be involved. [She even] used a huge slinky to demonstrate how fast the sound could travel!” Both groups also appreciated when their teachers showed enthusiasm, as DL, an EASE student reported, “They showed that they were interested in the subject and their excitement to discuss science made me excited to learn about science.” These findings mirror those reported in our earlier study as well as others in Koomen et al (2018). Many students in the CCS program, and a few in the EASE program also commented on the helpful ways teachers provided them with tools or scaffolds to aid in their learning such as providing handouts or modified readings, which are also strategies recommended in the literature on best practices for addressing the needs of individuals with disabilities in science (Abels, 2015; Jiminez et al, 2012). Additionally, these kinds of supports might ameliorate some of the heavy reading and mathematics load associated with science learning that many individuals in both groups reported. The two groups also both emphasized their frustration with science learning that included a heavy reading or mathematical load in agreement with the three individuals in our earlier work (Madden et al, 2018).
+
+Another common theme that came across both groups was a sense of frustration about the way their science teachers interacted with them. \\When asked about her science teachers, Delphine, a CCS student said, “They ignore me,” while Florence, another CCS student felt frustrated, “when they’re not thinking about me or my friends.” Brittany, a CCS student offered that teachers should, “Be patient for any students who may need extended time on assignments.” These types of comments echo the narratives shared in our earlier work (Madden et al, 2018) and others (e.g. Koester, 2018) and further emphasize that changes must be made to engage all learners in science. Kelly, an EASE student expressed similar frustrations and made some recommendations for teachers: “You have to take your time. You must be willing to spend your lunch break helping a student who truly wants to learn but couldn't figure it out the first time. You have to really have the student in your best interest...science can be a difficult [content area] to grasp.” 
+
+Through these conversations, the pairs of students were able to develop a sense of each person’s own science journey, interests, and frustrations, and eventually find that they had much common ground. Including the voices of diverse learners, including those with intellectual disabilities, in our discussion and recommendations for science teaching is a critical step to help us move towards a more democratic perspective on science teaching and learning. Through using the paired interview approach we learned that the act of telling one another about science experiences allowed stories to em\-erge. Through this process, the individuals in both groups were able to reflect on and make meaning of their science learning, much in the way Coyle (2018) described. Additionally, thro\-ugh the expansion of our earlier work by applying our initial coding scheme work to a larger group and expanding it allowed us to validate the usefulness of the framework that emerged in our earlier study (Madden et al, 2018). Further, applying the coding scheme to a larger dataset including those without intellectual disabilities provides additional evidence on its efficacy and usefulness as a framework. Future work is needed to build upon recommendations for elevating the voices of all science learners and teaching science to all individuals including disabilities . 
+
+\include{} 
+\section*{References}\par 
+
+\leftskip 0.25in
+\parindent -0.25in 
+%%%
+Abels, S. (2015). Scaffolding Inquiry-based Science and Chemistry Education in Inclusive Classrooms. \textit{NL Yates (Hg), New Developments in Science Education Research}, 77-96.
+
+Abels, S. \& Markic, S. (2013). Umgang mit Vielfalt –neue Perspektiven im Chemieunterricht. Naturwissenschaftenim Unterricht -Chemie, 24(135), 2-6.
+
+Bakken, J. P., Mastropieri, M. A., \& Scruggs, T. E. (1997). Reading comprehension of expository science material and students with learning disabilities: A comparison of strategies. \textit{The Journal of Special Education,} 31(3), 300-324. 
+
+Coyle, D. (2018). \textit{The culture code: The secrets of highly successful groups}. Bantam.
+
+Hwang, Jiwon and Taylor, Jonte C. (2016) ``Stemming on STEM: A STEM Education Framework for Students with Disabilities," \textit{Journal of Science Education for Students with Disabilities:} Vol. 19 : Iss. 1 .
+
+Jimenez, B. A., Browder, D. M., Spooner, F., \& Dibiase, W. (2012). Inclusive inquiry science using peer-mediated embedded instruction for students with moderate intellectual disability. \textit{Exceptional Children, 78}(3), 301-317.
+
+Koester, M. (2018). Tanglde in Tetx: What I Want You to Know about My Dyslexic Self. In M. Koomen, S. Kahn, C. Atchison, \& T. Wild (Eds.), \textit{Toward Inclusion of All Learners Through Science Teacher Education}. Rotterdam: Sense Publishers. (pp. 26-41)
+\newpage
+Koomen, M. (2018). A Good Teacher Makes Science Light-Hearted: Experiences in Learning Science from Alejandro. In M. Koomen, S. Kahn, C. Atchison, \& T. Wild (Eds.), \textit{Toward Inclusion of All Learners Through Science Teacher Education}. Rotterdam: Sense Publishers.
+ (pp. 43-49).
+
+Koomen, M.L., Kahn, S., Atchison, C.L., \& Wild, T.A. (Eds.). (2018). Towards inclusion of all learners through science teacher education. Rotterdam: Sense Publishers.
+
+Madden, L., Schuler, A.K., Friedman, M., Koehler, D., \& Panday, S. (2018). Looking Through the Window to Help Teach Others: Science Stories of Three Young Women. In M. Koomen, S. Kahn, C. Atchison, \& T. Wild (Eds.), \textit{Toward Inclusion of All Learners Through Science Teacher Education}. Rotterdam: Sense Publishers.
+
+Riessman, C. K. (2008). \textit{Narrative methods for the human sciences}. Sage.
+
+Scruggs, T. E., \& Mastropieri, M. A. (2000). The effectiveness of mnemonic instruction for students with learning and behavior problems: An update and research synthesis. \textit{Journal of Behavioral Education}, 10(2-3), 163-173.
+
+Smith, B. R., Spooner, F., Jimenez, B. A., \& Browder, D. (2013). Using an early science curriculum to teach science vocabulary and concepts to students with severe developmental disabilities. \textit{Education and Treatment of Children}, 36(1), 1-31.
+
+Spooner, F., Knight, V. F., Browder, D. M., \& Smith, B. R. (2012). Evidence-based practices for teaching academic skills to students with severe developmental disabilities. \textit{Remedial and Special Education}, 33, 374-387. doi: 10.1177/0741932511421634
+
+\end{large}
+\end{document}
