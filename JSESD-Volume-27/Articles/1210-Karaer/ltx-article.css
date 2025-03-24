@@ -29,10 +29,6 @@ br {
   margin: 2em 0;
 }
 
-#p1 {
-  display: none;
-}
-
 /* Footnote code used for cleaner script */
 .footnote-ref {
 	color: blue;
