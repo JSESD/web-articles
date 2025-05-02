@@ -1,0 +1,148 @@
+\documentclass{sig-alternate} % sets document style to sig-alternate
+% packages
+% typesetting
+% \usepackage{dirtytalk} % can be used to typset quotes easier, automatically sets correct quotation marks with \say{content}
+% \usepackage{hanging} % hanging paragraphs with \hanging, like in references. doesn't translate to HTML
+% \usepackage[defaultlines=3,all]{nowidow} % avoid widows
+\usepackage[pdfpagelabels=false]{hyperref} % produce hypertext links, includes backref and nameref
+\usepackage{xurl} % defines url linebreaks, loads url package
+\usepackage{microtype} % better typography
+% \usepackage{textcomp} % for better tildes
+% \newcommand{\texttildemid}{\raisebox{0.4ex}{\texttildelow}} % creates a text mid tilde, a low tilde moved up
+% layout
+\usepackage{calc} % so we can do inline math within \setlength
+\usepackage{enumitem} % control layout of itemize, enumerate, description
+\usepackage{fancyhdr} % control page headers and footers
+% \usepackage{float} % improved interface for floating objects, adds H float
+% \usepackage{multicol} % intermix single and multiple column pages
+% \textgreek % typeset greek letters in text mode
+% language
+\usepackage[utf8]{inputenc} % utf8 encoding, wider character set
+\usepackage[english]{babel} % multilanguage support
+% misc
+\usepackage{graphicx} % builds upon graphics package, \includegraphics
+%\usepackage{lastpage} % reference number of pages
+\usepackage{xcolor} % color extensions
+\usepackage[backend=biber, style=apa]{biblatex} % sophisticated bibliographies % necessary for HTML to display author info and date on abstract page
+\usepackage{csquotes} % advanced quotations, makes biblatex happy
+\usepackage{authblk} % support for footnote style author/affiliation
+% tables and figures
+%\usepackage{array} % extend array and tabular environments
+\usepackage{caption} % customize captions in figures and tables (rotating captions, sideways captions, etc)
+%\usepackage{cuted} % allow mixing of \onecolumn and \twocolumn on same page
+\usepackage{multirow} % create tabular cells spanning multiple rows
+%\usepackage{subfigure} % deprecated, support for manipulation of small figures
+\usepackage{tabularray} % better table construction, does not translate to HTML
+%\usepackage{wrapfig} % allows figures or tables to have text wrapped around them
+% dummy text
+%\usepackage{blindtext} % blind text dummy text
+%\usepackage{kantlipsum} % Kant style dummy text
+\usepackage{lipsum} % lorem ipsum dummy text
+
+\setlength{\paperheight}{11in}
+
+\pagestyle{fancy} % sets pagestyle to fancy for fancy headers and footers. remember to change the header depending on article type
+% allows the header to take the full width of the page https://www.reddit.com/r/LaTeX/comments/awtrb2/how_to_you_make_the_headerfooter_extend_the/
+\newlength{\oddmarginwidth}
+\setlength{\oddmarginwidth}{1in+\hoffset+\oddsidemargin}
+\newlength{\evenmarginwidth}
+\setlength{\evenmarginwidth}{\evensidemargin+1in}
+\fancyhfoffset[LO,RE]{\oddmarginwidth}
+\fancyhfoffset[LE,RO]{\evenmarginwidth}
+
+% header and footer
+% modern way to set header image
+\renewcommand{\headrulewidth}{0pt} % defines thickness of line under header
+\renewcommand{\footrulewidth}{0pt} % defines thickness of line above header
+\setlength\headheight{80.0pt} % sets height between top margin and header image, effectively moves page contents down
+\addtolength{\textheight}{-80.0pt} % seems to affect the lower height. maybe only works properly if footer numbers enabled?
+\fancyhf{}
+\fancyhead[CE, CO]{\includegraphics[width=\pdfpagewidth]{headerImage.png}}
+
+\hypersetup{colorlinks=true,urlcolor=blue} % sets link color to blue
+\urlstyle{same} % sets url typeface to same as rest of text
+
+% set caption and figure to italics, label bold, left align captions, does not transfer to HTML
+\captionsetup{labelfont=bf, font={large, it}, justification=raggedright, singlelinecheck=false}
+\renewcommand\theContinuedFloat{\alph{ContinuedFloat}} % has something to do with subfigures... don't remember why i used it
+
+%this next bit is confusing, but essentially changes the width of the abstract. Seems to have been copied from this https://tex.stackexchange.com/questions/151583/how-to-adjust-the-width-of-abstract
+\let\oldabstract\abstract
+\let\oldendabstract\endabstract
+\makeatletter %changes @ catcode to enable modification (in parsep)
+\renewenvironment{abstract} % alters the abstract environment
+{\renewenvironment{quotation}% alters the quotation environment in the abstract environment ?
+               {\list{}{\addtolength{\leftmargin}{1em} % change this value to add or remove length to the the default ?
+                        \listparindent 1.5em%
+                        \itemindent    \listparindent%
+                        \rightmargin   \leftmargin%
+                        \parsep        \z@ \@plus\p@}%
+                \item\relax}%
+               {\endlist}%
+\oldabstract}
+{\oldendabstract}
+\makeatother %changes @ catcode to disable modification
+
+\newenvironment{references} % creates a new environment that uses hanging indentation for sources. handy when there's content after the references
+    {
+    \leftskip 0.25in
+    \parindent -0.25in
+    }
+    {
+    \leftskip 0in
+    \parindent 0in
+    }
+\begin{document}
+\title{From the Editors...}
+
+\author[1]{\large \color{blue} Michele Hollingsworth Koomen} % make sure there are no spaces after the author's name
+\author[2]{\large \color{blue} Thomastine A. Sarchet-Maher}
+\author[ ]{\large \color{blue} Jessica Williams}
+
+\affil[1]{Gustavus Adolphus College}
+\affil[2]{Rochester Institute of Technology/National Technical Institute for the Deaf}
+\toappear{} % the sig.alternate document type includes a copyright warning that appears at the bottom of the first page. This makes that not appear/be empty. Don't ask my why it's there in the first place /shrug
+
+\maketitle % prints article title
+
+\begin{large}
+\section*{Dear \textit{\textbf{JSESD}} Authors, Readers, and Supporters:}
+Happy New Year and thank you for your continued support of the \textit{Journal of Science Education for Students with Disabilities (JSESD)}!
+
+\textit{JSESD} remains a venue for the dissemination of research and practice related to the education of students with disabilities in the science classroom and laboratory since 1998. Volumes \#1 through 11 were published in a print format. Starting with Volume \#12, the journal has been published online and Open Access. Having \textit{JSESD} in the Open Access format maximizes access for readers and authors and allows the journal to remain economically sustainable.
+
+The journal enthusiastically seeks new manuscript submissions. We are especially interested in articles on science education for students with varying types of disabilities at a full range of grade levels (K-12 and postsecondary). We are also eager to include articles that represent the full research-to-practice continuum, including articles representative of inclusive pedagogies and research in general science classrooms. While most manuscripts submitted to \textit{JSESD} have historically focused on research, we have recently seen an increase in practitioner, or “Teaching Techniques” articles. We are delighted to see these articles, as they provide practical, ready-to-implement approaches for educators at all levels. We also seek referees who can peer-review \textit{JSESD} manuscript submissions. If you are interested in peer reviewing, please contact us (\href{mailto:michelejkoomen@gmail.com}{michelejkoomen@gmail.com}, \href{mailto:tasbka@rit.edu}{tasbka@rit.edu}, \href{mailto:jessicaw.phd@gmail.com}{jessicaw.phd@gmail.com}).
+
+The journal is currently hosted by bepress\texttrademark Digital Commons. The journal’s management and production are led by the talented group at Rochester Institute of Technology’s Scholarly Publishing group. A few reminders:
+
+\begin{itemize}[label=--]
+    \item The journal resides online.
+    \item Manuscripts should be submitted online at \url{http://scholarworks.rit.edu/jsesd/}.
+    \item There are currently no fees charged to authors for publication in \textit{JSESD}. As an open access journal, articles are also free for anyone to read.
+    \item \textit{JSESD} uses a double-blind review of manuscripts
+\end{itemize}
+
+We are pleased to welcome Drs. Millicent Carmouche Burks (University of South Alabama) and Laura N. Sarchet (Niagara University) as Associate Editors of \textit{JSESD}. Both bring significant expertise to the journal and will be valuable members of the growing editorial team at \textit{JSESD}.
+
+We remain proud of the relationship that \textit{JSESD} has with its partner organization, Science Education for Students with Disabilities (SESD), which is an associated group of the National Science Teaching Association (NSTA). Each year, SESD holds a pre-conference on science and disability at NSTA’s national conference. For further information, please contact Rachel Zimmerman Brachman, SESD Conference Coordinator, at: \href{mailto:Rachel.Zimmerman-Brachman@jpl.nasa.gov}{Rachel.Zimmerman-Brachman@jpl.nasa.gov}.
+
+We know that there is a considerable amount of high-quality scholarship that is being conducted in the field of science education for students with disabilities. \textit{JSESD} is proud to serve as a mechanism for the dissemination of such work. As always, we appreciate your support in maintaining \textit{JSESD} as a quality peer-reviewed journal.
+
+Sincerely,
+
+Michele, Thomastine, and Jessica
+
+Michele Hollingsworth Koomen, Ph.D.
+
+Editor, \textit{JSESD}
+
+Thomastine A. Sarchet-Maher, Ed.D.
+
+Editor, \textit{JSESD}
+
+Jessica Williams, Ph.D.
+
+Editor, \textit{JSESD}
+
+\end{large}
+\end{document}
