@@ -1,57 +1,78 @@
-\documentclass[11.5pt]{sig-alternate}
-\usepackage{tabularx}
-\usepackage{graphicx}
-\usepackage{blindtext}
-\usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
-\usepackage{lastpage}
-\usepackage{comment}
-\usepackage{dirtytalk}
-\usepackage{xcolor}
-\usepackage{hanging}
-\usepackage{wrapfig}
-\usepackage[backend=biber,style=apa]{biblatex}
-\addbibresource{notation.bib}
-\usepackage{authblk}
-\usepackage{caption}
-\usepackage{longtable}
-\usepackage{graphicx,subfigure}
-\usepackage{authblk}
-\usepackage{enumitem}
-\usepackage[utf8]{inputenc}
-\usepackage{cuted}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\usepackage{lipsum}
-\usepackage{xurl}
-\usepackage{hyperref}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-\setlength\headheight{80.0pt}
-\addtolength{\textheight}{-80.0pt}
-\usepackage{amssymb}
-\setcounter{tocdepth}{2}
-\chead{%
-  \ifcase\value{page}
-  % empty test for page = 0
-  \or \includegraphics[width=\textwidth]{headerImage.png}% page = 1
+\documentclass{sig-alternate} % sets document style to sig-alternate
+% packages
+% typesetting
+% \usepackage{dirtytalk} % can be used to typset quotes easier, automatically sets correct quotation marks with \say{content}
+% \usepackage{hanging} % hanging paragraphs with \hanging, like in references. doesn't translate to HTML
+% \usepackage[defaultlines=3,all]{nowidow} % avoid widows
+\usepackage[pdfpagelabels=false]{hyperref} % produce hypertext links, includes backref and nameref
+\usepackage{xurl} % defines url linebreaks, loads url package
+\usepackage{microtype} % better typography
+% \usepackage{textcomp} % for better tildes
+% \newcommand{\texttildemid}{\raisebox{0.4ex}{\texttildelow}} % creates a text mid tilde, a low tilde moved up
+% layout
+\usepackage{calc} % so we can do inline math within \setlength
+\usepackage{enumitem} % control layout of itemize, enumerate, description
+\usepackage{fancyhdr} % control page headers and footers
+% \usepackage{float} % improved interface for floating objects, adds H float
+\usepackage{multicol} % intermix single and multiple column pages
+% \textgreek % typeset greek letters in text mode
+% language
+\usepackage[utf8]{inputenc} % utf8 encoding, wider character set
+\usepackage[english]{babel} % multilanguage support
+% misc
+\usepackage{graphicx} % builds upon graphics package, \includegraphics
+%\usepackage{lastpage} % reference number of pages
+\usepackage{xcolor} % color extensions
+\usepackage[backend=biber, style=apa]{biblatex} % sophisticated bibliographies % necessary for HTML to display author info and date on abstract page
+\usepackage{csquotes} % advanced quotations, makes biblatex happy
+\usepackage{authblk} % support for footnote style author/affiliation
+% tables and figures
+%\usepackage{array} % extend array and tabular environments
+\usepackage{caption} % customize captions in figures and tables (rotating captions, sideways captions, etc)
+%\usepackage{cuted} % allow mixing of \onecolumn and \twocolumn on same page
+\usepackage{multirow} % create tabular cells spanning multiple rows
+%\usepackage{subfigure} % deprecated, support for manipulation of small figures
+\usepackage{tabularray} % better table construction, does not translate to HTML
+%\usepackage{wrapfig} % allows figures or tables to have text wrapped around them
+% dummy text
+%\usepackage{blindtext} % blind text dummy text
+%\usepackage{kantlipsum} % Kant style dummy text
+\usepackage{lipsum} % lorem ipsum dummy text
 
-  \else
-  \includegraphics[width=\textwidth]{headerImage.png}
-  \fi
-}
+\setlength{\paperheight}{11in}
 
-\hypersetup{
-    colorlinks=true,
-    urlcolor=blue
-}
- 
+\pagestyle{fancy} % sets pagestyle to fancy for fancy headers and footers. remember to change the header depending on article type
+% allows the header to take the full width of the page https://www.reddit.com/r/LaTeX/comments/awtrb2/how_to_you_make_the_headerfooter_extend_the/
+\newlength{\oddmarginwidth}
+\setlength{\oddmarginwidth}{1in+\hoffset+\oddsidemargin}
+\newlength{\evenmarginwidth}
+\setlength{\evenmarginwidth}{\evensidemargin+1in}
+\fancyhfoffset[LO,RE]{\oddmarginwidth}
+\fancyhfoffset[LE,RO]{\evenmarginwidth}
+
+% header and footer
+% modern way to set header image
+\renewcommand{\headrulewidth}{0pt} % defines thickness of line under header
+\renewcommand{\footrulewidth}{0pt} % defines thickness of line above header
+\setlength\headheight{80.0pt} % sets height between top margin and header image, effectively moves page contents down
+\addtolength{\textheight}{-80.0pt} % seems to affect the lower height. maybe only works properly if footer numbers enabled?
+\fancyhf{}
+\fancyhead[CE, CO]{\includegraphics[width=\pdfpagewidth]{headerImage.png}}
+
+\hypersetup{colorlinks=true,urlcolor=blue} % sets link color to blue
+\urlstyle{same} % sets url typeface to same as rest of text
+
+% set caption and figure to italics, label bold, left align captions, does not transfer to HTML
+\captionsetup{labelfont=bf, font={large, it}, justification=raggedright, singlelinecheck=false}
+\renewcommand\theContinuedFloat{\alph{ContinuedFloat}} % has something to do with subfigures... don't remember why i used it
+
+%this next bit is confusing, but essentially changes the width of the abstract. Seems to have been copied from this https://tex.stackexchange.com/questions/151583/how-to-adjust-the-width-of-abstract
 \let\oldabstract\abstract
 \let\oldendabstract\endabstract
-\makeatletter
-\renewenvironment{abstract}
-{\renewenvironment{quotation}%
-               {\list{}{\addtolength{\leftmargin}{1em} % change this value to add or remove length to the the default
+\makeatletter %changes @ catcode to enable modification (in parsep)
+\renewenvironment{abstract} % alters the abstract environment
+{\renewenvironment{quotation}% alters the quotation environment in the abstract environment ?
+               {\list{}{\addtolength{\leftmargin}{1em} % change this value to add or remove length to the the default ?
                         \listparindent 1.5em%
                         \itemindent    \listparindent%
                         \rightmargin   \leftmargin%
@@ -60,23 +81,30 @@
                {\endlist}%
 \oldabstract}
 {\oldendabstract}
-\makeatother
+\makeatother %changes @ catcode to disable modification
 
-% Left align captions
-\captionsetup{justification   = raggedright,
-              singlelinecheck = false}
-    
+\newenvironment{references} % creates a new environment that uses hanging indentation for sources. handy when there's content after the references
+    {
+    \leftskip 0.25in
+    \parindent -0.25in
+    }
+    {
+    \leftskip 0in
+    \parindent 0in
+    }
 \begin{document}
 \begin{large}
-
 \twocolumn[
 \begin{@twocolumnfalse}
 \section*{Journal of Science Education for Students with Disabilities (JSESD)}
  
-Volume 27, Issue \#1, 2024\\ISSN: 1940-9923\\
-\url{http://scholarworks.rit.edu/jsesd/}\\
-© 2024 Rochester Institute of Technology/ National Technical Institute for the Deaf and
-individual authors.\\
+Volume 27, Issue \#1, 2024
+
+ISSN: 1940-9923
+
+\url{http://scholarworks.rit.edu/jsesd/}
+
+© 2024 Rochester Institute of Technology/National Technical Institute for the Deaf and individual authors.
 
 \section*{Copyright and Open Access}
 Authors publishing in \textit{Journal of Science Education for Students with Disabilities} agree to the following terms:
@@ -100,5 +128,6 @@ Nicholas Paulus
 \subsection*{Cover:}
 Cathy Chou©
 \end{@twocolumnfalse}]
+
 \end{large}
 \end{document}
