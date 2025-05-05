@@ -598,7 +598,6 @@
  \gdef\@thanks{}\gdef\@author{}\gdef\@title{}\gdef\@subtitle{}\let\thanks\relax
  \@copyrightspace}
 
-
 %% CHANGES ON NEXT LINES
 \newif\if@ll % to record which version of LaTeX is in use
 
@@ -663,7 +662,7 @@
 % to change {cmr} to {times} above. (Not recommended)
   \renewcommand{\@ptsize}{}
   \renewcommand{\normalsize}{%
-    \@setfontsize\normalsize\@ixpt{12\p@}%\ninept%
+    \@setfontsize\normalsize\@ixpt{10.5\p@}%\ninept%
     \abovedisplayskip 6\p@ \@plus2\p@ \@minus\p@
     \belowdisplayskip \abovedisplayskip
     \abovedisplayshortskip 6\p@ \@minus 3\p@
@@ -672,7 +671,7 @@
   }
 \else
   \def\@normalsize{%changed next to 9 from 10
-    \@setsize\normalsize{12\p@}\ixpt\@ixpt
+    \@setsize\normalsize{9\p@}\ixpt\@ixpt
    \abovedisplayskip 6\p@ \@plus2\p@ \@minus\p@
     \belowdisplayskip \abovedisplayskip
     \abovedisplayshortskip 6\p@ \@minus 3\p@
@@ -702,11 +701,11 @@
 % make aubox hsize/number of authors up to 3, less gutter
 % then showbox gutter showbox gutter showbox -- GKMT Aug 99
 \newbox\@acmtitlebox
-\def\@maketitle{\relax
+\def\@maketitle{\newpage
  \null
  \setbox\@acmtitlebox\vbox{%
-\baselineskip 15pt
-\vskip 1em                   % Vertical space above title.
+\baselineskip 20pt
+\vskip 2em                   % Vertical space above title.
    \begin{center}
     {\ttlfnt \@title\par}       % Title set in 18pt Helvetica (Arial) bold size.
     \vskip 1.5em                % Vertical space after title.
@@ -724,11 +723,11 @@
  \ifdim\dimen0<0.0pt\relax\vskip-\dimen0\fi}
 % -------------------------------
 \newbox\@acmtitlebox
-\def\@maketitle{\relax
+\def\@maketitle{\newpage
  \null
  \setbox\@acmtitlebox\vbox{%
-\baselineskip 15pt
-\vskip 1em                   % Vertical space above title.
+\baselineskip 20pt
+\vskip 2em                   % Vertical space above title.
    \begin{center}
     {\ttlfnt \@title\par}       % Title set in 18pt Helvetica (Arial) bold size.
     \vskip 1.5em                % Vertical space after title.
