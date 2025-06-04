@@ -1,0 +1,348 @@
+\documentclass[11.5pt]{sig-alternate} % sets document style to sig-alternate
+% packages
+% typesetting
+%\usepackage{dirtytalk} % typset quotations easier (\say{stuff})
+\usepackage{hanging} % hanging paragraphs
+\usepackage[defaultlines=3,all]{nowidow} % avoid widows
+\usepackage[pdfpagelabels=false]{hyperref} % produce hypertext links, includes backref and nameref
+\usepackage{xurl} % defines url linebreaks, loads url package
+\usepackage{microtype}
+%\usepackage{textcomp}
+%\newcommand{\texttildemid}{\raisebox{0.4ex}{\texttildelow}}
+% layout
+\usepackage{enumitem} % control layout of itemize, enumerate, description
+\usepackage{fancyhdr} % control page headers and footers
+\usepackage{float} % improved interface for floating objects
+%\usepackage{multicol} % intermix single and multiple column pages
+% language
+\usepackage[utf8]{inputenc} % accept different input encodings
+\usepackage[english]{babel} % multilanguage support
+% misc
+\usepackage{graphicx} % builds upon graphics package, \includegraphics
+%\usepackage{lastpage} % reference number of pages
+%\usepackage{comment} % exclude portions of text (?)
+\usepackage{xcolor} % color extensions
+\usepackage[backend=biber, style=apa]{biblatex} % sophisticated bibliographies % necessary for HTML to display author info and date on abstract page
+\usepackage{csquotes} % advanced quotations, makes biblatex happy
+\usepackage{authblk} % support for footnote style author/affiliation
+% tables and figures
+\usepackage{tabularray}
+\usepackage{tablefootnote}
+%\usepackage{array} % extend array and tabular environments
+\usepackage{caption} % customize captions in figures and tables (rotating captions, sideways captions, etc)
+%\usepackage{cuted} % allow mixing of \onecolumn and \twocolumn on same page
+\usepackage{multirow} % create tabular cells spanning multiple rows
+%\usepackage{subfigure} % deprecated, support for manipulation of small figures
+%\usepackage{tabularx} % extension of tabular with column designator "x", creates paragraph-like column whose width automatically expands
+%\usepackage{wrapfig} % allows figures or tables to have text wrapped around them
+%\usepackage{booktabs} % better rules
+% dummy text
+%\usepackage{blindtext} % blind text dummy text
+%\usepackage{kantlipsum} % Kant style dummy text
+\usepackage{lipsum} %lorem ipsum dummy text
+% other helpful packages may be booktabs, longtable, longtabu, microtype
+
+\pagestyle{fancy} % sets pagestyle to fancy for fancy headers and footers
+
+% header and footer
+% modern way to set header image
+\renewcommand{\headrulewidth}{0pt} % defines thickness of line under header
+\renewcommand{\footrulewidth}{0pt} % defines thickness of line above header
+\setlength\headheight{80.0pt} % sets height between top margin and header image, effectively moves page contents down
+\addtolength{\textheight}{-80.0pt} % seems to affect the lower height. maybe only works properly if footer numbers enabled?
+\fancyhf{}
+\fancyhead[CE, CO]{\includegraphics[width=\textwidth]{headerImage.png}}
+% footer
+%\fancyfoot[LE,LO]{Article Title Here \\ DOI: }% left footer article title and doi
+%\fancyfoot[CE,CO]{{}} % center footer empty
+%\fancyfoot[RE,RO]{\thepage} % right footer page numbers
+%\pagenumbering{arabic} % arabic (1, 2, 3) numbering in footer
+
+\hypersetup{colorlinks=true,urlcolor=blue} % sets link color to blue
+\urlstyle{same} % sets url typeface to same as rest of text
+
+% set caption and figure to italics, label bold, left align captions, does not transfer to HTML
+\captionsetup{labelfont=bf, font={large, it}, justification=raggedright, singlelinecheck=false}
+\renewcommand\theContinuedFloat{\alph{ContinuedFloat}}
+
+%this next bit is confusing, but essentially changes the width of the abstract. Seems to have been copied from this https://tex.stackexchange.com/questions/151583/how-to-adjust-the-width-of-abstract
+\let\oldabstract\abstract
+\let\oldendabstract\endabstract
+\makeatletter %changes @ catcode to enable modification (in parsep)
+\renewenvironment{abstract} %alters the abstract environment
+{\renewenvironment{quotation}%
+               {\list{}{\addtolength{\leftmargin}{1em} % change this value to add or remove length to the the default ?
+                        \listparindent 1.5em%
+                        \itemindent    \listparindent%
+                        \rightmargin   \leftmargin%
+                        \parsep        \z@ \@plus\p@}%
+                \item\relax}%
+               {\endlist}%
+\oldabstract}
+{\oldendabstract}
+\makeatother %changes @ catcode to disable modification
+
+% checks
+% italics -
+% links -
+% dashes -
+% tildes -
+\begin{document}
+
+\title{Self-Efficacy of Students with Visual Impairments Before and After Participation in an Inquiry-Based Camp}
+
+\author[1]{\large \color{blue}Kathleen Farrand}
+\author[2]{\large \color{blue}Tiffany A Wild}
+\author[3]{\large \color{blue}Margilee P. Hilson}
+
+\affil[1]{Arizona State University}
+\affil[2]{The Ohio State University}
+\affil[3]{Columbus City School District}
+
+\toappear{}
+%% ABSTRACT
+\maketitle
+\begin{@twocolumnfalse} 
+\begin{abstract}
+\item 
+\textit{The purpose of this pilot study was to determine students’ self-efficacy level prior to participation and after participation in an inquiry-based science camp to determine if self-efficacy levels changed as a result of participation. A validated instrument, the 30 item Morgan-Jinks Student Self-Efficacy Scale (MJSES) (Jinks \& Morgan, 1996) was used to identify the constructs of self-efficacy before and after the weeklong summer camp. The results suggest that the inquiry-based science camp had a positive impact on junior participants’ academic self-efficacy and did not increase senior participants’ academic self-efficacy.}
+\\ \\
+Keywords: self-efficacy, inquiry-based, visual impairments, science camp
+\end{abstract}
+\end{@twocolumnfalse}
+
+%% AUTHOR INFORMATION
+
+\textbf{*Corresponding Author,Kathleen Farrand }\\
+\href{mailto:  kathleen.farrand@asu.edu}{(kathleen.farrand@asu.edu)} \\
+\textit{Submitted Feb 1 2016 }\\
+\textit{Accepted May 31 2016} \\
+\textit{Published online Jun 21 2016} \\
+\textit{DOI: 10.14448/jsesd.09.0004} \\
+\pagebreak
+\clearpage
+\begin{large}
+   
+\section*{INTRODUCTION}
+
+Self-efficacy is the belief that one can succeed in performing a particular behavior (Bandura, 1977). According to Bandura (1993), “Students’ beliefs in their efficacy to regulate their own learning and to master academic activities determine their aspirations, level of motivation, and academic accomplishments” (p. 117). By analyzing the responses of students with visual impairments, researchers will begin to comprehend students’ beliefs about their ability to succeed in technology and science.  
+
+According to research, students with visual impairments have considered science a difficult subject due to the overreliance on visual instruction for the teaching of the concepts (Jones, Minogue, Oppewal, Cook, \& Broadwell, 2006; Penrod, Haley, \& Matheson, 2005; Sahin \& Yorek, 2009). Students with visual impairments have the same span of cognitive abilities (Kumar, Ramasazmy, \& Stefanich, 2001), and can also master high-order science concepts with accommodations, as their peers (Jones et al.). However, they need to be encouraged to use other modes of exploration, beyond the visual, such as tactile to discover science concepts (Sahin \& Yorek).   
+
+Inquiry-based education allows engagement in science much like a scientist would in his/her career. Students utilize thinking processes similar to how a scientist would begin to examine the natural world. Recent research has shown that inquiry-based curriculums are beneficial for students with visual impairments (Wild \& Trundle, 2010a; 2010b; Wild, Hobson, \& Hilson, 2012). However, this research was based upon existing inquiry-based curriculum. No research exists to examine the self-efficacy of children with visual impairments regarding science or participation in inquiry-based science.   
+
+\section*{THEORETICAL FRAMEWORK}
+
+The beliefs a person has about his or her ability influences behavior.  Bandura (1993) suggested that these beliefs create effects through cognitive, motivational, affective, and selection processes. Performance accomplishments, vicarious experience, verbal persuasion, and physiological states are the four main sources of information that form the base for personal self-efficacy (Bandura, 1977). A student’s personal self-efficacy belief influences their participation in school. The belief that students have in their ability to do school work impacts their involvement and perseverance in the work (Linnenbrink \& Pintrich, 2003). This belief in one’s own capability influences an individual’s effort and interest in school related work. Student performance may be improved when students have a high sense of self-efficacy in a subject area and may influence students in considering career choices in that subject area (Pajares, 1997). This is supported by findings that suggest that a person’s self-efficacy beliefs are a factor in their selection of and achievement in a science and math related career (Zeldin, Britner, \& Pajares, 2008).
+
+\section*{SELF-EFFICACY RESEARCH}
+
+There is a paucity of research on the self-efficacy of students with visual impairments in science. There has been some related research, such as Ketelhut’s (2007) exploratory study on students’, of which only 3\% were identified as special education and none were reported visually impaired, self-efficacy before and during a scientific activity using technology over time. The study used a 7-point Likert scale and the findings suggest that when scientific inquiry concepts are integrated into teaching, such as with a computer game system, it may promote change in student’s self-efficacy (Ketelhut).
+
+Lacakaye and Margalit (2006) conducted a study that identified the self-efficacy of students with Learning Disabilities (LD) and their general education peers in math and history in middle school and high school. The study consisted of 120 students with LD and 160 general education students. Specific academic and general academic self-efficacy was measured using a 7-point Likert scale. The study indicated that students with LD continued to experience lower self-efficacy in history, even after they had received accommodations and assistance during the school year. In addition, the math self-efficacy for the high school students with LD remained stable compared to their peers without LD who reported lower math self-efficacy.
+
+\section*{METHODOLOGY}
+
+\subsection*{Students}
+
+Students with a visual impairment in grades 3rd through 12th were enrolled in a summer camp provided by a national consumer organization for students with visual impairments. Students in grades 3rd-6th were termed junior campers and senior campers were in grades 8th-12th. All students enrolled in the camp participated in the instruction; however, only the students who agreed to participate in the study and had parental consent completed the self-efficacy instrument. All campers had a visual impairment that ranged from total blindness to low vision.  Data regarding specific visual impairment conditions was not collected due to restrictions placed on the data collection. Demographic data are detailed in Table 1. 
+
+\begin{table*}[thp]
+\caption{Demographic Data for Self-Efficacy Data \footnote{From Preparing for an Inquiry-Based Summer Camp Experience for Students with Visual Impairments: What Do the Campers Think?, by T. Wild, M. Hilson, \& K. Farrand, 2014, \textit{Journal of Blindness Innovation and Research, 4}.  Copyright [2014] by Journal of Blindness Innovation Research. Reprinted with permission.}}
+\begin{tabular}{llllll}
+\hline
+Student \# & Age & Gender & Grade & Race & Junior or Senior \\
+1 & 11 & Female & 5 & Caucasian & Junior \\
+2 & 7 & Female & 3 & African American & Junior \\
+3 & 11 & Male & 5 & Caucasian & Junior \\
+4 & 11 & Female & 5 & Caucasian & Junior \\
+5 & 11 & Male & 5 & Hispanic & Junior \\
+6 & 11 & Male & 5 & Caucasian & Junior \\
+7 & 12 & Male & 4 & Asian & Junior \\
+8 & 12 & Male & 5 & Caucasian & Junior \\
+9 & 16 & Female & 10 & Caucasian & Senior \\
+10 & 19 & Male & 10 & Caucasian & Senior \\
+11 & 14 & Male & 8 & Caucasian & Senior \\
+12 & 16 & Female & 10 & Caucasian & Senior \\ \hline
+\end{tabular}
+\textit{(Wild, Hilson, \& Farrand, 2014).}
+\end{table*}
+
+Sixteen junior campers had parental forms and consent forms and completed the pre-survey questions, but only 8 (50\%) of the 16 junior campers completed the post-survey questions. Only data from those campers completing both the pre and post assessment will be presented. Five junior participants were male and 3 were female. One junior participant was seven years old, 5 junior participants were eleven years old, and 2 junior participants were twelve years old. One junior participant was in 3rd grade, 1 junior participant was in 4th grade, and 6 junior participants were in 5th grade. Five junior participants were Caucasian, 1 junior participant was African American, 1 junior participant was Hispanic, and 1 junior participant was Asian.   
+
+Seven senior campers had parental forms and consent forms and completed the pre-survey, but only 4 (57\%) of the 7 completed the post-survey questions. Of those senior participants that completed both surveys, two were male and 2 were female. One senior participant was in 8th grade and 3 senior participants were in 10th grade. All four senior participants were Caucasian. One senior participant was fourteen years old, two were sixteen years old, and 1 participant was nineteen years old.   
+
+\subsection*{Setting}
+
+The data were collected at the organization’s headquarters as well as the students’ home computers. All students attended a weeklong inquiry-based science camp at the organization’s headquarters. The theme of the week long camp was inquiry-based science.
+
+\subsection*{Purpose}
+
+The purpose of this pilot study was to determine students’ self-efficacy level prior to participation and after participation in the inquiry-based science camp to determine if self-efficacy levels changed as a result of participation.  
+
+\section*{CAMP CURRICULUM}
+
+All campers participated in a weeklong science inquiry-camp.  This camp built upon inquiry-based investigations that each individual camper had developed over several weekly, approximately 25 minute, telephone calls with the directors of the camp. Campers could choose a science or engineering topic they were interested in as long as the investigation surrounding their topic was inquiry-based. After deciding on a topic, the students built a list of supplies and resources needed for the projects. In addition, the directors assigned the campers to small groups with an adult mentor, who also had a visual impairment, based upon their interests prior to arriving to camp.
+
+%table footnote
+
+
+Upon arrival at camp, all campers were assigned a workstation with all their supplies needed to complete their investigations. Blocks of time were devoted daily to completing and working on their projects. Projects ranged from exploring human behaviors, building a hovercraft, exploring how to build a tactile graphics pad, testing modalities of learning, and building bridges; just to name a few. Campers kept data on their project in the form of a journal. Senior campers were encouraged to work with junior campers and answer any questions the junior campers might have about their inquiry projects. Both junior and senior campers asked questions of the adult mentors. When the students were not working on their projects they were exploring other science experiments or learning about engineering endeavors such as the Blind Driver Challenge.  
+
+The final day of camp involved campers presenting their findings from their projects to all staff, mentors, parents, and fellow campers. Some members of the general public also attended the event.  
+
+\section*{DATA COLLECTION}
+
+\subsection*{Instrument}
+
+Students in this study completed a short form demographic survey and a 30-item Morgan-Jinks Student Efficacy Scale (MJSES) self-efficacy instrument, a validated instrument developed by Jinks and Morgan (1996). The MJSES was used to identify the constructs of self-efficacy before and after participating in the weeklong summer camp. THE MJSES was designed to obtain information about student self-efficacy beliefs in relation to academic activities (Jinks \& Morgan, 1999). Jinks and Morgan identified the following three subscales within the MJSES self-efficacy instrument: talent items, context items, and effort items. 
+
+Talent items consisted of students responding to statements, 13, about their beliefs that they are a good student and questions about specific content areas, such as science, math, reading, and social studies.  An example statement from the talent items subscale is, “I am a good science student” (Jinks \& Morgan, 1999, p. 227). Context items consisted of students responding to statements, 13, about their beliefs about students that get good grades, the importance of school and grades, and their beliefs about teachers and adults in relation to school success. An example statement from the context items subscale is, “It does not matter if I do well in school” (Jinks \& Morgan, 1999, p. 227).  Effort items consisted of students responding to statements, 4, about their beliefs about their own effort in academic pursuits and grades.  An example statement from the effort items subscale is, “I always get good grades when I try hard” (Jinks \& Morgan, 1999, p. 227).
+
+The survey was posted on an Internet-based provider that was compatible with standard text to voice adaptive software. Students responded to the 30 item survey questions on a 4-point interval Likert-type scale (Jinks \& Morgan, 1999). Students marked the box that contained a statement of agreement (4=really agree, 3=kind of agree, 2=kind of disagree, and 1=really disagree) that matched their perceived self-efficacy. 
+
+\subsection*{Collection}
+
+A letter of support from the organization and an informational packet from the researchers were sent to participants and parents prior to camp. Information in the packet described the potential value of the research study and requested parental consent. A permission form and a self-addressed stamped envelope were included in the packet. Only students with signed parental or self- consent forms were considered participants of this study. Students 18-years –or older were permitted to sign their own consent forms. After consent forms were received, an email with a link to the survey was sent to the students. The national consumer organization that sponsored the camp provided the researchers with student/parent email addresses from their files upon receipt of permission. A short introduction to the assessment was given on the survey’s opening page followed by the demographic questions and then the MJSES instrument.  
+
+Students and parents also had the option of completing the survey during camp registration. Researchers were available to answer questions and provide computer access. All participants completed the MJSES and pre-survey questions prior to the first morning of the camp.  
+	
+One week after camp, students received an email asking them to complete the same MJSES survey as a post evaluation. All participants were asked the same MJSES questions pre and post camp. 
+
+\section*{DATA ANALYSIS}
+    
+The data collected from the MJSES self-efficacy instrument was analyzed using Jinks and Morgan’s subscale item information for talent, context, and effort (Jinks \& Morgan, 1996).  MJSES data were analyzed using SPSS software to identify the children’s understanding of self-efficacy. Due to the small sample size of participants the statistical power of the data was reduced. The mean scores of the participant responses were analyzed to identify patterns between junior and senior campers, as well as their responses to the MJSES subscale items about self-efficacy.
+
+\section*{RESULTS}
+	
+Results from the MJSES self-efficacy instrument showed that junior participants had a pre-survey self-efficacy mean score of 2.73 and a post-survey self-efficacy mean score of 2.84 (Table 2). Thus, junior campers’ self-efficacy scores increased from pre-survey to post-survey. Five junior participants’ (62.5 \%) self-efficacy mean scores increased, 2 junior participants’ (25\%) self-efficacy mean scores decreased, and 1 participants’ (12.5 \%) self-efficacy mean score stayed the same.  
+
+\begin{table*}[p]
+\caption{Junior Self-efficacy Scores on the MJSES}
+\begin{tabular}{llll}
+\hline
+ & n & Pre-survey M & Post-survey M \\
+Group & 8 & 2.73 & 2.84 \\
+Participant 1 & 1 & 2.93 & 2.87 \\
+Participant 2 & 1 & 2.90 & 2.83 \\
+Participant 3 & 1 & 2.97 & 3.07 \\
+Participant 4 & 1 & 2.73 & 2.73 \\
+Participant 5 & 1 & 2.70 & 2.87 \\
+Participant 6 & 1 & 2.73 & 2.83 \\
+Participant 7 & 1 & 2.87 & 2.97 \\
+Participant 8 & 1 & 2.03 & 2.57 \\ \hline
+\end{tabular}
+\end{table*}
+
+Table 3 reports the results of the junior group self-efficacy mean scores for the three subscale items of the MJSES self-efficacy instrument. The junior groups’ self-efficacy mean scores for subscale items increased in 2 categories: talent items and effort items, and the self-efficacy mean scores for context items decreased slightly. 
+
+\begin{table*}[p]
+\caption{Junior Group Self-Efficacy Scores on the MJSES by Subscale Items}
+\begin{tabular}{lllll}
+\hline
+Group & n & Talent Items M & Context Items M & Effort Items M \\
+Pre-survey & 8 & 3.05 & 2.48 & 2.53 \\
+Post-Survey & 8 & 3.32 & 2.43 & 2.59 \\ \hline
+\end{tabular}
+\end{table*}
+
+Results from the MJSES self-efficacy instrument showed that senior participants had a pre-survey self-efficacy mean score of 2.83 and a post-survey self-efficacy mean score of 2.75 (Table 4). Thus, senior campers’ self-efficacy group scores decreased from pre-survey to post-survey. One senior participants’ (25\%) self-efficacy mean score increased and 3 senior participants’ (75\%) self-efficacy mean scores decreased.
+
+\begin{table*}[p]
+\caption{Senior Self-efficacy Scores on the MJSES}
+\begin{tabular}{llll}
+\hline
+ & n & Pre-survey M & Post-survey M \\
+Group & 4 & 2.82 & 2.75 \\
+Participant 9 & 1 & 2.63 & 2.77 \\
+Participant 10 & 1 & 2.93 & 2.77 \\
+Participant11 & 1 & 2.90 & 2.77 \\
+Participant 12 & 1 & 2.83 & 2.67 \\ \hline
+\end{tabular}
+\end{table*}
+
+Table 5 reports the results of the senior groups’ self-efficacy mean scores for the three subscale items of the MJSES self-efficacy instrument. The senior groups’ self-efficacy mean scores increased for 1 subscale category: context items, and decreased for 2 subscale categories: talent items and effort items. 
+
+\begin{table*}[p]
+\caption{Senior Group Self-Efficacy Scores on the MJSES by Subscale Items}
+\begin{tabular}{lllll}
+\hline
+Group & n & Talent Items M & Context Items M & Effort Items M \\
+Pre-survey & 4 & 3.40 & 2.33 & 2.48 \\
+Post-Survey & 4 & 3.21 & 2.35 & 2.44 \\ \hline
+\end{tabular}
+\end{table*}
+
+\section*{LIMITATIONS}
+
+One of the limitations of this study is the small sample size; there were only eight junior campers and four senior campers. This is in part due to the fact that visual impairments is identified as a low incidence disability. The U.S. Department of Education (2002) reported that students with low incidence disabilities make up less than 1\% of the U.S. school population (Ludlow, Conner, \& Schechter, 2005). Findings from this research cannot be generalized to populations of all students’ with visual impairments, due in large part to the small number of students in the sample size. The small sample size also reduced the statistical power. This made it difficult to analyze the data for significance, because at least one of the groups had fewer than two cases. This occurred when statistical measures were run to test the significance of age, gender, and visual disability impacts within the survey. The tests could not be performed to determine the statistical significance for the fixed factors.
+
+Another limitation is that the students that participated in the study were a self-selected group. The students in the study voluntarily applied to attend the camp and participate in the study; selection of the participants was not random. Also, not all students that completed the pre-survey questions completed the post-survey questions. This limitation was in part due to the fact that participants completed the post-survey at their homes. Students were sent an email reminder one week after camp, but the number of participants that completed the online survey still decreased from the pre to the post survey.
+
+A further limitation is that the MJSES self-efficacy instrument did not focus solely on science and technology. The MJSES was designed to identify student self-efficacy perceptions concerning academic performance (Jinks \& Morgan, 1999). The MJSES results recorded the impact of an inquiry-based summer camp on the self-efficacy beliefs of students’ with visual impairments for academic performance, but science and technology was not the sole subject being measured. The MJSES test itself only had one question directly related to science and no questions that specifically asked about technology.
+
+\section*{CONCLUSIONS}
+
+The purpose of this pilot study was to determine students’ self-efficacy level prior to participation and after participation in an inquiry-based science camp to determine if self-efficacy levels changed as a result of participation. The results of the present study could not determine the students’ self-efficacy for science and technology specifically, but was rather used to determine the impacts of inquiry-based science camp on students’ academic self-efficacy. The results from the MJSES subscale items suggested that junior and senior participants’ self-efficacy was highest with talent items, followed by effort items, and context items. Overall the results from the MJSES self-efficacy survey indicated that junior and senior students had high academic self-efficacy beliefs at the beginning of the camp. The overall subscale means also indicated high self-efficacy levels for the participants.  
+	
+The results of the present study indicated that the inquiry-based science camp increased the junior participants’ self-efficacy for academic performance. The results from the MJSES self-efficacy instrument recorded an increase in the junior group participants’ self-efficacy mean sco-re, an increase in the self-efficacy mean scores for the majority of the individual junior participants (6), a decrease in the self-efficacy mean score for 1 junior participant, and had no effect on 1 junior participants’ self-efficacy mean score. Additional data collected by the author’s supports the junior campers increased self-efficacy. According to Wild, Hilson, and Farrand (2014), junior campers indicated that they enjoyed their time working on the inquiry-based science projects, learned new technology, were more confident about their cane use, and were more confident about possibilities for people with visual impairments upon completion of the camp.
+	
+In contrast, the results from the MJSES self-efficacy instrument indicated that the inquiry-based science camp did not increase the self-efficacy of senior participants for academic performance. The MJSES results indicated that the group self-efficacy mean scores for the senior participants decreased, the self-efficacy mean scores for the majority of the senior participants (3) decreased, and the self-efficacy mean score of 1 senior participant increased.  The decrease in senior participants’ self-efficacy mean score may have been due to their high self-efficacy scores prior to the camp, more specifically in regards to their perceived talent and effort. Wild, Hilson, and Farrand (2014) reported information from the senior participants that supported their high self-efficacy beliefs prior to and upon completion of the inquiry-based science camp.  More specifically Wild and colleagues found that senior campers felt they were good role models and mentors, as well as leaders that had skills that included “confidence, independence, understanding, being informed, and connecting with others” before and after the camp (2014, p. 5). In addition, the seniors high mean scores prior to the camp and a lack of increase in self-efficacy upon completion of the camp may have been due to the seniors having more experiences with open inquiry prior to the camp.  
+
+\section*{SUMMARY}
+
+\subsection*{Implications and Future Research}
+	
+There is a dearth of literature on the self-efficacy of students with visual impairments on science and technology. This pilot study research can provide educators and researchers with a better understanding of the role of self-efficacy in students with visual impairments. Future research needs to be done using the MJSES self-efficacy instrument with a larger sample size of students with visual impairments as well as a random sample of student participants. A suggestion would be to have data collected using the MJSES self-efficacy instrument from multiple camps to increase the sample size of the students. Also, future research should examine validated norm-referenced instruments for all students and the impact of the instrument on the self-efficacy of students with visual impairments on science and technology. This study can also provide a basis for future research to create a norm-referenced instrument for the self-efficacy of students with visually impairments for science and technology. 
+
+Results from the MJSES self-efficacy instrument implied that there was increased self-efficacy with the junior participants and decreased self-efficacy with the senior participants.  These results have implications for how the self-efficacy of students of different age ranges, specifically junior and senior participants with visual impairments are impacted by an inquiry-based science camp. Results may have been influenced by the level of cognitive understanding or prior knowledge of participants. Junior participants may not have experienced the same level of frustration during inquiry as the seniors. Senior participants may have entered the camp with higher expectations for the scientific outcomes of their inquiry experiments. Student’s individual success in completing an experiment that he or she designed may have influenced his or her academic self-efficacy. Future research needs to take into account individual participants’ understanding of inquiry-based science experiments and how this can influence academic self-efficacy, as well as individual participants’ previous experiences participating in inquiry-based science.
+
+Overall the results from the MJSES self-efficacy instrument subscale items indicated that students with visual impairments had the highest self-efficacy with regards to talent items, followed by effort items and then context items. The high results for the talent subscale items has implications for future research with inquiry-based science that takes into account different teaching and learning variables and how these impact students with visual impairments academic self-efficacy. The self-efficacy data also has implications for teachers motivating students in the various subscale areas. Teachers may design lessons that focus more on talent, effort, or context items in order to increase individual self-efficacy with regards to various academic content areas.
+	
+\end{large}
+\clearpage
+\section*{REFERENCES}\par 
+
+\leftskip 0.25in
+\parindent -0.25in 
+Bandura, A.  (1977).  Self-efficacy: Toward a unifying theory of behavioral change. Psychological Review, 84(2), 191-215.
+
+Bandura, A.  (1993).  Perceived self-efficacy in cognitive development and functioning. \textit{Educational Psychologist, 28}(2), 117-148.
+
+Jinks, J. \& Morgan, V. (1996).  Students’ sense of academic efficacy and achievement in science: A useful new direction for research regarding scientific literacy?  \textit{Electronic Journal of Science Education, 1}(2).
+
+Jinks, J., \& Morgan. V.  (1999).  Children’s perceived academic self-efficacy: An inventory scale.  \textit{The Clearing House}, 72(4), 224-230.
+
+Jones, M. G., Minogue, J., Oppewal, T., Cook, M. P., \& Broadwell, B.  (2006). Visualizing without vision as the microscale: Students with visual Impairments explore cells with touch.  \textit{Journal of Science Education \& Technology}, 15(5/6), 345-351.
+
+Ketelhut, D. J.  (2007).  The impact of student self-efficacy on scientific inquiry skills: An exploratory investigation in \textit{River City}, a multi-user virtual environment.  \textit{Journal of Science Education and Technology}, 16(1), 99-111.
+
+Kumar, D., Ramassamy, R., \& Stefanich, G. (2001).  Science for students with visual impairments: teaching suggestions and policy implication for secondary learners.  [Electronic version].  \textit{Electronic Journal of Science Education, 5}, 1-9.
+
+Lackaye, T. D. \& Margalit, M.  (2006).  Comparisons of achievement, effort, and self perceptions among students with learning disabilities and their peers from different achievement groups.  \textit{Journal of Learning Disabilities}, 39(5), 432-446.
+ 
+Linnenbrink, E. A. \& Pintrich, P. R.  (2003).  The role of self-efficacy beliefs in student engagement and learning in the classroom.  \textit{Reading \& Writing Quarterly}, 19(2), 119-137.
+
+Ludlow, B. L., Conner, D., \& Schechter, J.  (2005).  Low incidence disabilities and personnel preparation for rural areas: Current status and future trends.  Rural Special Education, 24(3), 15-24.
+
+Magogwe, J.M. \& Oliver, R.  (2007).  The relationship between language learning strategies, proficiency, age and self-efficacy beliefs: A study of language learners in Botswana. \textit{System}, 35(3), 338-352.
+
+Pajares, F.  (1997).  Current directions in self-efficacy research.  In M. Maehr \& P. R.	Pintrich (Eds.), \textit{Advances in Motivation and Achievement}, (Vol. 10, 149), Greenwich, Ct: JAI Press.
+
+Penrod, W. M., Haley, C. D., \& Matheson, L. P. (2005). A model for improving science teaching for students with visual impairments.  \textit{RE:view}, 37(2), 53-58.
+
+Sahin, M. \& Yorek, N.  (2009).  Teaching science to visually impaired students: A small-scale qualitative study. \textit{US-China Education Review}, 6(4), 19-26.
+
+United States Department of Education (2002).  Twenty-fourth annual report to Congress on implementation of the Individuals with Disabilities Education Act.  Washington, DC: Author.
+
+Wild, T. \& Trundle, K. (April, 2010a).  Talking turkey: Teaching about America’s greatest conservation story with children with visual impairments.  \textit{Journal of Visual Impairment \& Blindness, 104(4)}, 198-201.
+
+Wild, T \& Trundle, K. (February, 2010b).  Conceptual understandings of seasonal change by middle school students with visual impairments. \textit{Journal of Visual Impairment \& Blindness, 104(2)}, 107-108.
+
+Wild, T., Hobson, S., \& Hilson, M.  (2012).  \textit{Conceptual Understandings of Sound by Elementary Students’ with Visual Impairments}.  Paper presented at the annual international meeting of the Association for Science Teacher Educators, Clearwater, FL.
+ 
+Wild, T., Hilson, M., \& Farrand, K. (2014). Preparing for an Inquiry-Based Summer Camp Experience for Students with Visual Impairments: What Do the Campers Think? \textit{Journal of Blindness Innovation and Research}, 4(2).
+
+Zeldin, A., Britner, S., \& Pajares, F. (2008).  A comparative study of self-efficacy beliefs of successful men and women in mathematics, science and technology careers. \textit{Journal of Research and Science Teaching}, 45(9), 1036-1058.
+
+\end{document}
