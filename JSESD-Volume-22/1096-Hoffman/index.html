@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>The SALS App: Making Chemistry Accessible With iOS Devices</title>
+<!--Generated on Thu Aug 22 20:58:01 2024 by LaTeXML (version 0.8.3) http://dlmf.nist.gov/LaTeXML/.-->
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<link href="LaTeXML.css" rel="stylesheet" type="text/css"/>
+<link href="ltx-article.css" rel="stylesheet" type="text/css"/>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line" lang="en">
+<h1 class="ltx_title ltx_title_document">The SALS App: Making Chemistry Accessible With iOS Devices</h1>
+<div class="ltx_authors">
+<span class="ltx_creator ltx_role_author">
+<span class="ltx_personname"><span class="ltx_text" style="font-size:120%;color:#0000FF;">Rosanne Hoffmann</span>
+</span><span class="ltx_author_notes"><span>
+<span class="ltx_contact ltx_role_affiliation">American Printing House for the Blind
+</span></span></span></span>
+</div>
+<div class="ltx_abstract">
+<h2 class="ltx_title ltx_title_abstract">Abstract</h2>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">A new version of SALS (Submersible Audible Light Sensor) consists of a wireless lightdetecting probe Bluetooth ® connected to the iOS SALS App. As in previous versions of SALS,changes in detected light are converted to changes in sound, the latter now rendered with iPhone or iPad audio. The SALS probe assists the student with visual impairment in a variety of science activities, including those involving liquids. For example, when the SALS probe is placed in a reaction vessel, changes in light intensity caused by a chemical reaction or color indicator change are converted to changes in tone in real time. The SALS app also provides options to store tones from experiments and to convert tones to Hertz for quantitative expression of data.</span>
+<br class="ltx_break"/>
+<br class="ltx_break"/>Keywords: Accessibility, Chemistry, SALS, Science, STEM</p>
+</div>
+<div class="ltx_para" id="p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">*Corresponding Author, Rosanne Hoffmann
+<br class="ltx_break"/><a class="ltx_ref ltx_href ltx_font_medium" href="mailto:%20rhoffmann@aph.org" title="">(rhoffmann@aph.org)</a></span>
+<br class="ltx_break"/><span class="ltx_text ltx_font_italic">Submitted December 18th, 2018
+<br class="ltx_break"/>Accepted January 27th, 2019</span>
+<br class="ltx_break"/><span class="ltx_text ltx_font_italic">Published online April 5th, 2019</span>
+<br class="ltx_break"/><span class="ltx_text ltx_font_italic">DOI:10.14448/jsesd.11.0005</span>
+<br class="ltx_break"/><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+<section class="ltx_section" id="Sx1">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">INTRODUCTION</h2>
+<div class="ltx_para" id="Sx1.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Participation in science laboratory lessons and experiments is often limited for students with visual impairments due to the visual elements in these activities (Jones, Minogue, Oppewal, Cook, &amp; Broadwell; 2006). While this problem has been addressed and awareness increased, barriers still exist (Durre; 2008). Nevertheless, some students with visual impairments who are interested in STEM fields not only succeed, but also devise innovative solutions that help current and future students. Cary Supalo, a scientist who is blind, designed the first submersible version of a sound-emitting light sensor over 10 years ago (Supalo, Kreuter, Musser, Han, Briody, McArtor, Gregory, &amp; Mallouk, 2006). Dubbed the Submersible Audible Light Sensor, or SALS, this device detects light levels not only in air but also in reaction vessels such as test tubes and beakers commonly found in chemistry laboratories. When the detected light level changes, a corresponding change in the emitted tone takes place: lower frequencies or tones at low light levels and higher frequencies or tones at higher light levels. Early prototype SALS devices comprised a plastic-covered glass probe encasing a photocell tethered to a light-to-sound conversion control box. Early field testing demonstrated that SALS afforded increased independence in science labs by alerting the student with visual impairment that a chemical reaction had taken place (Supalo, Wohlers, &amp; Humphrey, 2010). For example, precipitate formation in a test tube typically decreases the light within, thus causing a decrease in sound wave frequency and a lower tone by the SALS control device.
+</span></p>
+</div>
+<div class="ltx_para" id="Sx1.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Over the last decade, upgraded SALS prototypes, still consisting of light-detecting probes tethered to standalone control boxes, were produced and field tested yet not made available for purchase by the community of students with VI and their instructors. During this period of time, many changes with regard to electronic devices and educational institutions took place: Cell phones and tablets are now more accepted in schools, most students own or have access to cell phones and tablets, and scientific companies are developing apps that exploit the electronic output of iPhone® and Android™ devices. Applications that make use of these now commonplace devices allow connection to scientific probes directly or wirelessly via Bluetooth® (e.g., the Vernier temperature sensing probe; Vernier, 2018). By 2018, development of an updated version of SALS by the American Printing House for the Blind had shifted gears and software engineers created a SALS iOS app that connects wirelessly via Bluetooth® to a light detecting probe similar in design to the original. The control box of the newly designed SALS, which includes a RedBear BLE Nano Arduino controller board (Arm Limited, 2018; GitHub, Inc., 2018), is small enough to be attached to the probe and uses iOS device (iPhone or iPad) technology for tone production, volume control, and enhanced data storage options instead of the tethered standalone control box. Students are also able to access the iOS voiceover feature to navigate the app and obtain the Hertz equivalent of any tone output. This new design, including the app, light sensing probe, and wireless control box greatly simplifies SALS production requirements, which will ultimately translate to enhanced ease of use and a decreased purchase price for the consumer.</span></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx2">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">MATERIALS AND METHODS</h2>
+<div class="ltx_para" id="Sx2.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The SALS app and light detecting probe were demonstrated at the September 2018 IsLAND Conference in Princeton, NJ. The app was downloaded to a model 6 iPhone which connected wirelessly via Bluetooth® to the light-detecting probe. The probe consists of a 25cm long 8mm diameter glass tube covered with opaque black vinyl (except at the tip), a photocell located in the tip (which is the only part exposed to light), and a small control box located on the end opposite the probe tip. The control box housed an IOIO-OTG development board from ®SparkFun (®SparkFun, 2018) which was programmed to convert the detected light to sound and send this output to the app. As with older versions of SALS, the app functions in two modes: Tone and tone frequency stated in Hertz. It is also possible to name, store, and delete tones within the app on the iOS device, which allows a user to compare stored tones with a current tone. The new SALS app permits better data collection because the number of stored samples (tones) is limited only by the amount of memory on the device to which the app is downloaded. Older SALS devices with standalone control boxes were limited to a seven tone storage capacity. Furthermore, tones stored on a phone or tablet are identified not only by what the user names them, but also a timestamp, which is often helpful when reviewing data.</span></p>
+</div>
+<div class="ltx_para" id="Sx2.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">After launching the app, tones were generated by the iPhone that corresponded to where the probe tip pointed in air: Low tones sounded for dark areas (e.g., probe tip tucked into an armpit) and higher tones were heard in well-lit areas (e.g., pointing toward ceiling lights). This was followed by sequentially placing the probe into four beakers of water mixed with increasing concentrations of red food coloring, producing tones of lower and lower frequency. Finally, the probe was placed into a beaker containing a solution of copper sulfate and a tone was noted. A solution of potassium hexacyanoferrate was added to the beaker and the resulting brown precipitate, which decreased the amount of light detected by the probe, was announced by a dramatic lowering of the tone (decrease in frequency) by the iPhone.</span></p>
+</div>
+<div class="ltx_para" id="Sx2.p3">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Applications of the SALS device suitable for science experiments and activities along the Kindergarten to Grade 12 continuum include ranking colored objects and solutions from dark to light (and vice versa), identification of light and dark areas on a printed page (e.g., understanding constellations), exploration of precipitate formation, and determination of solution pH change with halochromic pH indicators, among others. An important feature of SALS is that it allows students to make observations in real time (Supalo, Kreuter, Musser, Han, Briody, McArtor, Gregory, &amp; Mallouk, 2006).</span></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx3">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">RESULTS AND CONCLUSIONS</h2>
+<div class="ltx_para" id="Sx3.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The device known as SALS reported here is the only light detector known to the author that is immersible in liquids, thus increasing its versatility in the educational setting. The SALS device provides qualitative information, rather than quantitative. Although quantitative results in the form of Hertz readings can assist in distinguishing one tone from another, it’s important to remember the Hertz values (and the corresponding tones) are a proxy for what is happening in a particular activity made apparent via changes in detectable light.</span></p>
+</div>
+<div class="ltx_para" id="Sx3.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Field testing directed by the American Printing House for the Blind in the fall of 2015 revealed that SALS is most useful for students with blindness rather than low vision, as the latter group can use their sight for most activities that are done with SALS. It was also found that fluids such as milk result in increased tone frequency when compared to pure water. This was not expected and suggests that light is reflected off the particles of pale colloid solutions and thus amplified. Finally, SALS users must be aware that ambient light will affect output by the device; maintaining consistent environmental lighting during an experiment is crucial.</span></p>
+</div>
+<div class="ltx_para" id="Sx3.p3">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Development of an Android equivalent of the SALS app is underway at the American Printing House for the Blind. The author believes that future SALS probes could be modified to include a temperature sensor and/or a color detector to increase the amount of collectable data and further level the playing field in the STEM activity arena for students with vision impairments.</span></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx4">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">ACKNOWLEDGMENT</h2>
+<div class="ltx_para" id="Sx4.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The author wishes to recognize Mark Swain for his time and effort in building five units of an upgraded prototype of SALS that were used for field testing in the summer of 2015.</span></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx5">
+<h2 class="ltx_title ltx_title_section">REFERENCES</h2>
+<div class="ltx_para" id="Sx5.p1">
+<p class="ltx_p">© Arm Limited. (2018). Retrieved from <a class="ltx_ref ltx_url" href="https://os.mbed.com/platforms/RedBearLab-BLE-Nano/" title="">https://os.mbed.com/platforms/RedBearLab-BLE-Nano/</a></p>
+</div>
+<div class="ltx_para" id="Sx5.p2">
+<p class="ltx_p">Durre, I. (2008). Untapped career opportunities for persons with visual impairments. American Meteorological Society, July 2008. doi:10.1175/2008BAMS2447.1 <a class="ltx_ref ltx_url" href="https://journals.ametsoc.org/doi/pdf/10.1175/2008BAMS2447.1" title="">https://journals.ametsoc.org/doi/pdf/10.1175/2008BAMS2447.1</a></p>
+</div>
+<div class="ltx_para" id="Sx5.p3">
+<p class="ltx_p">© GitHub, Inc. (2018). <a class="ltx_ref ltx_url" href="Retrievedfromhttps://github.com/redbear/nRF5x" title="">Retrievedfromhttps://github.com/redbear/nRF5x</a></p>
+</div>
+<div class="ltx_para" id="Sx5.p4">
+<p class="ltx_p">Jones, M. G., Minogue, J., Oppewal,T., Cook, M. P., &amp; Broadwell, B.(2006). Visualizing without vision at the microscale: Students with visual impairments explore cells with touch. Journal of Science Education and Technology, 15(5-6),345-351. <a class="ltx_ref ltx_url" href="https://www.researchgate.net/publication/226773469_Visualizing_Without_Vision_at_the_Microscale_Students_With_Visual_Impairments_Explore_Cells_With_Touch" title="">https://www.researchgate.net/publication/226773469_Visualizing_Without_Vision_at_the_Microscale_Students_With_Visual_Impairments_Explore_Cells_With_Touch</a></p>
+</div>
+<div class="ltx_para" id="Sx5.p5">
+<p class="ltx_p">® SparkFun Electronics. (2018). Retrieved from <a class="ltx_ref ltx_url" href="https://www.sparkfun.com/products/13613" title="">https://www.sparkfun.com/products/13613</a></p>
+</div>
+<div class="ltx_para" id="Sx5.p6">
+<p class="ltx_p">Supalo, C.A., Kreuter, R.A., Musser, A., Han,J., Briody, E., McArtor, C., Gregory, K., &amp; Mallouk, T. E. (2006). Seeing chemistry through sound: A submersible audible light sensor for observing chemical reactions for students who are blind or visually impaired. Assistive Technology Outcomes and Benefits, 3(1), 110-116. <a class="ltx_ref ltx_url" href="https://files.eric.ed.gov/fulltext/EJ902512.pdf" title="">https://files.eric.ed.gov/fulltext/EJ902512.pdf</a></p>
+</div>
+<div class="ltx_para" id="Sx5.p7">
+<p class="ltx_p">Supalo, C.A., Wohlers, H.D., &amp; Humphrey,J. R. (2010). Students with blindness explore chemistry at ‘Camp Can Do.’ Journal of Science Education for Students with Disabilities, 15(1), 1-9. <a class="ltx_ref ltx_url" href="https://scholarworks.rit.edu/cgi/viewcontent.cgi?referer=https://www.google.com/&amp;httpsredir=1&amp;article=1001&amp;context=jsesd" title="">https://scholarworks.rit.edu/cgi/viewcontent.cgi?referer=https://www.google.com/&amp;httpsredir=1&amp;article=1001&amp;context=jsesd</a></p>
+</div>
+<div class="ltx_para" id="Sx5.p8">
+<p class="ltx_p">© Vernier Software &amp; Technology, LLC. (2018). Retrieved from <a class="ltx_ref ltx_url" href="ttps://www.vernier.com/products/sensors/temperature-sensors" title="">ttps://www.vernier.com/products/sensors/temperature-sensors</a></p>
+</div>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Thu Aug 22 20:58:01 2024 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img alt="[LOGO]" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg=="/></a>
+</div></footer>
+<section></section></div>
+
+      <script src="index.js">
+        </script>
+    </body>
+    
+</html>

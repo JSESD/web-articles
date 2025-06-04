@@ -1,0 +1,171 @@
+\documentclass[11.5pt]{sig-alternate} % sets document style to sig-alternate
+% packages
+% typesetting
+%\usepackage{dirtytalk} % typset quotations easier (\say{stuff})
+\usepackage{hanging} % hanging paragraphs
+\usepackage[defaultlines=3,all]{nowidow} % avoid widows
+\usepackage[pdfpagelabels=false]{hyperref} % produce hypertext links, includes backref and nameref
+\usepackage{xurl} % defines url linebreaks, loads url package
+\usepackage{microtype}
+%\usepackage[super]{nth} % easily create superscript ordinal numbers with \nth{x}
+\usepackage{textcomp}
+\newcommand{\texttildemid}{\raisebox{0.4ex}{\texttildelow}}
+% layout
+%\usepackage{enumitem} % control layout of itemize, enumerate, description
+\usepackage{fancyhdr} % control page headers and footers
+\usepackage{float} % improved interface for floating objects
+%\usepackage{multicol} % intermix single and multiple column pages
+% language
+\usepackage[utf8]{inputenc} % accept different input encodings
+\usepackage[english]{babel} % multilanguage support
+% misc
+\usepackage{graphicx} % builds upon graphics package, \includegraphics
+%\usepackage{lastpage} % reference number of pages
+%\usepackage{comment} % exclude portions of text (?)
+\usepackage{xcolor} % color extensions
+\usepackage[backend=biber, style=apa]{biblatex} % sophisticated bibliographies % necessary for HTML to display author info and date on abstract page
+\usepackage{csquotes} % advanced quotations, makes biblatex happy
+\usepackage{authblk} % support for footnote style author/affiliation
+% tables and figures
+\usepackage{tabularray}
+%\usepackage{array} % extend array and tabular environments
+\usepackage{caption} % customize captions in figures and tables (rotating captions, sideways captions, etc)
+%\usepackage{cuted} % allow mixing of \onecolumn and \twocolumn on same page
+\usepackage{multirow} % create tabular cells spanning multiple rows
+%\usepackage{subfigure} % deprecated, support for manipulation of small figures
+%\usepackage{tabularx} % extension of tabular with column designator "x", creates paragraph-like column whose width automatically expands
+%\usepackage{wrapfig} % allows figures or tables to have text wrapped around them
+%\usepackage{booktabs} % better rules
+% dummy text
+%\usepackage{blindtext} % blind text dummy text
+%\usepackage{kantlipsum} % Kant style dummy text
+\usepackage{lipsum} %lorem ipsum dummy text
+% other helpful packages may be booktabs, longtable, longtabu, microtype
+
+\pagestyle{fancy} % sets pagestyle to fancy for fancy headers and footers
+
+% header and footer
+% modern way to set header image
+\renewcommand{\headrulewidth}{0pt} % defines thickness of line under header
+\renewcommand{\footrulewidth}{0pt} % defines thickness of line above header
+\setlength\headheight{80.0pt} % sets height between top margin and header image, effectively moves page contents down
+\addtolength{\textheight}{-80.0pt} % seems to affect the lower height. maybe only works properly if footer numbers enabled?
+\fancyhf{}
+\fancyhead[CE, CO]{\includegraphics[width=\textwidth]{headerImage.png}}
+% footer
+%\fancyfoot[LE,LO]{Article Title Here \\ DOI: }% left footer article title and doi
+%\fancyfoot[CE,CO]{{}} % center footer empty
+%\fancyfoot[RE,RO]{\thepage} % right footer page numbers
+%\pagenumbering{arabic} % arabic (1, 2, 3) numbering in footer
+
+\hypersetup{colorlinks=true,urlcolor=blue} % sets link color to blue
+\urlstyle{same} % sets url typeface to same as rest of text
+
+% set caption and figure to italics, label bold, left align captions, does not transfer to HTML
+\captionsetup{labelfont=bf, font={large, it}, justification=raggedright, singlelinecheck=false}
+\renewcommand\theContinuedFloat{\alph{ContinuedFloat}}
+
+%this next bit is confusing, but essentially changes the width of the abstract. Seems to have been copied from this https://tex.stackexchange.com/questions/151583/how-to-adjust-the-width-of-abstract
+\let\oldabstract\abstract
+\let\oldendabstract\endabstract
+\makeatletter %changes @ catcode to enable modification (in parsep)
+\renewenvironment{abstract} %alters the abstract environment
+{\renewenvironment{quotation}%
+               {\list{}{\addtolength{\leftmargin}{1em} % change this value to add or remove length to the the default ?
+                        \listparindent 1.5em%
+                        \itemindent    \listparindent%
+                        \rightmargin   \leftmargin%
+                        \parsep        \z@ \@plus\p@}%
+                \item\relax}%
+               {\endlist}%
+\oldabstract}
+{\oldendabstract}
+\makeatother %changes @ catcode to disable modification
+
+% checks
+% italics -
+% links -
+% dashes 
+% tildes -
+\begin{document}
+
+\title{The SALS App: Making Chemistry Accessible With iOS Devices}
+
+\author[1]{\large \color{blue}Rosanne Hoffmann}
+
+\affil[1]{American Printing House for the Blind}
+
+\toappear{}
+%% ABSTRACT
+\maketitle
+\begin{@twocolumnfalse} 
+\begin{abstract}
+\item 
+\textit {A new version of SALS (Submersible Audible Light Sensor) consists of a wireless lightdetecting probe Bluetooth ® connected to the iOS SALS App. As in previous versions of SALS,changes in detected light are converted to changes in sound, the latter now rendered with iPhone or iPad audio. The SALS probe assists the student with visual impairment in a variety of science activities, including those involving liquids. For example, when the SALS probe is placed in a reaction vessel, changes in light intensity caused by a chemical reaction or color indicator change are converted to changes in tone in real time. The SALS app also provides options to store tones from experiments and to convert tones to Hertz for quantitative expression of data.}
+\\ \\
+Keywords: Accessibility, Chemistry, SALS, Science, STEM
+\end{abstract}
+\end{@twocolumnfalse}
+
+%% AUTHOR INFORMATION
+
+\textbf{*Corresponding Author, Rosanne Hoffmann}\\
+\href{mailto: rhoffmann@aph.org }{(rhoffmann@aph.org)} \\
+\textit{Submitted  December 18th, 2018}\\
+\textit{Accepted January 27th, 2019} \\
+\textit{Published online April 5th, 2019} \\
+\textit{DOI:10.14448/jsesd.11.0005} \\
+\pagebreak
+\clearpage
+\begin{large}
+
+\section*{INTRODUCTION}
+     
+Participation in science laboratory lessons and experiments is often limited for students with visual impairments due to the visual elements in these activities (Jones, Minogue, Oppewal, Cook, \& Broadwell; 2006). While this problem has been addressed and awareness increased, barriers still exist (Durre; 2008). Nevertheless, some students with visual impairments who are interested in STEM fields not only succeed, but also devise innovative solutions that help current and future students. Cary Supalo, a scientist who is blind, designed the first submersible version of a sound-emitting light sensor over 10 years ago (Supalo, Kreuter, Musser, Han, Briody, McArtor, Gregory, \& Mallouk, 2006). Dubbed the Submersible Audible Light Sensor, or SALS, this device detects light levels not only in air but also in reaction vessels such as test tubes and beakers commonly found in chemistry laboratories. When the detected light level changes, a corresponding change in the emitted tone takes place: lower frequencies or tones at low light levels and higher frequencies or tones at higher light levels. Early prototype SALS devices comprised a plastic-covered glass probe encasing a photocell tethered to a light-to-sound conversion control box. Early field testing demonstrated that SALS afforded increased independence in science labs by alerting the student with visual impairment that a chemical reaction had taken place (Supalo, Wohlers, \& Humphrey, 2010). For example, precipitate formation in a test tube typically decreases the light within, thus causing a decrease in sound wave frequency and a lower tone by the SALS control device. 
+
+Over the last decade, upgraded SALS prototypes, still consisting of light-detecting probes tethered to standalone control boxes, were produced and field tested yet not made available for purchase by the community of students with VI and their instructors. During this period of time, many changes with regard to electronic devices and educational institutions took place: Cell phones and tablets are now more accepted in schools, most students own or have access to cell phones and tablets, and scientific companies are developing apps that exploit the electronic output of iPhone® and Android™ devices. Applications that make use of these now commonplace devices allow connection to scientific probes directly or wirelessly via Bluetooth® (e.g., the Vernier temperature sensing probe; Vernier, 2018). By 2018, development of an updated version of SALS by the American Printing House for the Blind had shifted gears and software engineers created a SALS iOS app that connects wirelessly via Bluetooth® to a light detecting probe similar in design to the original. The control box of the newly designed SALS, which includes a RedBear BLE Nano Arduino controller board (Arm Limited, 2018; GitHub, Inc., 2018), is small enough to be attached to the probe and uses iOS device (iPhone or iPad) technology for tone production, volume control, and enhanced data storage options instead of the tethered standalone control box. Students are also able to access the iOS voiceover feature to navigate the app and obtain the Hertz equivalent of any tone output. This new design, including the app, light sensing probe, and wireless control box greatly simplifies SALS production requirements, which will ultimately translate to enhanced ease of use and a decreased purchase price for the consumer. 
+
+\section*{MATERIALS AND METHODS}
+
+The SALS app and light detecting probe were demonstrated at the September 2018 IsLAND Conference in Princeton, NJ. The app was downloaded to a model 6 iPhone which connected wirelessly via Bluetooth® to the light-detecting probe. The probe consists of a 25cm long 8mm diameter glass tube covered with opaque black vinyl (except at the tip), a photocell located in the tip (which is the only part exposed to light), and a small control box located on the end opposite the probe tip. The control box housed an IOIO-OTG development board from ®SparkFun (®SparkFun, 2018) which was programmed to convert the detected light to sound and send this output to the app. As with older versions of SALS, the app functions in two modes: Tone and tone frequency stated in Hertz. It is also possible to name, store, and delete tones within the app on the iOS device, which allows a user to compare stored tones with a current tone. The new SALS app permits better data collection because the number of stored samples (tones) is limited only by the amount of memory on the device to which the app is downloaded. Older SALS devices with standalone control boxes were limited to a seven tone storage capacity. Furthermore, tones stored on a phone or tablet are identified not only by what the user names them, but also a timestamp, which is often helpful when reviewing data.
+    
+After launching the app, tones were generated by the iPhone that corresponded to where the probe tip pointed in air: Low tones sounded for dark areas (e.g., probe tip tucked into an armpit) and higher tones were heard in well-lit areas (e.g., pointing toward ceiling lights). This was followed by sequentially placing the probe into four beakers of water mixed with increasing concentrations of red food coloring, producing tones of lower and lower frequency. Finally, the probe was placed into a beaker containing a solution of copper sulfate and a tone was noted. A solution of potassium hexacyanoferrate was added to the beaker and the resulting brown precipitate, which decreased the amount of light detected by the probe, was announced by a dramatic lowering of the tone (decrease in frequency) by the iPhone. 
+
+Applications of the SALS device suitable for science experiments and activities along the Kindergarten to Grade 12 continuum include ranking colored objects and solutions from dark to light (and vice versa), identification of light and dark areas on a printed page (e.g., understanding constellations), exploration of precipitate formation, and determination of solution pH change with halochromic pH indicators, among others. An important feature of SALS is that it allows students to make observations in real time (Supalo, Kreuter, Musser, Han, Briody, McArtor, Gregory, \& Mallouk, 2006).
+
+\section*{RESULTS AND CONCLUSIONS}
+
+The device known as SALS reported here is the only light detector known to the author that is immersible in liquids, thus increasing its versatility in the educational setting. The SALS device provides qualitative information, rather than quantitative. Although quantitative results in the form of Hertz readings can assist in distinguishing one tone from another, it’s important to remember the Hertz values (and the corresponding tones) are a proxy for what is happening in a particular activity made apparent via changes in detectable light. 
+
+Field testing directed by the American Printing House for the Blind in the fall of 2015 revealed that SALS is most useful for students with blindness rather than low vision, as the latter group can use their sight for most activities that are done with SALS. It was also found that fluids such as milk result in increased tone frequency when compared to pure water. This was not expected and suggests that light is reflected off the particles of pale colloid solutions and thus amplified. Finally, SALS users must be aware that ambient light will affect output by the device; maintaining consistent environmental lighting during an experiment is crucial. 
+
+Development of an Android equivalent of the SALS app is underway at the American Printing House for the Blind. The author believes that future SALS probes could be modified to include a temperature sensor and/or a color detector to increase the amount of collectable data and further level the playing field in the STEM activity arena for students with vision impairments. 
+
+\section*{ACKNOWLEDGMENT}
+
+The author wishes to recognize Mark Swain for his time and effort in building five units of an upgraded prototype of SALS that were used for field testing in the summer of 2015.
+
+\end{large}
+\clearpage
+\section*{REFERENCES}\par 
+
+\leftskip 0.25in
+\parindent -0.25in 
+
+© Arm Limited. (2018). Retrieved from \url{https://os.mbed.com/platforms/RedBearLab-BLE-Nano/}
+
+Durre, I. (2008). Untapped career opportunities for persons with visual impairments. American Meteorological Society, July 2008. doi:10.1175/2008BAMS2447.1 \url{https://journals.ametsoc.org/doi/pdf/10.1175/2008BAMS2447.1}
+
+© GitHub, Inc. (2018). \url{Retrieved from https://github.com/redbear/nRF5x}
+
+Jones, M. G., Minogue, J., Oppewal,T., Cook, M. P., \& Broadwell, B.(2006). Visualizing without vision at the microscale: Students with visual impairments explore cells with touch. Journal of Science Education and Technology, 15(5-6),345-351. \url{https://www.researchgate.net/publication/226773469_Visualizing_Without_Vision_at_the_Microscale_Students_With_Visual_Impairments_Explore_Cells_With_Touch}
+
+® SparkFun Electronics. (2018). Retrieved from \url{https://www.sparkfun.com/products/13613}
+
+Supalo, C.A., Kreuter, R.A., Musser, A., Han,J., Briody, E., McArtor, C., Gregory, K., \& Mallouk, T. E. (2006). Seeing chemistry through sound: A submersible audible light sensor for observing chemical reactions for students who are blind or visually impaired. Assistive Technology Outcomes and Benefits, 3(1), 110-116. \url{https://files.eric.ed.gov/fulltext/EJ902512.pdf}
+
+Supalo, C.A., Wohlers, H.D., \& Humphrey,J. R. (2010). Students with blindness explore chemistry at ‘Camp Can Do.’ Journal of Science Education for Students with Disabilities, 15(1), 1-9. \url{https://scholarworks.rit.edu/cgi/viewcontent.cgi?referer=https://www.google.com/&httpsredir=1&article=1001&context=jsesd}
+
+© Vernier Software \& Technology, LLC. (2018). Retrieved from \url{ttps://www.vernier.com/products/sensors/temperature-sensors}
+
+\end{document}
