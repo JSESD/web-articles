@@ -1,0 +1,189 @@
+\documentclass[11.5pt]{sig-alternate} % sets document style to sig-alternate
+% packages
+% typesetting
+%\usepackage{dirtytalk} % typset quotations easier (\say{stuff})
+\usepackage{hanging} % hanging paragraphs
+\usepackage[defaultlines=3,all]{nowidow} % avoid widows
+\usepackage[pdfpagelabels=false]{hyperref} % produce hypertext links, includes backref and nameref
+\usepackage{xurl} % defines url linebreaks, loads url package
+\usepackage{microtype}
+%\usepackage[super]{nth} % easily create superscript ordinal numbers with \nth{x}
+\usepackage{textcomp}
+\newcommand{\texttildemid}{\raisebox{0.4ex}{\texttildelow}}
+% layout
+%\usepackage{enumitem} % control layout of itemize, enumerate, description
+\usepackage{fancyhdr} % control page headers and footers
+\usepackage{float} % improved interface for floating objects
+%\usepackage{multicol} % intermix single and multiple column pages
+% language
+\usepackage[utf8]{inputenc} % accept different input encodings
+\usepackage[english]{babel} % multilanguage support
+% misc
+\usepackage{graphicx} % builds upon graphics package, \includegraphics
+%\usepackage{lastpage} % reference number of pages
+%\usepackage{comment} % exclude portions of text (?)
+\usepackage{xcolor} % color extensions
+\usepackage[backend=biber, style=apa]{biblatex} % sophisticated bibliographies % necessary for HTML to display author info and date on abstract page
+\usepackage{csquotes} % advanced quotations, makes biblatex happy
+\usepackage{authblk} % support for footnote style author/affiliation
+% tables and figures
+\usepackage{tabularray}
+%\usepackage{array} % extend array and tabular environments
+\usepackage{caption} % customize captions in figures and tables (rotating captions, sideways captions, etc)
+%\usepackage{cuted} % allow mixing of \onecolumn and \twocolumn on same page
+\usepackage{multirow} % create tabular cells spanning multiple rows
+%\usepackage{subfigure} % deprecated, support for manipulation of small figures
+%\usepackage{tabularx} % extension of tabular with column designator "x", creates paragraph-like column whose width automatically expands
+%\usepackage{wrapfig} % allows figures or tables to have text wrapped around them
+%\usepackage{booktabs} % better rules
+% dummy text
+%\usepackage{blindtext} % blind text dummy text
+%\usepackage{kantlipsum} % Kant style dummy text
+\usepackage{lipsum} %lorem ipsum dummy text
+% other helpful packages may be booktabs, longtable, longtabu, microtype
+
+\pagestyle{fancy} % sets pagestyle to fancy for fancy headers and footers
+
+% header and footer
+% modern way to set header image
+\renewcommand{\headrulewidth}{0pt} % defines thickness of line under header
+\renewcommand{\footrulewidth}{0pt} % defines thickness of line above header
+\setlength\headheight{80.0pt} % sets height between top margin and header image, effectively moves page contents down
+\addtolength{\textheight}{-80.0pt} % seems to affect the lower height. maybe only works properly if footer numbers enabled?
+\fancyhf{}
+\fancyhead[CE, CO]{\includegraphics[width=\textwidth]{headerImage.png}}
+% footer
+%\fancyfoot[LE,LO]{Article Title Here \\ DOI: }% left footer article title and doi
+%\fancyfoot[CE,CO]{{}} % center footer empty
+%\fancyfoot[RE,RO]{\thepage} % right footer page numbers
+%\pagenumbering{arabic} % arabic (1, 2, 3) numbering in footer
+
+\hypersetup{colorlinks=true,urlcolor=blue} % sets link color to blue
+\urlstyle{same} % sets url typeface to same as rest of text
+
+% set caption and figure to italics, label bold, left align captions, does not transfer to HTML
+\captionsetup{labelfont=bf, font={large, it}, justification=raggedright, singlelinecheck=false}
+\renewcommand\theContinuedFloat{\alph{ContinuedFloat}}
+
+%this next bit is confusing, but essentially changes the width of the abstract. Seems to have been copied from this https://tex.stackexchange.com/questions/151583/how-to-adjust-the-width-of-abstract
+\let\oldabstract\abstract
+\let\oldendabstract\endabstract
+\makeatletter %changes @ catcode to enable modification (in parsep)
+\renewenvironment{abstract} %alters the abstract environment
+{\renewenvironment{quotation}%
+               {\list{}{\addtolength{\leftmargin}{1em} % change this value to add or remove length to the the default ?
+                        \listparindent 1.5em%
+                        \itemindent    \listparindent%
+                        \rightmargin   \leftmargin%
+                        \parsep        \z@ \@plus\p@}%
+                \item\relax}%
+               {\endlist}%
+\oldabstract}
+{\oldendabstract}
+\makeatother %changes @ catcode to disable modification
+
+% checks
+% italics -
+% links -
+% dashes
+% tildes -
+\begin{document}
+
+\title{WCAG 2.1 Meets STEM: Application, Interpretation, and Opportunities for Further Standard Development}
+
+\author[1]{\large \color{blue}Jason White}
+
+\affil[1]{Educational Testing Service}
+
+\toappear{}
+%% ABSTRACT
+\maketitle
+\begin{@twocolumnfalse} 
+\begin{abstract}
+\item 
+\textit {This paper offers an overview of changes introduced in the recent \textit{Web Content Accessibility Guidelines (WCAG) 2.1} standard that have implications for the accessibility of content in science, technology, engineering and mathematics (STEM) disciplines. In reviewing new provisions of WCAG 2.1, interpretive questions are raised regarding their application to mathematical and scientific materials. The paper is concluded with a brief discussion of opportunities for further enhancing accessibility of STEM materials in future revisions of the Guidelines}
+\\ \\
+Keywords: STEM, web accessibility, international standards, self-efficacy, inquiry-based, visual impairments, science camp
+\end{abstract}
+\end{@twocolumnfalse}
+
+%% AUTHOR INFORMATION
+
+\textbf{*Corresponding Author, Jason White}\\
+\href{mailto: jjwhite@ets.org }{(jjwhite@ets.org)} \\
+\textit{Submitted  January 22nd, 2019}\\
+\textit{Accepted February 4th, 2019} \\
+\textit{Published online March 29th, 2019} \\
+\textit{DOI:10.14448/jsesd.11.0008} \\
+\pagebreak
+\clearpage
+\begin{large}
+
+\section*{INTRODUCTION}
+The present paper is motivated by the recent publication of \textit{Web Content Accessibility Guidelines (WCAG) 2.1}, the first substantive revision of this important web standard since 2008. After introducing the Guidelines and acknowledging their significance in policy and practice, some notable consequences of the new requirements introduced in version 2.1 for web-based content and applications in STEM disciplines are then reviewed. Although these new provisions were not proposed with STEM-related applications explicitly in mind, they nevertheless have implications for a broad range of documents and software in these domains. The application of WCAG 2.1 to content in STEM fields also gives rise to issues of interpretation, which are analyzed in the discussion of individual requirements that follows.
+
+\section*{BACKGROUND TO WCAG 2.1}
+
+Since the release of version 1.0 in May 1999 (World Wide Web Consortium, 1999), the \textit{Web Content Accessibility Guidelines (WCAG)} standard has provided authoritative guidance regarding the accessibility of web-based resources, including hypertext documents and, more recently, interactive applications. The Guidelines have achieved broad adoption and recognition among practitioners of web accessibility, and have also been cited in the context of public policy. WCAG is developed by the Web Accessibility Initiative of the World Wide Web Consortium (W3C), which maintains a Working Group responsible for the evolution of the Guidelines and supporting documentation.
+
+WCAG 2.0 (World Wide Web Consortium, 2008), released in December 2008, comprises a central component of the technical requirements established by regulations issued under section 508 of the Rehabilitation Act in the United States (36 CFR Part 1194), which address the accessibility of information technologies developed or procured by the federal government. WCAG is also cited in corresponding regulations concerning the accessibility of telecommunications equipment under section 255 of the Communications Act. In the European Union, WCAG 2.0 was cited by the EN 301 549 standard for public procurement of information and communication technologies—a standard that has recently been updated to refer to the WCAG 2.1 specification published by the W3C in June of 2018. In these public policy contexts, both in the European Union and in the United States, the provisions of WCAG have been applied not only to web-based documents and applications as originally intended, but also to ‘non-web’ documents and software generally. This expansion in the domain of application of WCAG has been facilitated by the W3C itself, through the publication of a non-normative note (World Wide Web Consortium, 2013) which identified modest changes to the text of the Guidelines that were sufficient to make the technical requirements applicable to non-web documents and software. That such alterations were feasible without substantially revising the standard is indicative of the universality inherent in WCAG 2.0.
+	
+Structurally, WCAG 2.0 is organized according to four broad \textit{principles} of accessibility, which assert that web content must be ‘perceivable’, ‘operable’, ‘understandable’, and ‘robust’. Under each of these principles stand more specific \textit{guidelines} for its application. At the most detailed level are the specific \textit{success criteria}—ver\-ifiable assertions that must hold in order for a web page or a set of pages (e.g., a web site or application) to conform to the Guidelines. More precisely, a success criterion is met either if it is true, or if it is inapplicable to the web page being evaluated. Thus, the \textit{principles} and the \textit{guidelines} serve to organize and to provide context for the success criteria which express the concrete requirements that web pages need to meet in order to conform to WCAG. The success criteria are divided into three levels of priority, designated as ‘Level A’, ‘Level AA’, and ‘Level AAA’, respectively. Each successive level achieves superior accessibility for people with disabilities than that which precedes it. Accordingly, WCAG 2.0 defines three levels of conformance that web content can meet if it satisfies all of the success criteria at the associated level and at the preceding (higher) levels, or if an equivalent, ‘conforming alternate version’ of the content is provided.
+
+The success criteria of WCAG 2.0 are designed to be independent of the specific technologies (e.g., markup languages or application programming interfaces) that may be used in their implementation. The technology-specific interpretation of the success criteria needed by the authors of web sites and applications is documented in non-normative publications of the W3C’s Accessibility Guidelines Working Group, which are presently being refined following the publication of WCAG 2.1 (Accessibility Guidelines Working Group, 2018a, 2018b). Though not formally included as part of the standard, these publications are of crucial value in enabling practitioners to apply the success criteria, which are themselves expressed somewhat abstractly. (This degree of abstraction is necessary to achieve independence from specific web technologies, enabling the Guidelines to remain relevant and applicable despite technological changes that occur over time.)
+
+As can clearly be discerned from the abstraction and broad applicability of the standard, WCAG 2.0 can be used in the design, development and evaluation of a wide variety of electronic documents and software, including, relevantly for the purposes of this paper, those which arise in STEM fields. Although the relevance of the Guidelines to the accessibility of educational and professional materials in STEM-related disciplines follows directly from their general scope of application, specific decisions need to be made in interpreting and applying the success criteria to particular contexts. Some of these issues are explored in the next section in connection with the success criteria that were added in WCAG 2.1, which builds upon the foundation laid by WCAG 2.0.
+
+The recently released WCAG 2.1 specification (World Wide Web Consortium, 2018) retains all of the success criteria of WCAG 2.0, but adds further success criteria to improve the accessibility of the web along three significant dimensions. First, support for meeting the needs of people with learning or cognitive disabilities is enhanced. Second, the new success criteria strengthen accessibility for people who have low vision. Third, additional success criteria have been included to take account of accessibility issues raised by mobile and touch-based devices, such as the now ubiquitous phones and tablets with touch displays. These success criteria were derived from proposals put forward by three Task Forces that examined accessibility to people with learning and cognitive disabilities, the needs of users with low vision, and requirements arising from mobile and touch-based interfaces, respectively. The new success criteria in the latter two categories, in particular, have implications for the accessibility of STEM-related documents and software. For the sake of concreteness, the discussion which follows focuses on web-based materials in STEM disciplines.
+
+\section*{NEW WCAG 2.1 SUCCESS CRITERIA WITH INTERESTING IMPLICATIONS FOR STEM DISCIPLINES}
+
+Under Principle 1 (‘perceivable’), success criteria were added to improve the legibility of web content for users with low vision. Success criterion 1.4.10 (‘reflow’) is designed to ensure that web pages can be visually magnified without requiring the user to scroll the view-port horizontally to bring the rightmost portion of each line into view\footnote{For simplicity, this explanation assumes a left to right reading direction; the success criterion is generalized to include right-to-left text direction as well as scripts occurring in some languages where the reading direction runs vertically rather than horizontally.}.  If the web page is magnified within the limits specified by the success criterion, it must retain all of its content and functionality. In practice, this is achieved by ensuring that, when enlarged, the content is formatted and wrapped appropriately to fit within the confines of the view-port. An exception to this constraint is made for ‘parts of the content which require two-dimensional layout for usage or meaning’.
+
+With respect to content in STEM fields, the interpretive challenge which emerges from this success criterion concerns the scope of the exception. In a non-normative note that follows the text of the success criterion, examples are given of aspects of web content that require two-dimensional layout, namely ‘images, maps, diagrams, video, games, presentations, data tables, and interfaces in which it is necessary to keep tool bars in view while manipulating content’. All of these examples, except perhaps the last, can be expected to occur frequently in documents and applications in STEM domains. The interpretive issue for practitioners to consider, then, is whether the mere fact that such a part of the content requires two-dimensional layout of some kind is sufficient to bring it within the scope of the exception, or whether more must be shown in order to apply the exception—specifically, that a fixed, prescribed layout is required for ‘usage or meaning’. The latter, broader interpretation of the exception would better fulfill the purpose of the success criterion by limiting the scrolling required of people with low vision in circumstances in which the content can be designed (remediated, if necessary) to allow reformatting without jeopardizing understanding or interaction. On the other hand, it could be argued that a strict reading of the success criterion supports the former, narrower interpretation, to the detriment of achieving greater accessibility of STEM content.
+
+A further example of the interpretive difficulty associated with this success criterion lies in its applicability to mathematical notation, particularly displayed equations, which are laid out two-dimensionally. As noted in Cervone, Krautzberger, and Sorge, 2016, § 3.3, it is feasible to implement an algorithm for semantically appropriate line breaking of displayed mathematical expressions that enables reflow of such content if magnification is needed by the user. This being the case, it remains an open interpretive question whether displayed mathematical content is subject to the exception stated in the success criterion. Moreover, the question emerges of whether algorithms for reflowing displayed mathematics are sufficiently reliable and effective to improve readability for users with low vision, and should therefore be recommended for use, even if the text of WCAG 2.1 is not construed as requiring their application.
+
+Success criterion 1.4.11 (‘non-text contrast’) establishes a 3 to 1 color contrast ratio for ‘visual information required to identify user interface components and [their] states’, and for ‘parts of graphics required to understand the content, except when a particular presentation of graphics is essential to the information being conveyed’. The graphics contrast requirement is especially relevant to content in STEM fields, in which graphical material is often indispensable to understanding. The qualifications and exceptions included in both clauses of the success criterion are clearly intended to limit its impact on graphical design. However, they also contribute to interpretive uncertainty in the application of the standard. For example, practitioners will need to determine which ‘parts of graphics’ are required for a reader to understand the content—a decision that can be expected to raise difficulties even in educational contexts in which reasonable assumptions can be made about the background knowledge and skills that students are likely to bring to a scientific or mathematical text.
+
+Success criterion 1.4.12 may be briefly noted: it requires content and functionality to be preserved if the user adjusts any combination of several typographic properties of text, namely line height, space between paragraphs, letter spacing, and word spacing. The definition of ‘text’ in WCAG appears to exclude text that is rendered as images. Thus, mathematical expressions that are included as vector or rasterized graphics in a web page would seem not to be subject to this requirement. However, if Mathematical Markup Language— MathML (World Wide Web Consortium, 2014) is used, the situation regarding the application of this success criterion is less clear, particularly in the case of some in-line mathematical expressions which may arguably satisfy the definition of ‘text’ given in the glossary of WCAG\footnote{Whether mathematical notation could satisfy this definition depends, in part, on whether it is deemed to be ‘a sequence of characters’ that expresses ‘something in a human language’, as the latter term is defined in WCAG.}. 
+
+Developers of interactive STEM-related applications, such as science simulations, should note success criterion 2.3.3, which is designed to limit the distractions and, in some cases, nausea that users can experience as a result of motion animations. At present, however, this is a Level AAA requirement and therefore is unlikely to be reflected in policies that adopt WCAG 2.1, which generally prescribe conformance only at level AA.
+
+Of greater consequence to STEM applications is success criterion 2.5.1 (‘pointer gestures’), which is intended to make applications that use pointing devices or touch input more accessible to those with physical limitations who cannot effectively perform path-based actions, or cannot invoke gestures that require multiple points of simultaneous contact with the device. Multi-point gestures arise commonly in modern touch interfaces that necessitate two or more points of contact with a touch screen. Beyond the implications of this success criterion for STEM applications designed to be used on mobile devices, its effects are likely to be significant for graphical tools that require drawing or direct manipulation of objects. An exception is provided in cases in which ‘a multipoint or path-based gesture is essential’. However, the term ‘essential’ is strictly defined to apply only in circumstances in which removing the need for a multipoint or pathbased gesture would fundamentally alter the functionality, and no alternative approach to implementing the functionality is possible. Thus, for example, a raster-based graphics editor would require path-based gestures \textit{essentially} in this strict sense, but there are other cases (graph plotting, for instance), in which the argument for applying the exception is less strong. As is true of other success criteria, practitioners will need to exercise careful judgment in making design decisions. In doing so, success criterion 2.5.2 (‘pointer cancellation’) should also be taken into account, which limits the creation of pointer gestures in which user interface actions occur in response to the ‘down’ event (i.e., the act of pressing a button on a pointing device, or coming into contact with a touch screen, prior to performing the release movement).
+
+In an interactive application such as a science simulation, components of the user interface may be updated to signal the effect of a user’s action, without receiving keyboard focus. For example, in a chemistry simulation, focus may remain on the control that pours a chemical into a beaker, while the resulting reaction is displayed elsewhere in the user interface. Success criterion 4.1.3 (‘status messages’) clarifies WCAG to ensure that assistive technologies, including screen readers, are notified of the significance of such changes\footnote{A strategy for implementing simulations that are accessible to screen reader users, including a queue of alert messages, is described in Smith, Greenberg, Reid, and Moore, 2018.}. 
+
+\section*{CONCLUSIONS: OPPORTUNITIES FOR FURTHER DEVELOPMENT}
+
+As the preceding survey has shown, the changes introduced into WCAG 2.1 take incremental steps toward improving the accessibility of the web as a whole, and some of the enhancements offer substantive benefits to the accessibility of content in STEM disciplines. On the negative side, the interpretive difficulties created by qualifications and exceptions in new success criteria will demand thoughtful and informed design judgments of document and application authors in STEM domains. These challenges further support the concerns raised on empirical grounds by Brajnik, Yesilada, and Harper, 2012 that WCAG success criteria are sufficiently subject to interpretation that they tend to yield inconsistent appraisals of web pages even by well informed evaluators.
+
+As the Accessibility Guidelines Working Group contemplates its strategy for developing future versions of the standard, it is appropriate for the STEM accessibility community to consider areas in which the requirements should be further strengthened. Two suggestions may be briefly noted. First, WCAG could better support the accessibility of mathematical notation. Although assistive technologies (screen readers and read-aloud software) on several platforms can now render mathematical content marked up with MathML, either in speech or in braille, there exists no associated WCAG requirement to provide such markup. The minimalist approach to making mathematical notation accessible by rendering it as an image with associated alternative text, suffices to satisfy WCAG success criteria. Secondly, graphics accessibility is evolving in several directions: support for vector graphics in web technologies, including browsers, is now widespread, but the opportunities that this creates for improved accessibility remain to be fully developed. In parallel with this come technological improvements in tactile and haptic displays that offer considerable opportunities for improved accessibility of graphs, diagrams and other images that extend beyond the limits of textual descriptions, which have been the centerpiece of graphics accessibility in WCAG since its inception. As new approaches to the accessibility of graphical content become integrated into web technologies, there will doubtless arise opportunities to strengthen the accessibility guidance provided by WCAG in alignment with these developments.
+
+\end{large}
+\clearpage 
+\section*{REFERENCES}\par 
+
+\leftskip 0.25in
+\parindent -0.25in 
+Accessibility Guidelines Working Group.(2018a). Techniques for wcag 2.1. Retrieved December 27, 2018, from \url{https://www.w3.org/WAI/WCAG21/Techniques/}
+
+Accessibility Guidelines Working Group.(2018b). Understanding wcag 2.1. Retrieved December 27, 2018, from \url{https://www.w3.org/WAI/WCAG21/Understanding/}
+
+Brajnik, G., Yesilada, Y., \& Harper, S. (2012). Is accessibility conformance an elusive property? a study of validity and reliability of wcag 2.0. \textit{ACM Transactions on Accessible Computing (TACCESS), 4}(2), 8.
+
+Cervone, D., Krautzberger, P., \& Sorge, V.(2016). Towards universal rendering in mathjax. In \textit{Proceedings of the 13th web for all conference} (p. 4). ACM.
+
+Smith, T. L., Greenberg, J., Reid, S., \& Moore,E. B. (2018). Parallel dom architecture for accessible interactive simulations. In \textit{Proceedings of the internet of accessible things} (p. 4). ACM.
+
+World Wide Web Consortium. (1999). \textit{Web content accessibility guidelines 1.0}. Retrieved from \url{http://www.w3.org/TR/1999/WAIWEBCONTENT-19990505}
+
+World Wide Web Consortium. (2008). \textit{Web content accessibility guidelines (wcag) 2.0}. Retrieved from \url{http://www.w3.org/TR/2008/REC-WCAG20-20081211/}
+
+World Wide Web Consortium. (2013). \textit{Guidance on applying wcag 2.0 to non-web information and communications technologies (wcag2ict)}. Retrieved from \url{http://www.w3.org/TR/2013/NOTE-wcag2ict-20130905/}
+
+World Wide Web Consortium. (2014). \textit{Mathematical markup language (mathml) version 3.0 2nd edition}. Retrieved from \url{http://www.w3.org/TR/2014/REC-MathML320140410/}
+
+World Wide Web Consortium. (2018). \textit{Web content accessibility guidelines (wcag) 2.1}. Retrieved from \url{https://www.w3.org/TR/2018/REC-WCAG21-20180605/}
+
+\end{document}
