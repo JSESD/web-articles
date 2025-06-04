@@ -1,0 +1,249 @@
+\documentclass[11.5pt]{sig-alternate} % sets document style to sig-alternate
+% packages
+% typesetting
+%\usepackage{dirtytalk} % typset quotations easier (\say{stuff})
+\usepackage{hanging} % hanging paragraphs
+\usepackage[defaultlines=3,all]{nowidow} % avoid widows
+\usepackage[pdfpagelabels=false]{hyperref} % produce hypertext links, includes backref and nameref
+\usepackage{xurl} % defines url linebreaks, loads url package
+\usepackage{microtype}
+%\usepackage{textcomp}
+%\newcommand{\texttildemid}{\raisebox{0.4ex}{\texttildelow}}
+% layout
+\usepackage{enumitem} % control layout of itemize, enumerate, description
+\usepackage{fancyhdr} % control page headers and footers
+\usepackage{float} % improved interface for floating objects
+%\usepackage{multicol} % intermix single and multiple column pages
+% language
+\usepackage[utf8]{inputenc} % accept different input encodings
+\usepackage[english]{babel} % multilanguage support
+% misc
+\usepackage{graphicx} % builds upon graphics package, \includegraphics
+%\usepackage{lastpage} % reference number of pages
+%\usepackage{comment} % exclude portions of text (?)
+\usepackage{xcolor} % color extensions
+\usepackage[backend=biber, style=apa]{biblatex} % sophisticated bibliographies % necessary for HTML to display author info and date on abstract page
+\usepackage{csquotes} % advanced quotations, makes biblatex happy
+\usepackage{authblk} % support for footnote style author/affiliation
+% tables and figures
+\usepackage{tabularray}
+%\usepackage{array} % extend array and tabular environments
+\usepackage{caption} % customize captions in figures and tables (rotating captions, sideways captions, etc)
+%\usepackage{cuted} % allow mixing of \onecolumn and \twocolumn on same page
+\usepackage{multirow} % create tabular cells spanning multiple rows
+%\usepackage{subfigure} % deprecated, support for manipulation of small figures
+%\usepackage{tabularx} % extension of tabular with column designator "x", creates paragraph-like column whose width automatically expands
+%\usepackage{wrapfig} % allows figures or tables to have text wrapped around them
+%\usepackage{booktabs} % better rules
+% dummy text
+%\usepackage{blindtext} % blind text dummy text
+%\usepackage{kantlipsum} % Kant style dummy text
+\usepackage{lipsum} %lorem ipsum dummy text
+% other helpful packages may be booktabs, longtable, longtabu, microtype
+
+\pagestyle{fancy} % sets pagestyle to fancy for fancy headers and footers
+
+% header and footer
+% modern way to set header image
+\renewcommand{\headrulewidth}{0pt} % defines thickness of line under header
+\renewcommand{\footrulewidth}{0pt} % defines thickness of line above header
+\setlength\headheight{80.0pt} % sets height between top margin and header image, effectively moves page contents down
+\addtolength{\textheight}{-80.0pt} % seems to affect the lower height. maybe only works properly if footer numbers enabled?
+\fancyhf{}
+\fancyhead[CE, CO]{\includegraphics[width=\textwidth]{headerImage.png}}
+% footer
+%\fancyfoot[LE,LO]{Article Title Here \\ DOI: }% left footer article title and doi
+%\fancyfoot[CE,CO]{{}} % center footer empty
+%\fancyfoot[RE,RO]{\thepage} % right footer page numbers
+%\pagenumbering{arabic} % arabic (1, 2, 3) numbering in footer
+
+\hypersetup{colorlinks=true,urlcolor=blue} % sets link color to blue
+\urlstyle{same} % sets url typeface to same as rest of text
+
+% set caption and figure to italics, label bold, left align captions, does not transfer to HTML
+\captionsetup{labelfont=bf, font={large, it}, justification=raggedright, singlelinecheck=false}
+\renewcommand\theContinuedFloat{\alph{ContinuedFloat}}
+
+%this next bit is confusing, but essentially changes the width of the abstract. Seems to have been copied from this https://tex.stackexchange.com/questions/151583/how-to-adjust-the-width-of-abstract
+\let\oldabstract\abstract
+\let\oldendabstract\endabstract
+\makeatletter %changes @ catcode to enable modification (in parsep)
+\renewenvironment{abstract} %alters the abstract environment
+{\renewenvironment{quotation}%
+               {\list{}{\addtolength{\leftmargin}{1em} % change this value to add or remove length to the the default ?
+                        \listparindent 1.5em%
+                        \itemindent    \listparindent%
+                        \rightmargin   \leftmargin%
+                        \parsep        \z@ \@plus\p@}%
+                \item\relax}%
+               {\endlist}%
+\oldabstract}
+{\oldendabstract}
+\makeatother %changes @ catcode to disable modification
+
+% checks
+% italics -
+% links -
+% dashes
+% tildes -
+\begin{document}
+
+\title{An Examination of Accessible Hands-on Science \\Learning Experiences, Self-confidence in One’s \\Capacity to Function in the Sciences, and Motivation\\ and Interest in Scientific Studies and Careers}
+
+\author[1]{\large \color{blue}Mick D. Isaacson}
+\author[2]{\large \color{blue}Michelle Michaels}
+\author[3]{\large \color{blue}Cary Supalo}
+\author[4]{\large \color{blue}Alan Roth}
+
+\affil[1]{Novus Access \& Ivy Tech Comm College}
+\affil[2]{Novus Access}
+\affil[3]{Independence Science}
+\affil[4]{Pleasant Schools, Whiteland, IN}
+
+\toappear{}
+%% ABSTRACT
+\maketitle
+\begin{@twocolumnfalse} 
+\begin{abstract}
+\item 
+\textit{This study examined the potential relationship of accessible hands-on science learning experiences to the development of positive beliefs concerning one’s capacity to function in the sciences and motivation to consider science as a college major and career. Findings from Likert survey items given before and after accessible hands-on science laboratories show that students who were blind or had low vision (BLV) were more likely to agree with the following items after engaging in accessible science experiences: 1) I plan on enrolling as a science major in college; 2) My educational experiences, so far, have given me the confidence that I need to decide on majoring in an area of science in college and then a career in science; 3) I feel that I have the skills needed to independently perform a lab activity in (on) \_\_\_\_\_\_; 4) I feel that I have the skills needed to independently start data collection during a lab activity in \_\_\_\_\_\_; 5) I feel that I have the skills needed to independently stop data collection on a lab activity in \_\_\_\_\_\_; 6) I was actively involved in data collection during the\_\_\_\_\_\_ lab. The Likert survey findings are consistent with the notion that accessible science activities may foster the development of self-beliefs that one has the capacity to independently function in scientific domains, which may promote an inclination to consider scientific pursuits. Insufficient accessible science learning experiences may contribute to the underrepresentation of individuals with disabilities in science, technology, engineering, and mathematics (STEM) fields. Providing accessible science learning activities may help to increase both the number of individuals who have disabilities and diversity in the STEM fields.}
+\\ \\
+Keywords: Access, Accessible, Assistive Technology, Blindness, Disabilities, Diversity, Engineering, Hands-on, Learning, Mathematics, Motivation, Science, Technology, Self-beliefs, Self-confidence, STEM
+\end{abstract}
+\end{@twocolumnfalse}
+
+%% AUTHOR INFORMATION
+
+\textbf{*Corresponding Author, Mick D. Isaacson}\\
+\href{mailto: mick.isaacson@gmail.com }{(mick.isaacson@gmail.com)} \\
+\textit{Submitted  Mar 5 2016 }\\
+\textit{Accepted Aug 15 2016} \\
+\textit{Published online  Nov 15 2016 } \\
+\textit{DOI:10.14448/jsesd.09.0005} \\
+\pagebreak
+\clearpage
+\begin{large}
+
+\section*{INTRODUCTION}
+
+Individuals who have disabilities are underrepresented in the fields of science, technology, engineering and mathematics (STEM). To illustrate, according to a 2015 National Science Foundation (NSF) report, only 7.0\% of the science and engineering workforce reported having a disability. Additional evidence of underrepresentation from the same report can be found in data showing that only 2,333 recipients of doctorates in science and engineering reported having a disability compared to 31,976 recipients of science and engineering doctorates who did not report having a disability. Statistics that differentiate disability type according to their representation within science and engineering are not readily extracable from the 2015 NSF report and are not readily available from other sources; however, as the report appears to indicate that individuals who have visual impairments are included in their data, a reasonable extrapolation is that individuals who have visual impairments are underepresented in the science and engineering workforce.
+
+All students including those who have disabilities should be provided with experiences that encourage interest in the STEM fields. Educational research should help to identify barriers that may inhibit students from choosing to enter into a particular field of study. The present study examines potential barriers that may inhibit students who have disabilities from choosing post-secondary studies and careers in STEM. Although students who are blind or have low vision (BLV) are the focus of the present study, the findings should be applicable to students who have other disabilities, and possibly even to students who do not have disabilities. 
+
+Based on substantial personal and professional experiences of the authors with students who have disabilities, in particular, students who have BLV, there are a number of potential factors that may contribute to underrepresentation, including low expectations of significant others (e.g., parents, teachers, etc.), not feeling fully included in science activities, and lack of confidence in one’s capacity to function in science. Of these potential factors, confidence in one’s science ability is the focus of this paper. The development of self-confidence in science may be associated with hands-on science activities. People who have successfully engaged in activities may develop beliefs that they have the capacity to function in the domain in which they were engaged (Bandura, 1977; 1997).  Furthermore, effort and persistence may be higher in individuals who have developed beliefs that they have the capacity to successfully complete domain specific activities (Pintrich \& Schunk, 2002; Schunk, 1991).  
+
+In science classrooms and laboratories, students who have BLV may be limited in the number of science activities in which they actively participate. Based on personal observations and communication of the researchers with students who have BLV and certified teachers of visually impaired students, passive observation of science laboratory activities or other roles with  limited hands-on experiences such as note-takers or data recorders are frequently assigned to students who have BLV. Such limitations may not provide sufficient opportunities for the development of positive beliefs regarding one’s self-confidence in STEM domains. Hence, students who have BLV may not receive adequate experiences to develop a positive belief system regarding their capacity or confidence to function in STEM. This may lead to little effort and persistence in STEM studies and also to the low representation of students who have BLV in STEM careers. 
+
+The present study examined the potential relationship between hands-on accessible science activities, self-beliefs concerning one’s capacity to succeed in science, and the inclination to consider post-secondary science studies and careers in students who have BLV. In this study, the LabQuest, a data collection device commonly used in mainstream science classrooms was used. Operation of the LabQuest is typically through a visual touch-screen interface. The visual nature of the interface limits its accessibility to students who have BLV. Text-to-speech software was developed to allow non-visual access to the LabQuest. The synthetic speech output provided an accessible method for students who have BLV to collect data and to be more actively engaged in ongoing science activities. Likert survey items were administered before and after completion of laboratories in which devices with and without synthetic speech output were used.  The survey items primarily addressed:  1) self-confidence in STEM fields; and 2) perceptions and interest in science. 
+
+\section*{METHOD}
+
+\subsection*{Institutional Review Board (IRB)}
+
+All procedures and materials were approved by a university IRB.
+
+\subsection*{Participants}
+
+Twenty-seven students from a residential school for the blind and visually impaired were tested. The participants were junior (n=13) and high school (n=14) students. The students were enrolled in chemistry (n=11), earth science (n=4), general science (n=6), and physical science (n=6) courses. The gender composition was female (n=12) and male (n=15). The racial composition was African-American (n=4), Asian (n=1), and Caucasian (n=22). The visual status was blind (n=10) and visually impaired (n=17).
+
+\subsection*{Design} 
+A pre-post within subject design was used. As with most educational studies, the design was quasi-experimental in nature (Campbell \& Stanley, 1963). Hence, the researchers had to adapt to the constraints imposed by the educational environment. 
+
+\section*{Materials}
+
+\subsection*{Classroom Laboratory Experiments}
+
+Laboratory experiments were selected from the Vernier Software \& Technology Lab Books: 1) \textit{Chemistry with Vernier}, 2) \textit{Earth Science with Vernier}, 3) \textit{Physical Science with Vernier}, and 4) \textit{Human Physiology with Vernier}. 
+
+\subsection*{Survey Instruments}
+
+Two Likert survey instruments constructed by the educational researchers were used to measure perceptions about science and the current laboratory experiences. Each  survey used the following five point scale: 1 = Strongly disagree; 2 = Slightly disagree; 3 = Neither agree nor disagree; 4 = Slightly agree; 5 = Strongly agree. 
+
+Survey A (shown below) addressed general attitudes toward science, plans for college including major, feelings about science education and capacity to function in science. Survey B (shown below) was directed towards perceived skills and degree of active involvement. Survey B differed according to the specific science class in which a student was enrolled. To illustrate, for students in chemistry, the blank lines in the survey items would have contained the word, \textit{chemistry} and for students in physical science, the blank lines would have contained the words, \textit{physical science}, etc. 
+
+\subsection*{Survey A}
+\begin{enumerate}
+    \item  I am interested in science.
+    \item  Science is fun.
+    \item  I plan on going to college.
+    \item  I plan on enrolling as a science major in college.
+    \item  I feel left out during science labs.
+    \item  I would like to be more actively involved in science labs.
+    \item Science labs are frustrating.
+    \item  Developing technology to allow students who are blind or visually impaired to be more actively involved in science labs would be valuable.
+    \item  My educational experiences, so far, have given me the confidence that I need to decide on majoring in an area of science in college and then a career in science.
+\end{enumerate}
+                                                             
+\subsection*{Survey B}
+\begin{enumerate}
+    \item  I feel that I have the skills needed to independently perform a lab activity in (on) \_\_\_\_\_\_.
+    \item  I feel that I have the skills needed to independently start data collection during a lab activity in \_\_\_\_\_\_.
+    \item  I feel that I have the skills needed to independently stop data collection on a lab activity in \_\_\_\_\_\_.
+    \item I have the ability to independently collect data in \_\_\_\_\_\_.
+    \item  I am interested in \_\_\_\_\_\_.
+    \item  I was actively involved in the \_\_\_\_\_\_ lab.
+    \item  I was actively involved in data collection during the \_\_\_\_\_\_ lab.
+\end{enumerate}
+
+\subsection*{Procedure} 
+
+Testing consisted of students completing labs from the Vernier catalog using versions of the LabQuest both with and without synthetic speech as previously specified. The labs completed were dependent upon the class in which the student was enrolled. For example, students enrolled in chemistry completed the chemistry lab. Prior to completing their labs, the teacher provided instruction on how to use both versions of the LabQuest. The version with synthetic speech provided students with the opportunity to directly control and monitor data collection without help from the teacher during the lab. The surveys were administered immediately before (pre) and after completion of the labs (post). 
+      
+\section*{RESULT}
+ 
+\subsection*{Survey A}
+
+A Wilcoxon Matched-Pairs-Signed-Ranks test (Champion, 1970) was performed on the pre-post changes for the responses to each item. Most notably, statistically significant changes using an alpha level of 0.05 were detected in the items that asked: \textit{I plan on enrolling as a science major in college} (Z=2.11, P=0.017); and \textit{My educational experiences, so far, have given me the confidence that I need to decide on majoring in an area of science in college and then a career in science} (Z=1.80, P=0.034). In sum, the Wilcoxon test found that after accessible laboratory experiences students who have BLV were statistically more likely to consider science as a major and that they were more likely to think that their educational experiences had given them sufficient self-confidence in science to pursue additional studies in science and careers in science.
+
+Although the items, \textit{I am interested in science} and \textit{Science is fun} from Survey A did not show statistically significant shifts after an accessible hands-on science experience, they are noteworthy because they illustrate a disconnect between finding an activity such as science to be enjoyable and interesting and the desire to pursue additional similar activities as a science major in college. Specifically, before any of the science activities in the present study, 69\% of the students reported that they were interested in science; 62\% reported that they thought science was fun; and 92\% reported that they were planning to go to college. But only 8\% reported that they were planning on enrolling as a science major in college. Based on the relatively high percentage of students who reported that they found science interesting and fun, one would intuitively expect a higher percentage of students reporting that they were planning to major in science. 
+
+\subsection*{Survey B}
+
+For Survey B, a Wilcoxon Matched-Pairs-Signed-Ranks test also found pre-post changes in responses following accessible experiences. Statistically significant differences using an alpha level of 0.05 were detected in the following items: 1) \textit{I feel that I have the skills needed to independently perform a lab activity in (on)} \_\_\_\_\_\_ (Z=1.887, p=.029); 2) \textit{I feel that I have the skills needed to independently start data collection during a lab activity in} \_\_\_\_\_\_ ( Z= 2.490, p=.006); 3) \textit{I feel that I have the skills needed to independently stop data collection on a lab activity in} \_\_\_\_\_\_ (Z=2.111, p=.017); and 4) \textit{I was actively involved in data collection during the} \_\_\_\_\_\_ \textit{lab} (Z=2.032, p=.021). Statistical significance is based on an arbitrarily chosen alpha level. Psychology research frequently uses a 0.05 level, however, it is not unusual to find 0.1 used in the social sciences. Hence, it is worth mentioning that the item,  \textit{I was actively involved in the} \_\_\_\_\_\_ \textit{lab} (Z=1.391, p=.082) had a p value between 0.05 and 0.1.       
+
+\section*{DISCUSSION}
+
+A majority of students who have BLV reported that they found science interesting and fun, but when asked whether they were planning on majoring in science during college, only a small number (8\%) reported that they were going to major in science, a finding that is consistent with a 2015 NSF report that only 7\% of the science and engineering work force is composed of individuals who have disabilities. The disconnection between interest in science and actual involvement in science may be related to insufficient hands-on experiences in science. Specifically, after accessible hands-on labs, students were more likely to agree with the Survey A statements: \textit{I plan on enrolling as a science major in college} and \textit{My educational experiences, so far, have given me the confidence that I need to decide on majoring in an area of science in college and then a career in science}. Moreover, findings from Survey B indicate that accessible hands-on experiences may be associated with self-beliefs that one has the capacity to independently function in various capacities involving scientific activities. Together, the findings from surveys A and B are consistent with the notion that accessible science activities may contribute to a self-belief system that one has the capacity to independently function in scientific domains, which may contribute to an inclination to consider scientific pursuits. These findings are consistent with Bandura's theoretical framework regarding the importance of a self-belief system (1977; 1997). They are also consistent with research showing that effort and persistence may be higher in individuals who have developed positive beliefs concerning their capacity to successfully complete domain specific activities (Pintrich \& Schunk, 2002; Schunk, 1991) and similar research showing that believing that one has prerequisite academic skills is predictive of college academic achievement and performance (Robbins et al., 2004). In short, a positive belief structure may be important for motivating performance and achievement in the STEM fields. Findings from the present study in conjunction with the aforementioned research suggest that inaccessible experiences during classroom science activities by students who have BLV or other disabilities may be insufficient in promoting a positive belief structure for motivating future studies and careers in STEM. This may be a contributing factor to the underrepresentation of students with disabilities in STEM.
+
+Many limitations were imposed by the nature of this study. Because the study took place in a school, it was necessary to adapt to the educational parameters already in place. Specically, it was necessary to use the planned curriculum and current student enrollment. As the study was funded by a six month grant, it was also necessary to complete the study in one semester. These limitations prevented random assignment of students to groups and the use of a between subjects design, making it necessary to use a within subject design with pre and post measures separated by a short time period. This limited timeframe prevented the examination of the potential influence of extended exposure to accessible science experiences. It could be argued that the short separation of time between pre and post testing may have contributed to an inclination to respond according to perceived expectations of the researchers, however, it could also be argued that the short separation of time between pre and post testing may have limited exposure to extraneous events that could have negatively influenced students’ responses and that this short time enhanced sensitivity of the pre/post measures.
+
+While findings from the present study are consistent with the notion that hands-on accessible experiences in the STEM fields may promote consideration of studies and careers in STEM, it is unlikely that a single hands-on science activity will be sufficient to result in a decision to choose a STEM career path. The cumulative effects of repeated exposure may underlie the development of many phenomena (Furniss, Beyer,  Muller,  2009; Shields, Zawadzki, \& Johnson, 2011). Repeated exposures to hands-on STEM activities may be required for students to actually decide upon post-secondary STEM studies and careers. Hence, educators should not only provide all students with accessible hands-on science activities but should also attempt to maximize cumulative effects by providing \textit{frequent} accessible activities beginning as early as possible in the child’s education.
+
+Although our research indicates that accessible hands-on education experiences may be important for science learning and for promoting STEM self-confidence, interest, and inclination to pursue post-secondary studies in STEM fields and STEM careers, considerable research is needed to better clarify these relationhips and how to optimize interest and motivation in the STEM fields. Our study provides a foundation from which to guide the development of future research to better undertstand the role that accessibility and hands-on participation may play in encouraging STEM learning and STEM career choices.
+
+In conclusion, for students who have disabilities, science laboratory equipment may have limited accessibility and may not provide adequate accessible hands-on experiences to promote motivation to pursue STEM studies and careers. Educators should ensure that students who have disabilities are also provided with sufficient accessible science learning experiences. 
+
+\section*{ACKNOWLEDGEMENTS}
+
+This research was supported by NSF SBIR Award Number 1127412.
+
+\end{large}
+\clearpage
+\section*{REFERENCES}\par 
+
+\leftskip 0.25in
+\parindent -0.25in 
+
+Bandura, A. (1977). Self-efficacy: Toward a unifying theory of behavioral change. \textit{Psychological Review, 84}, 191-215. 
+
+Bandura, A. (1997). Self-efficacy: The exercise of control. New York: W. H. Freeman and Company. 
+
+Campbell, D.T., \& Stanley, J.C. (1963). Experimental and quasi-experimental designs for research. Boston: Hough-ton Mifflin Co. 
+
+Champion, D.J. (1970). Basic Statistics for Social Research. New York: Harper \& Row.
+
+Furniss, T. Beyer, T., Muller, J.M. (2009). Impact of life events on child mental health before school entry at age six. \textit{European Child and Adolescent Psychiatry, 18}, 717–724.
+
+National Science Foundation (2015). Women Minorities, and persons with disabilities in science and engineering. Retrieved from \url{http://www.nsf.gov/statistics/2015/nsf15311/}
+
+Pintrich, P. R., \& Schunk, D. H. (2002). Motivation in education (2nd ed.). Upper Saddle River, NJ: Pearson Education. 
+
+Robbins, S. B., Lauver, K, Le, H., Davis, D., Langley, R., \& Carlstrom, K. (2004). Do psychosocial and study skill factors predict college outcomes? A meta-analysis. \textit{Psychological Bulletin, 130}, 261-288. 
+
+Schunk, D. H. (1991). Self-efficacy and academic motivation. \textit{Educational Psychologist, 26}, 207-231.  
+
+Shields, S.A., Zawadzki, M. J. \& Johnson, R.N. (2011). The Impact of the Workshop Activity for Gender Equity Simulation in the Academy (WAGES–Academic) in Demonstrating Cumulative Effects of Gender Bias. \textit{Journal of Diversity in Higher Education, 4}, 120-129.
+
+Vernier Software \& Technology Lab Books. Available at: \url{www.vernier.com/products/books/}
+
+\end{document}
