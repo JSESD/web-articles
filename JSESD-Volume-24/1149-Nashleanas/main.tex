@@ -1,0 +1,622 @@
+\documentclass[11.5pt]{sig-alternate} % sets document style to sig-alternate
+% packages
+% typesetting
+%\usepackage{dirtytalk} % typset quotations easier (\say{stuff})
+\usepackage{hanging} % hanging paragraphs
+\usepackage[defaultlines=3,all]{nowidow} % avoid widows
+\usepackage[pdfpagelabels=false]{hyperref} % produce hypertext links, includes backref and nameref
+\usepackage{xurl} % defines url linebreaks, loads url package
+\usepackage{microtype}
+%\usepackage[super]{nth} % easily create superscript ordinal numbers with \nth{x}
+\usepackage{ragged2e}
+% layout
+%\usepackage{enumitem} % control layout of itemize, enumerate, description
+\usepackage{fancyhdr} % control page headers and footers
+\usepackage{float} % improved interface for floating objects
+%\usepackage{multicol} % intermix single and multiple column pages
+% language
+\usepackage[utf8]{inputenc} % accept different input encodings
+\usepackage[english]{babel} % multilanguage support
+% misc
+\usepackage{graphicx} % builds upon graphics package, \includegraphics
+%\usepackage{lastpage} % reference number of pages
+%\usepackage{comment} % exclude portions of text (?)
+\usepackage{xcolor} % color extensions
+\usepackage[backend=biber, style=apa]{biblatex} % sophisticated bibliographies % necessary for HTML to display author info and date on abstract page
+\usepackage{csquotes} % advanced quotations, makes biblatex happy
+\usepackage{authblk} % support for footnote style author/affiliation
+% tables and figures
+\usepackage{tabularray}
+%\usepackage{array} % extend array and tabular environments
+\usepackage{caption} % customize captions in figures and tables (rotating captions, sideways captions, etc)
+%\usepackage{cuted} % allow mixing of \onecolumn and \twocolumn on same page
+\usepackage{multirow} % create tabular cells spanning multiple rows
+%\usepackage{subfigure} % deprecated, support for manipulation of small figures
+%\usepackage{tabularx} % extension of tabular with column designator "x", creates paragraph-like column whose width automatically expands
+%\usepackage{wrapfig} % allows figures or tables to have text wrapped around them
+%\usepackage{booktabs} % better rules
+% dummy text
+%\usepackage{blindtext} % blind text dummy text
+%\usepackage{kantlipsum} % Kant style dummy text
+\usepackage{lipsum} %lorem ipsum dummy text
+% other helpful packages may be booktabs, longtable, longtabu, microtype
+
+\pagestyle{fancy} % sets pagestyle to fancy for fancy headers and footers
+
+% header and footer
+% modern way to set header image
+\renewcommand{\headrulewidth}{0pt} % defines thickness of line under header
+\renewcommand{\footrulewidth}{0pt} % defines thickness of line above header
+\setlength\headheight{80.0pt} % sets height between top margin and header image, effectively moves page contents down
+\addtolength{\textheight}{-80.0pt} % seems to affect the lower height. maybe only works properly if footer numbers enabled?
+\fancyhf{}
+\fancyhead[CE, CO]{\includegraphics[width=\textwidth]{headerImage.png}}
+% footer
+%\fancyfoot[LE,LO]{Article Title Here \\ DOI: }% left footer article title and doi
+%\fancyfoot[CE,CO]{{}} % center footer empty
+%\fancyfoot[RE,RO]{\thepage} % right footer page numbers
+%\pagenumbering{arabic} % arabic (1, 2, 3) numbering in footer
+
+% deprecated way
+%\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\footrulewidth}{0pt}
+%\setlength\headheight{80.0pt}
+%\addtolength{\textheight}{-80.0pt}
+%\chead{%
+%  \ifcase\value{page}
+%  % empty test for page = 0
+% \or \includegraphics[width=\textwidth]{headerImage.png}% page=1
+%  \or \includegraphics[width=\textwidth]{headerImage.png}% page = 2
+%  \or \includegraphics[width=\textwidth]{headerImage.png}% page = 3
+%  \or \includegraphics[width=\textwidth]{headerImage.png}% page = 4
+%  \or \includegraphics[width=\textwidth]{headerImage.png}% page = 5
+%  \else
+%  \includegraphics[width=\textwidth]{headerImage.png}
+%  \fi
+%}
+%\chead{\includegraphics[width=\textwidth]{headerImage.png}}
+
+\hypersetup{colorlinks=true,urlcolor=blue} % sets link color to blue
+\urlstyle{same} % sets url typeface to same as rest of text
+
+% set caption and figure to italics, label bold, left align captions, does not transfer to HTML
+\DeclareCaptionFormat{custom}
+{
+    \textbf{\textit{\large #1#2}}\textit{\large #3} % #1 is the "Table 1" or "Figure 1" part, #2 is the separator (":"), #3 is the caption
+}
+\captionsetup{format=custom}
+\captionsetup{justification = raggedright, singlelinecheck = false}
+
+%this next bit is confusing, but essentially changes the width of the abstract. Seems to have been copied from this https://tex.stackexchange.com/questions/151583/how-to-adjust-the-width-of-abstract
+\let\oldabstract\abstract
+\let\oldendabstract\endabstract
+\makeatletter %changes @ catcode to enable modification (in parsep)
+\renewenvironment{abstract} %alters the abstract environment
+{\renewenvironment{quotation}%
+               {\list{}{\addtolength{\leftmargin}{1em} % change this value to add or remove length to the the default ?
+                        \listparindent 1.5em%
+                        \itemindent    \listparindent%
+                        \rightmargin   \leftmargin%
+                        \parsep        \z@ \@plus\p@}%
+                \item\relax}%
+               {\endlist}%
+\oldabstract}
+{\oldendabstract}
+\makeatother %changes @ catcode to disable modification
+
+% checks
+% italics 
+% links
+% dashes
+% tildes
+\begin{document}
+
+\title{The Perceptions of Teachers of Students with Visual Impairments on Students with Visual Impairments and Graphing: How To Teach}
+
+\author[1]{\large \color{blue}Ashley N. Nashleanas}
+
+\affil[1]{Independence Science, Inc}
+
+\toappear{}
+%% ABSTRACT
+\maketitle
+\begin{@twocolumnfalse} 
+\begin{abstract}
+\item 
+ \textit {Many gaps exist in what is known around teaching students with visual impairments (SVI) about how to use graphs (Rosenblum et al., 2018; Rosenblum \& Herzberg, 2015; Zebehazy \& Wilton, 2014a;2014b;2014c). When teachers first experience a student with a visual impairment, some of the questions that come to mind are: How can I be sure this student understands what I am saying about these graphs I show on the board? Will this student be able to keep up? The study herein, based on findings from Nashleanas (2018), serves as a guide for teachers to consider in the case that SVI enroll in their STEM courses. Nashleanas reports findings that answer questions that focus on (1) how to teach SVI so they can have timely access to and demonstrate comprehension of graphical information in mathematics and science courses, and (2) the kinds of individuals who, given their unique training and experience with SVI, can be helpful resources.}
+     \\
+     \\
+     Keywords: Teachers of students with visual impairments (TVI); students with visual impairments (SVI); tactile graphs; mathematics
+\end{abstract}
+\end{@twocolumnfalse}
+
+%% AUTHOR INFORMATION
+
+\textbf{*Corresponding Author, Ashley N. Nashleanas }\\
+\href{mailto: anashleanas@independencescience.com}{(anashleanas@independencescience.com)} \\
+\textit{Submitted March 2021 }\\
+\textit{Accepted May 4, 2021} \\
+\textit{Published online September 16, 2021} \\
+\textit{DOI:10.14448/jsesd.13.0009} \\
+
+\pagebreak
+\clearpage
+\begin{large}
+    \section*{INTRODUCTION}
+
+“A picture says a thousand words” is all one needs to say when being asked about the importance of visual representations, especially in a technical context. Throughout all science, technology, engineering, and mathematics (STEM) disciplines, visual material such as graphs, diagrams, and charts do justice for communicating complex messages to individuals with vision very quickly. However, individuals who happen to be blind or visually impaired, focusing on students with visual impairments (SVI) enrolled in the K-12 system, do not have the same privileges as those with normal vision when accessing much of the material ubiquitous to STEM. There are many reasons for this, including the effort needed to render these materials into a format suitable for SVI to use (Dick \& Kubiak, 1997; Pritchard \& Lamb, 2012; Quek \& McNeill, 2006; Rosenblum \& Herzberg, 2015), the inadequate type and amount of training that both teachers in the K-12 system and teachers of students with visual impairments (TVI) possess with regard to teaching STEM concepts to SVI (DeMario et al., 1998; Kapperman \& Sticken, 2003), and the learning techniques SVI have had to adopt merely to their lack of vision in order to absorb information in a way that is meaningful to them (Millar, 1994; Rosenblum et al., 2018; Zebehazy \& Wilton, 2014a;2014b;-2014c).
+
+Graphs are a specific form of visual representation common in STEM that, unlike maps and other visual symbolisms, solicit those who use them to be cognizant that graphs are expressions of two or more variables being related to one another through specific schema of lines and labels, something that makes graph comprehension a daunting task for teachers and students (Balchin \& Coleman, 1966; Friel et al., 2001; Kosslyn, 1989; Pinker, 1990). Therefore, it is paramount for individuals who teach SVI to recognize that the lack of vision SVI experience further aggravates the already challenging task of providing instruction to students on how to use graphs properly. Teachers of students with visual impairments (TVI) have the onus of providing SVI with timely and sufficient access to graphical information (Suvak, 2004). However, many TVI do not have enough STEM training to teach SVI how to use graphs once they are provided access (Pogrund \& Wibbenmeyer, 2008). Meanwhile, teachers whose expertise is in STEM oftentimes do not receive training specific to instructing SVI on how to use graphs (Kahn \& Lewis, 2014). Furthermore, the degree to which vision is of absence plays a role in the technological and instructional strategies teachers must use to help their students gain access to and understand graphical information (Millar, 1994;,Rosenblum et al., 2018; Rosenblum \& Herzberg, 2015; Zebehazy \& Wilton, 2014a;2014b;2014c).
+ 
+The existing body of literature around graphing and SVI makes suggestions regarding how teachers should aide SVI in accessing and understanding graphical information, including the order in which it is best to present elements of a visual representation to their students (Dulin \& Hatwell, 2006; Papadopoulos et al., 2011; Zebehazy \& Wilton, 2014a;2014b;2014c), the role visual experience plays in comprehending spatial information (Dick \& Kubiak, 1997; Millar, 1994; Quek \& McNeill, 2006; Spindler, 2006), and the kinds of teachers most helpful to SVI in their attempts to learn graphical information (McKenzie \& Lewis, 2008; Pogrund \& Wibbenmeyer, 2008; Suvak, 2004). For example, the literature focused on teaching SVI how to read a tactile graphic suggests that SVI read a tactile graphic by first going to the title, then moving in a counterclockwise manner through exploring the axes and associated labels, and lastly the function. The order with which SVI are known to read graph elements is in opposition to Carpenter and Shah (1998) and Pinker (1990), whose findings show that sighted students focus on the function before attending to the information on the axes. As for the role of visual experience on graphing abilities, the consensus is that while instructing SVI on how to utilize visual representations is timelier and more effortful than teaching individuals without visual disabilities, SVI are as capable of understanding visual and graphical information as their sighted peers. TVI are shown to be the most beneficial resource for helping SVI learn to access and understand graphical information, as Pogrund and Wibbenmeyer as well as Suvak report. However, McKenzie and Lewis suggest that paraprofessionals can be equally beneficial in providing TVI and classroom teachers with ideas for how to instruct SVI. Paraprofessionals differ from TVI because they spend individualized time with one or very few students with special needs. Paraprofessionals are responsible for a multitude of tasks, such as one-on-one tutoring multiple times a week, adapting materials on a much timelier basis than TVI are able so they are deemed accessible, and regularly communicating with students’ families about their overall performance.
+ 
+As part of their training, TVI and paraprofessionals receive services from consultants in mathematics, education, and other areas of focus (Bruens, 2020). Earning a minimum of a master’s degree in an area of expertise, and many times receiving training beyond a Master’s degree, consultants advise teachers, parents, and school administrators on best practices for assessing students and implementation of policies that take into account the curricular and material needs of students who belong to several specialized populations. As explained later in Nashleanas (2018), mathematics consultants for the visually impaired provided workshop training as a way for TVI and paraprofessionals to discover and implement technologies and instructional practices that benefited their students.
+
+This study summarizes research from a dissertation that was conducted to share findings regarding teachers’ perceptions and SVI experiences with accessing and understanding graphical information (Nashleanas, 2018). The focus of this manuscript is on teachers’ perceptions of how SVI access and understand graphical information and the supports their teachers provide in order to help them access and understand graphical information. Although the existing body of literature as described above shows that individuals with visual impairments learn in a sequential and stepwise manner, Nashleanas adds information that to our consultation has never been published in the literature surrounding SVI and graphing. Until now, teachers’ perceptions of the order in which SVI read tactile graphics, the role of visual experience on the ability to solve graphing problems successfully, and beneficial resources for teachers of SVI when using tactile graphics, has not been explored or explicated upon in this level of detail. By conducting a study wherein teachers with first-hand experience with SVI report on their perceptions of these three aspects of how SVI access and understand graphs, Nashleanas brings to the education community practical implications that are largely informative to teachers experiencing SVI in mathematics and other STEM courses on instructional techniques and support systems for their students that likely will contribute to successful experiences with graphing. In order to understand teachers’ viewpoints on what SVI need to access and understand graphical information, Nashleanas posed the following research questions:
+\begin{enumerate}
+    \item Do teachers perceive SVI explore graph elements in the same way as their sighted peers?
+    \item What role does prior visual experience play in teachers’ perceptions of task performance?
+    \item Whom do teachers perceive as helpful to SVI in learning about graphs??
+\end{enumerate}
+\section*{METHODOLOGY}
+
+This manuscript is based on a publication which includes two studies that were conducted independently of one another in their timing and samples (Nashleanas, 2018). However, both studies served the purpose of providing answers to each of the research questions as listed above. A study conducted in this way is referred to as a mixed model approach (Mertens \& McLaughlin, 2002; Tashakkori \& Teddlie, 2008). Nashleanas (2018) developed a 51-question Qualtrics-based survey to understand TVI perceptions with regard to pedagogical practices and technological resources that benefit accessibility and comprehension of graphical information for SVI. A total of 34 TVI from 18 states and Canada completed the survey. For the purposes of this manuscript, items centered on teachers’ perceptions of the sequences SVI use to explore tactile graphics, as well as the role of visual experience on the ability to complete graphing exercises correctly.
+ 
+Nashleanas (2018) also conducted a set of interviews to understand teachers’ perceptions of support their students need to access and understand graphs. The sample included four TVI (Lois, Lydia, Bonnie, and Leah) and two mathematics teachers (Natty and Kenny), none of whom participated in the survey. Each teacher who participated in the interview session taught in a district located in the state where the study was conducted. These teachers served SVI in their courses at the time of the interviews, and pseudonyms were given to preserve anonymity. More demographic information such as number of years teaching, courses taught, and number of SVI can be found in Table 1. 
+ 
+Each interview lasted 45 minutes in length and followed a semi-structured approach (Merriam, 2002). Nashleanas (2018) recorded each interview session and kept all recorded content on a password-protected system provided by the institution where the study was conducted. After using a service to transcribe the data, she listened to the interviews and read the transcripts to confirm that all transcripts were kept de-identified and corrected any errors that were made on the part of the transcription. Interview questions were focused on TVI perceptions of their students’ technological and instructional needs with graphs, and the support systems that facilitate graph accessibility and comprehension for SVI. In the upcoming sections, Nashleanas describes the findings from each of these studies as well as their implications to the education of SVI in the way of graphing.
+
+\begin{table*}[!h]
+\caption{Teacher Demographic Information}
+\begin{tabular}{lcccccc}
+    & \textbf{Natty} & \textbf{Leah} & \textbf{Lois} & \textbf{Kenny} & \textbf{Bonnie} & \textbf{Lydia} \\ \hline
+Age & 45 & 52 & 29 & 45 & 50 & 46 \\
+District Size & \textless{}2,500 & \textgreater{}50,000 & \textgreater{}50,000 & \textless{}2,500 & \textless{}2,500          & Travels between districts \\
+Education Level & Masters & Masters & Bachelor’s & Masters & Masters & Masters \\
+Licensure & Secondary Mathematics & Visual Impairment & Visual Impairment & Secondary Mathematics & Visual Impairment         & Visual Impairment \\
+\# of years teaching overall & 21 & 20 & 2 & 17 & N/A & 10 \\
+\# of years teaching SVI & 1 & 20 & 1 & 0 & 27 & 10 \\
+\#   of students total blindness & 1 & 20 & 1 & 1 & 50 & 10 \\
+\#   of students with low vision & 0 & 20 & 1 & 0 & 100 & 10 \\
+Mathematics courses total blindness & Geometry & N/A & N/A & Algebra 1 & Algebra 2, Geometry & N/A \\
+Mathematics courses low vision & N/A & N/A & N/A  & N/A & Algebra 1 and 2, Geometry & N/A \\
+Have taught SVI graphs & Yes & Yes & Yes & No & Yes & Yes \\
+\# of years teaching SVI graphs & 1 & 4 & 2 & N/A & 20 & 5 \\                     
+\end{tabular}
+\justifying
+\\
+\\
+Note. SVI = Student with Visual Impairment; “Mathematics courses total blindness” refers to courses in which teachers have taught one or more students with total blindness. From “Graph accessibility and comprehension for the blind: A challenge of its own kind,” by Nashleanas, 2018, Graduate Theses and Dissertations, 16425. Reprinted by permission.
+\end{table*}
+
+\section*{RESULTS}
+Nashleanas (2018) reports results on teachers’ perceptions of the way SVI read tactile graphics, the role of visual experience on the ability to solve graphing problems successfully, and beneficial resources for teachers of students when using tactile graphics.
+ 
+\subsection*{Teachers’ Perceptions of SVI and Order of Graph Elements}
+
+The author’s first research question was: Do SVI explore graph elements in the same way as their sighted peers? According to the literature on TVI perceptions of SVI and graphing (Rosenblum et al., 2018; Zebehazy \& Wilton, 2014a;2014b;2014c), differences exist between the exploration processes students with vision use and those used by SVI. Verbal descriptions alone likely will not suffice when teaching SVI, and teachers need to provide a tactile representation of the graphic and hands-on instruction to teach SVI how to use graphical information correctly. However, much less is known about the order in which teachers perceive students to read tactile graphics and the specific type of verbal and tactile cues they need throughout each step of the navigation process.
+ 
+In order to provide more information on how teachers perceive SVI to explore graphical elements, teachers responded to survey items 24-29 as included in Nashleanas (2018) regarding the order of elements of a tactile graphic that SVI will put focus (Appendix A). 
+ 
+The survey analysis showed TVI perceive SVI to focus on the function before they begin to explore the reference, and this finding is in contrast to literature that suggests teachers perceive SVI will focus on the reference before the function.
+ 
+While the results from the survey suggest that teachers perceive their students to focus on the functional part of the tactile graphic before exploring its reference, TVI reported during the interviews that their students explore tactile graphics by examining the reference before they attend to the function (Nashleanas, 2018). TVI also communicated that they teach their students how to read tactile graphics by moving their hands through each part sequentially. The implication for teachers to practice is to place the student's hand on top of their own, articulate each part of the graph, from the title, to the axis labels, to the functional shape, as the teacher moves the hand through each part. After going through each part with both hands, the consensus among participants was to use one hand, preferably the left one, to keep track of each X-axis label, and the right hand to move from a label on the X-axis, up to the functional shape, and across the page to get to the label on the Y-axis.
+ 
+\subsection*{Teachers’ Perceptions of the Role of Visual Experience on Graphing Tasks}
+
+While much literary work exists to give us insight into teachers’ attitudes and concerns regarding the quality of SVI performance in mathematics and science courses related to their peers with vision (Kahn \& Lewis, 2014), our review of the literature indicates that there is no publication that reports TVI perceptions specific only to students with varying onsets and levels of visual impairment in their performance on graphing tasks (Nashleanas, 2018). For this reason, the author explored teachers’ perceptions of the role of prior visual experience on the abilities of SVI to complete homework and exam items with graphs successfully. The author focused on items 40, 15, 16, 19, and 20 to examine the degree to which demographic characteristics, such as number of years teaching SVI, relate to the responses regarding impact of onset and level of visual impairment on how well TVI perform graphing tasks (Appendix B). 
+
+When addressing the question about the impact of onset of blindness on how well SVI perform graphing tasks, TVI with teaching experience were more likely to agree that students with previous visual experiences perform graphing tasks more accurately than students who are blind. When addressing the question of whether students with low vision perform graphing tasks more accurately than students with total blindness, TVI who had taught for longer periods of time were more likely to agree that SVI with low vision were able to use graphs more accurately than SVI with total blindness.
+ 
+During the interviews, TVI and mathematics educators claimed that students with minimal visual experiences are able to understand graphs as effectively as their peers with vision. For example, Nattie articulated her perception of why her student, a male with total blindness, was able to work well with graphs in her geometry course. She attributed his success to his ability to keep math concepts in memory and utilize assistive technology that he knew worked well for him in the past as she said,  
+
+\begin{quote}
+
+He had a tactile board and we would use the wax to put on there for the axis and he could plot points that way. He would create it with the wax on the paper and he had braille paper with graphs on it, the axis's on there that he would plot. Even when we would talk about coordinates in class his memory is amazing (Nashleanas, 2018, p. 127).
+
+\end{quote}
+
+Lois also agreed that students with blindness are capable of performing well with graphs, but only if both the teacher and student jointly strive for the student's independence. She said that in order for her students to be successful, she would start out by communicating that she was willing and available to help them succeed, and she would go with them through each step of the process. She asked her students about aspects of their work to assess whether or not they were on the right track as they applied information from graphs they knew to the problems they were attempting to solve. When they gave incorrect answers, she kept asking questions that connected information they already knew to material unfamiliar to them at the time until they were able to come up with the correct solutions and reason through them sensibly. Once they gave correct responses, she reinforced that they were making progress as they were doing homework problems and let them know that she was confident that they will be successful in mathematics.
+ 
+\subsection*{Teachers’ Perceptions on the Value of Mathematics Consultants and Paraprofessionals for Teacher Training}
+
+During the interview sessions, the author asked teachers to provide information on the resources that helped them acquire the skills to teach SVI (Nashleanas, 2018). TVI are known to be the main resources for providing instruction to SVI (Suvak, 2004). However, teachers in this study suggested otherwise. Mathematics teachers and TVI attributed their skills to training they received from individuals who served the SVI they work with currently. For example, Kenny taught a high school math course where a student with late onset blindness was present, and he credited the student’s paraprofessional, as she reinforced the importance of providing a verbal description each time a graphic was displayed. Kenny claimed, 
+ 
+\begin{quote}
+I would say, just talking to the aide that works with her cause she’s been with her for quite a few years. She just told me that we just got to remember she’s writing what you say, not necessarily what you write on the board so, that was something where I figured I need to repeat myself so that she makes sure she gets everything written down (Nashleanas, 2018, p. 132).
+\end{quote}
+
+As another example of TVI benefiting from paraprofessionals, Lois articulated that she did not realize that her students were not able to produce their own graphs ahead of time. She gave credit to the paraprofessional for making her aware that she was the one who needed to produce tactile graphics for her students before they were ever expected to use them. She also mentioned that the paraprofessionals provided resourceful information on how to use assistive technology to produce graphs for her students.
+ 
+TVI also shared that mathematics consultants provided essential insights as they worked with SVI and graphing tasks. As an example of how mathematics consultants can benefit TVI in teaching SVI about graphing, Lydia shared that the consultant in charge of training her and other TVI throughout the area provided her with skills she needed to teach students to use the audio graphing calculator in conjunction with tactile graphics. She also vocalized that the consultant provided professional development tasks on information on how to teach students to use tactile graphics with unique approaches. Math educators, and TVI alike, shared that the skills they acquired for teaching tactile graphics to SVI can come from paraprofessionals who have worked with their students in the past, in sessions organized by consultants who have been involved in the development of tools and strategies for teaching SVI. Because teaching SVI requires unique combinations of tools and strategies, individuals who find themselves new to teaching students with visual impairments will benefit greatly if they connect with those who have had experience teaching the same SVI they work with at the time.
+ 
+\section*{DISCUSSION}
+
+Due to the content of this manuscript being centered on “how to” when teaching SVI how to use tactile graphics, the author capitalizes on the practices teachers should consider when teaching SVI about tactile graphics. These considerations serve as recommendations for practitioners which stemmed from the results around teachers’ perceptions of SVI and graphing.
+ 
+\subsection*{Recommendations around Graph Exploration for SVI and the Role of Visual Experiences on Task Performance with Graphs}
+
+The survey results in Nashleanas (2018) contradict literature on the order in which teachers should instruct SVI to explore visual objects such as graphs and diagrams (Millar, 1994; Rosenblum et al., 2018; Zebehazy \& Wilton, 2014a, 2014b, 2014c). Teachers’ responses that suggest their students access the function of a graph before accessing the referents aligns more with the findings in Carpenter and Shah (1998) and Pinker (1990) that describe how individuals with normal vision read graphs. The survey results also contradict work from Millar, Rosenblum et al., and Zebehazy and Wilton, which suggested that SVI are as capable of performing visual tasks as well as their peers with vision. TVI with more teaching experience asserted that students with prior visual experience would complete graphing tasks more accurately than students whose blindness was congenital.
+ 
+The teaching strategies TVI use when serving students with previous visual experiences may resemble teaching strategies with students with normal vision, as Millar (1994) reported. The preferred instructional strategy for each student depends on the amount and onset of vision. Individuals with limited vision are able to rely on the visual experiences they have, such that they learn in a similar manner to students with normal vision, depending on the level and severity of the visual impairment. Only through lived experiences can the uniqueness of the job of instructing SVI be understood fully, as there exists a high amount of variability in how SVI learn based on their level and onset of visual impairment. SVI are capable of performing spatial tasks as well as their peers with vision, but SVI will be successful at these tasks only if their teachers provide them with the proper type and amount of instruction and assistive technology. Certainly to account for the most severe type of visual impairment (congenital blindness) but also to take into account those with prior visual experience who prefer to use tactile graphics, it is key to provide SVI with a tactile graphic, communicating each piece of information verbally while guiding the student's hands through the representation as described in the previous section.
+ 
+\subsection*{Recommendations around Beneficial Resources for Teacher Training}
+
+Both TVI and mathematics educators stressed the importance of communicating with and receiving training from individuals who previously taught their students. Two examples the author found as discussed by participants in Nashleanas (2018), were professional development sessions organized by consultants to demonstrate best practices for production and instruction of tactile graphics, as well as the paraprofessional’s pointers that SVI will not be able to learn how to use graphs unless they have access as provided by their TVI. These findings support research from McKenzie and Lewis (2008) which suggests that TVI are not the only resource to teach SVI and are able to learn from paraprofessionals as to what SVI need when in the classroom. The author expands on what is known in the literature about the varieties of teachers who can be beneficial resources to SVI in that the research is based on the voices of teachers who have worked directly with SVI on graphing content. Information on valuable resources for SVI and their teachers with a focus on graphical information has been covered only in this study.
+ 
+\section*{CONCLUSION}
+
+The conclusion to this manuscript includes avenues for further research to be conducted. Areas of further research include perceptions of teachers who have instructed SVI but have not earned the TVI credential, and a deeper exploration into the influence of visual experience on how well SVI perform graphing exercises. 
+ 
+\subsection*{Avenues for Future Directions}
+
+Future research is necessary to understand perceptions held by teachers who have taught SVI but do not have the TVI credential, for example, K-12 mathematics teachers and paraprofessionals. Mathematics teachers, TVI, and paraprofessionals referred to in Nashleanas (2018) commonly credited mathematics consultants as valuable resources for the skills they acquired to teach SVI how to use graphs with success. There is an absence of mathematics consultants across the United States, so it is a necessity to understand the varieties of resources teachers find valuable when serving SVI in a location where a mathematics consultant has not been appointed. Information teachers in these locations provide, first, would be a reminder that more mathematics consultants specific to SVI are needed, and secondly would supply resources for other teachers in a similar position to consider utilizing.
+ 
+According to the author’s research to date, no study has been conducted to understand the real effect visual experience has on performance with graphing tasks among SVI. A second avenue for future research would involve deeper exploration as to the effect (or lack thereof) the role of visual experience among SVI has on the accuracy with which SVI of differing levels and onsets solve graphing problems on homework and exam items. An example of how this could be done is to compare a group of students with blindness from birth to students with early and late onset visual impairments in their past and present mathematics exam scores, where the exams are focused heavily on graphing tasks. The findings that arise from this study could inform the education community beyond perception and into reality, serving as an empirical way to test the effect of visual onset on students’ actual abilities to understand graphical information, as well as determine whether the perceptions of those who instruct SVI lead to teachers’ expectations of students blind from birth being lowered when working with graphical information.
+
+\end{large}
+\clearpage
+\section*{REFERENCES}\par 
+
+\leftskip 0.25in
+\parindent -0.25in 
+
+Balchin, W., \& Coleman, A. (1966). Graphicacy should be the fourth ace in the pack. Cartographica: The International Journal for Geographic Information, 3(1), 23-28.
+
+Bruens, R. (2020, August 10). Education Consultant: Career and Salary Information. Resilient Educator. \url{https://resilienteducator.com/teaching-careers/educa-tional-consultant/.}
+
+Carpenter, P. A., \& Shah, P. (1998). A model of the perceptual and conceptual processes in graph comprehension. Journal of Experimental Psychology: Applied, 4(2), 75-100.
+
+DeMario, N. C., Lang, S., \& Lian, M.-G. J. (1998). Teachers' self-assessed competence and attitudes toward literary braille and the Nemeth code. Journal of Visual Impairment \& Blindness, 92(5), 354.
+
+Dick, T., \& Kubiak, E. (1997). Issues and aids for teaching mathematics to the blind. The Mathematics Teacher, 90(5), 344-349.
+
+Dulin, D., \& Hatwell, Y. (2006). The effects of visual experience and training in raised-line materials on the mental spatial imagery of blind persons. Journal of Visual Impairment \& Blindness, 100(7), 414-424.
+
+Friel, S. N., Curcio, F. R., \& Bright, G. W. (2001). Making sense of graphs: Critical factors influencing comprehension and instructional implications. Journal for Research in Mathematics Education, 32(2),124-158.
+
+Kahn, S., \& Lewis, A. R. (2014). Survey on teaching science to K-12 students with disabilities: Teacher preparedness and attitudes. Journal of Science Teacher Education, 25(8), 885-910.
+
+Kapperman, G., \& Sticken, J. (2003). A case for increased training in the Nemeth Code of Braille Mathematics for teachers of students who are visually impaired. Journal of Visual Impairment \& Blindness, 97(2), 110.
+
+Kosslyn, S. M. (1989). Understanding charts and graphs. Applied Cognitive Psychology, 3(3), 185-225.
+
+McKenzie, A. R., \& Lewis, S. (2008). The role and training of paraprofessionals who work with students who are visually impaired. Journal of Visual Impairment \& Blindness, 102(8), 459-471.
+
+Merriam, S. B. (2002). Qualitative research in practice: Examples for discussion and analysis. San Francisco: Jossey-Bass.
+
+Mertens, D. M. \& Mclaughlin, J. A. (2004). Mixed Methods and Mixed Model Designs. In \textit{Research and Evaluation Methods in Special Education.}
+
+Millar, S. (1994). Understanding and representing space: Theory and evidence from studies with blind and sighted children. Clarendon Press/Oxford University Press.
+
+Nashleanas, A.N. (2018). Graph accessibility and comprehension for the blind: A challenge of its own kind.
+
+Papadopoulos, K., Koustriava, E., \& Kartasidou, L. (2011). The impact of residual vision in spatial skills of individuals with visual impairments. The Journal of Special Education, 45(2), 118-127. 
+
+Pinker, S. (1990). A theory of graph comprehension. In R. O. Fredle, (Ed.), Artificial intelligence and the future of testing (p.73-126). Hillsdale, NJ: Lawrence Erlbaum Associates.
+
+Pogrund, R. L., \& Wibbenmeyer, K. A. (2008). Interpreting the meaning of the terms certified and highly qualified for teachers of students with visual impairments. Journal of Visual Impairment \& Blindness, 102(1), 5-15.
+
+Pritchard, C. K., \& Lamb, J. H. (2012). Teaching geometry to visually impaired students. Mathematics Teacher, 106(1), 22-27.
+
+Quek, F., \& McNeill, D. (2006). Embodiment awareness, mathematics discourse, and the blind. Annals of the New York Academy of Sciences, 1093(1), 266-279.
+
+Rosenblum, L. P., Cheng, L., \& Beal, C. R. (2018). Teachers of students with visual impairments share experiences and advice for supporting students in understanding graphics. Journal of Visual Impairment \& Blindness, 112(5), 475-487.
+
+Rosenblum, L. P., \& Herzberg, T. S. (2015). Braille and Tactile Graphics: Youths with Visual Impairments Share Their Experiences. Journal of Visual Impairment \& Blindness, 109(3), 173-184.
+
+Spindler, R. (2006). Teaching mathematics to a student who is blind. Teaching Mathematics and its Applications, 25(3), 120-126.
+
+Suvak, P. A. (2004). What do they really do? Activities of teachers of students with visual impairments. Re:View, 36(1), 22-31.
+
+Tashakkori, A., \& Teddlie, C. (2008). Introduction to mixed method and mixed model studies in the social and behavioral science. In V.L.
+Plano-Clark \& J. W. Creswell (Eds.), The mixed methods reader, (pp. 7-26).
+
+Zebehazy, K. T., \& Wilton, A. P. (2014a). Quality, importance, and instruction: The perspective of teachers of students with visual impairments on student graphic use. Journal of Visual Impairment \& Blindness, 108(1), 5–16.
+
+Zebehazy, K. T., \& Wilton, A. P. (2014b). Charting success: The experience of teachers of students with visual impairments in promoting graphic use by students. Journal of Visual Impairment \& Blindness, 108(4), 263–274.
+
+Zebehazy, K. T., \& Wilton, A. P. (2014c). Straight from the Source: Perceptions of Students with Visual Impairments about Graphic Use. Journal of Visual Impairment \& Blindness, 108(4), 275-286.
+\clearpage
+\begin{large}
+\leftskip 0in
+\parindent 0in 
+
+\section*{APPENDIX A. RESEARCH QUESTIONS 3 ITEM LEVEL DESCRIPTIVE STATISTICS}
+From “Graph accessibility and comprehension for the blind: A challenge of its own kind,” by Nashleanas, 2018, \textit{Graduate Theses and Dissertations}, 16425. Reprinted with Permission.
+
+Q24 When given a tactile graphic, is it common for students with visual impairments to read the title before they discuss any other feature?
+\begin{itemize} \label{white}
+    \item Yes (1)
+    \item No (2)
+\end{itemize}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lc}
+Descriptive Statistics & Value\\ \hline
+N & 34 \\
+\% Yes & 68.8\\
+\% No & 31.3\\
+\# Missing & 2\\
+\% Missing & 5.89\\
+\end{tabular}
+\end{table}
+
+Q25 Check which element you believe students with visual impairments focus on directly after they become aware of the title.
+\begin{itemize}
+    \item Units on the y-axis (1)
+    \item Scale of the y-axis (2)
+    \item Units of the x-axis (3)
+    \item Scale of the x-axis (4)
+    \item Functional shape in the middle of the graph (5)
+\end{itemize}
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{lc}
+Descriptive Statistics & Value\\ \hline
+N & 34\\
+\% units on y-axis & 23.8\\
+\% scale on y-axis	& 14.3\\
+\% units on x-axis	& 19.0\\
+\% scale on x-axis &	0\\
+\% functional shape &	42.9\\
+\# Missing	& 13\\
+\% Missing	& 38.24\\
+\end{tabular}
+\end{table}
+\newpage
+
+Q26 Check which element you believe students with visual impairments attend to last as they explore tactile graphics. 
+\begin{itemize}
+    \item 	Units on the y-axis (1)
+    \item 	Scale of the y-axis (2)
+    \item Units of the x-axis (3)
+    \item 	Scale of the x-axis (4)
+    \item 	Functional shape in the middle of the graph (5)
+\end{itemize}
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{lc}
+Descriptive Statistics & Value\\ \hline
+N	& 34\\
+\% units on y-axis	& 29.5\\
+\% scale on y-axis	& 38.1\\
+\% units on x-axis	& 14.3\\
+\% scale on x-axis &	0\\
+\% functional shape &	39.1\\
+\# Missing	& 13\\
+\% Missing	& 38.24\\
+\end{tabular}
+\end{table}
+
+Q27 When do you believe students with visual impairments are likely to access the title as they read tactile graphics?  
+\begin{itemize}
+    \item Near the beginning of the exploration process (1)
+    \item Near the middle of the exploration process (2)
+    \item Near the end of the exploration process (3)
+    \item They don’t include it in their exploration process (4)
+\end{itemize}
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{lc}
+Descriptive Statistics & Value\\ \hline
+N	& 34\\
+\% near beginning	& 20.0\\
+\% near middle	& 20.0\\
+\% near end	& 20.0\\
+\% they don’t include it &	30.0\\
+\# Missing	& 24\\
+\% Missing	& 70.59\\
+\end{tabular}
+\end{table}
+\newpage
+
+Q28 Which element do you believe students with visual impairments are likely to attend to first as they explore tactile graphics? 
+\begin{itemize}
+    \item Units on the y-axis (1)
+    \item Scale of the y-axis (2)
+    \item Units of the x-axis (3)
+    \item Scale of the x-axis (4)
+    \item Functional shape in the middle of the graph (5)
+\end{itemize}
+\begin{table}[!h]
+\centering
+\begin{tabular}{lc}
+Descriptive Statistics & Value\\ \hline
+N	& 34\\
+\% units on y-axis	& 10.0\\
+\% scale on y-axis	& 0\\
+\% units on x-axis	& 0\\
+\% scale on x-axis &	10.0\\
+\% functional shape &	80.0\\
+\# Missing	& 24\\
+\% Missing	& 70.59\\
+\end{tabular}
+\end{table}
+
+
+Q29 Which feature do your students with visual impairments attend to last as they explore tactile graphics? 
+\begin{itemize}
+    \item Units on the y-axis (1)
+    \item Scale of the y-axis (2)
+    \item Units of the x-axis (3)
+    \item Scale of the x-axis (4)
+    \item Functional shape in the middle of the graph (5)
+\end{itemize}
+\begin{table}[!h]
+\centering
+\begin{tabular}{lc}
+Descriptive Statistics & Value\\ \hline
+N	& 34\\
+\% units on y-axis	& 20.0\\
+\% scale on y-axis	& 50.0\\
+\% units on x-axis	& 0\\
+\% scale on x-axis &	10.0\\
+\% functional shape &	20.0\\
+\# Missing	& 24\\
+\% Missing	& 70.59\\
+\end{tabular}
+\end{table}
+\clearpage
+\section*{APPENDIX B. RESEARCH QUESTION 4 MEAN RESPONSES FOR PREDICTORS AND OUTCOME ITEMS}
+
+From “Graph accessibility and comprehension for the blind: A challenge of its own kind,” by Nashleanas, 2018, \textit{Graduate Theses and Dissertations}, 16425. Reprinted with Permission.
+
+\subsection*{Mean Responses for Predictor Variables}
+
+Q40 To the best of your memory, please indicate the number of years of overall experience you have served students with visual impairments. 
+\begin{table}[h]
+\centering
+\begin{tabular}{lc}
+Descriptive Statistics & Value\\ \hline
+N  & 34 \\
+\textit{M} &	16.16\\
+\textit{SD}	& 9.68\\
+\# Missing &	3\\
+\end{tabular}
+\end{table}
+
+Q41 To the best of your memory, please indicate the number of students with blindness (unable to use printed sources) you have served in your career as an educator. 
+\begin{table}[h]
+\centering
+\begin{tabular}{lc}
+Descriptive Statistics & Value\\ \hline
+N  & 34 \\
+M &	78.87\\
+SD	& 114.93\\
+\# Missing & 4\\
+\end{tabular}
+\end{table}
+
+Q42 To the best of your memory, please indicate the number of visually impaired students (able to read large print) you have served in your career as an educator. 
+\begin{table}[h]
+\centering
+\begin{tabular}{lc}
+Descriptive Statistics & Value\\ \hline
+N  & 34 \\
+\textit{M} &	135.33\\
+\textit{SD}	& 196.05\\
+\# Missing &	4\\
+\end{tabular}
+\end{table}
+
+\subsection*{Frequencies and Percentages of TVI for Occupational Setting}
+Q45 Please identify your primary occupational setting. 
+\begin{itemize}
+    \item Residential institution (1)
+    \item Public K-12 institution (2)
+    \item Both (3)
+    \item Neither (please specify) (4)\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\end{itemize}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lc}
+Descriptive Statistics & Value\\ \hline
+N  & 34 \\
+\# residential ( \%)	& 22 (68.8)\\
+\# K12 ( \%) &	8 (25.0)\\
+\# both ( \%)&	2 (6.3)\\
+\# neither ( \%) &	0\\
+Number excluded &	0\\
+Percent excluded &	0\\
+\end{tabular}
+\end{table}
+
+\textbf{Mean Responses of Outcome Variables}
+
+Q15 How often do your students with visual impairments perform at least at the level  of the class average when they complete classwork that requires the use of graphs? 
+
+ \begin{itemize}
+     \item 5 – between 80\% and 100\% of the time (5)
+     \item 4 – between 60\% and 79\% of the time (4)
+     \item 3 – between 40\% and 59\% of the time (3)
+     \item 2 – between 20\% and 39\% of the time (2)
+     \item 1 – less than 20\% of the time (1)
+     \item 0 – don’t know
+ \end{itemize}
+\begin{table}[h]
+\centering
+\begin{tabular}{cc}
+Descriptive Statistics & Value\\ \hline
+N  & 34 \\
+M &	3.10\\
+SD	& 1.33\\
+\# Missing &	3\\
+\% Dont't know & 32.4\\
+\% Missing & 8.8\\
+\end{tabular}
+\end{table}
+
+Q16 How often do your students with visual impairments perform at least at the level  of the class average when completing exams that require the use of graphs? 
+
+\begin{itemize}
+    \item 5 – between 80\% and 100\% of the time (5)
+    \item 4 – between 60\% and 79\% of the time (4)
+    \item 	3 – between 40\% and 59\% of the time (3)
+    \item 2 – between 20\% and 39\% of the time (2)
+    \item 	1 – less than 20\% of the time (1)
+    \item 	0 – don’t know
+\end{itemize}
+\begin{table}[h]
+\centering
+\begin{tabular}{lc}
+Descriptive Statistics & Value\\ \hline
+N  & 34 \\
+\textit{M} &	3.19\\
+\textit{SD}	& 1.44\\
+\# Missing &	2\\
+\% Dont't know & 32.4\\
+\% Missing & 5.9\\
+\end{tabular}
+\end{table}
+
+Q19 Students who have had sight prior to becoming blind are likely to perform tasks that require the use of graphs more accurately than students who were blind from birth.
+ \begin{itemize}
+     \item 5 – Strongly agree (4)
+     \item 4 – Agree (3)
+     \item 3 – Disagree (2)
+     \item 2 – Strongly disagree (1)
+     \item 1 – Don’t know
+ \end{itemize}
+\begin{table}[h]
+\centering
+\begin{tabular}{lc}
+Descriptive Statistics & Value\\ \hline
+N  & 34 \\
+\textit{M} &	2.97\\
+\textit{SD}	& .76\\
+\# Missing &	2\\
+\% Dont't know & 23.5\\
+\% Missing & 5.9\\
+\end{tabular}
+\end{table}
+
+\newpage
+Q20 Students who have had low vision but are not completely blind, are likely to perform tasks that require the use of graphs more accurately than students who are totally blind.
+ \begin{itemize}
+     \item 5 – Strongly agree (4)
+     \item 4 – Agree (3)
+     \item 3 – Disagree (2)
+     \item 2 – Strongly disagree (1)
+     \item 1 – Don’t know
+ \end{itemize}
+\begin{table}[h]
+\centering
+\begin{tabular}{lc}
+Descriptive Statistics & Value\\ \hline
+N  & 34 \\
+\textit{M} &	2.80\\
+\textit{SD}	& .71\\
+\# Missing &	4\\
+\% Dont't know & 14.7\\
+\% Missing & 11.8\\
+\end{tabular}
+\end{table}
+
+\end{large}
+\end{document}
