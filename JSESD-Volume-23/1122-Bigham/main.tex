@@ -1,0 +1,126 @@
+\documentclass[11.5pt]{sig-alternate} % sets document style to sig-alternate
+% packages
+% typesetting
+%\usepackage{dirtytalk} % typset quotations easier (\say{stuff})
+\usepackage{hanging} % hanging paragraphs
+\usepackage[defaultlines=3,all]{nowidow} % avoid widows
+\usepackage[pdfpagelabels=false]{hyperref} % produce hypertext links, includes backref and nameref
+\usepackage{xurl} % defines url linebreaks, loads url package
+\usepackage{microtype}
+\usepackage[super]{nth}
+% layout
+%\usepackage{enumitem} % control layout of itemize, enumerate, description
+\usepackage{fancyhdr} % control page headers and footers
+\usepackage{float} % improved interface for floating objects
+%\usepackage{multicol} % intermix single and multiple column pages
+% language
+\usepackage[utf8]{inputenc} % accept different input encodings
+\usepackage[english]{babel} % multilanguage support
+% misc
+\usepackage{graphicx} % builds upon graphics package, \includegraphics
+%\usepackage{lastpage} % reference number of pages
+%\usepackage{comment} % exclude portions of text (?)
+\usepackage{xcolor} % color extensions
+\usepackage[backend=biber, style=apa]{biblatex} % sophisticated bibliographies % necessary for HTML to display author info and date on abstract page
+\usepackage{csquotes} % advanced quotations, makes biblatex happy
+\usepackage{authblk} % support for footnote style author/affiliation
+% tables and figures
+\usepackage{tabularray}
+%\usepackage{array} % extend array and tabular environments
+\usepackage{caption} % customize captions in figures and tables (rotating captions, sideways captions, etc)
+%\usepackage{cuted} % allow mixing of \onecolumn and \twocolumn on same page
+\usepackage{multirow} % create tabular cells spanning multiple rows
+%\usepackage{subfigure} % deprecated, support for manipulation of small figures
+%\usepackage{tabularx} % extension of tabular with column designator "x", creates paragraph-like column whose width automatically expands
+%\usepackage{wrapfig} % allows figures or tables to have text wrapped around them
+%\usepackage{booktabs} % better rules
+% dummy text
+%\usepackage{blindtext} % blind text dummy text
+%\usepackage{kantlipsum} % Kant style dummy text
+%\usepackage{lipsum} %lorem ipsum dummy text
+% other helpful packages may be booktabs, longtable, longtabu, microtype
+
+\pagestyle{fancy} % sets pagestyle to fancy for fancy headers and footers
+
+% header and footer
+% modern way to set header image
+\renewcommand{\headrulewidth}{0pt} % defines thickness of line under header
+\renewcommand{\footrulewidth}{0pt} % defines thickness of line above header
+\setlength\headheight{80.0pt} % sets height between top margin and header image, effectively moves page contents down
+\addtolength{\textheight}{-80.0pt} % seems to affect the lower height. maybe only works properly if footer numbers enabled?
+\fancyhf{}
+\fancyhead[CE, CO]{\includegraphics[width=\textwidth]{headerImage.png}}
+% footer
+%\fancyfoot[LE,LO]{Article Title Here \\ DOI: }% left footer article title and doi
+%\fancyfoot[CE,CO]{{}} % center footer empty
+%\fancyfoot[RE,RO]{\thepage} % right footer page numbers
+%\pagenumbering{arabic} % arabic (1, 2, 3) numbering in footer
+
+\hypersetup{colorlinks=true,urlcolor=blue} % sets link color to blue
+\urlstyle{same} % sets url typeface to same as rest of text
+
+% set caption and figure to italics, label bold, left align captions, does not transfer to HTML
+\DeclareCaptionFormat{custom}
+{
+    \textbf{\textit{\large #1#2}}\textit{\large #3} % #1 is the "Table 1" or "Figure 1" part, #2 is the separator (":"), #3 is the caption
+}
+\captionsetup{format=custom}
+\captionsetup{justification = raggedright, singlelinecheck = false}
+ 
+\let\oldabstract\abstract
+\let\oldendabstract\endabstract
+\makeatletter
+\renewenvironment{abstract}
+{\renewenvironment{quotation}%
+               {\list{}{\addtolength{\leftmargin}{1em} % change this value to add or remove length to the the default
+                        \listparindent 1.5em%
+                        \itemindent    \listparindent%
+                        \rightmargin   \leftmargin%
+                        \parsep        \z@ \@plus\p@}%
+                \item\relax}%
+               {\endlist}%
+\oldabstract}
+{\oldendabstract}
+\makeatother
+
+\begin{document}
+
+\title{Space Camp Experience For Attendees of the 2019 IsLAND Conference in Huntsville, Alabama}
+
+\author[1]{\large \color{blue}Rachel Bigham}
+
+\affil[1]{Certified Orientation and Mobility Specialist Zanesville City Schools}
+
+\toappear{}
+%% ABSTRACT
+\maketitle
+\begin{large}
+As attendees of the 2019 IsLAND Conference, we were offered a truly unique experience to begin our time focused on science education inclusion. We were given the opportunity to participate in some of the amazing activities done at Space Camp, which is held at the U.S. Space \& Rocket Center in Huntsville, Alabama. 
+
+The day began with a light breakfast as the attendees were split into two teams in which to share duties for our assigned simulation missions to the International Space Station. Each team member was assigned a job title for their mission. 
+
+Prior to being able to take our voyage, our group was taken through a series of training activities to determine our readiness to endure space travel. Our Space Camp leaders described the preparation process for astronauts and provided attendees with 3D printed models of one of the simulators that we would be experiencing.
+
+\textbf{*Corresponding Author, Rachel Bigham}  \\
+\href{mailto: rbigham@zanesville.k12.oh.us }{(rbigham@zanesville.k12.oh.us)} \\
+\textit{Submitted January 26, 2020 }\\
+\textit{Accepted January 26, 2020} \\
+\textit{Published online January 28, 2020} \\
+\textit{DOI:10.14448/jsesd.12.0004} \\
+
+\begin{large}
+Participants were given the opportunity to try the Multi-Axis Trainer, in which you are twisted and turned multiple directions at the same time, and the 1/6th Gravity Chair, which simulates the feeling of weightlessness that is experienced on the moon. 
+\end{large}
+
+After completing our training and enjoying a wonderful lunch, we divided back into our two teams to complete our space mission. Each participant was given a script in their preferred reading medium as the mission leaders went over the specific details for each person regarding their assigned position. The scripts provided lines to speak over the intercom system to allow verbal communication with Mission Control, the International Space Station, and the members aboard the space shuttle. The scripts also gave instructions for timing of the shuttle experience and tasks that needed to be completed for a successful mission, such as giving a command,
+
+\clearpage
+
+completing an experiment, or activating a switch. All of the areas of the shuttle simulator and mission control had been overlaid with a clear plastic paneling that provided braille to correspond with each switch or button. Participants also had support from mission leaders to assist in making smooth transitions and ensuring that we were completing the tasks presented. From pilot to CAPCOM we were able to see how each position involved with a shuttle is vital to the success of its mission…including the assurance that all of your team members were aboard from their spacewalk before you headed back to Earth. 
+
+Once returning from our journey, attendees were given a certificate of completion, a commemorative pin, and a t-shirt in which to remind us of the amazing, once in a lifetime experience we were able to have. Attendees were then given the opportunity to explore through the U.S. Space and Rocket Center independently to experience the other interactive and historical exhibits. Many interesting facts and memorabilia were on hand to gain a greater understanding of NASA and the amazing journey we have taken to get where we are in our knowledge of the universe and beyond. Some of the exhibits featured items that could be touched or provided other simulations. A rock wall exhibit provided attendees with a general understanding of the surface of Mars, while other interactive exhibits gave the opportunity to experience the feeling of G-forces upon the body by spinning or the exhilaration of a shuttle countdown and ignition. It was also exciting to see how adaptations had been made to make the museum more accessible for those with visual impairments. Stairs were edged with brightly colored tape to help indicate depth and presence and many exhibit placards had been transcribed into braille. You could also find pool noodles wrapped around objects that were in the pathway of travel to assist in minimizing the possibility for injury. For the few items that were not accessible, attendees were able to provide description to one another.
+
+This experience also gave an excellent opportunity to see how Space Camp has worked to adapt their programming to be more accessible to individuals with visual impairments and encourage STEM career interest with inclusion.  As a result of my participation, I look forward to when I will be able to take my own students to Space Camp and experience the full impact of the program in their lives.  I also have taken away ideas that will help me to further my ability to make science programming accessible to my students with visual impairments.  It was truly an amazing experience.
+
+\end{large}
+\end{document}
