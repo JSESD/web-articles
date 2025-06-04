@@ -1,0 +1,191 @@
+\documentclass[11.5pt]{sig-alternate} % sets document style to sig-alternate
+% packages
+% typesetting
+%\usepackage{dirtytalk} % typset quotations easier (\say{stuff})
+\usepackage{hanging} % hanging paragraphs
+\usepackage[defaultlines=3,all]{nowidow} % avoid widows
+\usepackage[pdfpagelabels=false]{hyperref} % produce hypertext links, includes backref and nameref
+\usepackage{xurl} % defines url linebreaks, loads url package
+\usepackage{microtype}
+\usepackage[super]{nth}
+% layout
+%\usepackage{enumitem} % control layout of itemize, enumerate, description
+\usepackage{fancyhdr} % control page headers and footers
+\usepackage{float} % improved interface for floating objects
+%\usepackage{multicol} % intermix single and multiple column pages
+% language
+\usepackage[utf8]{inputenc} % accept different input encodings
+\usepackage[english]{babel} % multilanguage support
+% misc
+\usepackage{graphicx} % builds upon graphics package, \includegraphics
+%\usepackage{lastpage} % reference number of pages
+%\usepackage{comment} % exclude portions of text (?)
+\usepackage{xcolor} % color extensions
+\usepackage[backend=biber, style=apa]{biblatex} % sophisticated bibliographies % necessary for HTML to display author info and date on abstract page
+\usepackage{csquotes} % advanced quotations, makes biblatex happy
+\usepackage{authblk} % support for footnote style author/affiliation
+% tables and figures
+\usepackage{tabularray}
+%\usepackage{array} % extend array and tabular environments
+\usepackage{caption} % customize captions in figures and tables (rotating captions, sideways captions, etc)
+%\usepackage{cuted} % allow mixing of \onecolumn and \twocolumn on same page
+\usepackage{multirow} % create tabular cells spanning multiple rows
+%\usepackage{subfigure} % deprecated, support for manipulation of small figures
+%\usepackage{tabularx} % extension of tabular with column designator "x", creates paragraph-like column whose width automatically expands
+%\usepackage{wrapfig} % allows figures or tables to have text wrapped around them
+%\usepackage{booktabs} % better rules
+% dummy text
+%\usepackage{blindtext} % blind text dummy text
+%\usepackage{kantlipsum} % Kant style dummy text
+%\usepackage{lipsum} %lorem ipsum dummy text
+% other helpful packages may be booktabs, longtable, longtabu, microtype
+
+\pagestyle{fancy} % sets pagestyle to fancy for fancy headers and footers
+
+% header and footer
+% modern way to set header image
+\renewcommand{\headrulewidth}{0pt} % defines thickness of line under header
+\renewcommand{\footrulewidth}{0pt} % defines thickness of line above header
+\setlength\headheight{80.0pt} % sets height between top margin and header image, effectively moves page contents down
+\addtolength{\textheight}{-80.0pt} % seems to affect the lower height. maybe only works properly if footer numbers enabled?
+\fancyhf{}
+\fancyhead[CE, CO]{\includegraphics[width=\textwidth]{headerImage.png}}
+% footer
+%\fancyfoot[LE,LO]{Article Title Here \\ DOI: }% left footer article title and doi
+%\fancyfoot[CE,CO]{{}} % center footer empty
+%\fancyfoot[RE,RO]{\thepage} % right footer page numbers
+%\pagenumbering{arabic} % arabic (1, 2, 3) numbering in footer
+
+\hypersetup{colorlinks=true,urlcolor=blue} % sets link color to blue
+\urlstyle{same} % sets url typeface to same as rest of text
+
+% set caption and figure to italics, label bold, left align captions, does not transfer to HTML
+\DeclareCaptionFormat{custom}
+{
+    \textbf{\textit{\large #1#2}}\textit{\large #3} % #1 is the "Table 1" or "Figure 1" part, #2 is the separator (":"), #3 is the caption
+}
+\captionsetup{format=custom}
+\captionsetup{justification = raggedright, singlelinecheck = false}
+ 
+\let\oldabstract\abstract
+\let\oldendabstract\endabstract
+\makeatletter
+\renewenvironment{abstract}
+{\renewenvironment{quotation}%
+               {\list{}{\addtolength{\leftmargin}{1em} % change this value to add or remove length to the the default
+                        \listparindent 1.5em%
+                        \itemindent    \listparindent%
+                        \rightmargin   \leftmargin%
+                        \parsep        \z@ \@plus\p@}%
+                \item\relax}%
+               {\endlist}%
+\oldabstract}
+{\oldendabstract}
+\makeatother
+
+\begin{document}
+
+\title{Overview of the proceedings of the 2019 Inclusion in Science, Learning a New Direction Conference on Disability (ISLAND)}
+
+\author[1]{\large \color{blue}Cary A. Supalo}
+\author[2]{\large \color{blue}Jasodhara Bhattacharya}
+\author[2]{\large \color{blue}Daniel Steinberg}
+\author[3]{\large \color{blue}Derrick Smith}
+\affil[1]{Educational Testing Service}
+\affil[2]{Princeton University}
+\affil[3]{University of Alabama}
+\toappear{}
+%% ABSTRACT
+\maketitle
+\begin{large}
+\textit{The 10th annual Inclusion in Science, Learning a New Direction Conference on Disability (ISLAND) was hosted by the University of Alabama in Huntsville (UAH), with support from the UAH College of Education, UAH Office of Academic Affairs, and the Alabama Institute for the Deaf and Blind, as well as the Princeton Center for Complex Materials (PCCM), a National Science Foundation funded Materials Research Science and Engineering Center (MRSEC) and the UAH Center for Cybersecurity Research and Education (CCRE). On October 4-5, 2019, the conference was held at the U.S. Space and Rocket Center facility and at the new Student Services Building on the UAH campus. This year’s presentations included innovative research by science educators in formal and informal educational settings, from pre-K-12 to higher education, as well as from science education researchers, access technology developers, and other persons interested in the promotion of the full inclusion of people with disabilities in Science, Technology, Engineering, and Mathematics (STEM) professions.}
+\end{large}
+
+\textbf{*Corresponding Author,Cary A. Supalo }\\
+\href{mailto: csupalo@ets.org }{(csupalo@ets.org)} \\
+\textit{Submitted  February 6, 2020}\\
+\textit{Accepted February 6, 2020} \\
+\textit{Published online February 19, 2020} \\
+\textit{DOI:10.14448/jsesd.12.0003} \\
+
+\begin{large}
+The 2019 ISLAND conference featured seventeen presentations over the two-day period. The following is intended to give the reader an overview of these presentations. This is not intended to be a comprehensive synopsis of all aspects of the discussions that were presented. Rather, readers are encouraged to review full papers authored by the presenters highlighted herein. All presenters were invited to contribute papers to this special section of JSESD.
+\end{large}
+
+\clearpage
+\begin{large}
+\section*{Pre-conference workshop}
+
+The conference opened with a six-hour Space Camp “experience” on Friday, October 4 that was held at the U.S. Space and Rocket Center in Huntsville, Alabama. Participants had the opportunity to experience how some space camp activities have been adapted for students with visual impairments. This was done by providing large print and/or braille scripts on different space missions that students undertake as part of their experience. Additionally, braille labels were placed on control panels on Space Shuttle simulators. Text-to-speech control panels were used to provide audio feedback to control values that informed the student participant about what to do next.  All participants had the opportunity to use the multi-access trainer (MAT) to experience a 360-degree rotation on three axes that all astronauts experience. There was also a 1/6-gravity walking experience that simulated what astronauts experienced in terms of gravity when walking on the moon during the Apollo moon missions. Overall, this experiential learning opportunity was successfully adapted for students with visual impairments.
+
+
+\section*{ISLAND keynote}
+On the evening of October 4th, ISLAND conference attendees had the opportunity to listen to a keynote lecture by Dave Schleppenbach of Tactile Solutions, Inc. from Lafayette, Indiana. Mr. Schleppenbach talked about his interests in hard copy braille production and his long-term vision of developing refreshable braille devices. This presentation featured his company’s prototype multi-line refreshable braille display. This device is magnetically driven and can provide both refreshable braille and tactile graphics representations on the same device. This type of capability has long been desired by the blind community; however, previously this protype technology has not been possible due to engineering challenges. This device has a less than one second refresh rate which is much faster than any prototypes featured in the past. This innovative device has high potential to revolutionize how persons who are blind and read braille can read and access braille content in the future.
+
+
+\section*{Internship Opportunities at the Bureau of Reclamation}
+The first presentation at this year’s conference on the Saturday program was delivered by Kevin L. Kelly, Ph. D., from the U.S. Bureau of Reclamation Technical Service Center. Dr. Kelly discussed the wide variety of internship programs the Department of Reclamation currently promotes for persons with disabilities. These internship programs provide opportunities for both undergraduate and graduate students who are interested in STEM fields of study. Persons from other minority groups are also welcome to participate in this inclusive internship program. The Department of Reclamation has one of the largest employment records for hiring persons with disabilities. At the time of the presentation, approximately 12\% of all employees have a documented disability. Recruitment efforts are not targeting one specific disability group as this is prohibited by the United States Federal government. Therefore, recruitment efforts are made through non-for-profit organizations. Many times, internship opportunities can lead to full-time employment opportunities for participants in these internship programs. Over all, this program promotes persons with disabilities in the STEM fields of study by providing employment opportunities and work experiences for persons with disabilities interested in STEM fields of study.
+
+
+\section*{The Accessibility of Mathematical Notation on the Web and Beyond}
+Dr. Jason White from Educational Testing Service, which is in Princeton, New Jersey, discussed the differences between presentation versus content MathML and the types of text-to-speech screen reader support that currently exist to render mathematics content via text-to-speech and refreshable braille Nemeth code representation. He also discussed how the World-Wide-Web Consortium or W3C MathML working group is currently developing MathML version 4. Work on aspects of this evolving standard has been going on since the 1990’s. The need for a person with a print disability to write and manipulate mathematics content to solve mathematics problems is essential for students with disabilities who are interested in pursuing STEM fields of study. Much work still needs to be done in the accurate representation of mathematics content and support from web browser and publishing communities need to clearly define MathML and other necessary standards to making mathematical and other science content accessible on the web for persons with disabilities.
+
+
+\section*{In Search of a Molecular Vision}
+Touching on a similar theme, the presentation of Dan Barrett from Houghton Mifflin Harcourt, Evanston, Illinois, discussed the W3C’s new chemistry community group that was started in Summer 2019. This W3C group is open to all interested persons who wish to have a voice in how chemistry content can be made more accessible in a digital context. This presentation illustrated a series of known general chemistry examples that have traditionally presented accessibility challenges. In the current landscape, these examples have leveraged tactile graphics, braille and large print, along with three-dimensional model representations to address the accessibility gap. Dan discussed how these current best practices may be translated and transformed on a digital platform. This presentation spoke about the current landscape and future directions as to where we need to go. The W3C chemistry group is working on defining the knowledge gap clearly so that viable solutions can be proposed to help us get to where we want to be. 
+
+
+\section*{Accessible Accommodations for Learning Cybersecurity}
+Dr. Derrick W. Smith, Jesse R. Hairston, and Tania Williams from the University of Alabama in Huntsville highlighted a pilot summer camp for students with visual impairments to have experiences in accessible cryptology and cybersecurity. Aspects of the camp were presented that included a braille labeled decoder ring. Additionally, the presenters demonstrated how short audio files were used to communicate clues to identify passwords to access secure information that was needed as part of a scavenger hunt. This experiential learning opportunity for students with visual impairments is designed to leverage the use of access technology such as text-to-speech screen readers, screen magnification, and refreshable braille displays along with hard copy tactile graphics to communicate key aspects of the activities as part of the overall experience. The need for an accessible cybersecurity certification assessment was also discussed as part of this presentation. It is the expectation of the cybersecurity camp organizers to increase participation in subsequent years.
+
+
+\section*{Accessible STEM Products and Beyond}
+Rosanne Hoffmann and Ken Perry from the American Printing House for the Blind (APH), which is located in Louisville, Kentucky, spoke about a range of efforts towards accessible STEM products.  Their panel presentation first discussed a new product called, “Build a Cell.” This consists of tactile manipulatives of cells. It includes moveable components that are also braille labeled and can be used as part of formal lessons or for individualized instruction. This new product from APH represents a standardized way of teaching lessons on a cell for students with visual impairments. The second part of this presentation consisted of different APH products that will be commercially available in 2020 that will promote computer programming skills. The products involved physical manipulatives that can be connected to use text-to-speech output to illustrate computer code structure. Additional partnerships with other companies have been formed to figure out ways to make computer programming, specifically in the area of coding, more accessible to students with visual impairments. Overall, the products presented are eligible for quota dollars, which evolved from the Help Educate the Blind Act of1879, making these products readily available in K-12 classrooms in the United States.
+
+
+\section*{Use of Argumentation by Deaf/Hard-of-Hearing Students}
+Dr. Todd Pagano from the Rochester Institute of Technology, (RIT), Rochester, New York, discussed the RIT associate degree program for Laboratory Science and Technology through the National Technical Institute for the Deaf (NTID). NTID is a standalone college within RIT. This program to date has a 98\% job placement of its graduates. All students who are deaf who qualify only pay one-third tuition as compared to other RIT students. All appropriate scaffoldings are provided. The research question investigated how the Laboratory Science and Technology (LST) associate degree students use an on-line climate science resource as part of their studies in their degree program.  More specifically, the question focused on the types of scientific arguments were observed during their assignments as part of a climate science activity. The specifics of this study and the data analysis will be discussed by the authors of this presentation in another paper in this issue. 
+
+
+\section*{Explore STEM Kit Diagrams for braille readers in inclusive classrooms}
+The morning session was concluded by Dr. Sariat Adelakun from the Federal College of Education (Special), Oyo, Nigeria. Dr. Adelakun discussed her work on the development of a standardized set of tactile graphics that are STEM oriented. Her research found the tactile graphics benefited the students with visual impairments the most when the tactile graphics were made available to the student at the same time non-visually impaired students were exposed to the same visual information during a classroom lecture. All the tactile graphics were labeled in large print and in braille. Additionally, this work described the use of a metal board that leveraged large print and braille labeled magnets to illustrate mathematical concepts. This would allow the students with visual impairments to directly manipulate algebraic and other mathematical problems. Overall, one of the major intended outcomes of this research is to develop a set of standardized tactile graphics as part of a STEM Kit for individuals with visual impairments that can be used both in the classroom and on large-scale assessments. 
+
+
+\section*{Promoting Diversity and Accessibility at University Research Centers}
+To kick-off the afternoon session, Daniel Steinberg from Princeton University, Princeton, New Jersey, discussed the importance of an ecosystem of partnerships in the science education and outreach communities. The history and evolving mission of the National Science Foundation supported Materials Research in Science and Engineering Centers or (MRSEC)s was discussed. Achieving synergistic involvement from university research scientists and graduate and undergraduate students involved in outreach activities is critical in promoting quality science outreach in your local community. The nationwide network of MRSEC Education Directors, and their potential transformative impact and influence as a result of informing them about disability education was also discussed as part of this presentation. The 2020 ISLAND conference will be hosted at Princeton University September 11-13, 2020. More details to come on the conference website in Spring 2020.
+
+
+\section*{Culturally Relevant Pedagogy in Science Education with Students who are Blind/Vision Impaired}
+Monique Coleman, a Ph.D. candidate from Rutgers University, New Brunswick, New Jersey, discussed the roles that equity and intersectionality play with culturally responsive education (CRE) for students who are visually impaired and may be from other culturally diverse backgrounds. The importance of science education and accessibility to technical content in STEM (e.g. mathematical derivations, chemical expressions, statistical content, graphical representations in Biology) and why it should be inclusive for all learners was a key point of this presentation. Teachers need to understand that cultural aspects of diverse learners can have a major impact on how students learn. Accessibility in science education and how the Next Generation Science Standards (NGSS) can complement one another were also discussed.
+
+
+\section*{Making the computational microscope accessible to the sight-impaired}
+The next presentation was from Dr. Jodi A. Hadden, Olivia R. Shaw, and Sharon Rozovsky from the University of Delaware, Newark, Delaware. Dr. Hadden’s presentation discussed appropriate scaffoldings for an undergraduate student who is visually impaired to conduct computational microscopic analysis in a simulated environment. Specific adaptations to access command line interfaces used to drive computational microscopes were presented. The use of tactile graphics and 3D models to analyze molecular structures in this cross disciplinary science research space was discussed. Overall, this work represents how an inclusive STEM learning experience can be made possible by leveraging access technologies along with commonly used visual molecular dynamics software tools in conjunction with super computers. 
+
+
+\section*{Analyzing Misconceptions of the Students with Visual Impairments}
+Dr. Tiffany Wild, from The Ohio State University, Columbus, Ohio presented research that interviewed students with visual impairments on their perceptions of science concepts. According to Dr. Wild, often her work found students with visual impairments connected concepts together that may or may not have had any relationship to one another. In all her work to date she has found that compared to sighted students, students with visual impairment had a lower level of understanding of science concepts Over all, the Next Generation Science Standards (NGSS) and guided inquiry activities in the general education classroom have proven themselves to be the best way to minimize misconceptions of science concepts.
+
+
+\section*{Visual impairments in the modern research environment}
+Dr. Stefan M. Kilyanek from the University of Arkansas, Fayetteville, Arkansas, shared an authentic view of how he, as a person with blindness/low vision, conducts organometallic chemistry research as part of his faculty obligations at the University of Arkansas. He leverages his useable vision with high powered magnification glasses. He also requires a high level of organization in his research laboratory that involves different reagents consistently placed in their appropriate space. Additionally, he has clearly defined work spaces for himself and other spaces for his graduate students. He describes his use of personal protective equipment in several aspects of his work that includes simply removing glassware from drawers to working in glove boxes. Laboratory safety and having a clear understanding of what risks you are and are not willing to take in your research can guide a researcher as to the types of work you want to investigate. Over all, Dr. Kilyanek operates an externally funded research group and performs all teaching obligations required by his chemistry department.
+
+
+\section*{STEM and coding Activities with the TI-84 Plus}
+This presentation from Steve DeBauge of Texas Instruments (TI) located in Dallas, Texas, featured different TI products that have been made accessible to allow students with visual impairments the opportunity to learn how to write computer programs. This can be done with the TI-84 talking calculator, but it can also be done with software products from TI. Hardware equipment that is compatible with these TI products was also demonstrated as part of this presentation. TI offers this equipment free of charge for professional development training opportunities for teachers upon request. Over all, this equipment is helping to provide another way for students with visual impairments to learn how to code.
+
+
+\section*{3D Printing for People who are Blind}
+Caroline Karbowski from The Ohio State University, Columbus, Ohio discussed a new charitable organization called, “See 3D.” This new organization makes 3D models available for free to teachers and students with visual impairments. They feature braille labels and long text descriptions to provide orientation to each model. This organization is open to requests for new models through their website. They are also looking for more donations and other sources of funding to try to keep providing these models available for free to the end users. See3D is open to partnerships with universities to conduct educational research. 
+
+
+\section*{Democratizing Inclusion Videos and Accessible Lab Experiments}
+The penultimate talk was delivered by Tom Grushka and April Hill from Metro State University, Denver, Colorado. This presentation shared information about a series of videos that were produced based on one blind student’s experiences they had as part of an undergraduate chemistry course. These videos present positive and negative illustrations of different interactions that illustrate social dynamics between students. These videos serve as an illustrative set of examples for science educators and students with visual impairments to consider when planning for blind student participation in a chemistry laboratory course.
+
+\section*{My Journey in STEM}
+The final presentation of the conference was delivered by Rafael San Miguel, a deaf research scientist formerly from the Coca Cola Company and recently retired. This presentation discussed the adaptations Dr. San Miguel was forced to make as he went through his schooling experience. He depended on lip reading as his main form of communication throughout his professional career. He had a reluctance to learn sign language because it would make him appear more different than his classmates since he was mainstreamed in his entire K12 experience. However, this communication methodology did not hold him back since he had a successful career for both NASA and the Coca Cola Company. Overall, his life experience shows the resilience a person with a disability needs to have in order to successfully overcome their disability in a STEM field.
+
+The 2019 ISLAND conference included several presentations that featured techniques and approaches for teaching a range of scientific disciplines in unique ways. Many presenters described and demonstrated methodologies that were implemented in their specific situations, which could be replicated and adapted for different contexts.  Additionally, several presentations featured authentic perspectives by scientists with different disabilities.  This snapshot view of challenges that were presented by persons with disabilities added a complementary flavor to this year’s proceedings. More formal research conducted in the future, to determine the effectiveness of some of the methodologies presented as part of the ISLAND conference, may lead to innovative new best practices for the science education community. Multisensory science instruction is becoming more mainstream, and new innovative digital technologies are becoming more readily available to effectively render STEM content in more inclusive, accessible ways. These advances will further promote persons with disabilities entering the STEM fields of study. More discussions as part of a community of practice are needed to further drive forward new innovative methodologies and access technology development and implementation to advance more inclusive and equitable instruction in K-12 and post-secondary education.
+
+\end{large}
+\end{document}
