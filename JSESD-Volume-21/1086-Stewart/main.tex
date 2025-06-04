@@ -1,0 +1,296 @@
+\documentclass[11.5pt]{sig-alternate} % sets document style to sig-alternate
+% packages
+% typesetting
+%\usepackage{dirtytalk} % typset quotations easier (\say{stuff})
+\usepackage{hanging} % hanging paragraphs
+\usepackage[defaultlines=3,all]{nowidow} % avoid widows
+\usepackage[pdfpagelabels=false]{hyperref} % produce hypertext links, includes backref and nameref
+\usepackage{xurl} % defines url linebreaks, loads url package
+\usepackage{microtype}
+\usepackage{textgreek}
+%\usepackage[super]{nth} % easily create superscript ordinal numbers with \nth{x}
+\usepackage{textcomp}
+\newcommand{\texttildemid}{\raisebox{0.4ex}{\texttildelow}}
+% layout
+\usepackage{enumitem} % control layout of itemize, enumerate, description
+\usepackage{fancyhdr} % control page headers and footers
+\usepackage{float} % improved interface for floating objects
+%\usepackage{multicol} % intermix single and multiple column pages
+% language
+\usepackage[utf8]{inputenc} % accept different input encodings
+\usepackage[english]{babel} % multilanguage support
+% misc
+\usepackage{graphicx} % builds upon graphics package, \includegraphics
+%\usepackage{lastpage} % reference number of pages
+%\usepackage{comment} % exclude portions of text (?)
+\usepackage{xcolor} % color extensions
+\usepackage[backend=biber, style=apa]{biblatex} % sophisticated bibliographies % necessary for HTML to display author info and date on abstract page
+\usepackage{csquotes} % advanced quotations, makes biblatex happy
+\usepackage{authblk} % support for footnote style author/affiliation
+% tables and figures
+\usepackage{tabularray}
+%\usepackage{array} % extend array and tabular environments
+\usepackage{caption} % customize captions in figures and tables (rotating captions, sideways captions, etc)
+%\usepackage{cuted} % allow mixing of \onecolumn and \twocolumn on same page
+\usepackage{multirow} % create tabular cells spanning multiple rows
+%\usepackage{subfigure} % deprecated, support for manipulation of small figures
+%\usepackage{tabularx} % extension of tabular with column designator "x", creates paragraph-like column whose width automatically expands
+%\usepackage{wrapfig} % allows figures or tables to have text wrapped around them
+%\usepackage{booktabs} % better rules
+% dummy text
+%\usepackage{blindtext} % blind text dummy text
+%\usepackage{kantlipsum} % Kant style dummy text
+\usepackage{lipsum} %lorem ipsum dummy text
+% other helpful packages may be booktabs, longtable, longtabu, microtype
+
+\pagestyle{fancy} % sets pagestyle to fancy for fancy headers and footers
+
+% header and footer
+% modern way to set header image
+\renewcommand{\headrulewidth}{0pt} % defines thickness of line under header
+\renewcommand{\footrulewidth}{0pt} % defines thickness of line above header
+\setlength\headheight{80.0pt} % sets height between top margin and header image, effectively moves page contents down
+\addtolength{\textheight}{-80.0pt} % seems to affect the lower height. maybe only works properly if footer numbers enabled?
+\fancyhf{}
+\fancyhead[CE, CO]{\includegraphics[width=\textwidth]{headerImage.png}}
+% footer
+%\fancyfoot[LE,LO]{Article Title Here \\ DOI: }% left footer article title and doi
+%\fancyfoot[CE,CO]{{}} % center footer empty
+%\fancyfoot[RE,RO]{\thepage} % right footer page numbers
+%\pagenumbering{arabic} % arabic (1, 2, 3) numbering in footer
+
+\hypersetup{colorlinks=true,urlcolor=blue} % sets link color to blue
+\urlstyle{same} % sets url typeface to same as rest of text
+
+% set caption and figure to italics, label bold, left align captions, does not transfer to HTML
+\captionsetup{labelfont=bf, font={large, it}, justification=raggedright, singlelinecheck=false}
+\renewcommand\theContinuedFloat{\alph{ContinuedFloat}}
+
+%this next bit is confusing, but essentially changes the width of the abstract. Seems to have been copied from this https://tex.stackexchange.com/questions/151583/how-to-adjust-the-width-of-abstract
+\let\oldabstract\abstract
+\let\oldendabstract\endabstract
+\makeatletter %changes @ catcode to enable modification (in parsep)
+\renewenvironment{abstract} %alters the abstract environment
+{\renewenvironment{quotation}%
+               {\list{}{\addtolength{\leftmargin}{1em} % change this value to add or remove length to the the default ?
+                        \listparindent 1.5em%
+                        \itemindent    \listparindent%
+                        \rightmargin   \leftmargin%
+                        \parsep        \z@ \@plus\p@}%
+                \item\relax}%
+               {\endlist}%
+\oldabstract}
+{\oldendabstract}
+\makeatother %changes @ catcode to disable modification
+
+% checks
+% italics -
+% links -
+% dashes
+% tildes -
+% dollars -
+\begin{document}
+
+\title{My Experience Teaching General Chemistry
+to a Student who is Visually Impaired}
+
+\author[1]{\large \color{blue}Katherine M. E. Stewart}
+
+\affil[1]{Troy University}
+
+\toappear{}
+%% ABSTRACT
+\maketitle
+\begin{@twocolumnfalse} 
+\begin{abstract}
+\item 
+\textit {This paper summarizes my experience with teaching a first-year, General Chemistry course to a visually impaired student. This includes accommodations and modifications for both the lecture material and the laboratory. Included are also examples of formats and syntax for txt-based quizzes, tests, and laboratory reports, as well as other general accommodations for both the student and the service dog.}
+\\ \\
+Keywords: Chemistry Education, College and University, Visually Impaired, Blind and Low Vision, Lectures and Laboratories
+\end{abstract}
+\end{@twocolumnfalse}
+
+%% AUTHOR INFORMATION
+
+\textbf{*Corresponding Author, Katherine M. E. Stewart}\\
+\href{mailto:  kastewart@troy.edu}{(kastewart@troy.edu)} \\
+\textit{Submitted  Jul 29 2018 }\\
+\textit{Accepted Oct 26 2018 } \\
+\textit{Published online November 26th, 2018} \\
+\textit{DOI:10.14448/jsesd.10.0007} \\
+\pagebreak
+\clearpage
+\begin{large}
+\section*{INTRODUCTION}
+
+Students with disabilities, including students who are blind and have low vision (BLV), are underrepresented in science, technology, engineering, and mathematics (STEM) (Statistics, National Center for Science and Engineering, 2017; Isaacson \& Michaels, 2015).  While it is not well understood why a smaller percentage of students with disabilities pursue a degree in STEM fields than the general population, it is important to support those that do (Statistics, National Center for Science and Engineering, 2017).
+ 
+The American Disabilities Act has laid out general guidelines for accommodations for students with disabilities; however, these guidelines set out broad and practical considerations such as suggestions for selecting accessible textbooks and providing electronic versions of handouts (Americans with Disabilities Act of 1990, as amended, n.d.).  While these guidelines do provide a foundation for accommodations, more specific approaches and practical guides for different academic disciplines, such as chemistry, are beneficial to instructors.
+
+In chemistry, much of the resources and literature for instructors teaching chemistry focusses on lectures and activities used to transfer knowledge to BLV students (Supalo, 2010).  Since chemistry is often taught in a very visual way, approaches including 3-D models and tactile model kits (Boyd-Kimball, 2012), tactile drawings (Supalo, 2005), and reducing ambiguity when describing concepts (Isaacson \& Michaels, 2015), especially mathematical equations (Nemeth, 1995) have been reported for general and specific chemistry concepts.  Additionally, specific adaptations for BLV students in laboratory are also available (Supalo, 2010; Kroes, Lefler, Schmitt, \& Supalo, 2016; Miner, Nieman, \& Swanson, 2001; Supalo, Mallouk, Rankel, Amorosi, \& Graybill, 2008), as well as limited literature that includes the perspective of BLV students (Harshman, Bretz, \& Yezierski, 2013; Supalo, Humphrey, Mallouk, Wohlers, \& Carlsen, 2016).   This paper is a case study on teaching a BLV student General Chemistry (both lecture and laboratory).   
+
+\section*{GENERAL ACCOMMODATIONS}
+
+The BLV student had limited vision in one eye, but was legally blind, and had a service dog.  For the sake of this communication, the student will be referred to as S.  S was very proactive about what course needs were and had specific suggestions about how to accommodate them.  There was a lot of back and forth discussion between the student and the instructor, suggestions, feedback, and counter-suggestions, about what worked and what did not throughout the semester. 
+\\ \\ \\
+\subsection*{In Lecture}
+
+The student (S) requested a seat at the front with space for the service dog to lay down.  In addition, S requested digital copies of notes and tests, which is discussed under the “Lecture Accommodations” Section.
+
+S made use of office hours to discuss many of the course/lecture concepts in more detail.  In many cases, the explanations in class had relied too heavily on visual representations of the concepts.  S sought additional clarifications and alternative explanations of the same concepts, which also provided useful feedback about what accommodations were working well and which were not.  
+
+\subsection*{In the Laboratory}
+
+Before the lab sessions began, S requested a tour of the lab space and description of facilities for better orientation.  S then chose a desk/station that would be more appropriate: the desk was relatively close to the instructor; the service dog was nearby, but out of the way.  An old towel was provided for the service dog to lay on.  On the first day, with the student’s permission, the rest of the class was informed that there was a service dog in class, the students should be careful when passing near the dog and should not interfere with the dog since the service dog was working.
+
+S would arrive about 15 minutes early to every lab session to go over the various equipment, glassware, and experimental set-up that was being used for the lab.  During this time, S would ask for additional clarifications (if any) about the lab.  
+
+S worked with another student (lab partner) who did much of the hands-on portion of the lab, although S was able to perform portions of the experiments in their entirety. In addition, S was able to comment on some of the lab-specific observations, especially if they were perceived by other senses including smell and heat (Supalo, 2005).
+
+\section*{LECTURE ACCOMMODATIONS}
+
+\subsection*{Course Notes}
+
+The student requested digital copies of the notes.  S received power point presentation files, which included text and visual representations (figures) of concepts.  As the semester progressed, additional descriptions of figures were added in the notes section of the power point presentations for the student to read through.  
+
+During class, figures and equations were described in unambiguous ways.  For example, “numerator” and “denominator” were used instead of “on top” and “on the bottom” for equations.7 In addition, objects, such as 3-D models of molecules, were given to the student while discussing a concept or figure (Boyd-Kimball, 2012; Graybill, Supalo, Mallouk, Amorosi, \& Rankel, 2008).  The other students had an opportunity to examine the models before and after class.
+
+While discussing ionic charges and bonding, card stock with different numbers of notches (for cations) and tabs (for anions) were used to demonstrate the ratio of cations bonding to anions.  The number of tabs and notches cut into a piece of card stock represented the charge of the ion (e.g. two notches for a +2 charge).  Cations and anions were added until all tabs and notches were paired (Graybill, Supalo, Mallouk, Amorosi, \& Rankel, 2008).  For example, Ca+2 had two notches and Cl- has one tab.  To pair all the notches in Ca+2 with the tabs in Cl-, two Cl- are required, hence CaCl2.  This demonstration was originally designed as a tactile representation of the charges; however, a few other students in the class found the demonstration helpful and made their own cards to practice with.
+
+\subsection*{Tests and Quizzes}
+
+At the beginning of the semester, it was decided that the best method for tests and quizzes would be txt-based files.  This was because .txt files could be easily read by the student’s text-to-speech software and there were less compatibility issues.  During the first week of class, a mock quiz with a few questions in different formats (such as multiple choice, fill in the blank and short answer) was given to S to evaluate its feasibility for future quizzes and tests.  Both quizzes and tests were given in the agreed upon format throughout the semester.  To accommodate the weekly quizzes that concluded each class, the quizzes were e-mailed directly to the student who would complete the quizzes in class with the rest of the students.  S would hand in the specific quiz by e-mailing the quiz back with answers.  Similarly, S would be e-mailed other tests; however, the tests would be completed in student services at a scheduled time.  See Box 1 for a sample quiz with various formats.
+
+Any additional information given to the students, such as a periodic table or table of constants, was provided to S in separate .txt files.  The periodic table that S used was a list in order of atomic number (Fantin, Sutton, Daumann, \& Fischer, 2016).  It contained the atomic number, element name, symbol, and atomic weight.  In addition, the periodic table had a blank line after each Noble gas so that the student could identify the end of each row on the periodic table.  The student preferred a list (table) format for the periodic table to a Braille format.
+
+The final exam for the course was conducted in a way similar to the quizzes and tests.  Additional information was provided in separate .txt files to make it easier to flip back and forth between the data given and the test question without having to scroll through hundreds of lines.  The other students in the class were given a page that contained this information at the end of their test that could be detached.  In addition, for the final exam, the students were given a one page (8.5” x 11”) “cheat sheet” for their final.  As an alternative, S was given one .txt file of up to 160 lines of up to 160 characters per line.  
+
+\section*{LABORATORY ACCOMMODATIONS}
+
+\subsection*{Laboratory Manuals and Reports}
+
+The laboratory manuals and reports were converted from a pdf to a .txt document.  The figures (such as apparatus set-ups) were described in text.  Initially, the lab manuals and reports were in one document, similar to how the other students received them.  However, after the first two lab sessions, the student requested that the lab report and lab manual be separated into two files to make it easier to flip back and forth between them instead of having to scroll up and down between the procedure and lab report.
+
+S used a laptop with text-to-speech software to navigate through the material for lab and quizzes.  S would type in answers in the spaces provided on the .txt documents (usually marked with square brackets) (see Box 1).  The lab reports and quizzes were submitted through e-mail.  
+
+The reports were graded using “+” for correct answers and “-” for incorrect answers.  Comments were left after an *.  S was encouraged to type out the equations and some of the steps used in calculating answers, so that the thought process be obvious to the instructor.
+
+\subsection*{Experiments}
+
+The student relied on another student (lab partner) to perform many of the experiments.  S would go through the specific experiment steps with the lab partner and write down the results.  There were two experiments that could be completed by S alone without direct assistance.  For example, when a strip of magnesium is burned, it emits a bright, white light.  S was able to see that light.  Also, in another case, S able to smell the decomposition of ammonium bicarbonate into ammonia.  
+
+The student was able to perform a titration if the apparatus was set-up and someone read out the volume gradations on the burette.  Instead of one or two drops of phenolphthalein, about 15 drops were used to produce a very bright pink when the end point was reached.  A piece of white paper was folded in half and opened to a 90° angle and oriented so that it sat both under and behind the flask to provide a white background for contrast.  S opened the valve on the burette and was audibly told by the instructor how fast the drops were coming out of the burette with the instructor saying “drop, drop, drop…” in time with the drops falling.  S was able to get in close and watch for the colour change, close the valve when the end point was reached, and therefore, perform the titration within a few milliliters of the endpoint.
+
+\subsection*{Tests and Quizzes}
+
+Tests and quizzes in the laboratory were formatted in the same manner as in lecture (see again Box 1).  Each lab session began with a pre-lab quiz.  The student would write the quiz at the same time as the other students and submit the pre-lab quiz through e-mail with answers included.
+
+The lab final exam was written in the laboratory with the rest of the students.  The lab final included questions with pictures of glassware.  For this section, the questions on the final exam for S just contained the word glassware.  For each question, S was handed a piece of glassware and recorded the answer on the final exam.  This aspect was quite successful. 
+
+\section*{NOMENCLATURE}
+
+All tests and quizzes were written in plain text to accommodate text-to-speech software.  This meant that symbols and other nomenclature had to be modified so that they could be written in plain text (see Box 2).  For example, subscripts and superscripts do not appear in plain text, therefore a standard way to write them had to be devised.  So, for example, the nitrate ion 
+(NO3-) was written as NO\_3\^{}-.
+
+As the semester progressed and new topics in chemistry were discussed, a standard for how to write specific chemistry nomenclature arose for various concepts.  As each new concept was taught, the .txt version of nomenclature was created and became more extensive/inclusive (see Box 2).  
+
+\subsection*{Box 1. Sample Quiz}
+Answers provided in [ ]
+\begin{enumerate}
+    \item  Give the name or atomic symbol of the following elements. (Correct spelling)
+ \begin{enumerate}[label=\alph*.]
+       \item  Mg [Magnesium]
+    \item Iron [Fe]
+ \end{enumerate}
+    \item{} [C] The (blank) allows for the prediction of whether a single displacement reaction will occur
+   \begin{enumerate}[label=\alph*.]
+        \item  Oxidation series 
+        \item  Reduction series  
+        \item Activity series
+   \end{enumerate}
+    \item Balance the following chemical equations.  Write in all coefficients in the [ ], even if the number is 1. \newline 
+    [1] CH\_4 (s) + [2] O\_2 (g) -> [1] CO\_2 (g) + [2] H\_2O (g)
+    \item  What is the oxidation number of each element in the following compounds? \newline
+     BaCO\_3 \newline
+     Ba: [+2]  C: [+4]  O: [-2]
+\end{enumerate}
+
+\subsection*{Box 2. Sample of the syntax/ nomenclature used}
+
+\underline{Compounds and Equations}
+
+NH\textsubscript{3 (aq)} + HCl \textsubscript{(aq)} -> NH4Cl \textsubscript{(aq)}
+
+NH\_3 (aq) + HCl (aq) -> NH\_4Cl (aq)
+
+2 Al(OH)\textsubscript{3 (s)} + 3 H\textsubscript{2}SO\textsubscript{4 (aq)}
+
+2 Al(OH)\_3 (s) + 3 H\_2SO\_4 (aq) 
+
+\underline{Ions}
+
+ClO\textsubscript{4} \textsuperscript{-} : ClO\_4\^{}-
+
+Hg \textsuperscript{+2}:  Hg\^{}+2
+
+\underline{Equations}
+
+q\_soln = m\_soln * Cs\_soln * deltaT\_soln
+
+1 A -> 1 B + 1 C
+
+mol A = mol B * (1 mol A / 1 mol B)
+
+\underline{Scientific Notation}
+
+h = 6.626 x10\^{}-34 J*s
+
+\underline{Other Nomenclature}
+
+Hydrates: CuSO\_4dot5H\_2O
+
+Greek Letters: delta for \textDelta or um for \textmu m
+
+Elec Config: Se: [Ar] 4s\^{}2 3d\^{}10 4p\^{}4
+
+Oxidation Numbers: Na[0] + Fe[+2]Cl\_3[-1]
+
+  
+\section*{FINAL REMARKS}
+
+From a teaching point of view, it was a challenge at times to explain a concept that was very visual from a conventional perspective.  However, this resulted in thinking about these concepts in a different way.  In some cases, the analogies and explanations given to help the student who was visually impaired understand the concept, also improved the understanding of other students in the class (not to mention that it also forced the instructor to be clearer and think/anticipate in advance).  As with everything, the more experience a person has, typically the better the understanding and application.  Thus, as the semester progressed, it became easier to identify (and anticipate) where modifications could be made to benefit both the student who was visually impaired and even the other students in the class.
+
+\end{large}
+\include{} 
+\section*{REFERENCES}\par 
+
+\leftskip 0.25in
+\parindent -0.25in 
+
+\textit{Americans with Disabilities Act of 1990, as amended}. (n.d.). Retrieved June 2018, from \url{https://www.ada.gov/pubs/adastatute08.pdf}
+
+Boyd-Kimball, D. (2012). Adaptive Instructional Aids for Teaching a Blind Student in a Nonmajors College Chemistry Course. \textit{Journal of Chemical Education, 89}, 1395-1399.
+
+Fantin, D., Sutton, M., Daumann, L., \& Fischer, K. (2016). Evaluation of Existing and New Periodic Tables of the Elements for Chemistry Education of Blind Students. \textit{Journal of Chemical Education, 93}(6), 1039-1048.
+
+Graybill, C., Supalo, C., Mallouk, T., Amorosi, C., \& Rankel, L. (2008). Low-Cost Laboratory Adaptations for Precollege Students who are Blind or Visually Impaired. \textit{Journal of Chemical Education, 85}(2), 243-247.
+
+Harshman, J., Bretz, S., \& Yezierski, E. (2013). Seeing Chemistry through the Eyes of the Blind: A Case Study Examining Multiple Gas Law Representations. \textit{Journal of Chemical Education, 90}, 710-716.
+
+Isaacson, M., \& Michaels, M. (2015). Ambiguity in Speaking Chemistry and Other STEM Content: Educational Implications. \textit{Journal of Science Education for Students with Disabilities, 18}(1), 1-9.
+
+Kroes, K., Lefler, D., Schmitt, A., \& Supalo, C. (2016). Development of Accessible Laboratory Experiments for Students with Visual Impairments. \textit{Journal of Science Education for Students with Disabilities, 19}(1), 61-67.
+
+Miner, D. L., Nieman, R., \& Swanson, A. B. (2001). \textit{Teaching Chemistry to Students with Disabilities: A Manual for High Schools, Colleges, and Graduate Programs 4th Edition}. (M. Woods, \& K. Carpenter, Eds.) The American Chemical Society.
+
+Nemeth, A. (1995). MathSpeak: A Talk on Verbalizing Math by Abraham Nemeth, Creator of the Nemeth Braille Code.
+
+Statistics, National Center for Science and Engineering. (2017). \textit{Women, Minorities, and Persons with Disabilities in Science and Engineering}. National Science Foundation. Retrieved from \url{https://www.nsf.gov/statistics/2017/nsf17310/static/downloads/nsf17310-digest.pdf}
+
+Supalo, C. (2005). Techniques to Enhance Instructors' Teaching Effectiveness with Chemistry Students who are Blind or Visually Impaired. \textit{Journal of Chemical Education, 82}(10), 1513.
+
+Supalo, C. (2010). Teaching Chemistry and Other Sciences to Blind and Low-vision Students through Hands-on Learning Experiences in High School Science Laboratories. State College, Pensylvania: The Pensylvania State University.
+
+Supalo, C., Humphrey, J., Mallouk, T., Wohlers, H., \& Carlsen, W. (2016). Examining the use of Adaptive Technologies to Increase the Hands-on Participation of Students with Blindness or Low Vision in Secondary-school Chemistry and Physics. \textit{Chemistry Education Research and Practice, 17}, 1174-1189.
+
+\end{document}
