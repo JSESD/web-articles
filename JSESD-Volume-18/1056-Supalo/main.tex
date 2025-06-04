@@ -1,0 +1,193 @@
+\documentclass[11.5pt]{sig-alternate} % sets document style to sig-alternate
+% packages
+% typesetting
+%\usepackage{dirtytalk} % typset quotations easier (\say{stuff})
+\usepackage{hanging} % hanging paragraphs
+\usepackage[defaultlines=3,all]{nowidow} % avoid widows
+\usepackage[pdfpagelabels=false]{hyperref} % produce hypertext links, includes backref and nameref
+\usepackage{xurl} % defines url linebreaks, loads url package
+\usepackage{microtype}
+\usepackage{textgreek}
+%\usepackage{textcomp}
+%\newcommand{\texttildemid}{\raisebox{0.4ex}{\texttildelow}}
+% layout
+\usepackage{enumitem} % control layout of itemize, enumerate, description
+\usepackage{fancyhdr} % control page headers and footers
+\usepackage{float} % improved interface for floating objects
+%\usepackage{multicol} % intermix single and multiple column pages
+% language
+\usepackage[utf8]{inputenc} % accept different input encodings
+\usepackage[english]{babel} % multilanguage support
+% misc
+\usepackage{graphicx} % builds upon graphics package, \includegraphics
+%\usepackage{lastpage} % reference number of pages
+%\usepackage{comment} % exclude portions of text (?)
+\usepackage{xcolor} % color extensions
+\usepackage[backend=biber, style=apa]{biblatex} % sophisticated bibliographies % necessary for HTML to display author info and date on abstract page
+\usepackage{csquotes} % advanced quotations, makes biblatex happy
+\usepackage{authblk} % support for footnote style author/affiliation
+% tables and figures
+\usepackage{tabularray}
+%\usepackage{array} % extend array and tabular environments
+\usepackage{caption} % customize captions in figures and tables (rotating captions, sideways captions, etc)
+%\usepackage{cuted} % allow mixing of \onecolumn and \twocolumn on same page
+\usepackage{multirow} % create tabular cells spanning multiple rows
+%\usepackage{subfigure} % deprecated, support for manipulation of small figures
+%\usepackage{tabularx} % extension of tabular with column designator "x", creates paragraph-like column whose width automatically expands
+%\usepackage{wrapfig} % allows figures or tables to have text wrapped around them
+%\usepackage{booktabs} % better rules
+% dummy text
+%\usepackage{blindtext} % blind text dummy text
+%\usepackage{kantlipsum} % Kant style dummy text
+\usepackage{lipsum} %lorem ipsum dummy text
+% other helpful packages may be booktabs, longtable, longtabu, microtype
+
+\pagestyle{fancy} % sets pagestyle to fancy for fancy headers and footers
+
+% header and footer
+% modern way to set header image
+\renewcommand{\headrulewidth}{0pt} % defines thickness of line under header
+\renewcommand{\footrulewidth}{0pt} % defines thickness of line above header
+\setlength\headheight{80.0pt} % sets height between top margin and header image, effectively moves page contents down
+\addtolength{\textheight}{-80.0pt} % seems to affect the lower height. maybe only works properly if footer numbers enabled?
+\fancyhf{}
+\fancyhead[CE, CO]{\includegraphics[width=\textwidth]{headerImage.png}}
+% footer
+%\fancyfoot[LE,LO]{Article Title Here \\ DOI: }% left footer article title and doi
+%\fancyfoot[CE,CO]{{}} % center footer empty
+%\fancyfoot[RE,RO]{\thepage} % right footer page numbers
+%\pagenumbering{arabic} % arabic (1, 2, 3) numbering in footer
+
+\hypersetup{colorlinks=true,urlcolor=blue} % sets link color to blue
+\urlstyle{same} % sets url typeface to same as rest of text
+
+% set caption and figure to italics, label bold, left align captions, does not transfer to HTML
+\captionsetup{labelfont=bf, font={large, it}, justification=raggedright, singlelinecheck=false}
+\renewcommand\theContinuedFloat{\alph{ContinuedFloat}}
+
+%this next bit is confusing, but essentially changes the width of the abstract. Seems to have been copied from this https://tex.stackexchange.com/questions/151583/how-to-adjust-the-width-of-abstract
+\let\oldabstract\abstract
+\let\oldendabstract\endabstract
+\makeatletter %changes @ catcode to enable modification (in parsep)
+\renewenvironment{abstract} %alters the abstract environment
+{\renewenvironment{quotation}%
+               {\list{}{\addtolength{\leftmargin}{1em} % change this value to add or remove length to the the default ?
+                        \listparindent 1.5em%
+                        \itemindent    \listparindent%
+                        \rightmargin   \leftmargin%
+                        \parsep        \z@ \@plus\p@}%
+                \item\relax}%
+               {\endlist}%
+\oldabstract}
+{\oldendabstract}
+\makeatother %changes @ catcode to disable modification
+
+% checks
+% italics -
+% links -
+% dashes -
+% tildes -
+\begin{document}
+
+\title{Fostering an Inclusive STEM Workforce}
+
+\author[1]{\large \color{blue}Cary A. Supalo }
+
+\affil[1]{Purdue University}
+
+\toappear{}
+%% ABSTRACT
+\maketitle
+\begin{@twocolumnfalse} 
+\begin{abstract}
+\item 
+\textit {The following keynote address was delivered by Dr. Cary A. Supalo at the 2015 Training Workforce and Development and diversity conference which is one of the divisions that is part of NIH’s general medical sciences. This conference was attended by over 500 program directors from all of the T32 sponsored projects in 2015. This presentation discussed the importance of a full inclusive STEM workforce that includes persons with disabilities}
+\\ \\
+\end{abstract}
+\end{@twocolumnfalse}
+
+%% AUTHOR INFORMATION
+
+\textbf{*Corresponding Author, Cary A. Supalo Dr}\\
+\href{mailto: cas380@gmail.com}{(cas380@gmail.com)} \\
+\textit{Submitted Jan 18 2016}\\
+\textit{Accepted Jan 18 2016} \\
+\textit{Published online Jan 18 2016} \\
+\textit{DOI:10.14448/jsesd.07.0005} \\
+\pagebreak
+\clearpage
+\begin{large}
+I was asked to talk about inclusion in the STEM workforce. I will first operate under the assumption that we are all familiar with the types of jobs in the STEM workforce. Additionally, I will assume that we all have an extensive knowledge base of the essential tasks required in our areas of expertise.  That being said, what does this word ‘inclusion’ mean? This can vary from person to person. For some, it means all encompassing. To others, it might simply mean not leaving anyone out. And to still others, it can mean open to all. According to Webster’s Dictionary, inclusion can be defined as, “the act or practice of including students with disabilities in regular school classes”.\textsuperscript{1}  All of these definitions sound similar. Yet, they are different at their core meanings.
+
+There is also the term ‘Universal Design’. I am sure many have heard of this term before, but not all may be familiar with what it means. Universal Design, like inclusion, can be defined as open to as wide an audience as is possible. This means we would be trying to include as large a population into our programs as we could. Ron Mace, one of the creators of Universal Design describes it as, “the design of products and environments to be usable by all people, to the greatest extent possible, without the need for adaptation or specialized design”.\textsuperscript{2}
+
+Why is STEM such a challenge to achieve full inclusion? This can be due to many different reasons. The first of which is a lack of access technologies that would allow a person with a disability to perform the essential tasks of the STEM employment opportunity.\textsuperscript{3}  Another reason might be a lack of opportunity to fully participate in the STEM workforce. Hiring committees may not know what is possible in a STEM employment opportunity for a person with a specific disability.\textsuperscript{4} Further, some of their preconceived notions about a specific disability may be rooted in a negative experience they had prior to this opportunity. Therefore, it is easy to stereotype. We all have done this in one context or another. This notion of stereotyping would not be unique to those reading this. Simply being aware of this notion of stereotyping will help us to go a long way in not doing so and giving the applicant with a specific disability an equal opportunity to compete for the position.
+
+Many of us are scientists. Therefore, what do we do in a more fundamental sense of our occupation all the time? We ask questions. So do persons with disabilities. We have this entire population of persons with disabilities that have been forced to problem solve through situation after situation for more or less their entire life to overcome their physical or mental limitation. Therefore, I ask you, why would we not want to welcome this entire population of life long problem solvers into the STEM workforce?\textsuperscript{5}  As you can see, in this context, maybe persons with disabilities would be an asset on our research teams. 
+
+Additionally, persons with disabilities often pay greater attention to what they are doing to minimize injury. As a result, they become safer employees and less prone to accidents. A study done by Swanson, Barrett and Steere, \textsuperscript{6} documented this phenomenon back in the early 1980’s. If such a study were to be conducted today, an assertion can be made that the same would be true. 
+
+Also, we as scientists value multiple points of view from different perspectives. A person with a disability may see a problem differently and thus have a unique solution to suggest. A person with a disability is similar to a person from a different ethnic background. Seeing the world from a different point of view can go a long way in empowering us to make the next major scientific discovery.
+
+If these are some of the assets of a person with a disability joining my research team, then how far should I go to make this possibility a reality? I would say, that depends. It depends on the nature of the disability. It depends on the intellectual capabilities of the individual in question. It also depends on the resources available at your respective institutions. It is not fair for the research advisor to have to pay the brunt of the costs associated with providing Americans with Disabilities Act (ADA) accommodations.  Therefore, there are resources within your own institutions to assist with such requests. If the matter pertains to a graduate or undergraduate student, your institution’s Office for Students with Disabilities can be contacted to see what might be possible. If it pertains to a post-doc fellow, your Human Resources department can assist you with providing accommodations. Additionally, approaching your Department Head to see if s/he can leverage additional resources from the Dean of your college may be fruitful. Further, depending on what types of research grants you may have, the National Institute of Health (NIH) and National Science Foundation (NSF) are two federal agencies that have supplements available for the purchase of access technologies that will enable your student with a disability to more fully participate in the government sponsored research. Therefore, I would say a little bit of creativity can go a long way to full inclusion for a person with a disability.
+
+In addition to their extensive problem solving and asking questions skillset, additional facilities and resource requirements may be different. For example, a person who is blind may not require the use of a parking spot. A person who is deaf (depending on the nature of the deafness) may not be as distracted by noise as his/her hearing counterparts. It is examples like these that are simply two of numerous illustrations for how employment difference can be strengths in the workplace. 
+
+That said, I would like to comment briefly on some of my work to help promote inclusion in the STEM workforce for persons who are blind or visually impaired. I first want to say that I lost my eyesight at age seven due to a rare genetic disease. I grew up with five other siblings all who were sighted. My parents raised me very well, to the point where I developed a strong appreciation for education. I, at one time in high school, was told that no blind person had ever taken calculus before. If I wanted to pursue that, my support teachers could not assist me in that endeavor. Therefore, I was discouraged from a possible STEM career path. I went off to college as a business administration major. 
+
+After being introduced to a consumer organization of blind persons, I realized my dream to be a scientist was still possible. I ended up changing my major in college seven times because I could not decide what I wanted to do. I eventually settled on a dual degree in chemistry and communications. I graduated from Purdue University, and off to Penn State I went. I entered the Ph.D. program, which presented its many struggling points. However, I initially used a team of undergraduate students to conduct all of my scientific work at the bench with them describing what was happening the entire way. I designed my experiments based on what I found in literature and under the guidance of my research advisor. I did have technological limitations to accessing chemical literature because the text-to-speech interfaces could not read chemical or mathematical content. This has improved in recent years, but is still somewhat cumbersome.
+
+I completed my masters in inorganic chemistry. I then was successful at landing an NSF Research in Disabilities Education (RDE) grant to develop the first suite of talking and audible laboratory tools for the blind in the science laboratory. I pursued this funding on the premise that if we had a suite of talking and audible lab tools, those students with visual impairments could use them. I wanted to see if this would positively or negatively impact their feelings towards science. If we could measure a positive shift, then intuitively they would more strongly consider career paths in STEM. It was this six year funding effort that gave me the opportunity to make the first text-to-speech enabled scientific data collection interface for the blind. I field-tested this technology first in a residential school for the blind, then later in mainstream science classes across the United States.  When these students were given the opportunity to do their own lab work, as opposed to working with a sighted counterpart, their perception in their own abilities that they could be a scientist were increased.  Therefore, what learning theorists found to be true for the sighted students, I found also to be true for the blind. Students learn best by doing.\textsuperscript{7}
+
+I started my own for-profit business called Independence Science. I used this company as a vehicle for the commercialization of these powerful talking laboratory tools. I also provide consultation services to schools around the world as to how they can provide accommodations to students with various disabilities. My software development team also feels we can make just about any piece of computer interfaced lab equipment accessible to students with disabilities. \textsuperscript{8} What I have learned through all of this is that anything can be made accessible. It is simply a matter of having the time and the resources to make it a reality.
+
+I also used Independence Science as a small business to pursue Small Business Innovation Research (SBIR) funding. That was how I successfully developed the Sci-Voice Talking Lab-Quest product. This is a partnership between Independence Science and Vernier Software \& Technology to make their handheld scientific data logger talk. I was successful in landing both phase I and phase II support for this effort. We have now commercialized this technology and are distributing it globally. It currently only speaks English, but we are actively pursuing funding to make it a multi-lingual product. In short, it works like this.  The Sci-Voice Talking LabQuest can speak real-time sensor readings. A student who is blind can independently start and stop data collection. They can analyze their data on the handheld, both in graphical and tabular form. They can also record qualitative observations and read them back. Another nice feature about this device is it is a piece of mainstream technology. Thus, nondisabled students can and do often use this hardware in science laboratory classes around the world. Therefore, the approximately 70 different sensors in the areas of chemistry, biology, physics, earth science, and physical science are all available for this device, and they all talk. \textsuperscript{9} In the near future, this device will also become compatible with a Tiger Braille embosser. This is a tactile graphics enabled embosser that will produce Cartesian graphs with Braille labels right there in the science lab, thus providing access right away for data analysis with lab group mates. I see how this has helped students who are blind all around the world to have hands-on science learning experiences. Thus giving them the opportunity to decide if they wish to pursue a STEM career path or not. I am always seeking other partners to collaborate with to help open more doors of opportunity for persons with disabilities to enter the STEM workforce. This will contribute to a more inclusive STEM workforce. However, much work is still to be done. 
+
+Unfortunately, the overwhelming majority of STEM education firms in the United States seem to be not concerned with accessibility. I received a communication from a biological instrumentation firm recently regarding their data collection software package used with their instrumentation that was deployed in a biology lab class at a post-secondary institution. My software developers were working on the incorporation of a commercially available text-to-speech screen reader application to work with this package. All we needed was for the company’s developers to add four lines of code into their application. My developers were even willing to provide the four lines of code to them with explanations and documentation as to what this would enable us to do. The response was, “Accessibility is not a priority right now.” My lead developer sent a follow up email to the head of their technical support team explaining this was a very simple matter, and all we needed them to do was to add these four lines of code into their application. A response came back, “Perhaps this note got lost in the email shuffle. Accessibility is not a priority right now.” Some of you may be familiar with the company in question. 
+
+Persons with disabilities need your help to lobby the science education industry to encourage accessibility. If you are thinking about deploying new computer assisted technologies in your classrooms, ask the manufacturer if it is accessible to students with disabilities? If you are considering a commercially available on-line course management or assessment system, ask the manufacturer, if it is accessible to students with disabilities? If so, ask them how.  I can almost guarantee you that in most cases, they will indicate that it is accessible in some ancillary way. To date, that is what I have experienced when I visit their booths at trade shows. Whether a product is a commercial or open source one, it must be accessible. If it is not, what are the ethical and moral implications of that decision to deploy such a technology in a classroom?  If we want to truly achieve a fully inclusive STEM workforce, the resources made available to the nondisabled need to be made available to the disabled. Back in 1954, Brown versus Board of Education said separate, but equal was no longer acceptable.\textsuperscript{10} The same is also now true for the disabled. 
+
+If we can fully integrate the science classroom, then we need to tackle enrichment programs. There have been a number of Research Experiences for Undergraduates (REU) and other science enrichment programs for persons with disabilities in recent years. The general consensus of most programs is the student with a disability is generally grateful for the opportunity they have been given to participate. Normally, this is not what they experience in mainstream science education.The more hands-on learning experiences we can make possible through text-to-speech enabled lab equipment, the availability of tactile graphics and other hard copy Braille materials in the case of the blind, and overwhelming welcoming attitudes towards the disabled into the STEM classroom are necessary, and only then, I believe, is an inclusive STEM learning environment achievable.
+
+This inclusive STEM workforce parallels something Martin Luther King once said, “Faith is taking the first step even when you don’t see the whole staircase.”\textsuperscript{11} It is up to us to try to make more inclusive science learning experiences possible for both the nondisabled and disabled.
+
+When we can have a large percentage of persons with disabilities working alongside their nondisabled counterparts that is when I believe we would have truly reached an inclusive STEM workforce. Are we there yet? I would say no, but I believe that day will come and it is within our grasp to make it a reality.
+
+\end{large}
+\clearpage
+\section*{REFERENCES}\par 
+
+\leftskip 0.25in
+\parindent -0.25in 
+1. Mirriam-Webster, Merriam-Webster Online Dictionary In \textit{Merriam-Webster Online Dictionary} Merriam-Webster, Incorporated: 2015; p N/A.
+
+2. University, N. C. S. The Center for Universal Design Environments and Products for All People. \url{https://www.ncsu.edu/ncsu/design/cud/about_ud/about_ud.htm} (accessed November 24).
+
+3. Scadden, L. \textit{Current Status of People with Disabilities in STEM Education: A Personal Perspective}; Regional Alliance for Science, Engineering, \& Mathematics - Squared (RASEM2): Las Cruces, NM, 2005.
+
+4. Jernigan, K., Blindness - Concepts and Misconceptions. \textit{Braille Monitor} 1965, Aug. 1965, 76-85.
+
+5. Woods, M. a.,\textit{ Working Chemists with Disabilities: Expanding Opportunities in Science}. American Chemical Society: Washington, D.C., 1996.
+
+6. Swanson, A. B.; Steere, N. V., Safety Considerations for Physically Handicapped Individuals in the Chemistry Laboratory. J. Chem. Educ. 1981, 58 (3), 234-238.
+
+7. (a) Supalo, C. Teaching Chemistry and Other Sciences to Blind and Low-Vision Students Through Hands-On Learning Experiences in High School Science Laboraties. Pennsylvania State University, State College, PA, 2010; (b) Piaget, J., \textit{Science of Education and the Psychology of the Child}. Orion Press: New York, NY, 1970.
+
+8. Independence Science. \url{www.IndependenceScience.com} (accessed November 8, 2013).
+
+9. (a) Supalo, C. A.; Isaacson, M. D.; Lombardi, M. V., Making Hands-On Science Learning for Students Who Are Blind or Have Low Vision. \textit{J. Chem. Educ.} 2014; (b) Supalo, C. A., The Next Generation Laboratory Interface for Students with Blindness or Low Vision in the Science Laboratory. \textit{Journal of Science Education for Students with Disabilities} 2012.
+
+10. Wright, P. W. D.; Wright, P. D., \textit{Wrightslaw: IDEA 2004}. Harbor House Law Press: Hartfield, VA, 2005.
+
+11. Supalo, C. A., The Blind In Science and Beyond. \textit{Braille Monitor} 2015, 58 (7).
+
+\begin{large}
+\clearpage
+\leftskip 0in
+\parindent 0in 
+\section*{BIOGRAPHICAL STATEMENT}
+Dr. Cary Supalo received his P.h.D. from Penn State University in 2010. His research interest is in the area of promoting hands-on science learning experiences for blind and visually impaired students in science education. He graduated from Purdue University in 1999 with his Bachelor‘s degrees in chemistry and communications. He is an active member of the American Chemical Society‘s Chemists with Disabilities committee and serves on the National Federation of the Blind‘s Research and Development committee. He has been an active member of the Federation since he attended his first national convention in Dallas in 1993 and has attended every convention since. He has organized a number of hands-on science education workshops for blind children at NFB conventions since 2006 and has been involved in NFB Jernigan Institute‘s science education activities since the founding of the National Center for Blind Youth in Science. He currently serves as a consultant for Haverford College in Philadelphia and a visiting scientist at Purdue University in the Department of Chemistry. He is working on a teacher training manual for science educators on how to teach chemistry and other sciences in a hands-on way. He is coauthoring this publication with Dr. George M. Bodner at Purdue University. He oversees the development of new innovative text-to-speech technologies to empower the blind to have hands-on science learning experiences.
+
+\end{large}
+
+\end{document}
