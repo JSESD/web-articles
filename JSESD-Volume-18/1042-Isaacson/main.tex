@@ -1,0 +1,264 @@
+\documentclass[11.5pt]{sig-alternate} % sets document style to sig-alternate
+% packages
+% typesetting
+%\usepackage{dirtytalk} % typset quotations easier (\say{stuff})
+\usepackage{hanging} % hanging paragraphs
+\usepackage[defaultlines=3,all]{nowidow} % avoid widows
+\usepackage[pdfpagelabels=false]{hyperref} % produce hypertext links, includes backref and nameref
+\usepackage{xurl} % defines url linebreaks, loads url package
+\usepackage{microtype}
+%\usepackage{textcomp}
+%\newcommand{\texttildemid}{\raisebox{0.4ex}{\texttildelow}}
+% layout
+\usepackage{enumitem} % control layout of itemize, enumerate, description
+\usepackage{fancyhdr} % control page headers and footers
+\usepackage{float} % improved interface for floating objects
+%\usepackage{multicol} % intermix single and multiple column pages
+% language
+\usepackage[utf8]{inputenc} % accept different input encodings
+\usepackage[english]{babel} % multilanguage support
+% misc
+\usepackage{graphicx} % builds upon graphics package, \includegraphics
+%\usepackage{lastpage} % reference number of pages
+%\usepackage{comment} % exclude portions of text (?)
+\usepackage{xcolor} % color extensions
+\usepackage[backend=biber, style=apa]{biblatex} % sophisticated bibliographies % necessary for HTML to display author info and date on abstract page
+\usepackage{csquotes} % advanced quotations, makes biblatex happy
+\usepackage{authblk} % support for footnote style author/affiliation
+% tables and figures
+\usepackage{tabularray}
+%\usepackage{array} % extend array and tabular environments
+\usepackage{caption} % customize captions in figures and tables (rotating captions, sideways captions, etc)
+%\usepackage{cuted} % allow mixing of \onecolumn and \twocolumn on same page
+\usepackage{multirow} % create tabular cells spanning multiple rows
+%\usepackage{subfigure} % deprecated, support for manipulation of small figures
+%\usepackage{tabularx} % extension of tabular with column designator "x", creates paragraph-like column whose width automatically expands
+%\usepackage{wrapfig} % allows figures or tables to have text wrapped around them
+%\usepackage{booktabs} % better rules
+% dummy text
+%\usepackage{blindtext} % blind text dummy text
+%\usepackage{kantlipsum} % Kant style dummy text
+\usepackage{lipsum} %lorem ipsum dummy text
+% other helpful packages may be booktabs, longtable, longtabu, microtype
+
+\pagestyle{fancy} % sets pagestyle to fancy for fancy headers and footers
+
+% header and footer
+% modern way to set header image
+\renewcommand{\headrulewidth}{0pt} % defines thickness of line under header
+\renewcommand{\footrulewidth}{0pt} % defines thickness of line above header
+\setlength\headheight{80.0pt} % sets height between top margin and header image, effectively moves page contents down
+\addtolength{\textheight}{-80.0pt} % seems to affect the lower height. maybe only works properly if footer numbers enabled?
+\fancyhf{}
+\fancyhead[CE, CO]{\includegraphics[width=\textwidth]{headerImage.png}}
+% footer
+%\fancyfoot[LE,LO]{Article Title Here \\ DOI: }% left footer article title and doi
+%\fancyfoot[CE,CO]{{}} % center footer empty
+%\fancyfoot[RE,RO]{\thepage} % right footer page numbers
+%\pagenumbering{arabic} % arabic (1, 2, 3) numbering in footer
+
+\hypersetup{colorlinks=true,urlcolor=blue} % sets link color to blue
+\urlstyle{same} % sets url typeface to same as rest of text
+
+% set caption and figure to italics, label bold, left align captions, does not transfer to HTML
+\captionsetup{labelfont=bf, font={large, it}, justification=raggedright, singlelinecheck=false}
+\renewcommand\theContinuedFloat{\alph{ContinuedFloat}}
+
+%this next bit is confusing, but essentially changes the width of the abstract. Seems to have been copied from this https://tex.stackexchange.com/questions/151583/how-to-adjust-the-width-of-abstract
+\let\oldabstract\abstract
+\let\oldendabstract\endabstract
+\makeatletter %changes @ catcode to enable modification (in parsep)
+\renewenvironment{abstract} %alters the abstract environment
+{\renewenvironment{quotation}%
+               {\list{}{\addtolength{\leftmargin}{1em} % change this value to add or remove length to the the default ?
+                        \listparindent 1.5em%
+                        \itemindent    \listparindent%
+                        \rightmargin   \leftmargin%
+                        \parsep        \z@ \@plus\p@}%
+                \item\relax}%
+               {\endlist}%
+\oldabstract}
+{\oldendabstract}
+\makeatother %changes @ catcode to disable modification
+
+% checks
+% italics 
+% links -
+% dashes
+% tildes -
+\begin{document}
+
+\title{Ambiguity in Speaking Chemistry and other STEM Content:
+Educational Implications}
+
+\author[1]{\large \color{blue}Mick D. Isaacson}
+\author[2]{\large \color{blue}Michelle Michaels}
+
+\affil[1]{Ivy Tech Community College}
+\affil[2]{Novus Access}
+
+\toappear{}
+%% ABSTRACT
+\maketitle
+\begin{@twocolumnfalse} 
+\begin{abstract}
+\item 
+\textit{Ambiguity in speech is a possible barrier to the acquisition of knowledge for students who have print disabilities (such as blindness, visual impairments, and some specific learning disabilities) and rely on auditory input for learning. Chemistry appears to have considerable potential for being spoken ambiguously and may be a barrier to accessing knowledge and to learning. Educators in chemistry may be unaware of, or have limited awareness of, potential ambiguity in speaking chemistry and may speak chemistry ambiguously to their students. One purpose of this paper is to increase awareness of potential ambiguity in speaking chemistry and other STEM fields and the ramifications of ambiguity. Another purpose is to introduce rules (known as MathSpeak) for non-ambiguous speaking of mathematics that could be adapted for use in chemistry. Reducing ambiguity in speaking chemistry may enhance learning of chemistry and could encourage students who have blindness, visual impairments, and/or other print disabilities to pursue careers in STEM fields.}
+\\ \\
+Keywords: Access, Ambiguity, Blindness, Chemistry, Education, Engineering, Low Vision,
+Mathematics, Print Disabilities, Science, STEM, Special Education, Technology, Visual
+Impairment
+\end{abstract}
+\end{@twocolumnfalse}
+
+%% AUTHOR INFORMATION
+
+\textbf{*Corresponding Author, Mick D. Isaacson}\\
+\href{mailto: mick.isaacson@gmail.com }{(mick.isaacson@gmail.com)} \\
+\textit{Submitted May 8 2015 }\\
+\textit{Accepted Jul 13 2015} \\
+\textit{Published online Sep 4 2015} \\
+\textit{DOI:10.14448/jsesd.07.0001} \\
+\pagebreak
+\clearpage
+\begin{large}
+
+\section*{INTRODUCTION}
+Individuals with disabilities, including blindness and low vision (BLV), are underrepresented in science, technology, engineering, and mathematics (STEM) (Malcom, \& Matyas, 1991; NSF, 2000; 2013). A majority of middle and high school students who have BLV reported that they find science “fun and interesting” and are planning to go to college, however, less than 15\% reported that they were going to major in science (Isaacson \& Supalo, n.d.). This discrepancy between finding science fun and interesting and consideration of science as a post-secondary field of study is disconcerting and needs to be better understood. A better understanding may help in developing strategies for reducing the discrepancy and increasing the representation of students with disabilities in STEM.
+
+\section*{AMBIGUITY IN TEACHING STEM}
+
+There are many factors that may contribute to STEM underrepresentation. Isaacson, Lloyd, \& Schleppenbach (2010) suggest that ambiguity in spoken mathematics may be a contributing factor. Mathematics is replete with potential ambiguity when it is spoken in a format typical of everyday speech. For example, consider the following equation: $\sqrt{a + b} + c$ which is typically spoken as ``the square root of a plus b plus c.'' This utterance is ambiguous because it has two interpretations as shown in the following equations $\sqrt{a + b} + c$ and $\sqrt{a + b + c}$.
+
+Ambiguity in oral communication of mathematical content is problematic for students who have BLV and may be frustrating and inhibit learning for others (Isaacson, Srinivasan, \& Lloyd, 2012). Ambiguity in spoken mathematics is a unique area of research and development with implications beyond mathematics. For example, chemistry has the potential for being spoken ambiguously and may pose a barrier to learning. One focus of the present article is the potential application of research and development efforts for reducing ambiguity in spoken mathematics to chemistry and other STEM fields. As Isaacson and his colleagues are the primary, if not the only, researchers who have published on the topic of ambiguity in spoken mathematics, citations of their work appear throughout this article.
+
+Textbooks provide source material that teachers frequently present aloud to their classes. Source material with potential ambiguity may be spoken ambiguously (Isaacson et al., 2012). Ambiguity in teachers' oral presentations of content from chemistry textbooks may impede information access. This reduced access is a possible barrier to learning that may contribute to STEM underrepresentation. Obstacles such as ambiguity in the presentation of content while learning chemistry may contribute to STEM underrepresentation.
+
+An examination of source material may provide an estimate of the degree of possible ambiguity within learning material presented aloud to students in the classroom (Isaacson et al., 2012). To obtain a rough estimate for the chemistry classroom, a basic chemistry textbook (Timberlake \& Timberlake, 2011) that met Indiana State Standards was perused for potential ambiguity. The following summary of the examination provides evidence of the potential for substantial ambiguity when speaking chemistry content. Chapter 2 has a lengthy section on scientific notation that contains many equations with superscripts and fractions. Based on informal observations, many professionals in chemistry speak both scientific notation (i.e. superscripts) and fractions in a manner consistent with how mathematical content is typically spoken, which frequently is ambiguous (Isaacson et al., 2012). Chapter 2 was not the only section that contained potential ambiguity. Mathematically based content with potential ambiguity was found throughout the text. This included equations concerning specific heat, mass, the energy content of food, and the properties of gases, to name a few.
+
+Potential ambiguity was not only limited to mathematically based chemistry equations. For example, the letter ``g'' was used in one section of the Timberlake and Timberlake (2011) chemistry textbook to denote a gas but was used in a different section to denote grams. While some individuals may be able to use contextual cues within a section to determine the correct use of the letter ``g'', others may not have developed the skills for using contextual clues to reduce ambiguity. In addition, chemical formulas may also contribute to spoken ambiguity. Consider the formula, H2O, which is usually spoken as ``h two o.'' In this utterance, it is unclear as to whether the ``two'' refers to the ``H'' as in two Hydrogen atoms or to the ``O'' as in 2 Oxygen atoms.  
+
+\section*{REDUCING AMBIGUITY}
+
+Many students who have BLV rely heavily on speech for learning. For these students, ambiguity in speaking may impose a barrier for accessing knowledge. Dr. Abraham Nemeth, Professor Emeritus of Mathematics at the University of Detroit Mercy, who had been blind since birth, developed rules during his studies for non-ambiguous communication of mathematics. These rules, now known as MathSpeak, have been developed and standardized as part of an initiative to promote non-ambiguous communication of mathematics (MathSpeak Initiative, 2004). 
+
+The MathSpeak rules have been shown to be intuitive and easy to learn (Isaacson et al., 2010). An example describing an application of the rules follows. Fractions are typically spoken ambiguously when they are read aloud. This tends to occur because of the speaker's failure to demarcate the beginning and end of instances of ambiguity (Isaacson et al., 2012). To illustrate, equation 1 below is typically spoken as ``a plus b over c.'' This utterance is ambiguous because there are two possible interpretations also shown below. Using the MathSpeak rules (MathSpeak additions are shown in italics), the first interpretation would be non-ambiguously spoken as ``a plus \textit{start fraction} b over c \textit{end fraction}.'' The second interpretation would be non-ambiguously stated as ``\textit{start fraction} a plus b over c \textit{end fraction}.'' The rules demarcate the beginning and end points of where ambiguity could arise.
+
+Equation 1:
+\[ a + \dfrac{b}{c}\]
+
+Interpretation 1:
+\[ a + \dfrac{b}{c}\]
+
+Interpretation 2:
+\[ \dfrac{a + b}{c}\]
+
+Unlike mathematics, rules for speaking chemistry content in a non-ambiguous manner have yet to be developed. Rules for non-ambiguous communication of chemistry may reduce ambiguity in spoken content as a potential barrier for accessing chemistry. Increasing access to chemistry may encourage some students who have BLV to enter into post-secondary STEM studies and STEM careers.
+
+The MathSpeak rules have the potential to be adapted for speaking many aspects of chemistry non-ambiguously. For example, a sample problem concerning volume and moles on p. 345 of Timberlake and Timberlake (2011) contains equation 4 shown below. 
+
+Equation 4:
+\[n2 \dfrac{v1}{n1} = \dfrac{v2}{n1}n2\]
+
+Equation 4 would typically be spoken as ``n two times v one over n one equals v two over n one times n two.'' This spoken rendering is ambiguous because it can be interpreted in many ways. Five possible interpretations are shown in table 1. The equation could be non-ambiguously spoken with the MathSpeak rules as in the following utterance: ``n two times \textit{start fraction} v one over n one \textit{end fraction} equals \textit{start fraction} v two over n one \textit{end fraction} times n two.''
+
+\begin{table}[h]
+\caption{This table shows five possible interpretations that could be derived from the expression, ``n two times v one over n one equals v two over n one times n two.''}
+\begin{tabular}{|c|c|c|}
+\hline
+\begin{tabular}[x]{@{}l@{}} Interpretation 1 \\ $ \dfrac{n2v1}{n1} = \dfrac{v2}{n1n2} $ \end{tabular} & 
+\begin{tabular}[x]{@{}l@{}} Interpretation 2 \\ $ n2\dfrac{v1}{n1} = \dfrac{v2}{n1n2} $ \end{tabular} & 
+\begin{tabular}[x]{@{}l@{}} Interpretation 3 \\ $ n2\dfrac{v1}{n1} = \dfrac{v2}{n1}n2 $ \end{tabular} \\ \hline
+\begin{tabular}[x]{@{}l@{}} Interpretation 4 \\ $ \dfrac{n2v1}{n1 = \dfrac{v2}{n1n2}} $  \end{tabular} & 
+\begin{tabular}[x]{@{}l@{}} Interpretation 5 \\ $ \dfrac{n2v1}{n1 = \dfrac{v2}{n1}n2} $ \end{tabular} & \\ \hline
+\end{tabular}
+\end{table}
+
+Potential ambiguity in chemistry can be found in content other than fractions. Chemical formulas, which are used frequently throughout chemistry, contain potential ambiguity that could be reduced by the use of MathSpeak rules. To illustrate, consider the formula, (NH\textsubscript{4})\textsubscript{2} SO\textsubscript{4} (found on p. 204 of Timberlake and Timberlake, 2011). One way of speaking this equation is: ``N H four two S O four.'' A source of ambiguity in this utterance occurs because it is unclear whether the ``two'' refers to the NH\textsubscript{4} or to the SO\textsubscript{4}. The formula could be non-ambiguously spoken with MathSpeak rules as follows: ``\textit{Begin parentheses} N H \textit{subscript} four \textit{baseline end parentheses subscript} two \textit{baseline} S O \textit{subscript} four.'' 
+
+\section*{PERVASIVENESS OF POTENTIAL AMBIGUITY IN CHEMISTRY TEXTBOOKS}
+
+The textbook by Timberlake and Timberlake (2011) is not the only chemistry text to contain potential ambiguity. Similar ambiguity can be found in other high school chemistry textbooks such as those by Wilbraham, Staley, Matta, \& Waterman (2012) and Zumdahl \& DeCorte (2011). As authors of chemistry textbooks frequently use core standards to guide content selection, most chemistry textbooks cover similar material making it is likely that potential ambiguity will be found in most chemistry texts.
+
+Chemical equations, principles and laws expressed as mathematical relationships, and dimensional analysis (also known as the Factor-Label Method or the Unit Factor Method) are often used in chemistry and it is not unusual for them to appear in chemistry textbooks. They are potential sources of ambiguity. For example, Hess’s law involves the adding of thermochemical equations to give a final equation (Wilbraham et al., 2012). Hess’s law is commonly taught in introductory chemistry and is likely to appear in most introductory chemistry texts. As chemical equations are involved, textbook examples of the application of Hess’s Law are likely to have potential ambiguity. 
+
+Dimensional analysis involving the conversion of units is often used in solving problems in chemistry. For example, frequent manipulations in chemistry involve converting between units (for example, grams per mole to kilograms, cubic inches to cubic centimeters, volume to mass, etc.). The conversions frequently use mathematical type formula containing fractions. As fractions are frequently spoken ambiguously, dimensional analyses are likely to contain material that will be spoken in an ambiguous manner. Because dimensional analysis is crucial for chemistry, it is likely that the method will be found in many basic chemistry books. 
+
+In conversions involving volume, it may be necessary to calculate the volume of a container. Superscripts are used in many volumetric calculations. Superscripts are sources of ambiguity in spoken communication of mathematics and are likely to be communicated in an ambiguous form when they are spoken in the context of chemistry. 
+
+Other examples of potential ambiguity can be found in thermodynamics, a crucial area for the study of chemistry. Because of its importance, it is likely to appear in introductory chemistry books. The area of thermodynamics contains formulas, such as the one for calculating specific heat, which contains a fraction. Because fractions are frequently spoken in an ambiguous form, textbook content about thermodynamics has the potential of being spoken ambiguously. 
+
+The few instances summarized above illustrate the many instances in which chemistry may be spoken ambiguously. Instances such as these were found in all of the chemistry textbooks examined. These findings indicate that there is considerable potential for chemistry to be spoken in an ambiguous manner.
+
+Whether the MathSpeak rules can be adapted for all cases of ambiguity in speaking chemistry is uncertain because a systematic and comprehensive examination of potential ambiguity in chemistry has not been completed. Communication and teaching of STEM could be improved by non-ambiguous speaking of STEM material. Spoken presentations of educational material that are ambiguous may be particularly problematic for students who may rely heavily on auditory input of information such as those who have BLV and those who have specific learning disabilities that inhibit processing of printed material. Rules for non-ambiguous speaking of chemistry content may enhance the learning of chemistry and may encourage the pursuit of studies and careers in chemistry. Research should be conducted to systematically identify potential ambiguity in the communication of chemistry and to develop and standardize rules for non-ambiguous communication of chemistry. 
+
+\section*{EDUCATIONAL TRENDS – IMPLICATIONS OF ONLINE LEARNING}
+
+According to the Sloan Consortium (2007), online learning shows substantial increases in popularity. The visual component of online content often is inaccessible to students who have print disabilities and it will be necessary for the spoken content to be rendered non-ambiguously. The MathSpeak rules have been shown to substantially reduce ambiguity in spoken mathematics (Isaacson et al., 2010) and should be available in online courses with mathematics to facilitate communication and access by students who have print disabilities. The development of standardized non-ambiguous rules for speaking chemistry may be a step toward making online chemistry courses accessible to students who have visual impairments or other print disabilities.
+
+Technology and engineering are fields within STEM. These fields tend to have a strong mathematical basis, which increases the probability of content found in both being spoken ambiguously. This potential ambiguity may limit access to the acquisition of knowledge and learning in the fields of technology and engineering. Students with disabilities, in particular those who have BLV, may be substantially affected and may find learning in these fields to be difficult and discouraging.  
+
+Because students who have BLV may not be able to access the visual component of online presentations, they will probably rely heavily on speech input for receiving online content. As described above, STEM content has considerable potential for being spoken ambiguously. This may severely limit access to online STEM content by students who have BLV and other auditory learners. 
+
+\section*{IMPLICATIONS FOR DISABILITIES OTHER THAN PRINT DISABILITIES}
+
+When different teachers were asked to speak the same mathematical equations, their spoken renderings were often quite different (Isaacson et al., 2012). Sometimes the same teacher would even speak the same equation differently on different occasions (unpublished data from Isaacson et al., 2012). Between and within teacher inconsistency such as cited above may be problematic for students who are first learning mathematics and for those who have difficulty understanding math in general. Furthermore, uncertainty that arises from inconsistency may be associated with increased levels of anxiety in children with autism (Boulter, Freeston, South, \& Rodgers, 2014). Anxiety may inhibit learning and is associated with decreased levels of achievement (McDonald, 2001; Ocak \& Yamak, 2013). Application of rules for non-ambiguous speaking of mathematics and chemistry would not only reduce ambiguity but would increase consistency of oral presentations, which could improve learning and achievement for students who may have difficulty with inconsistency. 
+
+ 
+\section*{IMPLICATIONS FOR EDUCATORS AND FAMILIES}
+
+Most practitioners and families want their students and children to study and learn without barriers that impede access to knowledge. Communication in mathematics and many STEM fields often is ambiguous and may inhibit learning. Rules have been developed for non-ambiguous spoken communication of mathematics. These rules also have potential applicability in other STEM fields. Teachers, family members, and other stakeholders should teach these rules and use them, as appropriate, when speaking STEM content. This may facilitate communication and learning of STEM.   
+
+\section*{CONCLUSION}
+
+Science, technology, engineering, and mathematics (STEM) are fields that have been emphasized as being in-demand, well paying, and important for our economy. Some groups of students, however, may encounter barriers that inhibit access to STEM education. This article examines barriers that may be encountered by students with print disabilities. It is important for the public to be aware of and understand issues that may inhibit education. All students deserve equal access to education. Awareness and understanding may be the first steps towards creating education equality. 
+
+Many educators are unaware, or insufficiently aware, of issues that may inhibit access to knowledge and education such as ambiguity in communication of content for learning. Isaacson et al. (2012) found that many math educators were unaware of ambiguity in spoken mathematics. Although awareness of ambiguity in speaking chemistry by chemistry teachers was not measured in the above study, it is unlikely that chemistry teachers are more aware of ambiguity in speaking chemistry and the potential ramifications than are math teachers in regards to ambiguity in speaking mathematics. 
+
+Math educators are supportive of teacher training concerning ambiguity in spoken mathematics and how to speak mathematics unambiguously (Isaacson et al., 2012). It is likely that chemistry educators would be supportive of similar training for chemistry. These observations indicate that educators are eager to improve their teaching skills for all students and that training should be provided concerning issues that may inhibit access to knowledge and learning by students with disabilities such as the spoken ambiguity in chemistry, math, and other STEM fields. Such training may enhance STEM learning and increase STEM representation of students with disabilities.
+
+Ambiguity in speaking mathematics inhibits learning of mathematics. Rules for non-ambiguous speaking of mathematics have been developed. Ambiguous communication of mathematical content in chemistry and other STEM fields may be reduced by the development and application of rules for chemistry such as MathSpeak. Because of the MathSpeak Initiative, the field of mathematics has a strong start in reducing ambiguity in spoken communication of mathematics. A systematic examination of the other STEM fields to identify sources of potential ambiguity with the objective of developing standardized rules for non-ambiguous spoken communication in these fields would be beneficial. As appropriate, the MathSpeak rules should be examined for their potential to be modified for non-ambiguous spoken communication in the other STEM fields.
+
+\section*{BACKGROUND, FUTURE DIRECTIONS, AND ACKNOWLEDGEMENT}
+ 
+This paper describes the initial phase of a project focused on educational implications of ambiguity in speaking chemistry. The initial phase consisted of an investigation of whether content in chemistry textbooks had the potential for being spoken ambiguously and whether the rules now known as MathSpeak could be used to decrease ambiguity in spoken chemistry. The MathSpeak rules evolved from informal rules that Dr. Abraham Nemeth developed during his studies of mathematics. Dr. Nemeth was originally working with us on this project. Unfortunately, he passed away before the project was completed. 
+
+The project still needs a more extensive examination of ambiguity in speaking chemistry and the development of standardized rules for speaking chemistry. Also needed is the development of mechanisms for disseminating information to teachers, both in-service and in-training, of the potential consequences of ambiguity in their teaching of STEM and rules for reducing ambiguity when speaking STEM content. 
+
+Dr. Nemeth was, and continues to be, an inspiration for this project and for many students. He will be missed.
+
+\end{large}
+\clearpage
+\section*{REFERENCES}\par 
+
+\leftskip 0.25in
+\parindent -0.25in 
+Boulter, C. Freeston, M. South, M. \& Rodgers, J. (2014). Intolerance of Uncertainty as a Framework for Understanding Anxiety in Children and Adolescents with Autism Spectrum Disorders.  \textit{Journal of Autism and Developmental Disorders, 44}, 1391–1402.
+
+Isaacson, M. D. \& Supalo, C. (n.d.).  Increased self-efficacy in STEM and consideration of post-secondary STEM studies and careers after hands-on education experiences, \textit{manuscript in preparation, Journal of Science Education for Students with Disabilities}.
+
+Isaacson, M. D., Lloyd, L. L. \& Schleppenbach, D. (2010).  Increasing STEM accessibility in students with print disabilities through MathSpeak. \textit{Journal of Science Education for Students with Disabilities, 14}, 25-32.
+
+Isaacson, M. D., Srinivasan, S \& Lloyd, L. L. (2012). Ambiguity and inconsistencies in mathematics spoken in the classroom: The need for teacher training and rules for communication of mathematics. \textit{Journal of Science Education for Students with Disabilities, 15}, 41-45.
+
+Malcom, S. M., \& Matyas, M. L. (1991). \textit{Investing in human potential: Science and engineering at the crossroads}. Washington, D. C.: American Association for the Advancement of Science.
+
+MathSpeak Initiative (2004). Welcome to the MathSpeak Initiative. Retrieved from \url{http://www.gh-mathspeak.com}.
+
+McDonald, A.S. (2001). Prevalence and Effects of Test Anxiety in School Children. \textit{Educational Psychology, 21}, 89-101.
+
+NSF (2000). Committee on Equal Opportunities in Science and Engineering. \textit{Graduate education: A declining share for SMET}. Retrieved from \url{http://www.nsf.gov/pubs/2001/ceose2000rpt/congress_5.pdf}.
+
+NSF (2013). Women, minorities, and persons with disabilities in science and engineering: 2013 [NSF 13-304]. Retrieved from \url{http://www.nsf.gov/statistics/women}.
+
+Ocak, G. \& Yamak, A. (2013). Examination of the Relationships between Fifth Graders’ Self-Regulated Learning Strategies, Motivational Beliefs, Attitudes, and Achievement. \textit{Educational Sciences: Theory \& Practice, 13}, 380-387.
+
+Sloan Consortium (2007). Online Nation: Five Years of Growth in Online Learning. Retrieved from \url{http://sloanconsortium.org/publications/survey/online_nation}.
+
+Timberlake, K. \& Timberlake, W. (2011). \textit{Basic Chemistry (3rd ed.)}. Boston, MA: Prentice Hall.
+
+Wilbraham, A. C., \& Staley, D. D., Matta, M. S., Waterman, E. L. (2012). \textit{Pearson Chemistry}. Boston, MA: Pearson Education Inc.
+
+Zumdahl, S. S., \& DeCorte, D.J. (2011). \textit{Introductory Chemistry: A Foundation (7th ed.)}. Belmont, CA: Brooks/Cole Cenage Learning.
+
+\end{document}
