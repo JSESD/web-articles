@@ -1,0 +1,333 @@
+\documentclass[11.5pt]{sig-alternate} % sets document style to sig-alternate
+% packages
+% typesetting
+%\usepackage{dirtytalk} % typset quotations easier (\say{stuff})
+\usepackage{hanging} % hanging paragraphs
+\usepackage[defaultlines=3,all]{nowidow} % avoid widows
+\usepackage[pdfpagelabels=false]{hyperref} % produce hypertext links, includes backref and nameref
+\usepackage{xurl} % defines url linebreaks, loads url package
+\usepackage{microtype}
+%\usepackage[super]{nth} % easily create superscript ordinal numbers with \nth{x}
+\usepackage{textcomp}
+\newcommand{\texttildemid}{\raisebox{0.4ex}{\texttildelow}}
+% layout
+%\usepackage{enumitem} % control layout of itemize, enumerate, description
+\usepackage{fancyhdr} % control page headers and footers
+\usepackage{float} % improved interface for floating objects
+%\usepackage{multicol} % intermix single and multiple column pages
+% language
+\usepackage[utf8]{inputenc} % accept different input encodings
+\usepackage[english]{babel} % multilanguage support
+% misc
+\usepackage{graphicx} % builds upon graphics package, \includegraphics
+%\usepackage{lastpage} % reference number of pages
+%\usepackage{comment} % exclude portions of text (?)
+\usepackage{xcolor} % color extensions
+\usepackage[backend=biber, style=apa]{biblatex} % sophisticated bibliographies % necessary for HTML to display author info and date on abstract page
+\usepackage{csquotes} % advanced quotations, makes biblatex happy
+\usepackage{authblk} % support for footnote style author/affiliation
+% tables and figures
+\usepackage{tabularray}
+%\usepackage{array} % extend array and tabular environments
+\usepackage{caption} % customize captions in figures and tables (rotating captions, sideways captions, etc)
+%\usepackage{cuted} % allow mixing of \onecolumn and \twocolumn on same page
+\usepackage{multirow} % create tabular cells spanning multiple rows
+%\usepackage{subfigure} % deprecated, support for manipulation of small figures
+%\usepackage{tabularx} % extension of tabular with column designator "x", creates paragraph-like column whose width automatically expands
+%\usepackage{wrapfig} % allows figures or tables to have text wrapped around them
+%\usepackage{booktabs} % better rules
+% dummy text
+%\usepackage{blindtext} % blind text dummy text
+%\usepackage{kantlipsum} % Kant style dummy text
+\usepackage{lipsum} %lorem ipsum dummy text
+% other helpful packages may be booktabs, longtable, longtabu, microtype
+
+\pagestyle{fancy} % sets pagestyle to fancy for fancy headers and footers
+
+% header and footer
+% modern way to set header image
+\renewcommand{\headrulewidth}{0pt} % defines thickness of line under header
+\renewcommand{\footrulewidth}{0pt} % defines thickness of line above header
+\setlength\headheight{80.0pt} % sets height between top margin and header image, effectively moves page contents down
+\addtolength{\textheight}{-80.0pt} % seems to affect the lower height. maybe only works properly if footer numbers enabled?
+\fancyhf{}
+\fancyhead[CE, CO]{\includegraphics[width=\textwidth]{headerImage.png}}
+% footer
+%\fancyfoot[LE,LO]{Article Title Here \\ DOI: }% left footer article title and doi
+%\fancyfoot[CE,CO]{{}} % center footer empty
+%\fancyfoot[RE,RO]{\thepage} % right footer page numbers
+%\pagenumbering{arabic} % arabic (1, 2, 3) numbering in footer
+
+\hypersetup{colorlinks=true,urlcolor=blue} % sets link color to blue
+\urlstyle{same} % sets url typeface to same as rest of text
+
+% set caption and figure to italics, label bold, left align captions, does not transfer to HTML
+\captionsetup{labelfont=bf, font={large, it}, justification=raggedright, singlelinecheck=false}
+\renewcommand\theContinuedFloat{\alph{ContinuedFloat}}
+
+%this next bit is confusing, but essentially changes the width of the abstract. Seems to have been copied from this https://tex.stackexchange.com/questions/151583/how-to-adjust-the-width-of-abstract
+\let\oldabstract\abstract
+\let\oldendabstract\endabstract
+\makeatletter %changes @ catcode to enable modification (in parsep)
+\renewenvironment{abstract} %alters the abstract environment
+{\renewenvironment{quotation}%
+               {\list{}{\addtolength{\leftmargin}{1em} % change this value to add or remove length to the the default ?
+                        \listparindent 1.5em%
+                        \itemindent    \listparindent%
+                        \rightmargin   \leftmargin%
+                        \parsep        \z@ \@plus\p@}%
+                \item\relax}%
+               {\endlist}%
+\oldabstract}
+{\oldendabstract}
+\makeatother %changes @ catcode to disable modification
+
+% checks
+% italics -
+% links - 
+% dashes
+% tildes -
+% dollars -
+\begin{document}
+
+\title{“Science is not my thing”: Exploring Deaf Non-Science Majors’ Science Identities}
+
+\author[1]{\large \color{blue}Cara L. Gormally}
+\author[2]{\large \color{blue}Amber Marchut}
+
+\affil[1]{Gallaudet University}
+\affil[2]{Lamar University}
+
+\toappear{}
+%% ABSTRACT
+\maketitle
+\begin{@twocolumnfalse} 
+\begin{abstract}
+\item 
+\textit{Students who are deaf and hard-of-hearing are underrepresented in science majors, yet we know little about why. Students from other underrepresented groups in science—women and people of color—tend to highly value altruistic or communal career goals, while perceiving science as uncommunal. Research suggests that holding stereotypical conceptions about scientists and perceptions of science as uncommunal may strongly hinder recruitment into science majors. This study sought to explore the science identities of students who are deaf, hard-of-hearing, and hearing signers. The study focused on non-science majors in bilingual (American Sign Language and written English) biology laboratory courses. This study is the first step to understanding if stereotypes about scientists and perceptions of science as uncommunal disproportionately affect students who are deaf and hard-of-hearing. Findings suggest that students’ science identities are influenced by stereotypical portrayals of scientists and a preference for people-centered careers, specifically within the Deaf community. Applied research is needed to challenge stereotypes, and identify connections between science and the Deaf community, to support the growth of deaf and hard-of-hearing students’ science identities to increase participation in science careers.}
+\\ \\
+Keywords: deaf and hard-of-hearing students, undergraduates, deaf education, science identity, science learning, inquiry-based learning
+\end{abstract}
+\end{@twocolumnfalse}
+
+%% AUTHOR INFORMATION
+
+\textbf{*Corresponding Author, Cara L. Gormally}\\
+\href{mailto: cara.gormally@gallaudet.edu }{(cara.gormally@gallaudet.edu)} \\
+\textit{Submitted Sep 19 2016 }\\
+\textit{Accepted Jan 11 2017} \\
+\textit{Published online Jan 20 2017} \\
+\textit{DOI:10.14448/jsesd.08.0001} \\
+\pagebreak
+\clearpage
+\begin{large}
+\section*{INTRODUCTION}
+
+Research suggests that a student’s feeling of not belonging to science or perceiving it as not affording altruistic career goals, may strongly hinder both recruitment and retention (Allen, Smith, Muragishi, Thoman, \& Brown, 2015; Diekman, Brown, Johnston, \& Clark; 2010; Cheryan \& Plaut, 2010). Science identity, defined as the authoring of one’s identity in relation to science (Johnson, Brown, Carlone, \& Cuevas; 2011) determines whether a student feels s/he belongs with science or not. For example, students seeing themselves as being interested in science and/or competent in science may lead them to perceive themselves as “science people” which may be based on years of patterns of participation, attitudes, and expectations about science learning (Archer, Dewitt, \& Osborne, 2015; Carlone \& Johnson, 2007). Like all aspects of identity, science identity is an ongoing process, which is continually under reconstruction (Gee, 2000). Most critically, if students do not see themselves as “science people,” they are unlikely to pursue science degrees (Diekman \textit{et al}., 2010; Losh, 2009). 
+
+Science identity also involves aligning one’s identity with one’s understanding of who scientists are (Diekman \textit{et al}., 2010). This alignment contributes to a sense of belonging with a prospective career. This is important because belonging plays a key role in career choices (Diekman \textit{et al}., 2010). Goal congruity theory tells us that career choice is strongly driven by value orientation (Cheryan \& Plaut, 2010; Diekman \textit{et al}., 2010). Value orientation is explained as whether one primarily values \textit{communion}—working with people and helping people—or \textit{agency}—associated with making personal professional advances. Notably, many people associate science fields with agency (and, thus, uncommunal) stereotypes. For example, the brainy white man in a white coat lacking social skills and singularly focused on science is a common stereotype (Finson, 2010). By embracing this stereotype, students effectively preclude their potential interest in science careers (Losh, 2009). Research has shown that these stereotypes disproportionately affect women, people of color, first-generation students, and students of low socio-economic status, who tend to highly value altruistic, or \textit{communal}, career goals, while perceiving STEM as uncommunal (Allen \textit{et al}., 2015; Brown, Thoman, Smith, \& Diekman, 2015; Diekman \textit{et al}., 2010; Thoman, Brown, Mason, Harmsen, \& Smith; 2015). Moreover, cultural communities (\textit{e.g.}, Latino and Native American communities (Thoman \textit{et al}., 2015)) often encourage the pursuit of altruistic goals that benefit one’s community. Consequently, stereotyped perceptions of scientists can prevent individuals who value altruistic career goals from even becoming interested in STEM careers, especially students from underrepresented groups (Brown \textit{et al}., 2015). In effect, this means that preconceived stereotypes may preclude students from recruitment into STEM majors.
+
+Many individuals who are deaf or hard-of-hearing consider themselves members of the culturally Deaf community (capital D is used to denote the cultural community). Like other cultural communities, the Deaf community shares traditions, language, and values, including giving back to the community (Clark \& Daggett, 2015; Ladd, 2003). Individuals who are deaf and hard-of-hearing are underrepresented in science, comprising 0.8\% of undergraduates but only 0.13-0.18\% of doctorates (NSF, 2015; Walter, 2010). Despite two decades of legislation securing equal access to academic resources, fewer than fifty individuals who are deaf receive doctorates annually in STEM (NSF, 2007; NSF, 2009; NSF, 2011; NSF, 2013; NSF, 2015). Yet, we know little about why students who are deaf and hard-of-hearing continue to be underrepresented in science. Whether these stereotypes disproportionately affect deaf and hard-of-hearing individuals is unknown.
+
+This study focused on exploring the science identities of deaf, hard-of-hearing, and hearing signing members of the Deaf community in non-majors science classes, an ideal recruitment pool of potential STEM majors. We explored whether students perceived themselves as a science person or not, and how their self-perception related to their conceptions of scientists. This research takes the first step to investigate whether students who are deaf and hard-of-hearing might be disproportionately affected by agentic, uncommunal stereotypes of science. Including hearing signers who are members of the Deaf community allowed us to understand whether these stereotypes were common to the Deaf community, regardless of hearing identity or status. This study addressed two research questions:
+ \begin{enumerate}
+     \item What are deaf, hard-of-hearing, and hearing signing students’ science identities?
+     \item What are students’ conceptions of scientists and how do their self-conceptions compare to their conceptions of scientists?
+ \end{enumerate}
+ 
+We hypothesized that students would initially hold limited, stereotypical conceptions of scientists. Based on other research showing that community college students had few real-world references for scientists, we expected students would have limited real-world references of scientists (Schinske \textit{et al}., 2015). We expected that students would not see themselves as scientists. However, we hypothesized that at the end of the semester, after participating in course activities which simulate authentic science work such as designing and conducting experiments, students would be more likely to see themselves as scientists. Understanding students’ science identities and their perceptions about scientists may provide important insights to create educational interventions to improve recruitment and broaden diversity in science. 
+
+\section*{METHODS}
+
+\subsection*{Study context}
+
+The study was situated at Gallaudet University, whose mission is to serve deaf and hard-of-hearing students. Enrollment also includes a limited number of students who are hearing and proficient in American Sign Language (ASL), most of who are ASL interpreting majors. Students and faculty—who are deaf, hard-of-hearing, and hearing—have diverse language backgrounds in ASL and/or spoken and written English. Classes are conducted entirely in ASL, without spoken English. Curricular materials are designed in both ASL and written English. In an ASL-English bilingual class, the classroom environment is visually-oriented (Erting, 1992; Mather, 1987) rather than auditory-oriented. Classroom spaces are designed around the philosophy of Deaf Space to promote a visually-accessible learning environment (Bauman and Murray, 2009). For example, desks are arranged in a large circle so that everyone can visually connect for seamless whole-class discussion. This is critical since students and instructors must be able to see each other for discussions. In a visually-oriented active learning classroom, if the instructor needs to get the class’s attention while students are working together in groups, flashing the classroom lights signals the class’s attention. The university is unique as it is one of very few bilingual universities in the United States. This is the study context, however, this study does not evaluate the impact of bilingualism on students’ science identities.
+
+It is important to note that there are more than 31,000 students who are deaf and hard-of-hearing are enrolled in colleges and universities (Marschark, 2008). Nearly 85\% of students who are deaf and hard-of-hearing are enrolled at mainstream universities (Marschark, 2008). The other 15\% are enrolled at the following four institutions of higher education: Gallaudet University; Rochester Institute of Technology and the National Technical Institute for the Deaf; California State University at Northridge, and the Southwest Collegiate Institute for the Deaf. 
+
+\subsection*{Study Participants}
+
+IRB approval for Project \#2520 was obtained from Gallaudet University after expedited review. Study participants were recruited from an introductory biology laboratory course for non-science majors. This introductory biology course with no prerequisites is a requirement for physical education and recreation, psychology, social work, and ASL interpreting majors. The laboratory course met once per week for two hours. Students were simultaneously enrolled in the corresponding lecture course. In Fall 2014, the laboratory course was taught using traditional didactic approaches. During Spring 2015 through Spring 2016, inquiry-based teaching approaches were implemented, with the goal of increasing opportunities for active learning, critical thinking skills, and increasing students’ exposure to the process of doing science (Beck, Butler, \& Burke da Silva, 2014; Brickman, Gormally, Armstrong, \& Hallar, 2009). Students worked in small groups to develop a research question related to the class topic, design an experimental protocol, and collect and analyze data to test their hypotheses. Study participants were recruited for four semesters, during the first week of the laboratory class (Fall of Spring 2014 through Spring of 2016). Participants were recruited for interviews during the last two weeks of the semester. Nineteen participants were interviewed (Table 2). 
+
+During the first and last week of each semester, study participants completed a demographic survey. The demographic survey included questions about students’ background, preferred method of communication and identity, as well as their experiences participating in lab class (Table 1, N=33). On average, student participants were 20.8 years old, with a range from 18-31 years old. Participants were majoring in physical education and recreation (27.3\%), interpreting (27.3\%), psychology (21.2\%), social work (12.1\%), or were undecided (3.0\%). While this course primarily serves as a requirement for the majors listed above, students from other majors (e.g., Communication Studies, Elementary Education, and English) were represented at 9.1\% of participants. Five of the 33 students had taken college biology courses previously.
+
+\subsection*{Data sources}
+
+Two data sources were collected: interviews and Reflection Assignments. Interviews were conducted during four semesters: Fall of 2014, Spring of 2015, Fall of 2015, and Spring of 2016. Reflection Assignment data were collected in two semesters: Fall of 2015 and Spring of 2016. The Reflection Assignment was a homework assignment in the inquiry-based laboratory class for which students received credit (available by request from the authors). All students completed pre- and post- semester Reflection Assignments during the first and last week of the semester. Only assignments completed by study participants were used in this study. 
+
+The Reflection Assignment was developed to assess students’ science identity, based on the interview protocol (described below; available by request from the authors). The pre- and post- semester reflection prompts were open-ended questions, provided in ASL and written English. Students could respond in either language. Pre-semester reflection prompts focused on students’ prior science learning experiences, their conceptions about who does science, their motivation for enrolling in this laboratory class, and their understanding of the science research process. Post-semester reflection prompts focused on students’ experiences in laboratory class, their conceptions about who does science, and whether they saw themselves as scientists while working in class this semester, and their understanding of the science research process.
+
+The authors developed the interview protocol based on literature on science identity (Varelas, 2012). The interview protocol was piloted in ASL with three students who were deaf. During pilot interviews, we asked students to explain their understanding of the questions, explain their responses, as well as reasoning for their responses, and react to confusing wording of items. After each pilot interview, we refined interview questions to be concise and clearer. We also removed and added interview questions as needed based on what we learned. Interview questions primarily focused on understanding students’ perspectives about their experiences in biology laboratory class and how their science identities were impacted by these experiences. Interviews began with questions to understand students’ prior experiences with learning science, and primarily focused on exploring students’ perspectives about their self-conceptions as a science person, their experiences in biology laboratory class, and the relevancy of laboratory learning to everyday life. Interviews focused on the “nature of the work” of learning in each type of laboratory environment, in order to reveal students’ characterizations of core elements differentiating inquiry-based teaching from traditional didactic approaches. The authors conducted the semi-structured individual interviews together. All interviews were videotaped and participants signed a video release consent form. Interviews were conducted in the student’s preferred language (ASL or spoken English). All information was de-identified. 
+
+\subsection*{Data analysis}
+
+To analyze the Reflection Assignments, one author used descriptive coding, as well as vivo coding to capture participants’ voices, to identify major themes (Corbin \& Strauss, 2008; Saldaña, 2013). The coding process was iterative, with a first read to identify coding categories, and subsequent iterations to hone the classifications. All participants’ responses to the first reflection question were coded, then all participants’ responses to the second reflection question were coded, and so forth. Then, comparative tables to analyze the emerging themes in the Reflection Assignments were created (Miles \& Huberman, 1994). Statements were classified as stereotypical conceptions of scientists based on categories described in the Draw a Scientist Test (Farland-Smith, 2012; Finson, 2010). 
+
+To analyze the interview data, the authors began by individually developing a written English translation using ELAN (\url{https://tla.mpi.nl/tools/tla-tools/elan/}). Through a series of meetings, the authors calibrated their translations together. The translated scripts, imported into Excel, were used for coding purposes. The authors coded the videotaped interviews with the research questions in mind: What are students’ science identities? What are students’ conceptions of scientists and how do their self-conceptions compare? The research questions were used to frame the inductive coding process. The coding process was iterative. The authors coded the interviews individually to identify categories, then aligned their codes through a series of meetings. During meetings, the authors identified coding classifications that converged and diverged, as well as how to explain meanings of codes, and discussed codes until reaching agreement. Through this coding process, patterns and themes in the data emerged. 
+
+\subsection*{Efforts to ensure study validity}
+
+By conducting the interviews together, we capitalized on follow-up questions to probe deeply to uncover students’ experiences. Translations for interviews were discussed in depth to satisfy our goal of making sure students’ voices were accurately conveyed. Because translations were conducted individually, the authors were able to compare their translations then the differences, which did not occur often, were discussed until an agreement was reached. Finally, the manuscript was shared with the research participants who were interviewed to check their understandings with the conclusions, listen to their comments, and incorporate their feedback. This step of member-checking was particularly important to enrich the data analysis and validity because a central question in this work focused on understanding students’ perspectives and experiences in inquiry-based laboratory classes (Patton, 2002). 
+
+\section*{RESULTS}
+
+\subsection*{Findings from Reflection Assignment Data}
+
+In the Fall of 2015, 22 pre-semester and 23 post-semester Reflection Assignments were collected. Stereotypical conceptions represented 55.1\% of all coded statements in pre-semester Reflection Assignments but only 40\% of their post-semester statements. Stereotypical comments included describing the scientist as wearing a lab coat, safety goggles, and using lab equipment. In the Fall of 2015, 46.2\% of students described that they saw themselves as scientists in laboratory class, and 23.1\% of students saw themselves as scientists some of the time in laboratory class. For example, one student wrote that the experiments he conducted made him feel like a scientist and motivated him to present credible data. However, 30.8\% of students reported they never saw themselves as scientists (in or outside of laboratory class). 
+
+Two themes emerged among students who wrote that they sometimes felt like scientists in laboratory class: (1) students felt like scientists when they were engaged in conducting experiments relevant to their interests; or (2) students saw themselves as “apprentice scientists” rather than working scientists, because they believed they had a lot to learn before they could be considered a “real scientist.” One common theme emerged when students did not see themselves as scientists: since they were not science majors, they could not see themselves as scientists. 
+
+In the Spring of 2016, 10 pre-semester and 7 post-semester Reflection Assignments were collected. Stereotypical responses comprised 50.0\% of all coded statements in students’ pre-semester Reflection Assignments and 30.0\% of post-semester statements. In the Spring of 2016, post-semester, 50\% of students described that they saw themselves as scientists in laboratory class. Students explained that they felt like a scientist in laboratory class because “I felt all the activities I did were so real and applied to real life.” Another student’s writing reflected common responses from students:
+
+I felt like a scientist because I did a lot of hands-on work and was able to come up with conclusions while testing different theories. I also feel like a scientist because of the equipment we use in our experiments. Lastly, I felt like a scientist because my opinions were valued by everyone in my group and in class discussions. 
+
+When students didn’t see themselves as scientists, one explained, for example: 
+
+I don’t necessarily see myself as a scientist...I look at myself as a person that finds a way to find an answer and I don’t have the patience to keep the interest as long as possible for an experiment.
+
+While the majority of students did not perceive themselves as scientists outside of the laboratory class, students were equally divided between feeling like a scientist in class or not. Fifty percent of students did not see themselves as scientists in class, despite engaging in inquiry-based activities that mimicked the scientific practices that working scientists use. However, the other fifty percent of students did perceive themselves as scientists in class.
+
+\subsection*{Findings from Interview Data}
+
+Nineteen participants were interviewed. Interviews allowed us to uncover students’ perspectives about what a scientist looks like and what a scientist does everyday.  Students were also asked if they perceived themselves as scientists in and/or outside the laboratory classrooms. From qualitative analysis of the interview data, four major themes emerged: (1) Students often held stereotypical perceptions of scientists; (2) Students perceive science as an inborn talent rather than holding a growth mindset about science. (3) Students view science as uncommunal and not affording altruistic goals. (4) Students chose not to pursue science majors not only because “science isn’t my thing,” but also because “something else is my jam” (Table 3). Students described how their career goals connected with their life experiences and skills. Students often emphasized the importance of early exposure to these experiences. Based on the interviews, these themes act as barriers that prevent students from envisioning themselves becoming scientists. Below, each theme is described in more depth.
+
+The first theme was that students often hold stereotypical conceptions of scientists. When asked to describe what a scientist looks like, typical student comments included stereotypical conceptions. For example: scientists wearing lab coats; and scientists as isolated, working alone in their labs. Interestingly, some students’ perspectives about scientists changed after the semester in inquiry-based laboratory classes. For example, Morgan and Marcus explain how their perspectives shifted through the course of the semester:
+
+Morgan: I first thought of a man with a white lab coat. Everyone must have a white coat, goggles, gloves, but now I realize it's just normal clothes. That's what I've seen in TV shows. At first I thought it was really strict, you must have this, this, this. But then I realized they're just normal people, going with the flow, okay, so it could be any person.
+
+Marcus: Now I see a lot of differences, because of my instructor. My professor was full of personality, full of energy, motivated, just a happy person. So yes, sometimes, the professor was focused, thinking, but not meaning like solitary, working alone. The professor was motivating to other people, spreading that motivation. So it's through that example, that's what I think of a scientist now.
+
+Like other students, both Morgan and Marcus began the semester with stereotypical conceptions of scientists. From doing activities involving authentic science practices, they began to change their conceptions of scientists and shared comments reflected by other participants. Marcus’ interactions with his professor in particular challenged his stereotypical perceptions of scientists. 
+
+During Spring 2016, students were also asked to describe what they thought scientists do everyday. Students’ responses about scientists’ everyday work were more complex than their perceptions about who scientists were (Table 4). Students’ visions of scientists’ daily work transcended their superficial, stereotypical conceptions of scientists. Their responses complicated the authors’ understanding of students’ perspectives of scientists. Students often described scientists engaging in inquiry-based activities similar to the activities they themselves undertook in laboratory class, such as writing, thinking, and questioning. 
+
+The second major theme was that students often described scientists as highly intelligent people who have deep content knowledge in science (Table 3). Relatedly, students perceived science as complex work that requires having a working knowledge of scientific terminology. Based on what they shared during interviews, students appear to hold scientists to a high standard regarding intelligence and work ethic. Since students perceived scientists as highly intelligent and knowledgeable in science, if students’ self-conceptions did not align with these conceptions, this might influence their ability to relate to scientists.
+
+Analysis revealed a third theme: students did not perceive science as a career that helps others or being connected to people (Table 3). As a result, students who were motivated to help people or work with people described how they instead preferred another major. Students’ comments revealed a specific or limited understanding of what scientists’ careers, motivation, and goals may constitute. Most students appear to believe scientists’ occupations do not include opportunities to work with people. A few students elaborated that although scientists do not work with people, they may help people through their research. Yet, many students described a drive to fulfill communal goals, specifically involving the Deaf community. For example, Jennifer, a social work major, explains:
+
+My mom told me when I was a little girl, I loved helping people, my mom knew I'd do something [related]. I wanted to do something, what, I don't know, but I wanted to help people, as far back as I can remember. Before I came here, I knew I wanted to do social work. 
+
+As Jennifer describes, students’ future career goals were often based the desire to fulfill these goals. Many students described having a long-standing passion for working with people and helping people. For example, Tamara’s decision to study psychology was rooted in her interest in pursuing communal goals. She discussed her motivation for studying psychology:
+
+It started from helping people with things: reading, writing, personal emotional stuff, or thinking of ideas, or whatever I recognized could help people. But, it got more focused from there. I discovered an interest in analyzing kids—I want to become a school psychologist. I will need to work with every child, parents, counselors, whoever else, I feel like it's all connected, whoever has an impact. That's part of my passion.
+
+The desire to work with the Deaf community or support Deaf people in various capacities for example, such as becoming an interpreter, a social worker, or a school psychologist, appeared as a common thread throughout the interviews regarding students’ career pathways and identities. Students did not see how being a scientist could create a context in which they could work with the Deaf community. Nor did students perceive that a career in science could afford opportunities to align with their communal goals. 
+
+Finally, a fourth theme emerged from analysis. When students were asked about their rationale for not majoring in science, they often explained that science was not their thing, how science did not fit their personality, and how their career interests fit with their experiences growing up. As described earlier, students often expressed a desire to help others or work with people, which led them to select a major other than science. Thus, the third and fourth themes are strongly connected: students often emphasized that their motivation for their chosen major was based on wanting to help people and work with people. Students often emphasized the desire for human connection as a strong motivating factor in their career decision-making. Since they did not perceive science as a “helping profession,” students did not see science as affording opportunities to help people or to work with people. 
+
+Additionally, this study explored the interaction between students’ self-identities (as deaf, hard-of-hearing, or hearing signers) and their science identities. Most students said their identity did not impact their education but recognized the impact on their career decisions. However, the authors found contradictory evidence: students’ identities often influenced their decision-making for their education. For example, students decided to come to Gallaudet for identity-related reasons. Identity-related reasons for coming to the university included a desire to become immersed in the Deaf community, to learn ASL, for language access and direct communication, and to explore their own identities. For example, Elizabeth describes her decision to come to the university: 
+
+I decided to come to Gallaudet because I wanted to be in my environment, in my community, to find myself, me as a deaf person, in the deaf community here. After [college], I'll go to graduate school, I will go outside to a hearing university. That's different. I'll find myself in the hearing world because the entire world is hearing. I will work with hearing people everyday.
+
+This reflects a common explanation among deaf and hard-of-hearing students for coming to Gallaudet: they want to attend an academic setting strongly connected to the Deaf community. Likewise, hearing students studying to be interpreters recognized the importance of immersing themselves in and learning from the Deaf community. Hannah explained this perspective in more depth:
+
+For me, identity is important. But if, if I can identify with diverse identities, it helps me feel more "at home," it makes for a more comfortable learning environment.
+
+Hearing signing students who came to Gallaudet to become immersed in the Deaf community often recognized the need to learn to work with a diverse range of individuals. As with deaf and hard-of-hearing students, for hearing signing students, a major priority was giving back to the Deaf community and participating in community life. For these students, the idea of pursuing a science degree did not appear to afford opportunities to give back to the Deaf community. 
+
+\section*{DISCUSSION}
+
+Research in social psychology suggests that a student’s feeling of not belonging to science or perceiving it as uncommunal may strongly hinder recruitment and retention (Allen \textit{et al}., 2015; Cheryan \& Plaut, 2010; Diekman \textit{et al}., 2015). This study focused on exploring the science identities of deaf, hard-of-hearing, and hearing signing members of the Deaf community. Our data supported our first hypothesis: indeed, students did hold stereotypical conceptions of scientists at the beginning of the semester. While we hypothesized that students’ science identities would be positively influenced by doing inquiry-based activities that mimic what scientists do, we found limited evidence to support this hypothesis. Some students came to see themselves as scientists during laboratory class (post-Reflection Assignments, Fall of 2015: 46.2\%; Spring of 2016: 50\%). However, this perception rarely translated to a positive science identity in everyday life or interest in pursuing a science career. While some students did come to perceive themselves as scientists, as we hypothesized—this only occurred in the context of the laboratory classroom. Interviews allowed us to explore the reasons underlying this positive change in students’ science identities, as well as why these identities were only performed in the biology laboratory classroom. Additionally, while students’ stereotypical conceptions of scientists were somewhat challenged, students persisted in perceiving science as uncommunal. Our findings suggest that biology classes must include explicit reflection and discussion about who scientists are and the communal goals inherent in science. Active learning pedagogies alone, such as inquiry-based laboratory courses, will do little to challenge students’ perceptions. Further curricular interventions are needed. Here, we discuss what we learned, as well as implications of this research.
+
+Interviews revealed that students’ understanding about what scientists do everyday was more complex than their perspectives about who scientists are. In fact, students’ comments about what scientists do often reflected the inquiry-based activities they themselves undertook in class. These activities that closely mimicked authentic scientific practices. For example, students designed their own experiments to test hypotheses they developed. Students analyzed their data and determined how best to communicate their findings using graphs and tables. While engaged in these scientific practices, students saw themselves as scientists. Yet, interviews revealed four intertwined themes that continued to dissuade students from science careers (Table 3), including holding stereotypical perceptions of scientists. 
+
+Students’ perceptions about who is a scientist may serve as a barrier to encouraging students to pursue a career in science. If students perceive scientists to be brilliant loners, this leaves little room for alternative conceptions of scientists. Consequently, if students do not themselves identify as brilliant loners, they may not be able to envision themselves in this role. These stereotypes are ubiquitous and they hold people back from pursuing careers in science. These stereotypes are ubiquitous among different populations in America, from kindergarteners to university students to the general public (Finson, 2010). Unfortunately, these stereotypes are quite persistent and have been documented since 1957 (Finson, 2010). Like other recent work about college students’ perceptions of scientists (Schinske, Cardenas, \& Kaliangara, 2015), we found that students had few real-world reference points to inform their conceptions of scientists. Interestingly, however, work by Schinske \textit{et al}. revealed that students mostly positive stereotyped scientists, describing them as “curious,” “works to make world better,” while rarely commenting on scientists’ social abilities or other negative stereotypes (2015). 
+
+Perhaps this project’s most important finding is that students did not perceive science to be a “helping profession.” Students did not perceive that science helps people nor that scientists work together to do science. From research in educational psychology and occupational psychology, it is clear that goal congruity is a key for career decisions (Cheryan \& Plaut, 2010; Diekman \textit{et al}., 2010). In this study, students strongly associated scientists with uncommunal stereotypes, describing scientists as “not the type of person with whom I’d want to socialize with” and “isolated in the laboratory.” Often, students expressed valuing communion and, in fact, students’ prospective careers were often oriented toward working with and helping people. Since students’ perceptions of scientists have not been challenged in this regard, these misleading stereotypes effectively work to limit their interest in science careers (Losh, 2009). Other research has shown that these stereotypes disproportionately affect individuals from underrepresented populations in science (e.g., women, members of racial minority groups, first generation students) (Allen \textit{et al}., 2015; Brown \textit{et al}., 2015; Diekman \textit{et al}., 2010). Our work suggests that these stereotypes may also negatively impact deaf and hard-of-hearing students, as well as hearing signing members of the Deaf community, who are interested in pursuing careers that afford opportunities to give back to the Deaf community. 
+
+\section*{FUTURE RESEARCH}
+
+This project has generated meaningful insights as a result of more than two years of investigating students’ self-conceptions, perceptions of scientists, career goals regarding science. Students continue to hold stereotypes of scientists, influencing their own self-perceptions as non-scientists, especially when they express a desire to work with the Deaf community and help people. Some students’ self-perceptions aligned more closely with their perceptions of scientists, at least during the inquiry-based laboratory class. Clearly, however, additional interventions are needed if we are interested in increasing the number of students who are deaf and hard-of-hearing in science as well as their motivation to engage in science.
+
+Next steps for research include developing a curricular intervention to better align students’ conceptions of scientists and their identities. To increase students’ interest in science, educators could highlight and emphasize how scientists may serve specific communities, especially those that are marginalized such as the Deaf community. Additionally, students would benefit from understanding more about what scientists do on a daily basis and how that varies as well as what they do outside of work. Students also need to see scientists themselves discuss why they became scientists. These findings highlight the need for educators to address the perception of misalignment between communal goals and careers in science. Students could benefit from scientists discussing how their work helps people, as well as how they work with people in various roles. Applied research is needed to challenge stereotypes, and to explicitly identify connections between science and the Deaf community, with the goal of both improving students’ science identities and increasing student involvement in careers in science. 
+
+\section*{STUDY LIMITATIONS}
+
+Recruitment and sampling in a small population was a challenge inherent in this study. During Fall 2014 and Spring 2015, the authors encountered challenges to recruiting students for interviews. To incentivize participation, interviewees were compensated \$20 for their time during Fall 2015 and Spring 2016. Additionally, the Reflection Assignment, another qualitative data source, was implemented in Fall 2015 in order to minimize the impact of small sample size as a study limitation.
+
+Another potential limitation stems from the challenge of conducting a bilingual study. In some interviews, study participants switched between ASL and spoken English. Furthermore, the authors also bring to the study their language backgrounds (one who is hearing whose first language is English and one who is a Deaf person whose primary language is ASL), which contributed to the complexities of language use in the study context. This could result in potential misunderstandings and mistranslation. Therefore, as discussed earlier, we performed member-checking with participants to reduce the possibilities of misunderstandings and mistranslations.  
+
+\end{large}
+\clearpage
+\section*{REFERENCES}\par 
+
+\leftskip 0.25in
+\parindent -0.25in 
+
+Allen, J. M., Smith, J. L., Muragishi, G. A., Thoman, D. B., \& Brown, E. R. (2015). To grab and to hold: cultivating communal goals to overcome cultural and structural barriers in first-generation college students' science interest. \textit{Translational Issues in Psychological Science, 1}(4), 331-341. doi:10.1037/tps0000046
+
+Archer, L., Dewitt, J., \& Osborne, J. (2015). Is science for us? Black students' and parents' views of science and science careers. \textit{Science Education, 99}, 199-237. doi:10.1002/sce.21146
+
+Bauman, H.-D. L., \& Murray, J. M. (2009). Reframing: From hearing loss to Deaf gain. \textit{Deaf Studies Digital Journal, 1}, 1-10. doi:10.1093/oxfordhb/9780195390032.013.0014
+
+Beck, C., Butler, A., \& Burke da Silva, K. (2014). Promoting inquiry-based teaching in laboratory courses: are we meeting the grade? \textit{CBE - Life Sciences Education, 13}, 444-452. doi:10.1187/cbe.13-12-0245
+
+Brickhouse, N. W., Lowery, P., \& Schultz, K. (2000). What kind of a girl does science? The construction of school science identities. Journal of Research in Science Teaching, 37(5), 441-458. doi:10.1002/(SICI)1098-2736(200005)37:\\5<441::AID-TEA4>3.0.CO;2-3
+
+Brickman, P., Gormally, C., Armstrong, N., \& Hallar, B. (2009). Effects of inquiry-based learning on students’ science literacy skills and confidence. \textit{International Journal for the Scholarship of Teaching and Learning, 3}(2). doi:10.20429/ijsotl.2009.030216
+
+Brown, E. R., Thoman, D. B., Smith, J. L., \& Diekman, A. B. (2015). Closing the communal gap: the importance of communal affordances in science career motivation. \textit{Journal of Applied Social Psychology}, 1-12. doi:10.1111/jasp.12327
+
+Carlone, H., \& Johnson, A. (2007). Understanding the science experiences of successful women of color: science identity as an analytic lens. \textit{Journal of Research in Science Teaching, 44}, 1187-1218. doi:10.1002/tea.20237
+
+Cheryan, S., \& Plaut, V. C. (2010). Explaining underrepresentation: a theory of precluded interest. \textit{Sex Roles, 63}, 475-488. doi:10.1007/s11199-010-9835-x
+
+Clark, M. D. and D. J. Daggett (2015). Exploring the presence of a Deaf American cultural life script. Deafness and Education \textit{International 17}(4): 194-203.
+
+Corbin, J., \& Strauss, A. (2008). \textit{Basics of qualitative research: techniques and procedures for developing grounded theory}. Thousand Oaks, California: Sage Publications, Inc.
+
+Diekman, A. B., Brown, E. R., Johnston, A. M., \& Clark, E. K. (2010). Seeking congruity between goals and roles: a new look at why women opt out of science, technology, engineering, and mathematics career. \textit{Psychological Science, 21}, 1051-1057. doi:10.1177/0956797610377342
+
+Eddy, S. L., and K. A. Hogan. (2014). Getting under the hood: how and for who does increasing course structure work? CBE - Life Sciences Education \textit{13}:453-468.
+
+Erting, C. (1992). Deafness \& literacy: Why can't Sam read? \textit{Sign Language Studies, 75}, 97-112. doi:10.1353/sls.1992.\\0028
+
+Farland-Smith, D. (2012). Development and field test of the modified draw-a-scientist test and the draw-a-scientist rubric. S\textit{chool Science and Mathematics 112}:109-116.
+
+Finson, K. D. (2010). Drawing a scientist: what we do and do not know after fifty years of drawings. \textit{School Science and Mathematics, 102}(7), 335-345. doi:10.1111/j.1949-8594.2002.tb18217.x
+
+Gee, J. P. (2000). Identity as an analytic lens for research in education. \textit{Review of Research in Education, 25}, 99-125. doi:10.3102/0091732X025001099
+
+Haak, D. C., J. HilleRisLambers, E. Pitre, and S. Freeman. (2011). Increased structure and active learning reduce the achievement gap in introductory biology. \textit{Science 332}:1213-1216.
+
+Hazari, Z., Sadler, P. M., \& Sonnert, G. (2013). The science identity of college students: exploring the intersection of gender, race, and ethnicity. \textit{Journal of College Science Teaching, 42}, 82-91. doi:10.2505/4/jcst13\_042\_05\_82
+
+Johnson, A., Brown, J., Carlone, H., \& Cuevas, A. K. (2011). Authoring identity amidst the treacherous terrain of science: A multiracial feminist examination of the journeys of three women of color in science. \textit{Journal of Research in Science Teaching, 48}(4), 339-366. doi:10.1002/tea.20411
+
+Ladd, P. (2003). \underline{Understanding Deaf Culture}. Tonawanda, NY, Multilingual Matters Ltd.
+
+Losh, S. C. (2009). Stereotypes about scientists over time among U.S. adults: 1983 and 2001. \textit{Public Understanding of Science}. doi:10.1177/0963662508098576
+
+Marschark M, Sapere, P., Convertino, C., \& Pelz, J. (2008). Learning via direct and mediated instruction by deaf students. Journal of Deaf Studies and Deaf Education  \textit{13}, 546-561.
+
+Mather, S. A. (1987). Eye gaze and communication in a deaf classroom. \textit{Sign Language Studies, 54}, 11-30. doi:10.1353/sls.1987.008
+
+Miles, M. B., \& Huberman, A. M. (1994). \textit{Qualitative data analysis: an expanded sourcebook} (2nd edition ed.). Thousand Oaks, California: Sage Publications, Inc.
+
+NSF (2013). National Center for Science and Engineering Statistics: Women, Minorities, and Persons with Disabilities in Science and Engineering: 2013.
+
+NSF (2007). National Center for Science and Engineering Statistics: Women, Minorities, and Persons with Disabilities in Science and Engineering: 2007. Arlington, VA.
+
+NSF (2009). National Center for Science and Engineering Statistics: Women, Minorities, and Persons with Disabilities in Science and Engineering: 2009. Arlington, VA.
+
+NSF (2011). National Center for Science and Engineering Statistics: Women, Minorities, and Persons with Disabilities in Science and Engineering: 2011. Arlington, VA.
+
+NSF (2015). National Center for Science and Engineering Statistics: Women, Minorities, and Persons with Disabilities in Science and Engineering: 2015. Arlington, VA.
+
+NSF. (2013). National Center for Science and Engineering Statistics: Women, Minorities, and Persons with Disabilities in Science and Engineering: 2013. 
+
+Patton MQ (2002). Qualitative research and evaluation methods. Sage Publications, Inc., Thousand Oaks.
+
+PCAST. (2012). \textit{President's Council of Advisors on Science and Technology Report to the President: Engage to Excel: Producing One Million Additional College Graduates with Degrees in Science, Technology, Engineering, and Mathematics}.  
+
+Saldaña, J. (2013). \textit{The coding manual for qualitative researchers}. Thousand Oaks, California: Sage Publications, Inc.
+
+Schinske, J., Cardenas, M., \& Kaliangara, J. (2015). Uncovering scientist stereotypes and their relationships with student race and student success in a diverse community college setting. \textit{CBE - Life Sciences Education, 14}, 1-16. doi:10.1187/cbe.14-12-0231
+
+Thoman, D. B., E. R. Brown, A. Z. Mason, A. G. Harmsen and J. L. Smith (2015). The role of altruistic values in motivating underrepresented minority students for bioscience. \textit{Bioscience 65}: 183-188.
+
+Varelas, M. (2012). Identity research as a tool for developing a feeling for the learner. In M. Varelas (Ed.), \textit{Identity construction and science education research}. Boston, Massachusetts: Sense Publishers.
+
+Walter, G. G. (2010). Deaf and hard-of-hearing students in transition: Demographics with an emphasis on STEM education. \textit{Report for Testing the Concept of a Virtual Alliance for Deaf and Hard of Hearing STEM Students at the Postsecondary Level (NSF HRD-0927586) and Planning Grant for the Center for Advancing Technological Education for the Deaf (NSF DUE-0903167)}. 
+
+\end{document}
