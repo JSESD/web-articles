@@ -1,0 +1,210 @@
+\documentclass[11.5pt]{sig-alternate} % sets document style to sig-alternate
+% packages
+% typesetting
+%\usepackage{dirtytalk} % typset quotations easier (\say{stuff})
+\usepackage{hanging} % hanging paragraphs
+\usepackage[defaultlines=3,all]{nowidow} % avoid widows
+\usepackage[pdfpagelabels=false]{hyperref} % produce hypertext links, includes backref and nameref
+\usepackage{xurl} % defines url linebreaks, loads url package
+\usepackage{microtype}
+%\usepackage{textcomp}
+%\newcommand{\texttildemid}{\raisebox{0.4ex}{\texttildelow}}
+% layout
+\usepackage{enumitem} % control layout of itemize, enumerate, description
+\usepackage{fancyhdr} % control page headers and footers
+\usepackage{float} % improved interface for floating objects
+%\usepackage{multicol} % intermix single and multiple column pages
+% language
+\usepackage[utf8]{inputenc} % accept different input encodings
+\usepackage[english]{babel} % multilanguage support
+% misc
+\usepackage{graphicx} % builds upon graphics package, \includegraphics
+%\usepackage{lastpage} % reference number of pages
+%\usepackage{comment} % exclude portions of text (?)
+\usepackage{xcolor} % color extensions
+\usepackage[backend=biber, style=apa]{biblatex} % sophisticated bibliographies % necessary for HTML to display author info and date on abstract page
+\usepackage{csquotes} % advanced quotations, makes biblatex happy
+\usepackage{authblk} % support for footnote style author/affiliation
+% tables and figures
+\usepackage{tabularray}
+%\usepackage{array} % extend array and tabular environments
+\usepackage{caption} % customize captions in figures and tables (rotating captions, sideways captions, etc)
+%\usepackage{cuted} % allow mixing of \onecolumn and \twocolumn on same page
+\usepackage{multirow} % create tabular cells spanning multiple rows
+%\usepackage{subfigure} % deprecated, support for manipulation of small figures
+%\usepackage{tabularx} % extension of tabular with column designator "x", creates paragraph-like column whose width automatically expands
+%\usepackage{wrapfig} % allows figures or tables to have text wrapped around them
+%\usepackage{booktabs} % better rules
+% dummy text
+%\usepackage{blindtext} % blind text dummy text
+%\usepackage{kantlipsum} % Kant style dummy text
+\usepackage{lipsum} %lorem ipsum dummy text
+% other helpful packages may be booktabs, longtable, longtabu, microtype
+
+\pagestyle{fancy} % sets pagestyle to fancy for fancy headers and footers
+
+% header and footer
+% modern way to set header image
+\renewcommand{\headrulewidth}{0pt} % defines thickness of line under header
+\renewcommand{\footrulewidth}{0pt} % defines thickness of line above header
+\setlength\headheight{80.0pt} % sets height between top margin and header image, effectively moves page contents down
+\addtolength{\textheight}{-80.0pt} % seems to affect the lower height. maybe only works properly if footer numbers enabled?
+\fancyhf{}
+\fancyhead[CE, CO]{\includegraphics[width=\textwidth]{headerImage.png}}
+% footer
+%\fancyfoot[LE,LO]{Article Title Here \\ DOI: }% left footer article title and doi
+%\fancyfoot[CE,CO]{{}} % center footer empty
+%\fancyfoot[RE,RO]{\thepage} % right footer page numbers
+%\pagenumbering{arabic} % arabic (1, 2, 3) numbering in footer
+
+\hypersetup{colorlinks=true,urlcolor=blue} % sets link color to blue
+\urlstyle{same} % sets url typeface to same as rest of text
+
+% set caption and figure to italics, label bold, left align captions, does not transfer to HTML
+\captionsetup{labelfont=bf, font={large, it}, justification=raggedright, singlelinecheck=false}
+\renewcommand\theContinuedFloat{\alph{ContinuedFloat}}
+
+%this next bit is confusing, but essentially changes the width of the abstract. Seems to have been copied from this https://tex.stackexchange.com/questions/151583/how-to-adjust-the-width-of-abstract
+\let\oldabstract\abstract
+\let\oldendabstract\endabstract
+\makeatletter %changes @ catcode to enable modification (in parsep)
+\renewenvironment{abstract} %alters the abstract environment
+{\renewenvironment{quotation}%
+               {\list{}{\addtolength{\leftmargin}{1em} % change this value to add or remove length to the the default ?
+                        \listparindent 1.5em%
+                        \itemindent    \listparindent%
+                        \rightmargin   \leftmargin%
+                        \parsep        \z@ \@plus\p@}%
+                \item\relax}%
+               {\endlist}%
+\oldabstract}
+{\oldendabstract}
+\makeatother %changes @ catcode to disable modification
+
+% checks
+% italics -
+% links -
+% dashes -
+% tildes -
+\begin{document}
+
+\title{Development of Accessible Laboratory Experiments \\for Students with Visual Impairments}
+
+\author[1]{\large \color{blue}KC Kroes}
+\author[1]{\large \color{blue}Daniel Lefler}
+\author[1]{\large \color{blue}Aaron Schmitt}
+\author[2]{\large \color{blue}Cary A. Supalo}
+
+\affil[1]{Illinois State University}
+\affil[2]{Purdue University}
+
+\toappear{}
+%% ABSTRACT
+\maketitle
+\begin{@twocolumnfalse} 
+\begin{abstract}
+\item 
+\textit{The hands-on laboratory experiments are frequently what spark students’ interest in science. Students who are blind or have low vision (BLV) typically do not get the same experience while participating in hands-on activities due to accessibility. Over the course of approximately nine months, common chemistry laboratory experiments were adapted and field tested for use in a residential school for the blind. These adaptations most commonly used a SciVoice Talking LabQuest and associated sensors, as well as other tactile methods.}
+\\ \\
+Keywords: blind, low-vision, chemistry, laboratory, accessible, hands-on
+\end{abstract}
+\end{@twocolumnfalse}
+
+%% AUTHOR INFORMATION
+
+\textbf{*Corresponding Author, KC Kroes}\\
+\href{mailto: kckroes@ilstu.edu }{(kckroes@ilstu.edu)} \\
+\textit{Submitted  Mar 9 2016}\\
+\textit{Accepted Jul 23 2016} \\
+\textit{Published online Sep 9 2016} \\
+\textit{DOI:10.14448/jsesd.09.0006} \\
+\pagebreak
+\clearpage
+\begin{large}
+\section*{INTRODUCTION}
+
+In recent years, students with blindness or low vision (BLV) have been successfully documented as more fully integrated into both classroom and summer enrichment programs. Although most of these cases are individual in scope, and hence done as a case study, there are rare opportunities where these summer enrichment programs foster the opportunity to have larger numbers of students with BLV participate. These initially were started by the National Federation of the Blind (NFB) as part of their Summer Science Academy that started in 2004 and ran over three consecutive summers. (Riccobono, 2004) (Maurer, 2005). These smaller proof-of-concept summer enrichment programs were followed by a more ambitious summer program referred to as the Youth Slam 2007, 2009, and 2011. (Frye, 2007) (Thorpe-Hartle, 2009) (Shaheen, 2011). These enrichment programs recruited students with BLV from across the United States and ranged in participation from 150 to 200 students. These events provided a larger venue for researchers to collect observational and quantifiable data. Other enrichment programs have been described in specific publications. In work done by Supalo et al, used the 2011 Youth Slam event to field test an alpha version of the Sci-Voice Talking LabQuest device with 91 students with BLV. (Supalo, Isaacson \& Lombardi, 2014). Feedback was collected on the usability of the device. Further, a paper by Supalo documents how the Sci-Voice Talking LabQuest uses the Vernier Software \& Technology LabQuest device to host a text-to-speech screen reader technology developed to be used by persons with print disabilities (Supalo, 2013). Now efforts documented in a paper by Supalo, Hill, and Larriak 2014 describe a summer enrichment program that featured the Sci-Voice Talking LabQuest used by students with BLV as part of a two day program. (May 2014). This effort was hosted at Metro State University of Denver and the Colorado Center for the Blind. Additional hands-on polymer science activities were also featured. It is these and other programs like them that illustrate how the Sci-Voice Talking LabQuest device is helping to open doors of opportunity for students with BLV to receive direct hands-on science learning experiences. These types of efforts also document as supported evidence for science educators and teachers of the visually impaired as to what is possible with current and future access technologies. 
+
+Over the course of the Fall 2013-Spring 2014 academic year, chemistry laboratory experiments were modified for access for students with BLV. With the use of SciVoice Talking LabQuests and other assistive technologies, students who are BLV were able to fully participate in experiments without the use of a sighted assistant. Once these experiments were modified for the student’s access, they were field tested at a residential school for the blind in the Midwestern part of the United States. After gaining the students feedback in the form of Likert scale and open ended questions, modifications were made to improve the curriculum. Following these changes, approximately 20 students ranging from middle to high school students with visual impairments came to Illinois State University (ISU) for a full day outreach event where they participated in hands-on science experiments that used the SciVoice Talking LabQuests. For some of these students it was their first time using the SciVoice Talking LabQuest device. 
+
+\section*{METHODS}
+
+During this project of modifying chemistry laboratory experiments for students who are BLV, many common experiments were modified for the use of a SciVoice Talking LabQuest. This device can connect to any number of sensors including but not limited to a temperature probe, pH sensor, drop counter, gas pressure sensor, light sensor, and a colorimeter. (Vernier, 2013)  These sensors connect the SciVoice Talking LabQuest which has been modified to read out the different readings it makes with these sensors. With these sensors, students with BLV can collect their own data without the help of sighted assistants allowing them to more fully participate in these activities. The modified lab procedure started with instruction on how to turn on the SciVoice Talking LabQuest and how to connect the needed sensors, as well as how to use them throughout the procedure as needed. This included direction to which buttons to push, where they are located, and when to push them. The SciVoice Talking LabQuest has many features associated with it that were used for this study. The home screen of the SciVoice Talking LabQuest has a read out of whatever probe is connected to it, and its reading (ex. the temperature). At the push of a button, the SciVoice Talking LabQuest also has the capability to put the collected data in tabular or graphical formats. These are good ways to look back on collected data and general trends. 
+
+To modify the experiments, they had to be thought through meticulously to search for what adaptations had to be made. A summary of each experiment and what modifications were made are listed below. 
+
+The first experiment that was modified was the Pressure Syringe lab. (Volz \& Sapatka) This experiment investigated the relationship between pressure and volume as contained in a 20mL syringe. The 20mL syringe connects to the Vernier Gas Pressure Sensor, which then connects to the SciVoice Talking LabQuest. The main premise for this lab includes moving the plunger of a syringe in and out to selected volume readings to record pressure values. Once the data points are collected students can learn about the inverse relationship between pressure and volume. To make this experiment accessible for the students, modifications had to be made to the syringes so the students could read the volume values on the side of the syringe. To do this, notches were made with a file on the plunger of the syringe to line up with the volume readings. The notches were in line with the 5mL, 10mL, 15mL, and 20mL mark, so when the students placed their finger in the notch they could feel when it lined up with the edge of the barrel of the syringe to read the volume. 
+
+The second experiment that was modified was an acid base titration experiment. (Randall) During this experiment the students had a known concentration of sodium hydroxide base (NaOH), and an unknown concentration of hydrochloric acid (HCl). The students had to put the base in a burette and drop it into a beaker with the acid in it. The amount of base added determines the amount of acid required, the students can then calculate the concentration of the acid. For this experiment to become accessible for students who are BLV many adaptations had to be made. The students had to measure out reagents, monitor the rate base is being added, monitor how much base is added to the beaker, monitor the pH of the reaction as it progresses, and find the endpoint of the reaction. For the students to measure out reactants, the notched syringe was used. During this experiment the students used a burette with a double stopcock to help monitor the drop rate. Before the experiment is begun, the students would place an aluminum pie tin underneath the burette and would fully open the bottom stopcock. Once the bottom stopcock was fully opened, the students could slowly open the top stopcock until they could hear the drops hitting the pie tin at a rate of 1 drop every 2 seconds. Once they have the drop rate they are looking for, the students close the bottom stopcock, leaving the top stopcock set and ready for their experiment. To monitor how much NaOH is added to the beaker during the reaction, the students set up the burette so the drops go through the Vernier Drop Counter. This, attached to the SciVoice Talking LabQuest will track how many drops go through into the reaction and will convert that into a volume for the students. In the reaction beaker, the Vernier pH Sensor is monitoring the pH as the reaction progresses, and is read out to the students through the SciVoice Talking LabQuest. For the students to find the endpoint of the reaction, they would go into the table function of the SciVoice Talking LabQuest when the reaction has finished. The students can then scroll through their data to find the volume reading where the largest jump in pH readings occurred. 
+
+The next experiment to be modified was an endothermic and exothermic reactions lab. (Holm-quist, Randall \& Volz) The students had to place a certain amount of two different powders (Baking soda and Zinc powder) into two different solutions (citric acid and 0.5M Copper (II) Sulfate). When the first pair is mixed, baking soda and Citric acid, the temperature will decrease (endothermic). When the zinc powder and Copper (II) Sulfate are mixed, the temperature will increase (exothermic). For this experiment to be accessible for students with BLV a few modifications had to be made. For the students to be able to monitor the temperatures of their solutions, a temperature probe attached to the SciVoice Talking LabQuest was used. When the temperature probe is in the solution while attached to the SciVoice Talking LabQuest the temperature reading is read out loud. The students also had  to measure out 30mL of the solution for their experiment. Typically, students would use a graduated cylinder, but in this experiment the students used a notched syringe to measure out their volume. To measure out the powder, the unit of grams was converted to teaspoon and tablespoon measurements so the students could scoop it out. The student would scoop their solid, and using a flat edge they could scrape the excess off of the top. Another modification that was used for this experiment was the use of rubber bands to mark the different beakers. Different reagents would have a different amount of rubber bands so the students would be able to feel the difference. The students would also have rubber bands around their reaction beakers to know the difference between their endothermic and their exothermic reactions. 
+
+Another experiment that was modified was A Hot Hand lab. (Volz \& Sapatka) This lab primarily targets elementary level students. During this experiment, the students hold the temperature probe in their palm to determine the temperature. Once they are familiar with the use of the SciVoice Talking LabQuest and the temperature probe, the students will experiment on how to change the temperature of their hands. To do this, students will rub their hands together, run them under water, touch the windows, and many other creative ways to either raise or lower their hand temperature. Without the SciVoice Talking LabQuest and the temperature probe, the students who are BLV would not be able to participate, as it would be difficult to get an accurate reading from a traditional thermometer. 
+
+\section*{RESULTS}
+
+After the field test of these activities, we had the opportunity to gain feedback from the students about their participation in the experiments. The students were asked a series of Likert scale questions about their enjoyment, followed by the open ended questions listed in the table below.
+
+\textbf{Open Ended Questions}
+\begin{enumerate}
+    \item 	What can be done to make the procedure more understandable?
+    \item 	What can be done to improve the technology?
+    \item 	Was the overview of the technology in the beginning useful?
+    \item 	Should we overview any other features that you would have liked to use?
+    \item 	Are there any features you would have liked to have the technology do during this lab that it does not already do?
+\end{enumerate}
+
+From these questions along with observations while the students were participating, we gained some information about ways to better implement these experiments. 
+
+In general, across all of the experiments, the SciVoice Talking LabQuests had some limitations. The students’ most common complaint was in understanding the speech of the SciVoice Talking LabQuest. With between three and six SciVoice Talking LabQuests talking at the same time, it became difficult to hear and understand their own device. There was also difficulty when hearing the difference between 16 and 60 as read out by the SciVoice Talking LabQuest, as well as 14 and 40. It was also requested that the SciVoice Talking LabQuests should talk slower to make it more understandable. It was observed that the power button is difficult to feel, as it is flush with the front of the device, and not protruding. 
+
+More specifically, from the titration experiment, the students had some suggestions about the data tables. When scrolling through the tables, the SciVoice Talking LabQuest does not announce the headings on the table. The students had to make assumptions as to what data they were listening to. A student also mentioned that scrolling through the table took too long, and another method might be better. 
+During the endothermic and exothermic reactions experiment, it was observed that some of the students had difficulty scooping the powder into the spoon. It was suggested that if the powder was placed in a larger bowl, the students could more easily fill the spoon prior to leveling it off. 
+
+\section*{DISCUSSION}
+
+The data documented in this paper represents a small sample size of how published science laboratory curricula can be adapted to be more inclusive to students with visual impairments. The Sci-Voice Talking LabQuest device is an accommodation that helps to build more equity for blind students in the laboratory learning environment. This along with other low-tech adaptations serves as a nice compliment to one another, thus making this experience more hands-on in nature. These activities were field tested in a residential school for the blind setting in an attempt to determine improvements to these procedures. The work featured here was developed by a team of undergraduate students interested in chemical education. 
+
+For the next time these experiments were field tested, the changes that were documented were implemented. One suggested improvement was that the students will be able to use both hands to scoop out solids, to have better control and accuracy. 
+
+Technology, although it gives more freedom, will always have its limitations. For the issues pertaining to the text-to-speech of the SciVoice Talking LabQuest, it helped to spread the students further apart. It would also help if the students had more familiarity with the text-to-speech. Once the students are more familiar with the voice on the SciVoice Talking LabQuest, it may solve some of these issues. 
+
+The field test of these experiments documents the need for more in-depth training. This training is necessary for students who are blind or have low vision to optimize their use of the Sci-Voice Talking LabQuest. More self-efficacy with the technology by research participants is necessary that may change the results of this study. The feedback received does make useful suggestions as to how the experiments documented here can be improved and thus used by a wider audience of students in the future. Therefore, it was the goal of the investigators here to develop a set of experiments that would serve as an illustrative example of how science laboratory experiments can be modified to make them more inclusive towards students who are blind or visually impaired. It is the hope that additional work of this nature can be conducted in the future thus serving as an illustrative curriculum that will improve science access for all learners.
+
+\section*{CONCLUSION}
+
+The Sci-Voice Talking LabQuest is a useful tool in making science laboratory learning experiences more accessible to students who are blind or have low vision. This work serves as an illustrative example of how this innovative technology can be successfully incorporated into published curricula. Additional modifications beyond what the Sci-Voice Talking LabQuest can do are usually necessary. Specifically with regards to how students with BLV measure volume and/or detect color changes. Additionally, low tech solutions such as the use of a cafeteria style serving tray to assist with bench top special awareness and organization is a nice compliment to any students’ laboratory learning experience. Additionally talking timers and other color identification technologies can prove to be very useful in the laboratory setting. All and all, the technologies featured here are complimented with other access solutions that may or may not be initially intended to be used in the laboratory. The creativity of both the teacher and the student are powerful resources when providing a successful hands-on science learning experience.
+
+\end{large}
+\clearpage
+\section*{REFERENCES}\par 
+
+\leftskip 0.25in
+\parindent -0.25in 
+Frye, D. B. (2007). It's A Grand Slam. \textit{The Braille Monitor, 50}(9), 711-718. 
+
+Holmquist, D. D., Randall, J., \& Volz, D. L. Endothermic and Exothermic Reactions Experiment 1 \textit{Chemistry with Vernier Lab Book}. Beaverton OR: Vernier Software \& Technology.
+
+Maurer, M. (2005). Rocket On!: Excitement, Challenge, and Growth. \textit{Braille Monitor, 48}(9), 687-691. 
+
+Randall, J., Vonderbrink, S. A., Volz, D., Holmquist, D., Gastineau, J., Dodd, G., \& Eaker, C. W. Acid-Base Titration Experiment 7 \textit{Advanced Chemistry with Vernier Lab Book}. Beaverton OR: Vernier Software \& Technology.
+
+Riccobono, M. A. (2004). The 2004 NFB Science Academy: Turning Dreams Into Reality. \textit{The Braille Monitor, 47}(10), 765-774. 
+
+Shaheen, N. (2011). Driving Change: The 2001 NFB Youth Slam. \textit{The Braille Monitor, 54}(10), 836-848. 
+
+Supalo, C. A. (2013). The Next Generation Laboratory Interface for Students with Blindness or Low Vision in the Science Laboratory. \textit{Journal of Science Education for Students with Disabilities, Accepted}. 
+
+Supalo, C. A., Hill, A., \& Larrick, C. G. (May 2014). Summer Enrichment Programs to Foster Interest in STEM Education for Students with Blindness or Low Vision. \textit{Journal of Chemical Education}. 
+
+Supalo, C. A., Isaacson, M. D., \& Lombardi, M. V. (2014). Making Hands-On Science Learning for Students Who Are Blind or Have Low Vision. \textit{J. Chem. Educ}. 
+
+Thorpe-Hartle, M. J. (2009). What I Wish I Had Learned As A Teen At NFB Youth Slam. \textit{The Braille Monitor, 52}(9), 715-724. 
+
+Vernier Software \& Technology. (2013, November 8, 2013). 2014, from \url{www.vernier.com}
+
+Volz, D. L., \& Sapatka, S. Gas Pressure and Volume Experiment 30 \textit{Physical Science with Vernier Lab Book}. Beaverton OR: Vernier Software \& Technology.
+
+Volz, D., \& Sapatka, S. A Hot Hand Experiment 1 \textit{Middle School Science with Vernier Lab Book}. Beaverton OR: Vernier Software \& Technology.
+
+\end{document}
