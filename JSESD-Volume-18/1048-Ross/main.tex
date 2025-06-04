@@ -1,0 +1,303 @@
+\documentclass[11.5pt]{sig-alternate} % sets document style to sig-alternate
+% packages
+% typesetting
+%\usepackage{dirtytalk} % typset quotations easier (\say{stuff})
+\usepackage{hanging} % hanging paragraphs
+\usepackage[defaultlines=3,all]{nowidow} % avoid widows
+\usepackage[pdfpagelabels=false]{hyperref} % produce hypertext links, includes backref and nameref
+\usepackage{xurl} % defines url linebreaks, loads url package
+\usepackage{microtype}
+\usepackage{textgreek}
+%\usepackage{textcomp}
+%\newcommand{\texttildemid}{\raisebox{0.4ex}{\texttildelow}}
+% layout
+\usepackage{enumitem} % control layout of itemize, enumerate, description
+\usepackage{fancyhdr} % control page headers and footers
+\usepackage{float} % improved interface for floating objects
+%\usepackage{multicol} % intermix single and multiple column pages
+% language
+\usepackage[utf8]{inputenc} % accept different input encodings
+\usepackage[english]{babel} % multilanguage support
+% misc
+\usepackage{graphicx} % builds upon graphics package, \includegraphics
+%\usepackage{lastpage} % reference number of pages
+%\usepackage{comment} % exclude portions of text (?)
+\usepackage{xcolor} % color extensions
+\usepackage[backend=biber, style=apa]{biblatex} % sophisticated bibliographies % necessary for HTML to display author info and date on abstract page
+\usepackage{csquotes} % advanced quotations, makes biblatex happy
+\usepackage{authblk} % support for footnote style author/affiliation
+% tables and figures
+\usepackage{tabularray}
+%\usepackage{array} % extend array and tabular environments
+\usepackage{caption} % customize captions in figures and tables (rotating captions, sideways captions, etc)
+%\usepackage{cuted} % allow mixing of \onecolumn and \twocolumn on same page
+\usepackage{multirow} % create tabular cells spanning multiple rows
+%\usepackage{subfigure} % deprecated, support for manipulation of small figures
+%\usepackage{tabularx} % extension of tabular with column designator "x", creates paragraph-like column whose width automatically expands
+%\usepackage{wrapfig} % allows figures or tables to have text wrapped around them
+%\usepackage{booktabs} % better rules
+% dummy text
+%\usepackage{blindtext} % blind text dummy text
+%\usepackage{kantlipsum} % Kant style dummy text
+\usepackage{lipsum} %lorem ipsum dummy text
+% other helpful packages may be booktabs, longtable, longtabu, microtype
+
+\pagestyle{fancy} % sets pagestyle to fancy for fancy headers and footers
+
+% header and footer
+% modern way to set header image
+\renewcommand{\headrulewidth}{0pt} % defines thickness of line under header
+\renewcommand{\footrulewidth}{0pt} % defines thickness of line above header
+\setlength\headheight{80.0pt} % sets height between top margin and header image, effectively moves page contents down
+\addtolength{\textheight}{-80.0pt} % seems to affect the lower height. maybe only works properly if footer numbers enabled?
+\fancyhf{}
+\fancyhead[CE, CO]{\includegraphics[width=\textwidth]{headerImage.png}}
+% footer
+%\fancyfoot[LE,LO]{Article Title Here \\ DOI: }% left footer article title and doi
+%\fancyfoot[CE,CO]{{}} % center footer empty
+%\fancyfoot[RE,RO]{\thepage} % right footer page numbers
+%\pagenumbering{arabic} % arabic (1, 2, 3) numbering in footer
+
+\hypersetup{colorlinks=true,urlcolor=blue} % sets link color to blue
+\urlstyle{same} % sets url typeface to same as rest of text
+
+% set caption and figure to italics, label bold, left align captions, does not transfer to HTML
+\captionsetup{labelfont=bf, font={large, it}, justification=raggedright, singlelinecheck=false}
+\renewcommand\theContinuedFloat{\alph{ContinuedFloat}}
+
+%this next bit is confusing, but essentially changes the width of the abstract. Seems to have been copied from this https://tex.stackexchange.com/questions/151583/how-to-adjust-the-width-of-abstract
+\let\oldabstract\abstract
+\let\oldendabstract\endabstract
+\makeatletter %changes @ catcode to enable modification (in parsep)
+\renewenvironment{abstract} %alters the abstract environment
+{\renewenvironment{quotation}%
+               {\list{}{\addtolength{\leftmargin}{1em} % change this value to add or remove length to the the default ?
+                        \listparindent 1.5em%
+                        \itemindent    \listparindent%
+                        \rightmargin   \leftmargin%
+                        \parsep        \z@ \@plus\p@}%
+                \item\relax}%
+               {\endlist}%
+\oldabstract}
+{\oldendabstract}
+\makeatother %changes @ catcode to disable modification
+
+% checks
+% italics -
+% links -
+% dashes -
+% tildes -
+\begin{document}
+
+\title{What I Taught My STEM Instructor About Teaching: \\ What A Deaf Student Hears That Others Cannot}
+
+\author[1]{\large \color{blue}Annemarie Ross}
+\author[2]{\large \color{blue}Randy K. Yerrick}
+
+\affil[1]{Rochester Institute of Technology}
+\affil[2]{State University of New York at Buffalo}
+
+\toappear{}
+%% ABSTRACT
+\maketitle
+\begin{@twocolumnfalse} 
+\begin{abstract}
+\item 
+\textit{Overall, science teaching at the university level has remained in a relatively static state. There is much research and debate among university faculty regarding the most effective methods of teaching science.  But it remains largely rhetoric.  The traditional lecture model in STEM higher education is limping along in its march toward inclusion and equity.  The NGSS and Common Core reform efforts do little to help university science teachers to change their orientation from largely lecture-driven practice with laboratory supplements. While it is impossible to address all diverse student groups, the need for accommodations tend to be overlooked.  As a Deaf student and advocate, I felt responsible to share recommendations from this perspective regarding how exclusionary or inclusive National Reforms in Science Education can be.}
+\\ \\
+Keywords: Deaf, STEM, Science Education, Instruction, Inclusion
+\end{abstract}
+\end{@twocolumnfalse}
+
+%% AUTHOR INFORMATION
+
+\textbf{*Corresponding Author, Annemarie Ross}\\
+\href{mailto: adrnts@rit.edu }{(adrnts@rit.edu)} \\
+\textit{Submitted  Aug 24 2015}\\
+\textit{Accepted Oct 20 2015} \\
+\textit{Published online  Nov 13 2015 } \\
+\textit{DOI: 10.14448/jsesd.07.0002} \\
+\pagebreak
+\clearpage
+\begin{large}
+\section*{INTRODUCTION}
+
+“I didn’t think Deaf people could be scientists,” said another young, Deaf female. It was not only a statement rife with inequity, but one which encapsulated the shame we bring upon our educational system by broadly misjudging our students’ potential. It was a statement that provoked me to internalize the responsibility that comes with the privilege of being one of the few Deaf, female scientists in the chemistry workforce—and with such a privilege comes great responsibility. With this newfound sense of responsibility, I became determined to increase visibility of Deaf women within this field, I decided to leave my industrial career and enter academia.  What better way to fill the Science, Technology, Engineering and Mathematics (STEM) pipeline with more Deaf, female scientists than to simultaneously teach and serve as a role model of success to Deaf students? 
+
+Like many educators in higher education, I reached a point in my STEM educator role at the National Technical Institute for the Deaf (NTID) where further professional growth would best be reached through a Doctorate of Philosophy degree. It is this journey that I wish to share with an audience of STEM college instructors, as I have become both learner and teacher—simultaneously called into reflexive practice amidst a group of professionals not always holding themselves to the ideals they profess.  While STEM educators profess to value hands-on and Active Learning (Dori, and Belcher, 2005; Felder, and Brent, 2010), lecturing is rampant as a default mode of instruction and the phrase “Ivory Tower” has been used to paint broad strokes across higher education’s academic landscape.  I subject myself daily to the role of college student once again and have grown keenly aware of this tension around and within me, and it drives me to be consistent in both my words and actions as a college student and teacher. Tobias (1990) argued that cultural artifacts and institutional practices were more at the root of curbing women’s representation in science, rather than the notion that deficiency in women keeps them out of science fields. Like Tobias’ students (1992), I am forced to confront the question, “Is science really for everyone?”   I am compelled to answer “Yes” and seek to irrigate the sciences' desert with inclusive methods that facilitate both Deaf and female individuals’ interests and successes in science.  I offer my own reflections as a STEM educator to my fellow colleagues for how STEM faculty can support all students, particularly those of the Deaf community.   
+
+\section*{EXAMINING STEM TEACHING}
+
+Encouraged and supported by administration and colleagues at NTID, I enrolled in a doctoral program studying the Science of Learning (SoL), a relatively new field by name, though its roots reach deep back to a Deweyian philosophy. The Science of Learning research harnesses and integrates knowledge across multiple disciplines including education, cognitive science and neuroscience, information organization, information and computational technologies, digital humanities, architecture and planning, engineering, social work, public health, and the disciplinary domains such as mathematics, the physical sciences, medicine, English, and history. These disciplines create a common foundation of conceptualization, experimentation and explanation that anchor new lines of thinking and inquiry towards a deeper understanding of learning. The Science of Learning develops evidence-based strategies for learning and teaching at all levels, often using social-cognitive strategies and multiple technologies to connect the research to practical solutions for specific scientific, technological, educational, and workforce challenges.  
+
+It was a perfect fit for me as its diverse perspective fit with the diversity and Deaf-friendly atmosphere to which I had grown accustomed.  You see, the community where I live and work, Rochester, NY has the largest population of Deaf individuals per capita in the U.S.  I entered my first semester as a Doctoral student from a background of chemistry, the only scientist within a cohort of engineering professors, skeptical on whether or not the UB faculty and classmates would be familiar with Deaf culture or responsive to it.  The cohort consisted of a group of experienced, engineering professors of RIT, the same institution which houses NTID, where I teach, so they were somewhat already familiar with the Deaf community of students. I quickly found there were some critical first steps I took for granted in my own teaching, that I needed to pass onto my professor as a student and colleague. 
+
+\subsubsection*{Step 1: Breaking the ice}
+
+There are many cultural artifacts in my class, where I teach, Deaf students that serve as a constant reminder of whom I am teaching (e.g., visual representations, seating arrangements, universal language, gestures, and eye contact).  However, these are overshadowed in an environment where Deaf students insert themselves into a more “mainstreamed” environment.  
+
+In the very first class, my professor directly approached my Deaf colleague and me (there were only two of us in our SoL cohort) and asked if there was anything he could do to make sure we were accommodated (beyond that of the interpreting and C-print services).  Breaking the ice was essential in making support explicit and responsive. We were immediately able to engage in a conversation about cultural sensitivity and responsiveness that otherwise would have been left unspoken.  For instance, as an instructor, one has to be careful of the use of the word uppercase D in “Deaf” for those who identify as culturally Deaf, and lowercase d (“deaf”) for those referring to the medical definition.  Another example was the tendency to look at the Deaf individual to engage them, instead of at the interpreter as the professor spoke.  Many individuals are tempted to look at the interpreter instead, but it is best to look at the Deaf individual.  However, from a personal viewpoint, as a Deaf student, my attention was on the interpreter and it was distracting for me to have to look back at my instructor away from the interpreter, because it was a socially accepted way hearing people interact.  Overall, I find it beneficial to make the effort to look at the individual speaking to me, since it allows for the interaction to become more engaging so that we connect.
+
+
+\subsubsection*{Step 2: Together, learning strategies to accommodate}
+
+Sharing learning strategies with fellow students and my instructor was an active venue for shaping the learning context.  We were able to stop and necessarily interrupt the routine patterns of discourse in order to make it better for all of us.  Having appropriate and immediate metadiscourse (or talk about the talk) helped us all to try on new roles, or as Gee (1989, 2005) calls it, a new “identity kit” to think, speak, and act in a social context.  One comical but poignant example was the moment we all broke out in laughter as my professor caught himself repeating long words, which had to be fingerspelled out, one-by-one.  He used witty, self-deprecating humor to address the propensity for scientists to use specific language and immediately wrote two long words on the board—henceforth noted as \textit{Thing One} and \textit{Thing Two}. It was an easy and small adaptation in context brought on by the constant vigil to find strategies, together, that worked for all without disrupting the overall flow of the class.  It was a welcomed response by two interpreters, without a science background, to find or invent conventions for a specific language common to our cohort. 
+
+We all want to improve our teaching and we all want to be thought of as inclusive of diverse students.  However, many think that by adopting new visions for teaching, important adaptations naturally follow.  My experience is that this is rarely the case.  Shifts in my teaching, as well as the trusted colleagues around me, result from deliberate changes and exposure of routine failures.  They are results of ruthless openness and precisely measured approaches.  Improving our teaching is a deeply personal endeavor but a task to be pursued in the light of a rich research base for examining teaching—a research tradition I heretofore had not adequately consulted, normost of my engineering colleagues.. 
+
+It is my goal to invite the reader into three vignettes below to explicate ways that research has informed my teaching and that of my instructors.  In doing so, first I will introduce the reader to some of the implicit challenges to our teaching that the Next Generation Science Standards (NGSS Lead States, 2013) and the Common Core (2012) present. Each of these vignettes are rife with shared artifacts of a community striving towards excellence.  They are intended to point inward toward our private practice and simultaneously outward toward a body of educational research STEM professors need to consult, if they are to live out the creed of teaching for diversity.
+
+\section*{TEACHING STEM SUBJECTS AT THE UNIVERSITY}
+
+The Common Core has taken the nation by storm and is of great concern to teachers everywhere in K-16 public institutions.  Some have argued, that its implementation may detract significantly from the impact of the Next Generation Science Standards, which has followed on the heels of a host of revised science education standards.  From the Project 2061 (AAAS, 1989) challenge of “Science for All Americans” to the revisions of the National Science Education Standards (NRC, 1996), to the Next Generation Science Standards (2013), science reform has been in a continued revisionist state repeatedly calling for less content, more inquiry, and greater access for all students.   Most of these science initiatives have been largely ignored by states likely because of the impact of local, state and national assessment driven instruction movements like that of the Common Core and Race-to-the-Top.  
+
+Under such heavily assessment driven instruction models, many lofty science education goals are lost.  STEM teaching that focuses upon standardized assessment outcomes fosters well-documented consequences of teaching in lecture-based, abstracted, mathematically assessed science that carry a demonstrated history of filtering non-majority students from its ranks (Blickenstaff, 2005; Clewell \& Campbell, 2002).  Many have commented on the content, form, and implementation of NGSS including the leadership of National Association for Research in Science Teaching (NARST) who hosted a thoughtful national forum in response to the NGSS (See \url{http://NARST.org} for example commentary).  However, with regard to the discussion of students with differences, like those who are Deaf, the vision remains painfully esoteric.  Like Rodriguez’s critique of the previous National Science Education Standards (NRC,1996) the danger of invisibility still exists for many students. While it is impossible to address all of the groups, it stands as another example of how those who need accommodations tend to be overlooked.  As an advocate, I felt responsible to share that perspective, and continue to share where this is a concern found in other models of science education and how exclusionary or inclusive, they may be. 
+
+The traditional lecture model in STEM higher education is limping along in its march toward inclusion and equity. Overall, science teaching at the university level has remained in a relatively static state.  I mean that in several ways.  There is much research and debate among university faculty regarding the most effective methods of teaching science.  But it remains largely rhetoric.  University science teaching remains largely lecture-driven with laboratory supplements.  There is much debate about best practices for teaching with technology but many engineering professionals currently embrace an \textit{Active Learning} approach (Dori \& Belcher, 2005; Felder \& Brent, 2010) that engineering and science education journals promote, without much connection to the historical, philosophical, and research traditions implied.  Thomas Huxley wrote extensively regarding Active Learning in the late 1800’s—a point clearly elucidated by DeBoer’s (1990) \textit{History and Philosophy of Ideas in Science Education}. Active learning is the term many professors focusing on inquiry teaching and the National Science Education Standards (NRC, 1996) use to describe what science education researchers refer to as inquiry from a constructivist orientation (von Glasersfeld, 1995; Osborne \& Freyberg, 1985; Tobin, 1993).  An Active Learning orientation contributes to developing STEM students’ motivation and analytical inquiry to better understand science knowledge compared to traditional lecture-based learning.  STEM educators and researchers have focused on science instruction to develop critical thinking and problem solving skills based on inquiry-based learning, technology-implemented learning, and students’ active engagement to science. 
+
+The problem remains that active learning approaches and other literature largely cited by engineers is not only antiquated but disconnected from sound educational research. Active learning was discussed in various ways by many founding educators in as early as the late 19th Century (DeBoer, 1991; Duschl, 1986) yet after over a century of science teaching in higher education, its merits go largely unimplemented.  Further, much of the recent educational research surrounding the engagement of diverse populations in science has rarely reached the hands, eyes, or ears of my collegial engineering professors.   Despite the popularity of notions like cultural responsive pedagogy (Gay, 2010) and strategies to engage English Language Learners (Lee, 1999) among science education reform literature, most engineers, like their general university colleagues, depend upon more traditional lecture modes of instruction (USDE, 2001; Wirt et al, 2001).  
+
+In order to invite the reader into the tensions of promoting an authentic STEM perspective while balancing concerns for equitable teaching, we have included examples below.  Each were clearly documented and explored from both the teaching and learning perspective with input from both mainstream and diverse students.  Our goal is to intentionally complicate the learning context for a more thoughtful analysis of teaching to benefit students like me, who require accommodations to succeed in the classroom.
+
+\subsection*{Vignette 1: Constructing Scientific Arguments About Real World Data}
+ 
+\subsubsection*{Should we really act like scientists?}
+
+Part of the promotion of scientific discourse is the fundamental act of constructing arguments surrounding real world data (Duschl \& Osborne, 2002; Latour \& Woolgar, 1986; Lemke, 1990; Berland, \& Reiser, 2009). In many cases, scientific work is achieved largely by building arguments to persuade or convince other scientists through competition—a process that forces documents and data to fit particular outcomes for reasons other than pure rationality. In other words, the construction of a scientific argument entails covering up the confusing, random, and chaotic means that produced it so as to give the impression that it is an objective reflection of the world as it really exists (Latour \& Woolgar, 1986). 
+
+One of the teaching strategies used in my professor’s seminars was to pose a scientific question, devise separate designs for gathering data, then reconvening to describe what data was collected and how to go about answering the question posed by superimposing the wealth of live data collected.  Such was the case when we were asked what part of the candle flame was the hottest. Many of us, in the cohort, had unique ideas of where and why but few could link our collected data with a consistent theoretical construct to defend our conclusions (e.g., oxidation, efficiency, convection).  This, of course, was the instructor’s intention to make us reflect upon our readings regarding paradigms (Kuhn, 1962; Schwab, 1975) and expose potential weaknesses of normal \textit{science} (e.g., the nature of observations, their theoretical origins, and the difficulty of talking across conflicting paradigmatic perspectives).
+
+This activity was challenging because it depended upon members at the table to spontaneously argue, refute, and defend one’s position within the group as it naturally takes place in the workplace in oral fashion.  In other words, people working in STEM contexts typically are quite proficient at face-to-face debates with their peers as oral confrontation is often indigenous to male-dominated science contexts (Traweek, 1990; Latour and Woolgar, 1986; Nisbett, \& Brightwell, 1987).  Such debates often take quick turns, follow irrational detours, hypothetical conjectures, and exhibit such norms as overlapping talk, hand and facial gestures central to expressing disagreement. Though it is essential to model what scientists \textit{do} in constructing arguments and analysis, promoting this kind of authentic discourse in class excludes Deaf members from a large proportion of available information that other members use to make sense of the arguments. During such impassioned interactions, Deaf students are not looking at the participant cues to understand the points of disagreement. Rather they are looking typically to their interpreters, who are harried in capturing an often-abstract argument for which they could not have prepared. Looking to their interpreters, they not only miss the important cues of oral arguments, but when they try to look back and forth to opponents openly disagreeing about their data and back to the interpreters, they actually missed more than just sticking with one or the other.  Hence, there was a real tension for the instructor to promote authentic scientific discourse as it can be, by its very nature, exclusionary.  While arguments can be slowed, other visual cues offered, and venues adapted for better turn taking, the norms followed in real science contexts for constructing oral arguments surrounding real world data often reflect the competitive, Anglo, male model that some Deaf students cannot, or choose not, to engage.
+
+\subsection*{Vignette 2: Learning To Use Technology: }
+  
+\subsubsection*{Deaf Culture Etiquette –Treat All Students Equally?}
+
+Any instructor who has introduced new technologies in large class settings can relate to the importance of consistent presentation, hands-on application, immediate feedback, and timely support.  Particularly in the case of mobile devices, the practice of maintaining visual contact with the presenter, offering step-by-step instructions while simultaneously looking down at the new device, can present a challenge.  Students are easily lost in their first introduction to novel tools.  As such, it is necessary to provide a variety of support structures to teach well in these contexts.  Online tutorials, projection systems that model the presenters’ gestures, students’ immediate application, take-home practice tasks, and peer mentoring by experts within the class, can all assist in the smooth introduction of new tools (Glasgow, Cheyne, \& Yerrick, 2010).  
+
+The proper balance of each of these techniques can be critical and one can run headlong into insensitive pedagogical missteps without proper student feedback.  Such was the case when handheld digital microscopes were introduced.  As an instructor, my professor was required to balance the novelty of the new device and its quirks, the needs of two Deaf students, and a vast range of experience and background knowledge of mobile devices and gestures, with only one ASL interpreter.   For him the choice became, “Do I assign the Deaf students to work together based upon my perceived ability grouping to share one interpreter OR do I assign them to work with another Hearing student who may not communicate well with them but understands the basics of mobile device gestures and programming?”  Which is a more important domain to draw upon, the knowledge of communication or that of the technical communication domain?   Which will cause the greatest inequity to access if underemphasized?”  Technological Pedagogical Content Knowledge or TPACK (Koehler \& Mishra, 2009) is a relatively recent domain of knowledge extending Shulman’s (1987) theoretical framework for requisite teacher knowledge.   My professor was once again thrust into managing a teaching dilemma, not simply modeling a prescribed best practice as some literature may suggest. There is little guidance from Standards Based reform documents to guide expert teachers through the process of managing such dilemmas.
+
+During this activity, my Deaf colleague and I were allowed to choose for ourselves and we naturally teamed together.  Upon self-reflection on why we immediately partnered, we probably stuck together since it was assumed that learning the new technology would itself be challenging enough (so to avoid the additional challenge of communicating with hearing peers).  During the instruction on how to use the digital microscope and to download the required app, a lot of the dialogue was lost since looking away from the interpreter at the iPad instead, was required (not allowing time to look back up at the interpreter).  We accommodated by asking my instructor to slow down, which he generously did, in addition to asking the interpreter to wait until we looked up to see what was just said.  
+
+As previously mentioned, my instructor broke the ice by having a conversation with my Deaf colleague and me about how he can assist beyond the provided access services. Without this conversation he would have likely managed the instructional context differently and singled out my colleague and I based upon wrong assumptions.  This was a consistent strategy used in this class. When class activities required collaborative work, he left it up to the class members to choose partners and did not assume to group my Deaf colleague and me together (in my experience, a common strategy used by many instructors and interpreters).  While some Deaf members may prefer to do so due to communication efficiency, individuals like myself, rather not limit my exposure to the diverse knowledge streams from each classmate and prefer to engage with hearing peers.  While this may not be feasible due to limited resources (like only one interpreter available for multiple Deaf students during the activity), it is still advisable to openly ask the Deaf students their preferences and not to make assumptions that may be considered offensive to some.  
+
+\subsection*{Vignette 3: Balancing Gender and Hearing Diversity}
+
+\subsubsection*{The elephant in the room}
+
+The final vignette resulted from an intentional object lesson for majority students to learn of exclusion and its consequences.  Male engineers in the cohort were struggling to understand underrepresented perspectives in STEM contexts.  After all, most of them had shared their autobiographies describing their success and privilege in STEM throughout their lives and many of them had denied and even become defensive if any of their language, gestures, and social norms excluded, demeaned, or marginalized women, underrepresented ethnic minorities, or Deaf students in the class.   Some majority students of our cohort (White, middle aged, accomplished male engineers) would simply brush it aside half-heartedly and announce, “Sorry.  I didn’t mean to offend anyone.  That’s just the way I am…” and continue with their point.
+
+All students in the class were given specific structured time to lead the class for 30 minutes once during the semester.  I was opting for a more general discussion of gender and minority STEM issues when my instructor asked if I was open to another, more assertive approach.  He suggested we focus on the work Traweek (1990) and her elucidation of the male bias of high energy physicists in context.  We accompanied the reading with a clip from the Big Bang Theory television show to demonstrate how exclusionary a scientific community may be to women.  After the clip (close-captioned) was shown, we purposely asked the men to keep quiet, allowing only the women in the cohort to discuss the clip.  We also assigned a gentleman to take notes (to demonstrate how it is an assignment habitually asked of my female classmate at male-dominated meetings).
+
+During the discussion, the women felt free to share their opinions and how they felt they are left out in a male-dominated culture (in reference to the STEM cultures).  Interestingly, one participant mentioned how she felt left out in the prior week’s discussion as a co-leader with her male partner.  She saw that the questions were defaulted to him, and when about to answer, was overridden by his response.
+
+After our discussion, we received feedback directly from the very supportive male participants.  It was a lively discussion, and beneficially helped classmates understand how male-dominated conversations may occur in the STEM fields.  It is a culture established perhaps due to the laboratory being dominated by men for so long.
+
+Lastly, from my perspective, using interpreters to help facilitate the dialogue, is a natural exclusion that is innate to the flow of the dialogue.  More specifically, when does a person know when their hearing peer is done talking, to initiate their input?  There is something in the voice (that I do not recognize) to hint at a person’s end to their monologue.  In the past, I would rely on the interpreters, but by the time the interpreters hear that audible hint and signal me to talk; someone else has already begun. In this particular course, the professor and I accommodated by my raising my hand to be called on. It can be reasonably expected that many of us have plenty to say and talk over one another at times.  It is due to this talk-over, as well as interpretation lag time (the time it takes for the interpreter to hear what is said and then interpret into ASL), that I found it difficult to interject and share my take.  While feeling remedial, I raised my hand to compensate.  My teacher realized he was to call on me when he saw my hand so that I am sure to take part in the discussion.  It became efficient enough to the point where I made eye contact with him and do a quick motion to indicate I would like to speak when the current speaker is finished.   
+
+Don’t misunderstand me.  I have wonderful classmates who are supportive and smart and who would never intentionally marginalize me from the conversations we have.  I even saw my hearing peers eventually raise their own hands toward the end of the semester to be called on to talk, which helped the flow of the discussion for all participants. The problem is that science discourse by its very nature can be exclusionary, and by promoting argumentation, this prompted our group to practice norms generally accepted in an environment that left me at a disadvantage.
+
+\section*{CONCLUSION}
+
+One should not walk away from this article thinking, “If my instructor would have simply tried \_\_\_\_\_\_\_\_\_\_\_ method, that would have solved their teaching problem.”  A thoughtful analysis would recognize there are central tensions promoting certain science standards in classrooms specifically because the nature of scientific discourse has evolved in a narrowly defined, strictly enforced context by certain kinds of elite citizens.  When an instructor applies new teaching strategies they are introducing new uncertainties (Jackson, 1986) and tensions that must be balanced within the existing classroom culture.  Rather than guaranteeing that they are \textit{improving their practice}, it would be better framed by Lampert’s (1988) description of teaching as a practice of managing dilemmas.  Thoughtful practitioners are engaged in learning to manage unsolvable problems, often regarding multiple outcomes that are mutually exclusive. 
+
+Though I welcome the Next Generation Science Standards and look forward to joining thousands of teachers and researchers to raise the bar for science and engineering instruction in this country, I wish to address the overwhelming lack of attention to facets of the science learning context which have the greatest impact on my Deaf students. 
+
+As Rodriguez (1997) has referred to it as “invisibility” for underrepresented students, I too have concerns that the rolling tide of reform will simply wash over my students who themselves will struggle to keep up in the relatively unexamined learning context of university science teaching.  There is much for my fellow engineers to learn about effective teaching outside of their own engineering education conversations and much of the research that has proven effective for English Language Learners has benefited all students.  If we try, if we change, we may actually be benefiting the already achieving students as well. 
+
+As Gallard, Moore Mensah, Pitts, and Kaepplinger (2013) have argued, if we do not have a concrete vision, framework, or roadmap of how equity and diversity can be addressed theoretically and pedagogically to inform the implementation of the NGSS, then we will not make significant educational progress in science learning achievement.
+
+STEM should be about connecting science to the lives of citizens both in the majority and underrepresented students as well.  Missing opportunities to engage a population of students with a specific set of talents and access to specific funds of knowledge like my Deaf students is a loss for the whole field.  Such as a loss of the Deaf students in my program (the NTID Laboratory Science Technology program), who are very well-trained at the use of instrumentation and making quality standards.  They are also well-versed in working in teams and accommodating to others since they are used to not being accommodated to.  
+
+So what shall the reader take from this?  Instead of seeing equity as a burden on classmates and the professor, view it as an opportunity to learn to include all classmates.  For example, when my professor slowed down to give instructions to the use of the ProScope, I am sure other classmates benefitted since it was a new technology to them as well.  When the close-captioned clip was provided, it also benefitted hearing students who missed some of the sound. Lastly, by treating all students equally, and not exclusively highlighting a student who needs an accommodation, it provides an inclusive environment and serves as a model of cultural inclusion.  The above vignettes demonstrate my STEM professor in the classroom had a special role to take on in a classroom with \textit{diverse} learners: to establish an inclusive tone that is heard by all learners, Deaf or not.
+
+\end{large}
+\clearpage
+\section*{REFERENCES}\par 
+
+\leftskip 0.25in
+\parindent -0.25in 
+
+Project 2061 (1989). \textit{Science for all Americans: A Project 2061 report on literacy goals in science, mathematics, and technology}. American Association for the Advancement of Science.
+
+Anderson, C. W., \& Smith, E. (1987). Teaching science. In V. Richardson-Koehler (Ed.), \textit{Educators’ handbook: A research perspective} (pp. 84–111). New York: Longman.
+
+Berland, L. K., \& Reiser, B. J. (2009). \textit{Making sense of argumentation and explanation. Science Education, 93}(1), 26-55. 
+
+Blickenstaff, J. C. (2005). \textit{Women and science careers: Leaky pipeline or gender filter? Gender and Education, 17}(4), 369-386.
+
+Carlsen, W. S. (1991). \textit{Questioning in classrooms: A sociolinguistic perspective. Review of Educational Research, (61)}, 157–178.
+
+Clewell, B. C., \& Campbell, P. B. (2002). Taking stock: Where we’ve been, where we are, where we’re going. \textit{Journal of Women and Minorities in Science and Engineering, 8}, 255-284.
+
+Common core state standards for mathematics. Common Core State Standards Initiative, 2012.
+
+Darling-Hammond, L. (2010). The flat earth and education: How America’s commitment to equity will determine our future. \textit{Educational Researcher, 36}(6), 318-334.
+
+DeBoer, G. (1991). \textit{History of ideas in science education: Implications for practice}. New York: Teachers College Press.
+
+Dori, Y. J., \& Belcher, J. (2005). How does technology-enabled active learning affect undergraduate students' understanding of electromagnetism concepts? \textit{The Journal of the Learning Sciences, 14}(2), 243-279.
+
+Duschl, R. A., \& Osborne, J. (2002). \textit{Supporting and promoting argumentation discourse in science education}. Chicago.
+
+Felder, R. M., \& Brent, R. (2005). Understanding student differences. \textit{Journal of engineering education, 94}(1), 57-72. 
+
+Gay, G. (2010). \textit{Culturally responsive teaching: Theory, research, and practice}. New York, NY: Teachers College Press. 
+
+Gallard, A., Moore Mensah, Pitts, W., \& Kaepplinger, A. (2013). “NARST Position Paper Equity in the Next Generation Science Standards.”  [Available: \url{https://www.narst.org/members/NGSSblog/NGSSblogSubmit.cfm?dociD=45DA3E52-F67B-143F-BF66B58A3A0F9B8F}.  Last accessed January 24, 2014] 
+
+Gee, J. P. (1989). What Is Literacy?. Journal of Education, 171(1), 18-25.
+
+Gee, J (2005). Language in the Science Classroom: Academic Social Languages as the Heart of School-Based Literacy.  In \textit{R. Yerrick and M.W. Roth’s Establishing Scientific Discourse Communities}.  Erlbaum. 
+
+Glasgow, N., Cheyne, M., \& Yerrick, R. (2010). \textit{What Successful Science Teachers Do: 75 Research Proven Strategies}. Thousand Oaks, CA: Corwin Press.
+
+Grimberg, B.I., \& Gummer, E. (2013). Teaching science from cultural points of intersection. \textit{Journal of Research in Science Teaching, 50}(2), 12-32.
+
+Jackson, P. W. (1986). \textit{The practice of teaching}. Teachers College, Columbia University, 1234 Amsterdam Ave., New York, NY 10027.
+
+Koehler, M., \& Mishra, P. (2009). What is technological pedagogical content knowledge (TPACK)?. \textit{Contemporary Issues in Technology and Teacher Education, 9}(1), 60-70.
+
+Kuhn, T. S. (1970). \textit{The structure of scientific revolutions} (2nd ed.). Chicago: University of Chicago Press.
+
+Lampert, M. (1990). When the problem is not the question and the solution is not the answer: Mathematical knowing and teaching. \textit{American Educational Research Journal, 27}, 29–63.
+
+Latour, B., \& Woolgar, S. (1986) \textit{Laboratory life: The construction of scientific facts}. Beverly Hill: Sage Publications.	
+
+Lee, O., (1999). Equity implications based on the conceptions of science achievement in major reform documents. \textit{Review of Educational Research, 69}(1), 83-115.
+
+Lemke, J. (1990). Talking science: Language, learning and values. Norwood, NJ: Ablex. 
+
+Mensah, F.M. (2009). Confronting assumptions, biases, and stereotypes in preservice teachers’ conceptualizations of science teaching and diversity through the use of book club. \textit{Journal of Research in Science Teaching, 46}(9), 1041-1066.
+
+NGSS Lead States. (2013). \textit{Next Generation Science Standards: For States, By States}. Washington, DC: National Academy Press.
+
+National Research Council (Ed.). (1996). \textit{National science education standards}. National Academy Press.
+
+Nisbett, A., \& Brightwell, R. (1987). \textit{To Engineer is Human}. BBC Enterprises Limited.
+
+Osborne, R., \& Freyberg, P. (1985). \textit{Learning in Science. The Implications of Children's Science}. Heinemann Educational Books, Inc., 70 Court Street, Portsmouth, NH.
+
+Prince, M. (2004). Does active learning work? A review of the research. \textit{Journal of Engineering Education, 93}, 3, 223–31/
+
+Rodriguez, A. J. (1997).  The dangerous discourse of invisibility: A critique of the National Research Council’s National Science Education Standards.  \textit{Journal of Research in Science Teaching, 34}, 19-37.
+
+Rodriguez, A. J. (2010). Exposing the impact of opp (reg) ressive policies on teacher development and on student learning. \textit{Cultural Studies of Science Education, 5}(4), 923-940.
+
+Shulman, L. S. (1987). Knowledge and teaching: Foundations of the new reform. \textit{Harvard educational review, 57}(1), 1-23.
+
+Tobias, S. (1990). They're Not Dumb, They're Different--Stalking the Second Tier.
+
+Tobin, K. G. (1993). \textit{The practice of constructivism in science education}. Psychology Press.
+
+Traweek, S. (1990). Beamtimes and Lifetimes. The lives and work of High Energy Physicists.  Teachers College Press.
+
+Traweek, S. (1993). Cultural differences in high-energy physics. In Harding, S. (Ed.), The racial economy of science (pp. 398–407). Bloomington, IN: Indiana University.
+
+U.S. Department of Education, National Center for Education Statistics. (2001). \textit{The Condition of Education 2001}, NCES 2001-072, Washington, DC: U.S. Government Printing Office.
+
+Von Glasersfeld, E. (1995). \textit{Radical Constructivism: A Way of Knowing and Learning. Studies in Mathematics Education Series: 6}. Falmer Press, Taylor \& Francis Inc., 1900 Frost Road, Suite 101, Bristol, PA 19007.
+
+Wirt, J., \& Livingston, A. (2001). The Condition of Education 2001 in Brief. NCES 2001-125. \textit{National Center for Education Statistics}.
+
+\end{document}
