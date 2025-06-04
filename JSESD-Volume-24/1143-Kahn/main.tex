@@ -1,0 +1,460 @@
+\documentclass[11.5pt]{sig-alternate}
+\usepackage[defaultlines=3,all]{nowidow}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{blindtext}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{comment}
+\usepackage{dirtytalk}
+\usepackage{xcolor}
+\usepackage{hanging}
+\usepackage{wrapfig}
+\usepackage[backend=biber, style=apa]{biblatex}
+\addbibresource{notation.bib}
+\usepackage{authblk}
+\usepackage{caption}
+\usepackage{graphicx,subfigure}
+\usepackage{authblk}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage{cuted}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{microtype}
+\usepackage{xurl}
+\usepackage{tabularray}
+\usepackage{csquotes}
+\usepackage{float}
+\usepackage{ragged2e}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength\headheight{80.0pt}
+\addtolength{\textheight}{-80.0pt}
+% header and footer
+% modern way to set header image
+\renewcommand{\headrulewidth}{0pt} % defines thickness of line under header
+\renewcommand{\footrulewidth}{0pt} % defines thickness of line above header
+\setlength\headheight{80.0pt} % sets height between top margin and header image, effectively moves page contents down
+
+\fancyhf{}
+\fancyhead[CE, CO]{\includegraphics[width=\textwidth]{headerImage.png}}
+
+\hypersetup{colorlinks=true, urlcolor=blue}
+\DeclareCaptionFormat{custom}
+{%
+    \textbf{\textit{\large #1#2}}\textit{\large #3}
+}
+\captionsetup{format=custom}
+\captionsetup{justification = raggedright, singlelinecheck = false}
+ 
+\let\oldabstract\abstract
+\let\oldendabstract\endabstract
+\makeatletter
+\renewenvironment{abstract}
+{\renewenvironment{quotation}%
+               {\list{}{\addtolength{\leftmargin}{1em} % change this value to add or remove length to the the default
+                        \listparindent 1.5em%
+                        \itemindent    \listparindent%
+                        \rightmargin   \leftmargin%
+                        \parsep        \z@ \@plus\p@}%
+                \item\relax}%
+               {\endlist}%
+\oldabstract}
+{\oldendabstract}
+\makeatother
+
+% Left align captions
+\captionsetup{justification   = raggedright,
+              singlelinecheck = false}
+
+
+\begin{document}
+
+\title{Increasing Awareness of Inclusive STEM Education through a College-Level Student Research Group}
+
+\author[1]{\large \color{blue}Sami Kahn}
+\author[1]{\large \color{blue}Grace Lanouette}
+\author[1]{\large \color{blue}Tiffany Agyarko}
+\author[1]{\large \color{blue}Sean Lee}
+\author[1]{\large \color{blue}Courteney Wiredu}
+
+
+\affil[1]{Princeton University}
+
+\toappear{}
+%% ABSTRACT
+\maketitle
+\begin{@twocolumnfalse} 
+\begin{abstract}
+\item 
+ \textit {The underrepresentation of persons with disabilities in STEM reflects not only a moral failing in society’s commitment to equity but also a practical dilemma as science benefits from the contributions of people with diverse perspectives. While teacher education programs attempt to address equity at the K-12 level, societal biases and misconceptions about who is “able” in science present persistent barriers for people with disabilities throughout the STEM pipeline, in higher education, employment, and beyond. How can we ensure that students with disabilities will encounter professors, employers, coworkers, and peers who are supportive of their efforts in STEM? To address this question, this article describes the experience of a college administrator and four undergraduate students who collaboratively conducted a literature review on inclusive STEM education during the summer of 2020. While the goal of this project was to provide meaningful summer learning opportunities and employment for students during COVID-19 while simultaneously providing research support for the administrator, project outcomes suggest that the college students, none of whom were education majors, gained understanding and appreciation of the issues surrounding inclusive STEM education while also developing expertise in the literature review process. We suggest that this project represents a successful teaching technique that can be used in higher education, including teacher education programs, to contribute to the development of future leaders, educators, and citizens who are aware of, engaged with, and supportive of quality inclusive STEM education and opportunities for all.}
+\\
+\\
+Keywords: Disability, STEM, Inclusive, Literature Review, Teacher Education
+\end{abstract}
+\end{@twocolumnfalse}
+
+%% AUTHOR INFORMATION
+
+\textbf{*Corresponding Author, Sami Kahn}\\
+\href{mailto: samik@princeton.edu }{(samik@princeton.edu)}\\
+\textit{Submitted January 13, 2021 }\\
+\textit{Accepted December 2, 2021}\\
+\textit{Published online December 23,2021}\\
+\textit{DOI: 10.14448/jsesd.13.0014}\\
+
+\clearpage
+\begin{large}
+\section*{INTRODUCTION}
+
+Persons with disabilities are underrepresented in science and engineering (National Science Foundation, 2019).  On its face, this inequity reflects a failing in society’s ability, and perhaps commitment, to nurturing the interests, talents, and opportunities for all people in STEM.  It also represents a loss for the field, for even a cursory review of scientists with disabilities attests to the fact that science benefits from having people with diverse perspectives contribute to scientific discovery.  Among the most vexing barriers are societal biases about who is “able” (Michigan State University, 2019) and “who can do science” that persist all along the STEM pipeline, in schooling, employment, and beyond (Cech \& Waidzunas, 2018).
+
+While teacher preparation programs attempt to achieve the promise of equitable and excellent science education for all articulated in national science education policies (National Research Council, 2012; NGSS Lead States, 2013), one must question the effectiveness of such efforts if the greater society beyond the field of K-12 education continues to harbor misconceptions about people with disabilities in STEM.  How can we ensure that students with disabilities will encounter professors, employers, coworkers, and peers who are supportive of their efforts in STEM?  Moreover, how can we create a society where leaders in \textit{all} fields are committed to the worthy cause of “STEM for All?” 
+
+To address these questions, this “Teaching Techniques” article describes the experience of a college administrator (first author) with expertise in science teacher education and four undergraduate liberal arts students (co-authors) at a major university in the northeastern United States who collaboratively conducted a literature review on inclusive STEM education during the summer of 2020.  While the initial goal of this project was to provide meaningful summer learning opportunities and employment for students during COVID-19 while simultaneously providing research support for the administrator, project outcomes suggest that the college students, none of whom were education majors, gained understanding and appreciation of the issues surrounding inclusive STEM education while also developing expertise in the literature review process.  These outcomes were quite surprising given that literature reviews are typically conceptualized as vehicles for understanding what is known in a particular field (Jesson, et al., 2011) rather than as a focal point for pedagogy. Therefore, we suggest that this project represents a successful teaching technique that can easily be applied to STEM, STEM education, and/or Special Education (SPED) programs by integrating small literature review groups, either within the curriculum or co-curricularly, in order to raise awareness of and sensitivity to quality science education for all students. Tips for doing so are included in the Recommendations section of the article. As this is a practitioner article, we focus on the step-by-step process by which we worked through our project, using narrative style to engage readers and “bring them along” through our journey.  We begin with the first author’s project overview, then move to the student voices, and finally we present a synthesis of what we learned, providing recommendations for the use of literature review groups in teacher education and liberal arts and sharing what we see as possible next steps for the field. 
+
+\section*{FORMING A RESEARCH GROUP DURING THE SUMMER OF COVID-19}
+
+I (Sami - first author) work at a major U.S. university where I lead an entity whose mission is to advance STEM literacy through course development, co-curricular programming, and research. During the spring of 2020, the COVID-19 pandemic interrupted our semester and forced all teaching and most other university endeavors to an online environment.  At around the time we went online, I had begun to outline plans for an integrative literature review on science education for students with exceptionalities, the latter term being defined as students who are viewed as having disabilities or as being gifted. This review would serve as the basis for a chapter which I planned to write for a major handbook on science education research. When I learned that many students’ summer employment and travel plans were cancelled due to the pandemic, I began to think about ways to include students in my research.  At first, this seemed like a daunting task because our university doesn’t have a college of education, and so I knew that I wouldn’t be able to find students with strong backgrounds in education theory or research.  That said, as I have mentored many students through research projects in education, I believed that I could develop a “mini-curriculum” to provide students with adequate background to accomplish our work while also familiarizing them with inclusive STEM approaches.  
+
+I began by posting an ad on our university’s student employment site for the position(s).  I had funding for up to four students, but I wasn’t sure whether many students would be interested in this type of commitment over the summer.  To my surprise and delight, 16 students applied, and so I began the challenging task of narrowing down the applicant pool.  Ultimately, I selected the four students who conveyed genuine interest in the research topic and who demonstrated curiosity by doing some background research in preparation for the interview (e.g., looking at our website, reading a relevant article) and/or asking pertinent questions.  Of the four students, two were rising sophomores and two were rising juniors. Their majors were: Civil and Environmental Engineering, History, History of Science/Chemistry, and Molecular Biology.
+
+\section*{LEARNING THE FOUNDATIONS OF EDUCATION RESEARCH AND LITERATURE REVIEWS}
+
+At our first meeting, we introduced ourselves and reviewed some logistics for the project (e.g., meeting days/dates, tracking hours, getting paid, etc.) as well as the goals and expectations for the project. As a reading assignment, I had students read the chapter on science and exceptionality from a research handbook (McGinnis \& Kahn, 2014) in order to gain an overview of the topic.  I asked them to consider: 
+
+\begin{itemize}
+    \item How is the chapter organized?  In your opinion, what are the strengths and weaknesses of this organization scheme?
+    \item What, if anything, do the studies cited in the chapter have in common?  What are some of the differences?
+    \item Looking at the References, are there any journals that are particularly fertile ground for studies in this field (the journal names are italicized)?  Who are some of the key scholars?
+\end{itemize}
+
+These questions proved to spark a lively discussion of students’ honest assessment (and critique) of the chapter.  
+
+During our second meeting, we embarked on an orientation to education research.  I showed a PowerPoint that I had developed specifically for this group based on Gay, et al.’s (2009) text.  It included topics such as: 
+
+\begin{itemize}
+    \item What is education research? (the formal systematic approach to the study of educational problems)
+    \item What are some steps involved in conducting education research? (e.g., defining a problem possibly through a literature review, observation, and/or experience, determining research methods that are appropriate to address the problem/question, collecting and analyzing data, interpreting data to draw conclusions, considering implications of the research for the field, identifying questions for future research, etc.)
+    \item What are key methodologies in education research? (e.g., qualitative, quantitative, mixed methods).
+\end{itemize}
+
+For the following week, I assigned some articles that utilized a range of methodologies.  When students “arrived” at the next meeting, I presented them with the following questions for discussion in pairs (using breakout rooms in Zoom): 
+
+\begin{itemize}
+    \item What methods are used to collect and analyze the data in this study?  Why do you think they were used?
+    \item What are the key takeaways (“implications”) for this study?  Did anything surprise you?
+    \item What questions do you still have about this topic?
+\end{itemize}
+
+I used the time to move (virtually) back and forth between the two rooms to listen to the students.  I felt that giving them the time to chat in pairs (in a “Think-Pair-Share” style) would give students the confidence to share with the larger group of four and also would allow students to get to know each other better.  We then came back to the larger group and had the pairs share their key takeaways and questions. We also discussed the importance of our virtual room being a safe space for asking questions, taking intellectual risks, and sharing ideas and feedback respectfully.  
+
+For the following meeting, I asked students to read an article on systematic literature reviews (Alexander, 2020) to give them a sense of the rigor and scope of a quality review.  Students were also tasked with using whatever search methods they knew to identify one new article related to science and disability and to upload it in our Google Drive folder.  I had students present their articles to each other. After some discussion, I felt confident that we were ready to embark on our research. 
+
+To get us started, I invited two of our university’s librarians to visit with us in order to orient us to the university’s library holdings and online databases, and to elicit their recommendations for how we might proceed.  The librarians first helped us to register for Zotero, the citation management software used by our university. Throughout our project, we used a group Zotero folder in order to share resources, an approach that proved to be quite efficient. The librarians also provided helpful tips for conducting searches, such as using the asterisk “*” for terms like “disab*” to include disability and/or disabilities, considering the range of terms that might prove fruitful for our searches (e.g., disability, special needs, exceptionalities, special education, autism, etc.), and how to narrow our searches.  Based on our work with the librarians, we developed a template for the research that my student assistants would use for collecting and summarizing information on the various articles that they read. A sample completed research summary template is included below in Figure 1, while a blank template for readers’ use can be found in Appendix 1. We also used a research log that had been provided to us by one of the librarians so that we could ensure that we weren’t duplicating efforts (Appendix 2).
+
+\textbf{Article/Chapter Summary Template}
+\begin{table*}
+\begin{tabular}{|l|}
+\hline
+\textbf{Citation} (author, year, journal, etc.) using APA 7 format \\ 
+Davis, K. E. B. (2014) Students with Disabilities' Perspectives of STEM Content and careers. \textit{Journal of the American Academy of Special Education Professionals}. \url{https://eric.ed.gov/?id-EJ1134798} \\ \hline
+\textbf{Problem/Purpose} (Why was the study done? Research question(s)? \\
+Students with disabilities are underrepresented in STEM careers, which is alarming considering the demand for jobs in STEM careers in the US. The research question was: How do middle school students with disabilities perceive science, technology, engineering, and mathematics content as measured by STEM Semantics Survey? \\ \hline
+\textbf{Participants} (Who was studied? How many? Where?) \\
+Participants were 43 6th, 7th, and 8th graders with disabilities in inclusive classrooms. They attended an urban school in southwestern United States. 24 were White, 6 were African-American/Black, 2 were Asian, 3 were Native American, 4 were Hispanic or of Spanish descent, and 4 were two or more races. \\ \hline
+\textbf{Methods and Procedures} (How was data collected and analyzed?) \\
+Researchers anonymously surveyed participants using the STEM Semantics Survey, which was used to rank students' perceptions of science, technology, engineering, and mathematics and to measure their perceptions of STEM careers. Teachers administered the survey and only students with signed parent consent forms participated. Students were instructed to write their demographic information on the survey as well. Researchers coded the surveys and analyzed means for the overall group, then according to gender, race/ethnicity, and grade level. \\ \hline
+\textbf{Findings/Results} (What did the researchers learn?) \\
+Overall, science was ranked the second highest in terms of students' most positive perceptions out of all four STEM categories. Girls ranked science the highest, while boys ranked it the lowest. Rankings of White/Caucasians ranked science the second highest and African-Americans ranked science second to last. Asians, Native Americans and Hispanic or Spanish students ranked it the second highest. Bi/Multiracial ranked science the highest. All scores were skewed toward positive perspectives on STEM careers, but 7th graders had the highest perceptions of STEM careers while 6th graders had the lowest. \\ \hline
+\textbf{Implications} (Why does it matter?) \\
+Since students had to self-report that they had a disability, this study showed the need to encourage self-awareness for students with disabilities. Based on the high perceptions these students have of technology, teachers should encourage its use in education. These students may need more positive experiences in math because these classes are needed for STEM careers. Students may benefit from being exposed to careers in STEM. \\ \hline
+\textbf{Limitations/Gaps} (What \textit{can't} we say?; What is still unanswered?) \\
+Participants were not required to disclose their specific disabilities, limiting generalizability. The study relied on self-identification by students with disabilities, so not all students may have been honest about their disability status. Only 4 participants were in 7th grade and there were not a lot of participants in the minority groups, which could have skewed results. \\ \hline
+\textbf{Anything else of interest?} (Notes for reader) \\
+This study was a subsection of a bigger study consisting of 1873 students. In the larger study, only 2\% of the participants identified as having a disability. The districts that participated in this smaller study requested that researchers not make direct contact with participants. \\ \hline
+\textbf{Student Researcher Name:} \\
+XXXXXXXXXXXXXXXX \\ \hline
+\end{tabular}
+\captionof{figure}{Sample Article Summary}
+\end{table*}
+
+At our next meeting, I tasked each of the students to identify an area of the research within science and exceptionality that was of particular interest to them and to develop research questions around it.  To prepare them for this task, we discussed the characteristics of good research questions (e.g., answerable through our research process, novel, interesting, and relevant).  At our next meeting, each student shared their questions in pairs and provided feedback to each other.  When we came back together as a group, students shared their choices for their questions and agreed to share articles with other students when they encountered items that might be relevant to their peers’ work.  Each week that ensued, I had students identify and analyze (by completing the article template) five articles within their research topic and upload them to our shared Google Drive.  We then had students present one of their articles each week during our 1 ½ hour meeting.  Some weeks, we met twice while other weeks we met once but stayed connected via email.  One week, we had an expert colleague in inclusive science education from another university visit us virtually; the student research assistants had read two of the expert’s articles in preparation for the meeting. This was an exciting opportunity as the students had the opportunity to question an author directly on their research. While I attempted to schedule other such visits, I was not able to in the timeframe of our project.
+
+One of the most interesting and unexpected discussions that arose during the summer was on the topic of research ethics; specifically, education researchers’ ethical obligations when conducting research on human subjects. While our literature review clearly did not involve human subjects, many of the articles that we read did, and the students in the research group were quick to recognize the safeguards that were described insofar as informed consent by research participants, voluntariness, and so on.  I shared some of the history that led to many of these safeguards, such as the Tuskegee syphilis experiments, and I provided students with resources on research ethics and Institutional Review Boards (IRB).  I note that, as a demonstration to the students, I also contacted our university’s IRB to confirm that neither our research, nor the development of this article, constituted research on human subjects.     
+
+After six weeks, I asked the students to present an overview of their research on their particular topic. To prepare for this, I gave them the following guiding questions:  1) What is your research topic/question?  2) What are the key findings/themes?  3) What are the gaps in the literature?  Students presented to the group for discussion and, by summer’s end, all four students were asking each other questions, providing constructive feedback, and developing competence and confidence in reading, analyzing, and presenting science education research articles.  A summary of our internship “curriculum,” which was implemented during ten meetings over six weeks, is outlined below in Table 1.  Note that all assessment conducted was informal; suggestions for more formalized assessment are included in the “Recommendations” section of the article. 
+
+\begin{table*}
+\caption{Research Group ``Curriculum''}
+\begin{tabular}{|c|l|l|l|}
+\hline
+Meeting & Topic & Student Assignments and Class Activities & Assessment \\ \hline
+1 & Welcome and introduction to inclusive science education  & Read Handbook chapter \begin{itemize}[noitemsep,topsep=0pt]
+    \item Discuss strengths/weaknesses of article organization
+    \item Compare/contrast cited studies
+    \item Notice references, authors, and journals
+\end{itemize} & Contributions to informal discussions \\ \hline
+2 & Introduction to education research, part 1 - “What is education research and how is it done?”  & Discussion of PowerPoint on education research \begin{itemize}[noitemsep,topsep=0pt]
+    \item What is education research?
+    \item What are some key steps and methodologies in education research
+\end{itemize} & Contributions to informal discussions \\ \hline
+3 & Introduction to education research, part 2 - “How does education research inform the field?” & Discuss assigned articles \begin{itemize}[noitemsep,topsep=0pt]
+    \item Compare and contrast methodologies
+    \item Identify implications and remaining questions
+\end{itemize} & Identification of a relevant article using any search means \\ \hline
+4 & Introduction to literature reviews & Discussion of Alexander (2020) reading \begin{itemize}[noitemsep,topsep=0pt]
+    \item Explain the purpose of literature reviews
+    \item Discuss the features of “systematic” reviews
+\end{itemize} \begin{tabular}[x]{@{}l@{}} Visit by two university librarians sharing literature search and organizational strategies \\ Collaborative development of a research summary template \end{tabular} & Successful completion of one research summary template and research log entry \\ \hline
+5 & Developing research questions & \begin{tabular}[x]{@{}l@{}} Discussion on the features of a good research question \\ Share and critique each others’ draft research questions \end{tabular} & Development of three draft research questions \\
+6 & Meeting an inclusive science education researcher/author & \begin{tabular}[x]{@{}l@{}} Pre-read two articles by visiting author and prepare 1-2 questions\\ Reflect on meeting and its impact on you as a student and researcher \end{tabular} & Engagement with author and thoughtful reflection on experience \\ \hline
+7-9 & \begin{tabular}[x]{@{}l@{}} Presenting and evaluating selected articles \\ Research ethics \end{tabular} & \begin{tabular}[x]{@{}l@{}} Select one student-identified article and present to the group for discussion. \\ Discussion of researchers’ ethical obligations related to research on human subjects\\ Review of Institutional Review Board (IRB) requirements \end{tabular} & Successful completion of three article summaries; presentation of one per meeting to group \\ \hline
+10 & Presenting research summaries & \begin{tabular}[x]{@{}l@{}} Presentations on students’ research questions\\ Q\&A sessions\\ Identification of areas for future research \end{tabular} & Clear and concise presentation on research findings; facilitation of discussion \\ \hline
+\end{tabular}
+\end{table*}
+
+At the end of the summer, I asked the students to reflect on their experiences, as is the custom with all of our interns. In the next section, their responses are outlined in their own words. 
+
+\section*{RESEARCH EXPERIENCES IN THE STUDENTS’ OWN WORDS}
+
+The four student research assistants’ reflections on our project are below.  They are listed along with their class year, major/concentration, and career goal. 
+
+\subsection*{Tiffany (second author): Sophomore, Civil and Environmental Engineering, and Engineer}
+
+In high school, I wanted to be a teacher, however coming into college as an engineering major, I have had to push that aspiration to the side for some time. I was primarily interested in this internship because it gave me the opportunity to combine my passion for education with STEM. I also believed that it would open my eyes to alternative ways I could make an impact in the field of education without necessarily becoming a teacher. In all honesty, I didn’t have much knowledge on inclusive science education prior to the internship. This is particularly because inclusive education is not a major topic of discussion in my home country Ghana, much less inclusive science education. Hence this internship was particularly helpful in expanding my knowledge and awareness of issues within this field. For this project, I gathered articles based on the following  three research questions: 1) What is the experience of science general and special educators with formal or informal special ed. training with regards to level of preparedness and ability to create and implement inclusive STEM curricula? 2) What are the experiences of K-12 students with disabilities (SWD) attending schools that practice co-teaching between science general ed. and special ed. faculty? 3) What influences SWD interest in learning science and their decision to pursue careers in science?
+
+To carry out my research, I started out by using keywords associated with my research questions as search terms in the ERIC database. For example, “Science co-teaching” “in-service teacher education” AND “science” AND “disabilities”, “teacher professional development” AND “science” AND “inclusion.” I also scanned through the references of the articles I selected, to identify other articles that explored my research questions. I also searched through journals such as \textit{Journal of Science Education for Students with Disabilities, Journal of Science Education, International Journal of Science and Mathematics Education}. Occasionally, I used Google scholar. 
+
+These search results allowed me to identify a number of trends and key takeaways. Firstly, the research showed that student perspectives are very important to consider because sometimes they are very different from teachers perspectives. Additionally, teachers need more support for co-teaching, i.e. given more planning time and more training on co-teaching strategies. Another point that was very clearly highlighted is the fact that special education teachers need more training on science content. A general trend that the articles highlighted was that a lot of teaching strategies for inclusive education focus on the here and now and not on impacting the science identities and interest in science of SWD and gifted students. 
+
+Even though the research helped me draw the conclusions above, some questions still remain open. For instance, the dearth of research about co-teaching gifted students makes it an intriguing point for investigation. Is co-teaching just generally not used with gifted students? Or have studies just not been done to investigate its effects? More questions that arose from this research are: What are the science identities of gifted students? Are they interested in pursuing careers in science and if so, what motivates their interest? This last question in particular, is something I couldn't find a lot of literature in English.
+
+A few of the articles that were most meaningful to me were:
+
+\begin{enumerate}
+    \item Gormally, C., \& Marchut, A. (2017). “Science is not my thing”: Exploring deaf non-science majors’ science identities. \textit{Journal of Science Education for Students with Disabilities, 20}(1), 1-15.
+\end{enumerate}
+This summary opened my eyes to the fact that people, particularly members of the deaf community, still held traditional stereotypes of scientists as isolated and not sociable and did not see their personalities as matching with a scientist’s personality and these were barriers to pursuing a career in science. It also made me realize that this could be avoided if SWD were taught science with strategies that intended to help SWD envision themselves as future scientists.
+
+\begin{enumerate}[start=2]
+    \item  Ansari Ricci, L., Persiani, K., Williams, A. D., \& Ribas, Y. (2019). Preservice general educators using co-teaching models in math and science classrooms of an urban teacher residency programme: Learning inclusive practices in teacher training. \textit{International Journal of Inclusive Education, 25}(4), 517-530.
+\end{enumerate}
+This study piqued my interest because it was the only study I found that combined two of my research questions (professional development of science teachers for inclusive science education and co-teaching in science classrooms). Most studies either focused on the teacher or student perspectives about co-teaching or training teachers to use strategies other than co-teaching in inclusive science classrooms. Hence, it was interesting to see a study that trained teachers’ in co-teaching, especially since this is an area the teachers claimed to want training in based on the reports from other literature in science co-teaching.
+
+\begin{enumerate}[start=3]
+    \item  Benny, N., \& Blonder, R. (2016). Factors that promote/inhibit teaching gifted students in a regular class: Results from a professional development program for chemistry teachers. \textit{Education Research International, 2016}, 1-11.
+\end{enumerate}
+This study was unique in the fact that it used photo narratives as a mode of data collection of factors that promote/ inhibit teaching science to gifted students. It was also interesting to see what the teachers recorded as promoting and inhibiting factors .e.g. 
+ 
+\begin{itemize}
+    \item Promoting factors - Positive responses of gifted students to answered questions, professional development, awareness of gifted needs and enrichment programs for gifted students, administrative support
+    \item Hindrances - Lack of time to plan, mixed-ability classrooms, outdated and broken technology, superior attitudes of gifted students
+\end{itemize}
+I truly loved this project because it encouraged me to think about how to better equip K-12 STEM educators with teaching resources that promote inclusivity. For some of the articles I read, it seemed like the researchers published the articles just to get the research out there; not much is said regarding how to practically apply the research and make practical changes in classrooms across the country/state where the research was carried out. Additionally, this internship also motivated my interest in researching the state of special education in Ghana, the country I was born in and live in.
+
+\subsection*{Grace (third author): Junior, History of Science, and Law}
+
+I was interested in this research internship because of my academic focus on science as a History of Science major and because of my past experiences working with students with exceptionalities. Before college, I worked as a camp counselor at a summer camp for students with disabilities. This work opened my eyes to the depth of challenges students with disabilities face and the variety of perspectives they have regarding their educational experiences. Further, the COVID-19 pandemic has sparked my interest in how scientific knowledge is conveyed and understood, and reinforced in my mind the importance of science education for all. Before starting, I knew very little about inclusive science education. My only knowledge was anecdotal - I had no idea that there was a whole field of inclusive science education research. 
+
+My primary research question during the course of the internship was as follows: What is the current state of laboratory and field trip accessibility and accommodations for students with physical and sensory disabilities in science? I started my research with a broad lens on Google Scholar, then I moved to ERIC and Articles+ from the university library, then, finally, I focused on the references of sources I had already located to find new studies and articles. I searched using key words such as “science lab”, “physical disability”, “science teachers”, “outdoor science”, and “field trip”.  I noticed a number of trends in the sources I worked with. First, a wide variety of accommodations, both high-tech and low-tech, exist for students with physical disabilities in science labs and on science field trips. Teacher-initiated adjustment of technological accommodations to suit the needs of individual students has proven crucial in this area. While high-tech accommodations are certainly important in breaking down barriers, simple, low-tech accommodations are also useful, and tend to be more available. In spite of these promising findings, many lab spaces continue to be inaccessible for students with physical disabilities. This is likely due in part to the second major trend I observed: teacher knowledge of available accommodations seems to be lacking, and many schools and districts cannot afford many helpful accommodations. Educators are generally concerned about implementing accessible science experiences into their own schools and programs when they lack administrative support and resources. Further, multiple studies found that science teachers tend to hold biases against students with physical disabilities in science labs and field trips. However, on a positive note, experience working with students with physical disabilities appears to be quite successful in improving teacher perceptions. Third, study in the realm of inclusive science labs and field trips for students with physical disabilities is rather lopsided in terms of age groups and disabilities studied. Much of the research I found was done at the college level or on adults who had previously completed degrees. Additionally, I found a great deal of research on students with visual and hearing impairments, and noticeably less on students with motor impairments and other physical disabilities. Finally, my research pointed to the importance of inclusive labs and field trips. While students with physical disabilities tend not to think of themselves as future career scientists, participating in accessible lab and field trip experiences can show students the path to a potential degree or career in science. 
+
+Below are two articles I found particularly intriguing during my time participating in this internship:
+
+\begin{enumerate}
+    \item Isaacson, M. D., Supalo, C., Michaels, M., \& Roth, A. (2016). An examination of accessible hands-on science learning experiences, self-confidence in one’s capacity to function in the sciences, and motivation and interest in scientific studies and careers. \textit{Journal of Science Education for Students with Disabilities, 19}(1), 68–75. DOI: 10.14448/jsesd.09.0005
+\end{enumerate}
+This study examined the relationship between the completion of hands-on accessible science activities, self-beliefs about one’s capacity for success in science, and inclinations to consider post-secondary science study and science careers in blind and low-vision (BLV) students. Researchers found that, after completing accessible lab activities, BLV students were more likely to express interest in pursuing a higher-education degree and/or a career in science. I found this study to be particularly impactful because it highlighted the role of inclusive science labs in impacting students’ future plans. The study’s findings suggest that accessibility improves not only the real-time experiences of students, but the accessibility of science at higher levels as well. They emphasize the importance of improving inclusive science at every level of education.
+\begin{enumerate}[start=2]
+    \item  Rule, A. C., Stefanich, Greg. P., Boody, R. M., \& Peiffer, B. (2011). Impact of adaptive materials on teachers and their students with visual impairments in secondary science and mathematics classes. \textit{International Journal of Science Education, 33}(6), 865–887. \url{https://doi.org/10.1080/09500693.2010.506619}
+\end{enumerate}
+
+This study found that attitudes of secondary teachers toward students with visual impairments in their science or math classes improved significantly after completing a year-long, funded program that provided them with adaptive materials. I was intrigued by this study because it examined teacher perceptions, which may be a significant barrier to the success of students with physical disabilities in science. The researchers’ findings suggest that increased accessibility can impact not only students, but teachers as well. Influencing teacher perceptions has the potential for far-reaching implications, because most teachers instruct multiple groups of students over time. 
+
+By the conclusion of my research, many questions remained open. Are certain accommodations more successful for younger science students with physical disabilities? What is the success of tactics applied at the college level in improving lab and field trip experiences for students at the primary and secondary levels? How does co-teaching come into play, specifically in the lab or on field trips? Why does teacher knowledge of accommodations lag behind the accommodations themselves? What is the best way to increase teacher knowledge of accommodations?
+
+\subsection*{Sean (fourth author): Junior, History of Science/Chemistry, and Medicine}
+
+I became interested in this internship as a way to challenge myself. Despite dabbling in chemistry and electrical engineering, I’ve always found STEM to be difficult through traditional classroom learning. However, I came to a point where I thought that maybe, I can teach myself STEM through non-traditional ways. But I didn’t know where to start. When I saw that this internship focused on “inclusive science education,” or another way of teaching STEM to both gifted students and students with disabilities, I thought that this would be a great place to learn more about how to teach STEM. I had never heard about “inclusive science education” before I started, but I assumed it was to bring kids with disabilities and kids without disabilities into a classroom where they can cooperate and learn together.
+
+I first approached this by going through our university library’s database, and scouring the internet for papers using key phrases like “inclusive science education” and “students with disabilities”. Oftentimes, I would read these works and look at their references. I would then work backwards to see not only how well supported their arguments were, but also to expand the breadth of my scope. The trends I saw discussed include ideas from how repetition while studying proves effective in the short term, but doesn’t prove necessarily effective in the long term, and students who were more “creative” in approaching STEM were more engaged and thus did better on tests.
+
+I’ve had the opportunity to discuss my findings with wonderful people, but my conversation with our internship’s visiting expert sticks out to me. At the time, I was all for inclusive education and talked about how it was a great way to teach STEM. But our visiting expert was able to challenge my ideas, citing his experiences working with students that found inclusive education a mixed bag of results. Through him, I realized that my definition of “success” was different for every person. In other words, in the context of inclusive science education, was success being defined by good test scores? Or was success defined by the likelihood of these students pursuing STEM as future careers?
+
+This internship quickly developed into something more than just learning different ways of teaching STEM. Though my research question focused on figuring out what the best way of teaching and learning STEM was for students with learning disabilities, I saw how my questions bled into the realms of politics, psychology, and especially economics. One report that stands out to me is a work by Lori Andersen and Brooke Nash (2016) of the University of Kansas, where they asked the question of how do we make science accessible to kids with significant cognitive disabilities? Are there biases in administrators as they assess students? Another work by Martha Thurlow, Christopher Rogers, and Laurene Christensen (2010) notes the discrepancy in the level of science education and curriculum across states. But these reports made me realize that educating people seems to be outrageously underfunded by both state and federal levels of government. But the information on where our taxes go seems to be a bit obscured, especially when it comes to education in poorer areas of the United States. 
+
+In all, I found this experience to be very rewarding. It has given me the tools and skills to tackle big questions. It taught me to have courage when taking the plunge down the rabbit hole of confusing and often conflicting blends of information from various fields in society. 
+
+\subsection*{Courteney (fifth author): Sophomore, Molecular Bio, and Medicine}
+
+For as long as I can remember, I have always had a passion for science. As a hands-on learner, I am always engaged in science labs during class and try to replicate the things I learn at home. I remember doing experiments with my siblings, which would often result in a mess, but it brought me an inner joy at being able to create extraordinary things out of household objects. My love for science is what first drew me to this internship. However, once I read more about it, I found that I had several other personal connections to it. I was a beneficiary of talented and gifted programs and have a family history of teaching and helping special needs students. Furthermore, I have a passion for education and participate in several initiatives to educate others. I love that this internship combined these various interests in a way that will be used to advance inclusive science practices while maximizing the potential of all learners.
+
+Before starting this internship, my knowledge of inclusive education mainly consisted of my personal experiences and first-hand accounts from my mom, who works with special needs students. For both gifted students and students with disabilities, I was aware of a lack of inclusive science education; these students learned in separate classrooms, limiting the number of interactions they had with students of diverse educational needs. I knew that intersectionality played a role in exceptional education, but I was not very familiar with the terminology beforehand. I was also aware of the lack of focus on science education for students with special needs. However, I knew there was a lot more for me to learn about inclusive science education, which is another reason I was drawn to this internship. Specifically, I wanted to learn more about the impacts of technologically-enhanced learning on science classrooms for exceptional students and how socioeconomic and racial backgrounds impacted the identification and experiences of exceptional students in science classrooms. Thus, these two topics were the focus of my research.
+
+After coming up with my research questions, I brainstormed keywords. I did advanced searches using the databases ERIC, PsycInfo, Google Scholar, and ProQuest as well as our university’s library website. Search terms I used included: “Disabilities,” “gifted,” “science education,” “technology,” “intersectionality,” “socioeconomic status,” “race,” “ethnicity,” “income,” and “demographics.” I recorded my search terms and the databases I used in a research log. After finding articles, I would check the references of those articles to see if there were additional articles or journals I could look into. I went to websites of different journals and did searches there as well. This process enabled me to come across several articles that greatly expanded my knowledge of science education for exceptional students. One article I found particularly interesting was “Sounding Out Science: Using Assistive Technology for Students with Learning Differences in Middle School Science Classes” by Clement Vashkar Gomes and Felicia Moore Mensah (2016). This article introduced me to some of the concepts and theories associated with special education, such as the phonological deficit hypothesis and the disability theory. Furthermore, as a more hands-on learner, I liked how this article focused on teaching science from a different learning style. This study focused on the use of audio technology to help science students with language learning disabilities, so I found it interesting to read about the process of auditory learning. Another article that stood out to me was “The Structural Relationship Between Out-of-School Time Enrichment and Black Student Participation in Advanced Science” by Jamaal Young and Jemimah Young (2018). This article emphasized the importance of out-of-classroom programs in promoting the diversification of science education. When Black students were able to become more engaged in science and participate in hands-on research, they were more inclined to continue their perusal and maintained interest in science. This stood out to me because I have had firsthand experience with the lack of diversity in scientific fields, and this can at least in part be traced back to notions instilled in students from an early age that minorities cannot be successful in science. I appreciate how the researchers of this article strive to debunk this idea. I also liked how this article emphasized the importance of having a support system of family and educators to encourage minority students to pursue STEM.
+
+This process enabled me to find several trends in terms of the impacts of technology and intersectionality on science education for exceptional students. Several articles I read emphasized the positive impacts of assistive technology on science education for both gifted students and students with disabilities. However, there are so many different types of technology and technology is always evolving, so this topic requires further research. In terms of intersectionality, a trend was the lack of diversity in STEM; minorities, females, and low socioeconomic status (SES) students pursue STEM less often than other groups of people. However, these underrepresented groups can prosper in science, but need access and support from an early age. Diverse students thrive in science settings that embrace different cultures and reject social norms because this enables these students to use their unique backgrounds as assets instead of barriers.
+
+Coming into this internship, I had some familiarity with education for exceptional students, but I soon learned that there are so many different aspects of science education for these students that I had never before considered. This research experience has been very eye-opening, and I have learned so many skills that are applicable to research in any discipline.
+
+\section*{LEARNING FROM STUDENT REFLECTIONS}
+
+In reviewing the student reflections, we believe that we are able to identify some interesting trends.  Most notably, each of the students seemed to experience a deepening or refinement of the initial connection they felt to the subject matter.  For example, Tiffany’s general interest in teaching became more refined and sparked interest in learning about special education in her home country of Ghana.  Similarly, Sean’s own challenges with “traditional” STEM education led him on a journey to identify the “best” way to teach science - a journey that ultimately led him to a more nuanced understanding of the importance of how one operationalizes “best,” or “success.”  Courteney noted that she had experienced the lack of diversity in STEM fields firsthand but became more aware of the necessity for STEM educators and education researchers to deepen their understanding of intersectionality and its influence on learner experiences and identities.  Finally, Grace’s experience working at a camp for students with disabilities led her to investigate, and ultimately become acutely aware of, the attitudinal, physical, and economic barriers that can limit accessibility to quality educational experiences for students with disabilities.  Given that the experience of examining and discussing the existing literature in students’ self-identified areas of interest seemed to expand and enrich students’ connection to inclusive STEM education, it would seem that small literature review groups could become integrated into STEM, STEM education, or SPED programs, either within the curriculum or co-curricularly, in order to develop future teachers, leaders, and engaged citizens who are supportive of quality inclusive STEM education and opportunities for all.  This model could be implemented fairly easily if based upon a short learning module comprised of an introduction to education research and literature review serving as its foundation.  The “curriculum” we outlined earlier in Table 1 could serve as a foundation to such a module.  
+
+Regarding students’ academic paths, it is interesting to note that both of the history of science majors found interest in policy or systemic issues.  Sean’s initial interest in curriculum quickly pivoted to advocacy for increased school funding levels and transparency while Grace’s interest in accessible laboratories and field trips led her to note the critical nature of improving teachers’ perceptions of students with disabilities given each teacher’s impacts on multiple groups of students over long periods of time.  Perhaps STEM and special education faculty might find it fruitful to collaborate with colleagues in history, political science, economics, psychology, and pre-law programs to present issues of inclusive STEM education as possible case studies for students in those programs to examine. Capitalizing upon the sweeping and profound connections between inclusive STEM education and other social science fields might prove beneficial for all students who plan to tackle thorny policy-level and system-wide challenges in their careers. 
+
+Finally, we note that, based on the students’ current career goals, this internship may have equipped two future doctors, a lawyer, and an engineer with increased awareness of the educational, policy, and societal barriers and facilitators influencing inclusive and equitable STEM education…an outcome that would not have ordinarily arisen from their existing academic programs. One can easily envision these future professionals treating, advocating for, and designing for students with exceptionalities in their careers.  Moreover, given that approximately 25\% of the adult U.S. population volunteers time outside of their careers, and approximately 26\% of volunteers work in the education sector (Bureau of Labor Statistics, 2016), developing future leaders in all fields who have awareness of the challenges and opportunities for inclusive STEM education may prove impactful through both vocational and avocational tracts. 
+
+\section*{CONCLUSIONS, RECOMMENDATIONS, AND FUTURE DIRECTIONS}
+
+We believe that our research group proved to be a successful venture for all involved. Each of the student research assistants gained understanding of the need for increased research on, and support for, quality inclusive science education. The students also each voiced interest in advocating for equitable STEM education in the future, regardless of their career paths.  This project outcome was particularly gratifying as it has the potential to address societal biases that continue to hamper persons with disabilities’ pursuit of STEM vocations.  Participation in our group also provided students with valuable experience and skills that will serve them in their future studies and possibly their careers. Of course, the college administrator also benefited tremendously from the research group in that she learned about the students’ experiences during the summer of COVID-19, gained student insights about inclusive science literature, and honed skills for communicating about inclusive science education with non-educators/non-education majoring students. 
+
+Some recommendations for STEM educators, teacher educators, and others interested in developing similar research group projects focused on inclusive science education are as follows: 
+
+\textbf{Recommendations for Inclusive STEM Education Research Groups in \textit{Non-Teacher Education} Courses/Settings}(e.g., internships in liberal arts programs, courses in STEM or social sciences, etc.)
+\begin{itemize}
+    \item Recognize that reading and evaluating research articles is valuable for students of all majors, so keep an open mind as to the applicability of these research groups.  Students in history, public policy, psychology, pre-law or pre-med, and many others can benefit from learning about inclusive STEM education research.
+    \item Seek out collaborators across diverse fields; faculty in education and non-education programs can identify common ground around issues of equity, intersectionality, policy, and research ethics.
+    \item Be flexible in your goal setting. Recognize that undergraduate students, particularly those from outside education majors, will require time to become familiar with terminology.  In addition, locating, reading, and evaluating articles will take students quite a bit longer than you might expect.
+    \item Create opportunities for students to present to other audiences beyond your research group. Our students had the opportunity to discuss their research with our librarians and our expert visitor.  If we did this again, we would develop a more formal presentation for a conference or perhaps a class on campus.
+\end{itemize}
+\textbf{Recommendations for Inclusive STEM Education Research Groups in \textit{Teacher Education} Courses/Settings}
+ \begin{itemize}
+     \item Consider incorporating research groups as an element of capstone courses in science, science teacher education, and/or SPED at either the graduate or undergraduate level.  Students can be grouped based on common research question interests or based on the unique perspectives (e.g., science education, SPED, early childhood, etc.) they can bring.
+     \item Connect student research group investigations to the \textit{Next Generation Science Standards (NGSS} Lead States, 2013) and/or \textit{High-Leverage Practices in Special Education} (McLeskey, et al., 2017) by having teacher candidates record and discuss where key elements from these leading documents are implemented and evaluated.
+     \item Encourage teacher candidates to research the ways in which the \textit{Individuals with Disabilities Education Act} (IDEA, 2012) which guarantees a free, appropriate public education commensurate with all students’ abilities in all subjects, including science, is implemented by examining studies/research questions on adaptive laboratory equipment, assistive technology, alternative formats (such as braille handouts), graphic organizers and other instructional supports that can accommodate individual students’ needs.
+     \item Introduce the Universal Design for Learning framework (UDL; CAST, 2018) by having research groups develop literature reviews on UDL in science teaching at the elementary, middle, and/or secondary level, and with students with a variety of learning differences including sensory or mobility impairments, learning disabilities, giftedness in STEM, and so on.
+     \item Form co-curricular science and SPED research/writing clubs where teacher candidates can collaboratively research and write articles for school newsletters, blogs, or journals;
+     \item Implement the “curriculum” outlined in this article as part of an introductory research course or colloquia for doctoral students in science education or SPED; inclusive STEM education can be used as the initial focal point to model research practices before having students apply the practices to their own research fields.
+ \end{itemize}
+ 
+\textbf{Recommendations for Inclusive STEM Education Research Groups in \textit{All} Courses/Settings}
+ \begin{itemize}
+     \item Leverage a range of resources at your university/school and beyond.  Consider reaching out to librarians, alumni, colleagues, the IRB, etc.
+     \item Encourage students to review reference lists for locating literature. One of the most exciting aspects for our study’s administrator was seeing the students begin to recognize authors and position them within the field of inclusive science education!
+     \item While the internship in the current study was ungraded and all assessment consisted of informal review of student article summaries, presentations, and discussions, a more formalized approach could be taken using a scoring rubric that might include the following performance criteria:
+
+      \begin{itemize}[label=$\circ$]
+          \item Development of an appropriate research question
+          \item Thorough discussion of purpose, research questions(s), methodologies, results, and implications of studies on research summary templates
+          \item Accurate documentation of research process via the research log
+          \item Engaging presentations that communicate the key elements of the article summaries to the group
+          \item Active participation in group discussions including asking and answering questions
+          \item Demonstrating the ability to synthesize findings across studies
+          \item Reflecting on one’s own experience in the course as a student and researcher
+      \end{itemize}
+
+     \item Although this project took place at a university, consider carrying out a modified version of it at the high school level, perhaps with undergraduate or graduate-level teacher candidates as the facilitators.  It is quite possible to get the gist of most articles even if students aren’t familiar with statistics.
+ \end{itemize}
+ 
+While literature reviews are typically done to understand what is known in a particular field in preparation for making original research contributions to that field (Jesson, et al., 2011), we were unable to find research on the use of literature review development as pedagogy for the purpose of teaching non-researchers (and in this case, non-education students) about a field such as inclusive science education. Perhaps research in this area is warranted to determine whether students show measureable differences in knowledge and awareness of, sensitivity to, and intentions to act on the area of study after literature review (both individual and collaborative) experiences.  We, of course, realize that bias may have played a role in the positive feedback received from the student participants who had been employed during the internship; however, we reiterate that the purpose of the present article was not research but rather, to share preliminary findings from what we believe was a positive practitioner experience.
+
+Near the end of our project, our university announced that undergraduate teaching for the fall would again be remote and students would remain off campus.  We decided to continue our research group, and three of the four students continued into the fall of 2020 to examine literature related to teacher education in support of science education for students with disabilities.  In addition, three of the students presented their research findings at our university’s research day. Thus far, our research has identified over 150 articles, chapters, and books related to inclusive science education.  More importantly, it has inspired a small group of future leaders toward the practical and moral imperative for inclusive, equitable, and excellent STEM for all.  
+
+\textbf{Acknowledgments:} The authors would like to thank Elana Broch and Kelee Pacion of the Princeton University Library for their research support and guidance.  In addition, the authors thank the Council on Science and Technology (CST) at Princeton for supporting the student internships.  
+
+\end{large}
+\clearpage
+\section*{REFERENCES}\par 
+
+\leftskip 0.25in
+\parindent -0.25in 
+
+Alexander, P. A. (2020). Methodological guidance paper: The art and science of quality systematic reviews. \textit{Review of Educational Research, 90}(1), 6-23. \url{https://doi.org/10.3102/0034654319854352}
+
+Andersen, L. \& Nash, B. (2016). Making science accessible to students with significant cognitive disabilities.  \textit{Journal of Science Education for Students with Disabilities, 19}(1) Article 3. DOI: 10.14448/jsesd.09.0002
+
+Ansari Ricci, L., Persiani, K., Williams, A. D., \& Ribas, Y. (2019). Preservice general educators using co-teaching models in math and science classrooms of an urban teacher residency programme: Learning inclusive practices in teacher training. \textit{International Journal of Inclusive Education, 25}(4), 517-530. \url{https://doi.org/10.1080/13603116.2018.1563643}
+
+Benny, N., \& Blonder, R. (2016). Factors That Promote/Inhibit Teaching Gifted Students in a Regular Class: Results from a Professional Development Program for Chemistry Teachers. \textit{Education Research International, 2016,} 1-11.  \url{https://doi.org/10.1155/2016/2742905} 
+
+Bureau of Labor Statistics (2016). \textit{Volunteering in the United States, 2015}. Washington: U.S. Department of Labor. \url{https://www.bls.gov/news.release/pdf/volun.pdf} 
+
+CAST (2018). Universal Design for Learning Guidelines version 2.2. \url{http://udlguidelines.cast.org}
+
+Cech, E., \& Waidzunas, T. (2018). \textit{STEM inclusion study organization report: APS}. Ann Arbor, MI: University of Michigan. Report. \url{https://www.aps.org/publications/apsnews/201806/upload/STEM-Inclusion-Study-Climate-Report.pdf} 
+
+Gay, L.R., Mills, G.E.  \& Airasian, P.W. (2009). \textit{Educational Research: Competencies for Analysis and Application,} 9th Ed. Pearson Education, Inc. ISBN-13: 978-0132338776 
+
+Gomes, C. V., \& Mensah, F. M. (2016). Sounding out science: Using assistive technology for students with learning differences in middle school science classes. In M. J. Urban \& D. A. Falvo (Eds.),\textit{ Improving K-12 STEM education outcomes through technological integration} (pp. 44-67). IGI Global. DOI: 10.4018/978-1-4666-9616-7.ch003 
+
+Gormally, C., \& Marchut, A. (2017). “Science is not my thing”: Exploring deaf non-science majors’ science identities. \textit{Journal of Science Education for Students with Disabilities, 20}(1), 1-15. DOI: 10.14448/jsesd.08.0001
+
+IDEA regulations, 34 C.F.R. § 300 (2012).
+
+Isaacson, M. D., Supalo, C., Michaels, M., \& Roth, A. (2016). An examination of accessible hands-on science learning experiences, self-confidence in one’s capacity to function in the sciences, and motivation and interest in scientific studies and careers. \textit{Journal of Science Education for Students with Disabilities, 19}(1), 68–75. DOI: 10.14448/jsesd.09.0005 
+
+Jesson, J., Matheson, L., \& Lacey, F. M. (2011). \textit{Doing your literature review: Traditional and systematic techniques}. London: Sage Publications. 
+
+McGinnis, J. R., \& Kahn, S. (2014). Special needs and talents in science learning. In S. K. Abell, \& N. G. Lederman (Eds.), \textit{Handbook of research on science education, Volume II} (pp. 237-259). Mahwah, NY: Routledge. \url{https://doi-org/10.4324/9780203097267} 
+
+McLeskey, J., Barringer, M-D., Billingsley, B., Brownell, M., Jackson, D., Kennedy, M., Lewis, T., Maheady, L., Rodriguez, J., Scheeler, M. C., Winn, J., \& Ziegler, D. (2017, January). High-leverage practices in special education. Arlington, VA: Council for Exceptional Children \& CEEDAR Center.
+
+Michigan State University. (2019, July 18). The unpopular truth about biases toward people with disabilities. \textit{ScienceDaily}. Retrieved January 10, 2021 from \url{www.sciencedaily.com/releases/2019/07/190718112453.htm}
+
+National Research Council. 2012. \textit{A Framework for K-12 Science Education: Practices, Crosscutting Concepts, and Core Ideas}. Washington, DC: The National Academies Press. \url{https://doi.org/10.17226/13165.}
+
+National Science Foundation, National Center for Science and Engineering Statistics. 2019. \textit{Women, Minorities, and Persons with Disabilities in Science and Engineering: 2019}. Special Report NSF 19-304. Alexandria, VA. Available at \url{www.nsf.gov/statistics/wmpd/.} 
+
+NGSS Lead States. 2013. \textit{Next Generation Science Standards: For States, By States}. Washington, DC: The National Academies Press. \url{https://www.nextgenscience.org/} 
+
+Rule, A. C., Stefanich, Greg. P., Boody, R. M., \& Peiffer, B. (2011). Impact of adaptive materials on teachers and their students with visual impairments in secondary science and mathematics classes. \textit{International Journal of Science Education, 33}(6), 865–887.  \url{https://doi.org/10.1080/09500693.2010.506619}    
+
+Thurlow, M., Rogers, C., \& Christensen, L. (2010). Science assessments for students with disabilities in school year 2006-2007: What we know about participation, performance, and accommodations (Synthesis Report 77). Minneapolis, MN: University of Minnesota, National Center on Educational Outcomes. \url{https://files.eric.ed.gov/fulltext/ED512615.pdf} 
+
+Young, J., \& Young, J. (2018). The structural relationship between out-of-school time enrichment and black student participation in advanced science. \textit{Journal for the Education of the Gifted, 41}(1), 43-59. \url{https://doi.org/10.1177\%2F0162353217745381} 
+
+\clearpage
+\onecolumn
+\leftskip 0in
+\parindent 0in
+
+\section*{Appendix 1. Article/Chapter Summary Template}
+\begin{table*}[!hbp]
+\begin{tabular}{|l|}
+\hline
+{\textbf{Citation} (author, year, journal, etc.) using APA 7 format} \\ \\ \\ \hline
+{\textbf{Problem/Purpose} (Why was the study done? Research question(s)?)} \\ \\ \\ \hline
+{\textbf{Participants} (Who was studied? How many? Where?)} \\ \\ \\ \hline
+{\textbf{Methods and Procedures} (How was data collected and analyzed?)} \\ \\ \\ \hline
+{\textbf{Findings/Results} (What did the researchers learn?)} \\ \\ \\ \hline
+{\textbf{Implications} (Why does it matter?)} \\ \\ \\ \hline
+{\textbf{Limitations/Gaps} (What can’t we say? What is still unanswered?)} \\ \\ \\ \hline
+{\textbf{Anything else of interest?} (Notes for reader)} \\ \\ \\ \hline
+{\textbf{Student Researcher Name:}} \\ \\ \hline
+\end{tabular}
+\end{table*}
+
+\clearpage
+
+\section*{Appendix 2. Research Log}
+
+Student Researcher \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\begin{table*}[!hbp]
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{3}{|c|}{\textbf{Developing the Research Question}} \\ \hline
+\textbf{Example topic:} & \textbf{Your topic:} & \textbf{Notes:} \\ 
+``students with disabilities'' AND science & & \\ \hline
+\textbf{Example research question:} & \textbf{Your research question:} & \textbf{Notes:} \\
+How can labs and field trips be made accessible for students with disabilities? & & \\ \hline
+\textbf{Key words:} & \textbf{Keywords:} & \textbf{Notes:} \\ 
+``students with disabilities,'' labs, field trips, accessibility & & \\ \hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!hbp]
+\begin{tabular}{|p{2.5in}|p{2.5in}|p{1.5in}|}
+\hline
+\multicolumn{3}{|c|}{\textbf{Library resource}} \\
+\multicolumn{3}{|c|}{This includes catalog, articles+, and database specific searching} \\ \hline
+\textbf{Name of resource used:} & \textbf{Your searches and the results:} & \textbf{Notes:} \\ 
+Catalog search & & \\
+\textbf{Search terms and results:} & & \\
+``students with disabilities'' AND science- 92 results, 27 online & & \\
+``students with disabilities'' AND science AND labs- 18 results, 7 online & & \\ \hline
+\end{tabular}
+\end{table*}
+
+\end{document}
