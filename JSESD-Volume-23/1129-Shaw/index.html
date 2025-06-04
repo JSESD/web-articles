@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>TactViz: A VMD Plugin for Tactile Visualization of Protein Structures</title>
+<!--Generated on Tue Aug 13 19:31:22 2024 by LaTeXML (version 0.8.3) http://dlmf.nist.gov/LaTeXML/.-->
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<link href="LaTeXML.css" rel="stylesheet" type="text/css"/>
+<link href="ltx-article.css" rel="stylesheet" type="text/css"/>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line" lang="en">
+<h1 class="ltx_title ltx_title_document">TactViz: A VMD Plugin for Tactile Visualization of Protein Structures</h1>
+<div class="ltx_authors">
+<span class="ltx_creator ltx_role_author">
+<span class="ltx_personname"><span class="ltx_text" style="font-size:120%;color:#0000FF;">Olivia R. Shaw</span>
+</span><span class="ltx_author_notes"><span>
+<span class="ltx_contact ltx_role_affiliation">Department of Chemistry and Biochemistry University of Delaware
+</span></span></span></span>
+<span class="ltx_creator ltx_role_author">
+<span class="ltx_personname"><span class="ltx_text" style="font-size:120%;color:#0000FF;">Jodi A. Hadden-Perill</span>
+</span><span class="ltx_author_notes"><span>
+<span class="ltx_contact ltx_role_affiliation">Department of Chemistry and Biochemistry University of Delaware
+</span></span></span></span>
+</div>
+<div class="ltx_abstract">
+<h2 class="ltx_title ltx_title_abstract">Abstract</h2>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Scientific disciplines spanning biology, biochemistry, and biophysics involve the study of proteins and their functions. Visualization of protein structures represents a barrier to education and research in these disciplines for students who are blind or visually impaired. Here, we present a software plugin for readily producing variable-height tactile graphics of proteins using the free biomolecular visualization software Visual Molecular Dynamics (VMD) and protein structure data that is publicly available through the Protein Data Bank. Our method also supports interactive tactile visualization of proteins with VMD on electronic refreshable tactile display devices. Employing our method in an academic laboratory has enabled an undergraduate student who is blind to carry out research alongside her sighted peers. By making the study of protein structures accessible to students who are blind or visually impaired, we aim to promote diversity and inclusion in STEM education and research.</span>
+<br class="ltx_break"/>
+<br class="ltx_break"/>Keywords: Tactile Graphics, Tactile Visualization, Blind, Visually Impaired, Accessibility, Proteins, STEM</p>
+</div>
+<div class="ltx_para" id="p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">*Corresponding Author, Jodi A. Hadden-Perill 
+<br class="ltx_break"/><a class="ltx_ref ltx_href ltx_font_medium" href="mailto:%20jhadden@udel.edu" title="">(jhadden@udel.edu)</a></span>
+<br class="ltx_break"/><span class="ltx_text ltx_font_italic">Submitted Mar 1 2020
+<br class="ltx_break"/>Accepted Apr 14 2020</span>
+<br class="ltx_break"/><span class="ltx_text ltx_font_italic">Published online Jul 24 2020</span>
+<br class="ltx_break"/><span class="ltx_text ltx_font_italic">DOI:10.14448/jsesd.12.0015</span>
+<br class="ltx_break"/></p>
+</div>
+<section class="ltx_section" id="Sx1">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">INTRODUCTION</h2>
+<section class="ltx_subsection" id="Sx1.SSx1">
+<h3 class="ltx_title ltx_title_subsection" style="font-size:120%;">Tactile Graphics</h3>
+<div class="ltx_para" id="Sx1.SSx1.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Tactile graphics, 2-dimensional graphics that employ raised surfaces to convey non-textual information through touch, are a major physical medium used in the instruction of students who are blind or visually impaired (Edman, 1992). Also called relief representations, tactile graphics may be used to depict images, diagrams, schematics, flow charts, maps, or graphs. Along with verbal descriptions and tangible 3-dimensional models, tactile graphics provide a valuable complementary approach for communicating visual and topological details of a subject. Common methods for generating tactile graphics include embossing, vacuum or thermoforming, printing layered inks or substrates, and printing on specialized papers that expand when heated.</span></p>
+</div>
+<div class="ltx_para" id="Sx1.SSx1.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Tactile graphics methods based on the application of heat to swell or microcapsule paper are very popular due to convenience, low cost, and quick production (Rowell &amp; Ungar, 2003; Thompson &amp; Chronicle, 2006). Devices designed to produce these graphics include the Swell Form Machine, Picture In A Flash, and TactPlus. The application of heat to the specialized papers causes the regions of an image that are darkly shaded to swell, or elevate and become tactile (Hashimoto &amp; Watanabe, 2016). Darkly shaded regions elevate more than lightly shaded regions, such that elevation height (typically on the millimeter scale) can be tuned by controlling shading in a grayscale image. Along with textures, variable elevation height can be used to encode additional information into tactile graphics. Electronic refreshable tactile display devices, like the Graphiti, which use arrays of pins that raise and lower to show tactile graphics, may offer multiple pin heights to likewise enrich tactile visualization.</span></p>
+</div>
+<div class="ltx_para" id="Sx1.SSx1.p3">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Whatever the medium, conceptually clear tactile graphics can be challenging to create (Barth, 1982) and are less readily available for advanced subject material. Here, we present a strategy for generating images of proteins using free biomolecular visualization software and publicly available protein structure data that translate into comprehensible tactile graphics when printed with swell or microcapsule paper. An example ready-to-print tactile graphic featuring the protein GB1, produced using our method, is included in the Appendix.</span></p>
+</div>
+</section>
+<section class="ltx_subsection" id="Sx1.SSx2">
+<h3 class="ltx_title ltx_title_subsection" style="font-size:120%;">Protein Structure and Visualization</h3>
+<div class="ltx_para" id="Sx1.SSx2.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Proteins are essential biological molecules whose natural functions are governed by their 3-dimensional shapes (Buxbaum, 2007). The shape of a protein is determined by its structure and the sensitivity of that structure to the surrounding environment (Chothia, 1984). Proteins are composed of linear chains of amino acids. Each protein has a unique amino acid sequence, called its primary structure. The primary structure folds locally to produce secondary structure elements, such as alpha-helices and beta-sheets. These elements further fold to give rise to the protein’s tertiary structure, and ultimately its 3-dimensional shape. The shape of a protein is a major factor underlying its physical properties and interactions with other biological molecules. Protein shape can vary with environmental conditions, such as temperature, pH, or ionic strength, or upon binding of substrates, cofactors, or drug compounds.</span></p>
+</div>
+<div class="ltx_para" id="Sx1.SSx2.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Scientific disciplines spanning biology, biochemistry, and biophysics rely on knowledge of protein structure to elucidate the mechanisms by which proteins carry out their functions, as well as to identify strategies by which those functions can be improved or altered to treat disease and improve human health. Protein structure determination is a major field of research based on experimental techniques including X-ray crystallography, nuclear magnetic resonance (NMR) spectroscopy, and cryo-electron micros-copy (Dobson, 2019), and computational techniques including molecular modeling and molecular dynamics simulations (Goh et al., 2016). The many 3-dimensional protein structures that have been solved by researchers are systematically deposited in and freely available for download from the Research Collaboratory for Structural Bioinformatics (RCSB) Protein Data Bank (Berman et al., 2000): </span><a class="ltx_ref ltx_url" href="https://www.rcsb.org/pdb/" style="font-size:120%;" title="">https://www.rcsb.org/pdb/</a><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+<div class="ltx_para" id="Sx1.SSx2.p3">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">The investigation of protein structure and structure-function relationships often relies heavily on molecular visualization. Because the atomistic details of protein structures can be very difficult to inspect visually, numerous abstracted or simplified protein representations have been developed to improve visualization (Goebel, 2014). For example, the widely recognized Ribbon and Cartoon representations display only features of the protein backbone to illustrate, as clearly as possible, the global protein fold. Color schemes may further be applied to highlight secondary structure elements, such that alpha-helices, beta-sheets, and other local-fold aspects are distinct. Scientific software for advanced visualization of proteins and other biomolecular structures are readily available. For example, Visual Molecular Dynamics (VMD) (Humphrey et al., 1996) is a widely used, freely available software package for biomolecular visualization and analysis: </span><a class="ltx_ref ltx_url" href="https://www.ks.uiuc.edu/Research/vmd/" style="font-size:120%;" title="">https://www.ks.uiuc.edu/Research/vmd/</a><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+</section>
+<section class="ltx_subsection" id="Sx1.SSx3">
+<h3 class="ltx_title ltx_title_subsection" style="font-size:120%;">TactViz Brings Protein Structure to Tactile Graphics</h3>
+<div class="ltx_para" id="Sx1.SSx3.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Visualization of protein structures represents a barrier to education and research for students who are blind or visually impaired. In remedy, we present a plugin for the VMD software to support tactile visualization of proteins. The plugin introduces representation schemes designed to produce variable-height tactile graphics, as well as drive interactive visualization on electronic refreshable tactile display devices. Through the development of this plugin, we aim to promote diversity and inclusion in STEM education and research by improving accessibility of protein structure visualization for individuals who are blind or visually impaired.</span></p>
+</div>
+</section>
+</section>
+<section class="ltx_section" id="Sx2">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">METHODS</h2>
+<div class="ltx_para" id="Sx2.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">TactViz is a VMD plugin written in the TCL programming language. VMD runs on Windows, Mac, and Linux operating systems and is accessible to individuals who are blind or visually impaired through its text console interface, which can be used with a screen reader or Braille display. TactViz is freely available for download from GitHub: </span><a class="ltx_ref ltx_url" href="https://github.com/jodihadden/TactViz/" style="font-size:120%;" title="">https://github.com/jodihadden/TactViz/</a><span class="ltx_text" style="font-size:120%;"></span></p>
+</div>
+<div class="ltx_para" id="Sx2.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Loading TactViz into VMD applies a representation scheme and display settings that have been empirically optimized to produce clear tactile graphics of 3-dimensional protein structures. The New Cartoon representation provides an abstraction of the protein backbone that distinctly illustrates alpha-helices, beta-sheets, and loops in the protein secondary structure. TactViz takes advantage of VMD’s native shading capabilities to display the protein in grayscale, with the shading gradient indicating special depth. Regions of the structure that are closer to the viewer are more darkly shaded, and shading decreases with distance from the viewer. In keeping with the convention of tactile graphics, more darkly shaded regions will become more elevated and appear closer to the viewer. The sense of depth provided by variable tactile elevation height illuminates the 3-dimensional nature of the protein structure. Shading of the protein updates automatically upon rotation or reorientation, allowing inspection from any viewing angle.</span></p>
+</div>
+<div class="ltx_para" id="Sx2.p3">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">To expand accessibility of VMD for individuals who are blind or visually impaired, as well as simplify usage for non-experts, TactViz also includes shortcuts for common actions, which can be executed through the text console. For example, commands for loading or deleting Protein Data Bank files, zooming in on or rotating the structure, toggling the projection mode between perspective and orthographic, rendering an image that can be printed as a tactile graphic, and rendering a stereolithography (STL) file that can be used for printing a 3-dimensional model are currently implemented. Commands are also implemented for adjusting the shading contrast and intensity in order to optimize the results produced by every individual’s available tactile graphics machine. TactViz is under active development and new features will continue to be added.
+</span></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx3">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">RESULTS AND DISCUSSION</h2>
+<div class="ltx_para" id="Sx3.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">TactViz supports tactile visualization of proteins. Along with 3-dimensional printed models, variable-height tactile graphics produced using TactViz enable individuals who are blind or visually impaired to conceptualize and analyze protein structures through the sense of touch. Figure 1 shows four different approaches for visualization of the protein GB1, including a 3-dimensional printed model, a computer rendering produced using TactViz, a tactile graphic produced using TactViz, and tactile visualization on an electronic refreshable tactile graphics display, also powered by VMD with TactViz. The depth-based shading applied by TactViz translates to elevation height in tactile visualization to illuminate the 3-dimensional nature of the protein structure. A ready-to-print tactile graphic of the protein GB1 [PDB ID 2QMT (Schmidt et al., 2007)], produced using TactViz, is presented in the Appendix.</span></p>
+</div>
+<figure class="ltx_figure" id="Sx3.F1"><img alt="Four pictures for visualization of protein structures, in order: a 3-d printed model, a computer rendering, a variable-height tactile graphic printed using Picture In A Flash machine, a variable-height tactile visualization using VMD with TactViz on the Graphiti electronic refreshable tactile graphics display" class="ltx_graphics ltx_centering" height="410" id="Sx3.F1.g1" src="9692b6d0-59aa-11ef-b3fa-0242ac110002/fig1.png" width="541"/>
+<figcaption class="ltx_caption ltx_centering" style="font-size:120%;"><span class="ltx_tag ltx_tag_figure">Figure 1: </span>Approaches for visualization of protein structures. (a) 3-dimensional printed model. (b) computer rendering with depth-based shading by TactViz. (c) Variable-height tactile graphic produced by TactViz, printed using Picture In A Flash machine. (d) Variable-height tactile visualization using VMD with TactViz on the Graphiti electronic refreshable tactile graphics display.</figcaption>
+</figure>
+<div class="ltx_para" id="Sx3.p2">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">Through the development of TactViz, we have enabled an undergraduate student who is blind to carry out publication-quality research on protein structure and structure-function relationships alongside her sighted peers, within the setting of an academic laboratory. The student’s own experience and perspective captures the effectiveness and impact of our tactile visualization strategy:</span></p>
+</div>
+<div class="ltx_para" id="Sx3.p3">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">“By using TactViz in conjunction with the Graphiti, tactile graphics, and 3-dimensional printed models, I have found that the process of research and data analysis is possible with minimal sighted assistance. Particularly advantagious is the text-based command line of the Linux opperating system and VMD text console, which allow for easy use of TactViz with a screen reader and Braille display. While sighted researchers might visualize a protein on a computer screen, I can now perform visualization using tactile approaches. Previously, as a student who is blind, if I was curious about how a particular protein structure looked, I would likely need to ask a sighted teacher or transcriber to describe the protein or help me find a way to make a tactile representation. With TactViz, I can download any protein from the Protein Data Bank, load it into VMD, and use either a tactile graphics printer or tactile graphics display to independently visualize the protein. Independence is critical, particularly for young scientists who are blind who are looking for ways to participate in STEM fields. Most important is the impact our tactile visualization method can have for other students who are blind or visually impaired who are studying the biological sciences, whether at the elementary or advanced level.”</span></p>
+</blockquote>
+</div>
+</section>
+<section class="ltx_section" id="Sx4">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">SUMMARY</h2>
+<div class="ltx_para" id="Sx4.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">We have developed TactViz, a VMD plugin to support tactile visualization of proteins, providing a mechanism to produce variable-height tactile graphics of protein structures and improve interactive visualization of protein structures on electronic refreshable tactile graphics display devices. This tool is freely available for download and use and is designed to be accessible to both non-experts and individuals who are blind or visually impaired. Because the plugin can theoretically be used to create tactile graphics of any protein structure in the Protein Data Bank, it provides unprecedented access to tactile training materials relevant to the fields of biology, biochemistry, and biophysics. Furthermore, TactViz has enabled our undergraduate student who is blind to carry out research on protein structure-function relationships alongside her sighted peers. We hope that the tool can serve to reduce barriers to education and research presented by biomolecular visualization for other students, attracting more individuals who are blind or visually impaired to STEM fields and empowering future scientists who do not depend on the sense of sight.</span></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx5">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">ACKNOWLEDGEMENTS</h2>
+<div class="ltx_para" id="Sx5.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">This work was supported by National Science Foundation grant MCB-2027096, funded in part by the Delaware Established Program to Stimulate Competitive Research (EPSCoR). This work used the Extreme Science and Engineering Discovery Environment (XSEDE), which is supported by National Science Foundation grant ACI-1548562, through an Education Allocation TG-SEE200003 on Comet at the San Diego Supercomputer Center. Student support was provided by the Chemical Sciences Leadership Initiative (CSLI) Research Experience for Undergraduates program, funded by National Science Foundation grant CHE-1560325, as well as the XSEDE Expert Mentoring Producing Opportunities for Work, Education, and Research (EMPOWER) program, funded by National Science Foundation grant ACI-1548562. The authors thank Cynthia Yurkovich and Soumita Basu for essential guidance on assistive technology and the production of tactile graphics and Thomas Lum for assistance with 3D printing of protein structures. The authors also thank Orbit Research and the American Printing House for the Blind for loan of a Graphiti prototype. The development of the Graphiti prototype was funded in part by the American Printing House for the Blind and the William M. Wood Foundation.
+</span></p>
+</div>
+</section>
+<section class="ltx_section" id="Sx6">
+<h2 class="ltx_title ltx_title_section">REFERENCES</h2>
+<div class="ltx_para" id="Sx6.p1">
+<p class="ltx_p">Barth, J. L. (1982). <span class="ltx_text ltx_font_italic">The Tactile Graphics Guidebook</span>. American Printing House for the Blind, Louisville, KY.</p>
+</div>
+<div class="ltx_para" id="Sx6.p2">
+<p class="ltx_p">Berman, H. M., Westbrook, J., Feng, Z., Gilliland, G., Bhat, T. N., Weissig, H., &amp; Shindyalov, I. N. (2000). The Protein Data Bank (www.rcsb.org). <span class="ltx_text ltx_font_italic">Nucleic Acids Research</span>. <a class="ltx_ref ltx_url" href="https://doi.org/10.1093/nar/28.1.235" title="">https://doi.org/10.1093/nar/28.1.235</a></p>
+</div>
+<div class="ltx_para" id="Sx6.p3">
+<p class="ltx_p">Buxbaum, E. (2007). <span class="ltx_text ltx_font_italic">Fundamentals of Protein Structure and Function</span>. Springer, Boston, MA. <a class="ltx_ref ltx_url" href="https://doi.org/10.1007/978-0-387-68480-2" title="">https://doi.org/10.1007/978-0-387-68480-2</a></p>
+</div>
+<div class="ltx_para" id="Sx6.p4">
+<p class="ltx_p">Chothia, C. (1984). Principles that Determine the Structure of Proteins. <span class="ltx_text ltx_font_italic">Annual Review of Biochemistry</span>. <a class="ltx_ref ltx_url" href="https://doi.org/10.1146/annurev.biochem.53.1.537" title="">https://doi.org/10.1146/annurev.biochem.53.1.537</a></p>
+</div>
+<div class="ltx_para" id="Sx6.p5">
+<p class="ltx_p">Dobson, C. M. (2019). Biophysical Techniques in Structural Biology. <span class="ltx_text ltx_font_italic">Annual Review of Biochemistry</span>. <a class="ltx_ref ltx_url" href="https://doi.org/10.1146/annurev-biochem-013118-111947" title="">https://doi.org/10.1146/annurev-biochem-013118-111947</a></p>
+</div>
+<div class="ltx_para" id="Sx6.p6">
+<p class="ltx_p">Edman, P. (1992). <span class="ltx_text ltx_font_italic">Tactile Graphics</span>. American Foundation for the Blind, New York, NY. <a class="ltx_ref ltx_url" href="https://doi.org/10.1177/026461969201000318" title="">https://doi.org/10.1177/026461969201000318</a></p>
+</div>
+<div class="ltx_para" id="Sx6.p7">
+<p class="ltx_p">Goebel, R. (2014). A sketch of a theory of visualization. <span class="ltx_text ltx_font_italic">Proceedings of the 5th International Conference on Information Visualization Theory and Applications</span>. <a class="ltx_ref ltx_url" href="https://doi.org/10.5220/0004852702180221" title="">https://doi.org/10.5220/0004852702180221</a></p>
+</div>
+<div class="ltx_para" id="Sx6.p8">
+<p class="ltx_p">Goh, B. C., Hadden, J. A., Bernardi, R. C., Singharoy, A., McGreevy, R., Rudack, T., Cassidy, C. K., &amp; Schulten, K. (2016). Computational Methodologies for Real-Space Structural Refinement of Large Macromolecular Complexes. <span class="ltx_text ltx_font_italic">Annual Review of Biophysics</span>. <a class="ltx_ref ltx_url" href="https://doi.org/10.1146/annurev-biophys-062215-011113" title="">https://doi.org/10.1146/annurev-biophys-062215-011113</a></p>
+</div>
+<div class="ltx_para" id="Sx6.p9">
+<p class="ltx_p">Hashimoto, T., &amp; Watanabe, T. (2016). <span class="ltx_text ltx_font_italic">Expansion Characteristic of Tactile Symbols on Swell Paper</span>. International Conference on Computers Helping People with Special Needs. <a class="ltx_ref ltx_url" href="https://doi.org/10.1007/978-3-319-41267-2_10" title="">https://doi.org/10.1007/978-3-319-41267-2_10</a></p>
+</div>
+<div class="ltx_para" id="Sx6.p10">
+<p class="ltx_p">Humphrey, W., Dalke, A., &amp; Schulten, K. (1996). VMD: Visual molecular dynamics. <span class="ltx_text ltx_font_italic">Journal of Molecular Graphics</span>. <a class="ltx_ref ltx_url" href="https://doi.org/10.1016/0263-7855(96)00018-5" title="">https://doi.org/10.1016/0263-7855(96)00018-5</a></p>
+</div>
+<div class="ltx_para" id="Sx6.p11">
+<p class="ltx_p">Rowell, J., &amp; Ungar, S. (2003). The world of touch: An international survey of tactile maps. Part 1: Production. <span class="ltx_text ltx_font_italic">British Journal of Visual Impairment</span>. <a class="ltx_ref ltx_url" href="https://doi.org/10.1177/026461960302100303" title="">https://doi.org/10.1177/026461960302100303</a></p>
+</div>
+<div class="ltx_para" id="Sx6.p12">
+<p class="ltx_p">Schmidt, H. L. F., Sperling, L. J., Gao, Y. G., Wylie, B. J., Boettcher, J. M., Wilson, S. R., &amp; Rienstra, C. M. (2007). Crystal polymorphism of protein GB1 examined by solid-state NMR spectroscopy and X-ray diffraction. <span class="ltx_text ltx_font_italic">Journal of Physical Chemistry B.</span> <a class="ltx_ref ltx_url" href="https://doi.org/10.1021/jp075531p" title="">https://doi.org/10.1021/jp075531p</a></p>
+</div>
+<div class="ltx_para" id="Sx6.p13">
+<p class="ltx_p">Thompson, L., &amp; Chronicle, E. (2006). Beyond visual conventions: Rethinking the design of tactile diagrams. <span class="ltx_text ltx_font_italic">British Journal of Visual Impairment</span>. <a class="ltx_ref ltx_url" href="https://doi.org/10.1177/0264619606063400" title="">https://doi.org/10.1177/0264619606063400</a></p>
+</div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+</section>
+<section class="ltx_section" id="Sx7">
+<h2 class="ltx_title ltx_title_section" style="font-size:120%;">APPENDIX</h2>
+<div class="ltx_para" id="Sx7.p1">
+<p class="ltx_p"><span class="ltx_text" style="font-size:120%;">This graphic of the protein GB1, rendered by VMD with TactViz, displays an alpha-helix in the foreground and four beta-sheets in the background. Alpha-helices and beta-sheets are major secondary structure elements in proteins. The shape of a protein, defined by its secondary structure and fold, plays an important role in the protein’s function in nature.</span></p>
+</div>
+<figure class="ltx_figure" id="Sx7.fig1"><img alt="An alpha-helix in the foreground and four beta-sheets in the background. The alpha-helix is curly and thins into a strip leading to the beta-sheets which are flat and have arrow shapes on one end." class="ltx_graphics ltx_centering" height="775" id="Sx7.g1" src="9692b6d0-59aa-11ef-b3fa-0242ac110002/fig2.png" width="541"/>
+</figure>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Tue Aug 13 19:31:22 2024 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img alt="[LOGO]" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg=="/></a>
+</div></footer>
+<section></section></div>
+
+      <script src="index.js">
+        </script>
+    </body>
+    
+</html>
