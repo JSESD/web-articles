@@ -1,0 +1,161 @@
+\documentclass[11.5pt]{sig-alternate} % sets document style to sig-alternate
+% packages
+% typesetting
+%\usepackage{dirtytalk} % typset quotations easier (\say{stuff})
+\usepackage{hanging} % hanging paragraphs
+\usepackage[defaultlines=3,all]{nowidow} % avoid widows
+\usepackage[pdfpagelabels=false]{hyperref} % produce hypertext links, includes backref and nameref
+\usepackage{xurl} % defines url linebreaks, loads url package
+\usepackage{microtype}
+%\usepackage[super]{nth} % easily create superscript ordinal numbers with \nth{x}
+\usepackage{textcomp}
+\newcommand{\texttildemid}{\raisebox{0.4ex}{\texttildelow}}
+% layout
+%\usepackage{enumitem} % control layout of itemize, enumerate, description
+\usepackage{fancyhdr} % control page headers and footers
+\usepackage{float} % improved interface for floating objects
+\usepackage{multicol} % intermix single and multiple column pages
+% language
+\usepackage[utf8]{inputenc} % accept different input encodings
+\usepackage[english]{babel} % multilanguage support
+% misc
+\usepackage{graphicx} % builds upon graphics package, \includegraphics
+%\usepackage{lastpage} % reference number of pages
+%\usepackage{comment} % exclude portions of text (?)
+\usepackage{xcolor} % color extensions
+\usepackage[backend=biber, style=apa]{biblatex} % sophisticated bibliographies % necessary for HTML to display author info and date on abstract page
+\usepackage{csquotes} % advanced quotations, makes biblatex happy
+\usepackage{authblk} % support for footnote style author/affiliation
+% tables and figures
+\usepackage{tabularray}
+%\usepackage{array} % extend array and tabular environments
+\usepackage{caption} % customize captions in figures and tables (rotating captions, sideways captions, etc)
+%\usepackage{cuted} % allow mixing of \onecolumn and \twocolumn on same page
+\usepackage{multirow} % create tabular cells spanning multiple rows
+%\usepackage{subfigure} % deprecated, support for manipulation of small figures
+%\usepackage{tabularx} % extension of tabular with column designator "x", creates paragraph-like column whose width automatically expands
+%\usepackage{wrapfig} % allows figures or tables to have text wrapped around them
+%\usepackage{booktabs} % better rules
+% dummy text
+%\usepackage{blindtext} % blind text dummy text
+%\usepackage{kantlipsum} % Kant style dummy text
+\usepackage{lipsum} %lorem ipsum dummy text
+% other helpful packages may be booktabs, longtable, longtabu, microtype
+
+\pagestyle{fancy} % sets pagestyle to fancy for fancy headers and footers
+
+% header and footer
+% modern way to set header image
+\renewcommand{\headrulewidth}{0pt} % defines thickness of line under header
+\renewcommand{\footrulewidth}{0pt} % defines thickness of line above header
+\setlength\headheight{80.0pt} % sets height between top margin and header image, effectively moves page contents down
+\addtolength{\textheight}{-80.0pt} % seems to affect the lower height. maybe only works properly if footer numbers enabled?
+\fancyhf{}
+\fancyhead[CE, CO]{\includegraphics[width=\textwidth]{headerImage.png}}
+% footer
+%\fancyfoot[LE,LO]{Article Title Here \\ DOI: }% left footer article title and doi
+%\fancyfoot[CE,CO]{{}} % center footer empty
+%\fancyfoot[RE,RO]{\thepage} % right footer page numbers
+%\pagenumbering{arabic} % arabic (1, 2, 3) numbering in footer
+
+\hypersetup{colorlinks=true,urlcolor=blue} % sets link color to blue
+\urlstyle{same} % sets url typeface to same as rest of text
+
+% set caption and figure to italics, label bold, left align captions, does not transfer to HTML
+\DeclareCaptionFormat{custom}
+{
+    \textbf{\textit{\large #1#2}}\textit{\large #3} % #1 is the "Table 1" or "Figure 1" part, #2 is the separator (":"), #3 is the caption
+}
+\captionsetup{format=custom}
+\captionsetup{justification = raggedright, singlelinecheck = false}
+
+%this next bit is confusing, but essentially changes the width of the abstract. Seems to have been copied from this https://tex.stackexchange.com/questions/151583/how-to-adjust-the-width-of-abstract
+\let\oldabstract\abstract
+\let\oldendabstract\endabstract
+\makeatletter %changes @ catcode to enable modification (in parsep)
+\renewenvironment{abstract} %alters the abstract environment
+{\renewenvironment{quotation}%
+               {\list{}{\addtolength{\leftmargin}{1em} % change this value to add or remove length to the the default ?
+                        \listparindent 1.5em%
+                        \itemindent    \listparindent%
+                        \rightmargin   \leftmargin%
+                        \parsep        \z@ \@plus\p@}%
+                \item\relax}%
+               {\endlist}%
+\oldabstract}
+{\oldendabstract}
+\makeatother %changes @ catcode to disable modification
+
+% checks
+% italics +
+% links
+% dashes +
+% tildes +
+\begin{document}
+
+\title{Overview of the 2018 Inclusion in Science, Learning a New Direction, Conference on Disability (ISLAND)}
+
+\author[1]{\large \color{blue}Dr. Cary A. Supalo}
+\author[1]{\large \color{blue}Jasodhara Bhattacharya}
+\author[1]{\large \color{blue}Dr. Daniel Steinberg}
+
+\affil[1]{Princeton University}
+
+\toappear{}
+%% ABSTRACT
+\maketitle % prints article title
+\begin{large}
+The 9th annual Inclusion in Science, Learning a New Direction, Conference on Disability was hosted by Princeton Center for Complex Materials (PCCM), a National Science Foundation funded Materials Research Science and Engineering Center (MRSEC), and Princeton University on September 14-15, 2018 at Bowen Hall. This annual conference included presentations that featured innovative research done by science educators in formal and informal education, ranging from pre-K-12 to higher education, as
+
+\end{large}
+ 
+\textbf{*Corresponding Author, Dr. Cary A. Supalo}\\
+\href{mailto:csupalo@ets.org}{csupalo@ets.org} \\
+\textit{Submitted  February 5th, 2019}\\
+\textit{Accepted February 20th, 2019} \\
+\textit{Published online March 28th, 2019} \\
+\textit{DOI:10.14448/jsesd.12.0006} \\
+\newpage
+\begin{large}
+well as science education researchers, access technology developers, and others interested in the full inclusion of persons with disabilities into the Science, Technology, Engineering, and Mathematics (STEM) workforce. The 2018 ISLAND conference featured thirteen different presentations over the two-day period. The following is intended to give the reader an overview of the presentations that were delivered. This is not intended to be a complete summary of all aspects of the presentations that were discussed.
+
+\end{large}
+
+\pagebreak
+\clearpage
+\begin{large}
+
+The first was a heartwarming keynote address by \textbf{Michael Hingson}, blind physicist and World Trade Center survivor. Mr. Hingson told his story of survival on September 11, 2001 and how he as a totally blind person, along with his guide dog Roselle, helped numerous others escape the World Trade Center back on that tragic day. His use of problem solving skills along with his blindness skills training played huge dividends on that infamous day. His story is immortalized in his New York Times best-seller list book titled, “Thunder Dog.” This presentation had conference attendees seeing a real-live illustrative example of what a person with a disability can do in even the most dire of circumstances.
+
+\textbf{Dr. Jason White} from the \textbf{Educational Testing Service} followed this presentation on the next day with a presentation titled, \textbf{“WCAG 2.1 Meets STEM: Application, Interpretation, and Challenges for Further Standard Development.”} In this presentation, Dr. White discussed the importance of the Web Content Accessibility Guidelines 2.1 (WCAG 2.1), and how these important standards may impact the rendering of STEM content on the World Wide Web. He also discussed the implications for teaching STEM content and standardized approaches for representing mathematical and other scientific technical content.
+
+\textbf{Jason Martin} from the \textbf{Alabama Department of Rehabilitation Services} followed with a presentation titled, \textbf{“Teaching Basic Cryptography Concepts Using Braille and Large Print Manipulatives.”}, which featured how a standard cybersecurity curriculum can be successfully adapted for students with visual impairments. Specific hands-on braille and large-print labeled decoding tools were highlighted along with different representations of coded messages. This presentation served as an illustrative example for teachers as to how they can promote handson engaging activities that involve cryptography based tasks.
+
+\textbf{Michael Hingson} from \textbf{Aira} then delivered his second presentation of the conference titled, \textbf{“Using Aira Services in STEM Education.”} In this presentation he described how the remote sighted assistance is provided using digital technologies and how these valuable tools could be used in a STEM instruction context. People who are blind can use the Aira service to have remote assistance with reading printed text on textbook pages, handouts, and other laboratory equipment. He also described how scientific phenomena such as color, effervescence, turbidity and the formation of a precipitate can be described by Aira agents using Aira description standards. These standards can be customized by individual users, who are referred to as Aira Explorers. Additionally, a current program for making the Aira subscription service available to current college students for free was also discussed.  The Aira service is currently free for members of the Princeton University community.
+
+\textbf{Rosanne Hoffmann}, who serves as the STEM project lead for the \textbf{American Printing House for the Blind} (APH), then delivered a presentation titled, \textbf{“The SALS App: Making Chemistry Accessible With iOS Devices.”} The SALS referred to as the submersible audible light sensor has been under development by APH for a number of years. This device originally was developed at Penn State University as part of the Independent Laboratory Access for the Blind (ILAB) project. This newest version of the SALS features a Bluetooth enabled light sensor enclosed in a glass tube that works in conjunction with a mobile app. This mobile app allows a user to hear audible tones that change with the amount of light detected by the light sensor in a test-tube or other reaction vessel.
+
+\textbf{Ken Perry}, also from the \textbf{American Printing House for the Blind}, followed with a presentation titled, \textbf{“Changing STEM with the Graphiti: A Tactile Graphic Display.”}, where he described some of the new technological enhancements introduced as part of the new Graphiti tactile graphics display. This valuable tool allows a person who is blind to access dynamic graphical information rendered on a computer screen. It also allows a user to draw on the display to record graphical responses. Potential applications for the Graphiti were discussed as part of this presentation. Currently tactile graphics are provided in static hard-copy paper form. The Graphiti represents a new innovative technology that has the potential of changing how students who are blind receive graphical information in real-time.
+
+The next presentation was by \textbf{Dr. Mike Kolinsky} from \textbf{nextgenEmedia} and titled, \textbf{“3D Printer and Swell Paper Audio-Enriched Tactile Templates Expand Access to Images from Microscopes and Human Anatomy Sections.”} This presentation featured tactile graphics that could be placed on a tablet computer that could provide additional audio and audible feedback. One challenge with tactile graphics is the limited amount of space directly on the graphics themselves. This technology application provides an innovative way of going beyond the space limitations of two-dimensional physical space, as Dr. Kolinsky demonstrated to conference attendees using specific examples.
+
+Next, \textbf{Dr. Todd Pagano} from \textbf{Rochester Institute of Technology/ National Technical Institute for the Deaf} (RIT) gave a presentation titled, \textbf{“A Post-Secondary Degree Program that Maximizes Deaf/Hard-of-Hearing Student Success.”}  In this presentation, Dr. Pagano discussed the underrepresentation of students who are deaf or hard-of-hearing (D/HH) in the STEM workforce. The National Technical Institute for the Deaf offers comprehensive and inclusive degree  programs for students who are D/HH. Classes in which instruction is communicated using Sign Language is a key component of NTID’s course offerings. Pedagogical interventions and unique aspects of NTID’s chemistry program were discussed. The inclusive approach to STEM education featured at RIT is a clear illustration of how inclusion can be achieved with proper training and opportunity for students who are D/HH.
+
+The next presentation was by \textbf{Dr. H David Wohlers} from \textbf{Truman State University} titled, \textbf{“Teaching Introductory Chemistry Laboratory Courses to Blind Students at Truman State University.”} In this presentation, he discussed how two students with visual impairments were enrolled in either the general chemistry nonmajors course, or in the first semester general chemistry course at Truman State University. Talking and audible laboratory tools were provided to these two students with visual impairments as part of their laboratory instruction. In both cases, the students were paired with a sighted laboratory assistant who was present to provide ancillary support. He observed that the students were overwhelmingly able to complete the majority of tasks with minimal to no assistance from their sighted laboratory assistant. Dr. Wohlers’ documented case studies for each student illustrates how audible tools can shift what is possible for students with visual impairments to do in the STEM laboratory environment. 
+
+The next presentation titled, \textbf{“Fun Science Activities for Young Children.”} was by \textbf{Dr. Lillian A. Rankel \& Marilyn Winograd}. They discussed how multisensory approaches for teaching science activities to children ages 3-8 could be conducted. Numerous examples along with resources were provided to the conference attendees. Introducing science activities and instruction in the early years has been found to help to build essential skills such as language development, following directions, mathematics sense, and reading readiness. Multisensory hands-on science instruction can be successfully conducted by science educators, special education teachers, and paraprofessionals. The methods illustrated in this presentation serve as illustrative examples of how science instruction to the visually impaired can be multisensory in nature and conducted in a hands-on way.
+
+The next presentation was by \textbf{Anna Volker} from \textbf{Ohio State University} and titled, \textbf{“AstroAccess: Creative Approaches to Disability Inclusion in STEM.”}, who discussed several ways astronomy concepts can be made accessible to students with various disabilities. Images from the Hubble Space Telescope of galaxies were made into 3-D models for students with visual impairments. Additionally, she discussed the use of theatre outreach to teach science concepts to students on the autism spectrum by using interactive games to teach life skills. She also discussed the importance of effective and accessible science communication in terms of its profound impact on the successful teaching of science to students with various disabilities.
+
+The next presentation was given by \textbf{Robert Jaquiss} from the \textbf{American Thermoform Corporation} and titled, \textbf{“A Review of Tactile Graphics Repositories.”} in this presentation he showed current methodologies for producing tactile graphics for students who are blind or visually impaired. The methods presented involved the use of Tiger graphics, thermoform, and capsule paper. Additionally, he presented on the use of additive and subtractive rapid prototyping technologies in the production of 3D models. A number of 2D and 3D models of science concepts were available for conference attendees to examine.
+
+The final presentation was delivered by \textbf{Dr. Donald Lubowich} from \textbf{Hofstra University} and titled, \textbf{“Edible Astronomy Demonstration and Laboratory Activities.”} In this presentation Dr. Lubowich discussed how common food items that are popular with children can be used to teach science concepts to students with visual impairments. He demonstrated how chocolate chips, cookies, marshmallows, popcorn, candy, bagels, potato chips, frosting, and pizza can be used to teach earth space and astronomical phenomenon such as plate tectonics, radioactivity and radioactive dating, and planetary formation, and promote students’ understanding of scientific concepts.  His presentation illustrated how children with and without visual impairments can have fun with food while learning about science in a hands-on way.
+
+The 2018 ISLAND conference included a number of different presentations that featured techniques and approaches for teaching a range of scientific disciplines in unique ways. Many presenters described and demonstrated specific methodologies that were implemented in their specific situations, which could be replicated and adapted for different contexts.  More formal research conducted in the future, to determine the effectiveness of some of the methodologies presented as part of the ISLAND conference, may lead to innovative new best practices for the science education community. Multisensory science instruction is becoming more mainstream, and new innovative digital technologies are becoming more readily available to effectively render STEM content in more inclusive accessible ways. These advances will further promote persons with disabilities entering the STEM fields of study. More discussions are needed to further promote new innovative methodologies and access technology development and implementation to advance more inclusive and equitable instruction in K-12 and higher education.  The Princeton University MRSEC outreach program, helped host the program in 2018 and is planning on helping in future years.
+
+\section*{ACKNOWLEDGEMENTS}
+“This conference was partially supported by NSF through the Princeton University Materials Research Science and Engineering Center DMR-1420541”
+
+\end{large}
+
+\end{document}
