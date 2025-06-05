@@ -1,0 +1,195 @@
+\documentclass[11.5pt]{sig-alternate} % sets document style to sig-alternate
+% packages
+% typesetting
+%\usepackage{dirtytalk} % typset quotations easier (\say{stuff})
+\usepackage{hanging} % hanging paragraphs
+\usepackage[defaultlines=3,all]{nowidow} % avoid widows
+\usepackage[pdfpagelabels=false]{hyperref} % produce hypertext links, includes backref and nameref
+\usepackage{xurl} % defines url linebreaks, loads url package
+\usepackage{microtype}
+\usepackage{textgreek}
+%\usepackage{textcomp}
+%\newcommand{\texttildemid}{\raisebox{0.4ex}{\texttildelow}}
+% layout
+\usepackage{enumitem} % control layout of itemize, enumerate, description
+\usepackage{fancyhdr} % control page headers and footers
+\usepackage{float} % improved interface for floating objects
+%\usepackage{multicol} % intermix single and multiple column pages
+% language
+\usepackage[utf8]{inputenc} % accept different input encodings
+\usepackage[english]{babel} % multilanguage support
+% misc
+\usepackage{graphicx} % builds upon graphics package, \includegraphics
+%\usepackage{lastpage} % reference number of pages
+%\usepackage{comment} % exclude portions of text (?)
+\usepackage{xcolor} % color extensions
+\usepackage[backend=biber, style=apa]{biblatex} % sophisticated bibliographies % necessary for HTML to display author info and date on abstract page
+\usepackage{csquotes} % advanced quotations, makes biblatex happy
+\usepackage{authblk} % support for footnote style author/affiliation
+% tables and figures
+\usepackage{tabularray}
+%\usepackage{array} % extend array and tabular environments
+\usepackage{caption} % customize captions in figures and tables (rotating captions, sideways captions, etc)
+%\usepackage{cuted} % allow mixing of \onecolumn and \twocolumn on same page
+\usepackage{multirow} % create tabular cells spanning multiple rows
+%\usepackage{subfigure} % deprecated, support for manipulation of small figures
+%\usepackage{tabularx} % extension of tabular with column designator "x", creates paragraph-like column whose width automatically expands
+%\usepackage{wrapfig} % allows figures or tables to have text wrapped around them
+%\usepackage{booktabs} % better rules
+% dummy text
+%\usepackage{blindtext} % blind text dummy text
+%\usepackage{kantlipsum} % Kant style dummy text
+\usepackage{lipsum} %lorem ipsum dummy text
+% other helpful packages may be booktabs, longtable, longtabu, microtype
+
+\pagestyle{fancy} % sets pagestyle to fancy for fancy headers and footers
+
+% header and footer
+% modern way to set header image
+\renewcommand{\headrulewidth}{0pt} % defines thickness of line under header
+\renewcommand{\footrulewidth}{0pt} % defines thickness of line above header
+\setlength\headheight{80.0pt} % sets height between top margin and header image, effectively moves page contents down
+\addtolength{\textheight}{-80.0pt} % seems to affect the lower height. maybe only works properly if footer numbers enabled?
+\fancyhf{}
+\fancyhead[CE, CO]{\includegraphics[width=\textwidth]{headerImage.png}}
+% footer
+%\fancyfoot[LE,LO]{Article Title Here \\ DOI: }% left footer article title and doi
+%\fancyfoot[CE,CO]{{}} % center footer empty
+%\fancyfoot[RE,RO]{\thepage} % right footer page numbers
+%\pagenumbering{arabic} % arabic (1, 2, 3) numbering in footer
+
+\hypersetup{colorlinks=true,urlcolor=blue} % sets link color to blue
+\urlstyle{same} % sets url typeface to same as rest of text
+
+% set caption and figure to italics, label bold, left align captions, does not transfer to HTML
+\captionsetup{labelfont=bf, font={large, it}, justification=raggedright, singlelinecheck=false}
+\renewcommand\theContinuedFloat{\alph{ContinuedFloat}}
+
+%this next bit is confusing, but essentially changes the width of the abstract. Seems to have been copied from this https://tex.stackexchange.com/questions/151583/how-to-adjust-the-width-of-abstract
+\let\oldabstract\abstract
+\let\oldendabstract\endabstract
+\makeatletter %changes @ catcode to enable modification (in parsep)
+\renewenvironment{abstract} %alters the abstract environment
+{\renewenvironment{quotation}%
+               {\list{}{\addtolength{\leftmargin}{1em} % change this value to add or remove length to the the default ?
+                        \listparindent 1.5em%
+                        \itemindent    \listparindent%
+                        \rightmargin   \leftmargin%
+                        \parsep        \z@ \@plus\p@}%
+                \item\relax}%
+               {\endlist}%
+\oldabstract}
+{\oldendabstract}
+\makeatother %changes @ catcode to disable modification
+
+% checks
+% italics
+% links
+% dashes
+% tildes
+\begin{document}
+
+\title{Video-Tutorials for Tech Sign Vocabulary in Astronomy}
+
+\author[1]{\large \color{blue}Judy Egelston-Dodd}
+\author[1]{\large \color{blue}Simon Ting }
+
+\affil[1]{Rochester Institute of Technology/National  Technical Institute for the Deaf }
+
+\toappear{}
+%% ABSTRACT
+\maketitle
+\begin{@twocolumnfalse} 
+\begin{abstract}
+\item 
+\textit{This article describes the mediated American Sing Language (ASL) presentation of technical vocabulary and definitions within the context of a web-based astronomy course for first year students at the National Technical Institute for the Deaf at Rochester Institute of Technology (Rochester, NY).  Deaf students showed achievement gains with fewer astronomy misconceptions. Also, student ratings of instructor ASL skill, as reported on the student rating system, were higher after students used the ASL vocabulary videos.}
+\\ \\
+\end{abstract}
+\end{@twocolumnfalse}
+
+%% AUTHOR INFORMATION
+
+\textbf{*Corresponding Author, Judy Egelston-Dodd}\\
+\href{mailto:jcenmp@rit.edu}{(jcenmp@rit.edu)} \\
+\textit{Submitted  Apr 14 2014}\\
+\textit{Accepted Apr 14 2014} \\
+\textit{Published online Apr 14 2014} \\
+\textit{DOI:10.14448/jsesd.01.0002} \\
+\pagebreak
+\clearpage
+\begin{large}
+\section*{INTRODUCTION}
+Technical vocabulary in science courses represents a huge challenge for deaf students at all levels of instruction.  Although frustrated by students’ inability to grasp complex science concepts, science teachers sometimes fail to recognize they are not adequately addressing students’ misconceptions about science.  When concepts are not thoroughly understood, human beings develop common sense or intuitive ideas to explain the behavior of the natural world, and these individualistic ideas strongly influence what and how students learn in the science classroom (Talanquer, 2002). 
+ 
+Misconceptions in science have been reported to occur when ASL signs are used in the classroom.  Egelston-Dodd and Himmelstein (1996) described a first-year college student in astronomy class who explained the changing phases of the Moon by showing a giant letter “C,” sides of which could be seen from various angles as the Moon revolved around the Earth.  The C- handshape for “moon” no doubt prompted the misconception. 
+ 
+Deaf students reportedly test below their hearing peers in reading levels.  Allen (1994) cited statistics showing only forty percent of deaf students who complete high school read above the fourth grade level.  Language barriers result in average reading scores of first year deaf college students generally about the level of the average 8- or 9-year old.  These literacy problems complicate career preparation and career development.  Often the information on course websites provides no visual text alternatives for deaf students to access content other than captioning or other text presentation.  Jelinek Lewis and Jackson (2001) found that captioned video provided significantly better comprehension of content compared to captions alone. 
+ 
+The organization and structure of visual components must be hierarchical to facilitate learning by deaf students.  This paper describes the rationale for, and development of, a web-based technology (i.e., video tutorials) that addresses the inadequate literacy skills of deaf students in science.  Web-based technology can allow deaf students to keep up with their hearing peers in a mainstream classroom. 
+ 
+\section*{CONTEXT AND LITERATURE ON MULTIMEDIA USE WITH DEAF STUDENTS}
+ 
+The study of astronomy has recently become popular both as an elective and as a required science option at the college level.  The basic astronomy course can improve skills in problem solving and decision making and lends itself to small group instruction, discussion of controversial issues related to current events and a plethora of science process skills.  Astronomy content is motivating to students and therefore easier to teach than the content of some other basic sciences.  The knowledge of astronomy content regarding natural phenomena (seasonal and diurnal changes, movement of the heavenly bodies, etc.) and the sometimes controversial and politically loaded current events tied to astronomy (NASA budget, shuttle safety, viability of the space station, etc.) all make astronomy an important course for deaf high school and college students to study. 
+ 
+Performance scores of deaf students in science have been enhanced by the use of multimedia, web-based technology (Dowaliby \& Lang, 1999).  Using 144 deaf college students, Dowaliby \& Lang (1999) compared the influence of four kinds of adjunct aids on factual recall of content about the human eye.  Students were either low, middle or high ability readers (standardized test scores) and assigned to four groups:  1) text plus content movies; 2) text plus ASL; 3) text plus adjunct questions; and 4) all four conditions together (text, sign, movies and questions).  Lower ability readers using text and questions performed as well as high scoring readers using text only.  The combined use of signs, graphics, text and adjunct questions also resulted in statistically significant gains as compared to the control group who read text only. 
+ 
+The use of highly pictorial content and simplified English text resulted in significantly higher gains (pre- to post-test) for 60 deaf students aged 12-22 (Diebold and Waldron, 1988). Lang and Steely (2003) reported that well designed, efficacious curriculum programs can be successfully adapted for use with deaf students by infusing text with ASL explanations and content animations, providing practice on vocabulary and the use of content graphic organizers. Flash cards and slides were used to teach terms in a medical lab technology course at NTID. Verbal and pictorial cues facilitated the relearning of the medical vocabulary better than the initial learning (Braverman, et al., 1979). The pre-teaching of vocabulary has been effective in preparing students to comprehend textbook assignments. Roald (2002) promoted using ASL to discuss a science topic prior to the reading of the textbook in order to enhance achievement. Deaf students’ test performance in environmental science was increased by the use of a combination of text, signed content movies and adjunct instructional questions, but not by content movies alone (Stefano, 2005). “Hybrid” learning, combining web use and live (face-to-face) communication resulted in modest pre- to post-test gains (Daniele, et al., 2001). Deaf students are primarily visual learners and naturally are best served by a combination of ASL and multimedia approaches. The literature reviewed above preponderantly embraces the use of technology to present and provide practice in science content and skills if deaf students are to be appropriately and successfully taught science. The use of the web to combine ASL and mediation in a live science class seems well advised by the research literature. The ultimate payoff should certainly be greater student motivation and better communication of content knowledge resulting in enhanced achievement.
+
+
+\section*{THE ASTRONOMY COURSE }
+ 
+The Astronomy course taught by the author may be selected by students to fulfill the 3hour RIT science requirement.  It is always taught at NTID only in Spring Quarter to accommodate the Rochester weather so that outdoor night labs can be included, using a portable telescope and binoculars.  The course is served on the Web by IdeaToolsTM, a web authority/course management system originally created by Simon Ting, the coauthor.  He developed the basic functionality of IdeaTools with the help of an RIT Provost’s Productivity Grant in 1999 and two Provost’s Learning Innovations Grants in 2001 and 2002 respectively.  Beginning in 2001, Rose Marie Toscano, a professor in the college of Liberal Arts, began collaborating closely with Simon Ting to extend the functionality of IdeaTools.  Their collaboration, supported by three New York State VATEA grants in 2001, 2002, and 2003, resulted in several innovative instructional tools, including tools for building Web-based slide shows that can be synchronized with ASL video to create interactive video tutorials.  The video tutorials described in this paper were created using IdeaTools by taking existing web content and reformatting it as a series of web slides, which were then synchronized to play automatically in time with an ASL video to create an interactive video presentation.  This approach to multimedia development yields substantial time savings, allowing multimedia content to be completed in a timely manner for classroom use. 
+ 
+Each week students participate in a laboratory activity prior to any presentation of content.  This constructivist strategy enables all students to experience a handson/minds-on class, usually working with a partner.  In the subsequent class, where the instructor voices and signs using Conceptually Signed English (CSE), students review the lab results and discuss conclusions.  Students then complete a homework assignment where they view the ASL video tutorial covering that same content.  Then students are assigned reading on the IDEA3 course website and questions from the textbook.  A formal lab report is required, and notes taken during the viewing of the ASL video are collected and read/graded by the teacher. 
+ 
+There are 17 different videos with a half screen ASL narrator whose content summary is supplemented with and supported by relevant graphics and captions downloaded from the website content.  Most of the ASL explanations happen first and then the text and/or animation appears, after which the ASL summary continues.  Occasionally they overlap in time requiring students to watch the ASL explanation while the animation is employed.  Students then are assigned a short multiple choice quiz (8-15 questions) on the IDEA3 website and receive immediate feedback on their performance.  Quizzes may be retaken once to improve students’ scores.  Thus, the organization sequence of instruction flows from:  1) hands-on experience in a lab setting; 2) collaboration and class discussion of relevant results; 3) viewing of the explanation in ASL on video with media and taking notes; 4) reading mediated text and observing media on the course website; 5) writing the lab report; 6) answering questions in textbook; and 7) online content quiz.  Students are encouraged to replay the video tutorials more than once, if they need to reinforce any concepts. 
+ 
+\section*{THE ASL VIDEO TUTORIALS }
+ 
+The first year only six videos were produced with a certified, experienced interpreter doing the ASL content summaries.  No other mediation was used to support or supplement the videos.  Students’ notes revealed that some content was missed, and occasionally some students wrote wrong facts.  The decision to supplement the videos with animation and short clips of text taken directly from the media already developed on the website was an inexpensive solution.  This years’ students had more extensive notes devoid of errors, partly explained by the teacher’s decision to grade the notes assignment. 
+ 
+The amount of text presented with the ASL video is based on content and the need to keep the text message coherent.  Several ASL videos also have audio narration to benefit some students with residual hearing.  In hindsight, the authors would use audio narration with all the ASL presentations, since about fifty percent of the students in the course use aural aids (hearing aids or cochlear implants).  It is unknown whether students actually turned up the audio when viewing the videos. 
+ 
+\section*{DEVELOPMENT OF THE VIDEO TUTORIALS }
+ 
+The development and production of the video tutorials involved the teacher, who identified which content areas needed video mediation and wrote the scripts, the instructional developer who determined the feasibility of producing everything requested and then made it happen, the interpreter who rehearsed the script with the teacher to identify technical sign vocabulary used in the astronomy classroom, such as gravity, rotation, revolution, seasons, planets, etc.  A consumer-grade digital video camcorder was used to videotape the interpreter as he signed the lesson.  To avoid the need to edit the video, “we shot the interpreter” signing from start to end.  If he made an error, rather than stopping he simply corrected himself and continued signing in much the same way that an interpreter would correct a mistake and move on during live interpreting.  After the video was shot, the camcorder was linked to a PC via a Firewire cable to digitize and save the video.  The resulting file was compressed using the free Microsoft Windows Media Encoder and uploaded to IdeaTools.  A web designer, working under the direction of the instructional developer, converted existing course and media content into a series of Web slides.  These slides, together with the video, were imported into IdeaTools multimedia authoring module, where they were synchronized so that the web slides would play in time with the ASL video.  IdeaTools allows unused footage to be skipped over, minimizing the need to edit the video footage if the segments are short.  Minimizing editing reduces the amount of postproduction work, an important consideration when a video tutorial must be completed to meet a class deadline. 
+ 
+\section*{RESULTS AND CONCLUSIONS }
+ 
+Student misconceptions and content challenges were addressed in the video tutorials based on the teacher’s past experience in teaching prior classes:  the Moon’s spherical shape (not a big letter “C”); the reason it is hotter in summer (tilt of Earth’s axis; not being closer to the sun); typical lab report format errors; Kepler’s 3rd law; azimuth vs. altitude, ecliptic path of the Sun through the Zodiac, etc. 
+ 
+The importance of learning technical sign vocabulary was addressed in the ASL video tutorials.  When developing the video programs, the vocabulary lists for each unit were lifted from the website content. A script was prepared detailing what each video would say and which components of the web-based course corresponded to that content.  The scripts had to be short (less than 15 minutes each) so that students could easily view and take notes.  The scripts were signed and taped using a certified interpreter who was knowledgeable about technical science signs and fluent in ASL.  Students reported high comfort level with the videos and rated them useful to very useful when reviewing for the final exam.  Pre- to posttest gains averaged ten points more for this year’s class with an N of 17 students.  Achievement gains and student attitude will be monitored for each iteration of the course in the next two years.  It is possible that students will be able to enter their notes on a course web board which will be made available to every student when reviewing for the final exam. 
+ 
+An unexpected benefit of having the ASL summaries of content on videotape is the sign production support they provide for the teacher as they are viewed in preparation for teaching the next day’s content.  This year students rated their satisfaction with the teacher’s sign communication skills as 4.5 out of 5 on the NTID Student Rating System. 
+ 
+In addition another grant proposal is being prepared to treat the POS:  Environmental Studies course and to design on-line video tutorials for that course content. 
+
+\end{large}
+\include{} 
+\section*{REFERENCES}\par 
+
+\leftskip 0.25in
+\parindent -0.25in 
+Allen, T. E.  (1994). Who are the deaf and hard of hearing students leaving high school and entering postsecondary education?  Paper prepared for Pelavin Research Institute as part of the project, A Comprehensive Evaluation of the Postsecondary Educational Opportunities for Students who are Deaf or Hard of Hearing.  Funded by the U.S. Office of Special Education and Rehabilitative Service.  Available on the web at the following address:  \url{http://gri.gallaudet.edu/AnnualSurvey/whodeaf.html}. 
+ 
+Braverman, B. B., Egelston-Dodd, J. C., and Egelston, R. L.  (1979). Cue utilization by deaf students in learning medical terminology.  \textit{Journal of Research in Science Teaching}, 16, 91-103. 
+ 
+Danielle, V. A., Aidala, C., Parrish, R., Robinson, V., Carr, J., \& Spiecker, P.  (2001). Distance learning pilot:  Physics and mathematics.  Paper presented at the Instructional Technology and Education of the Deaf Symposium, NTID at RIT, Rochester, NY. 
+ 
+Diebold, T. J. and Waldron, M. B.  (1988). Designing instructional formats:  The effects of verbal and pictorial components on hearing-impaired students’ comprehension of science concepts.  \textit{American Annals of the Deaf}, 133, 30-35. 
+ 
+Dowaliby, F. and Lang, H. G.  (1999). Adjunct aids in instructional prose:  A multimedia study with deaf college students.  \textit{Journal of Deaf Studies and Deaf Education}, 4, 270-282. 
+ 
+Egelston-Dodd, J. C. and Himmelstein, J.  (1996). A Constructivist Paradigm in science education for students who are deaf.  \textit{Journal of Science Education for Students with Disabilities}, 4(1), 20-27. 
+ 
+Jelenik Lewis, M. S. and Jackson, D. W.(2001). Preparing to Watch T: A training module for recessing captions for students who are deaf.  Proceedings of the 44th Annual Meeting of the Human Factors and Ergonomics Society, USA, 2, 113-116. 
+ 
+Lang, H. G. and Steely, D.  (2003). Webbased science instruction for deaf students:  What research says to the teacher. \textit{Instructional Science}, 31, 277-298. 
+ 
+Roald, I.  (2002). Norwegian deaf teachers’ reflections on their science instruction:  Implications for instruction.  \textit{Journal of Deaf Studies and Deaf Education}, 7, 57-73. 
+ 
+Stefano, M. J.  (2005, May).  A study of multimedia in an environmental science course.  Master’s degree project at National Technical Institute for the Deaf, Rochester Institute of Technology, Rochester, NY.  
+ 
+Talanquer, V.  (2002, November).  Minimizing Misconceptions:  tools for identifying patterns of reasoning, \textit{The Science Teacher}, 69:8, 46-48.   
+
+\end{document}
