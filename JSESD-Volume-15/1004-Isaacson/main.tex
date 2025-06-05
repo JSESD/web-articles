@@ -1,0 +1,194 @@
+\documentclass[11.5pt]{sig-alternate} % sets document style to sig-alternate
+% packages
+% typesetting
+%\usepackage{dirtytalk} % typset quotations easier (\say{stuff})
+\usepackage{hanging} % hanging paragraphs
+\usepackage[defaultlines=3,all]{nowidow} % avoid widows
+\usepackage[pdfpagelabels=false]{hyperref} % produce hypertext links, includes backref and nameref
+\usepackage{xurl} % defines url linebreaks, loads url package
+\usepackage{microtype}
+\usepackage{textgreek}
+%\usepackage{textcomp}
+%\newcommand{\texttildemid}{\raisebox{0.4ex}{\texttildelow}}
+% layout
+\usepackage{enumitem} % control layout of itemize, enumerate, description
+\usepackage{fancyhdr} % control page headers and footers
+\usepackage{float} % improved interface for floating objects
+%\usepackage{multicol} % intermix single and multiple column pages
+% language
+\usepackage[utf8]{inputenc} % accept different input encodings
+\usepackage[english]{babel} % multilanguage support
+% misc
+\usepackage{graphicx} % builds upon graphics package, \includegraphics
+%\usepackage{lastpage} % reference number of pages
+%\usepackage{comment} % exclude portions of text (?)
+\usepackage{xcolor} % color extensions
+\usepackage[backend=biber, style=apa]{biblatex} % sophisticated bibliographies % necessary for HTML to display author info and date on abstract page
+\usepackage{csquotes} % advanced quotations, makes biblatex happy
+\usepackage{authblk} % support for footnote style author/affiliation
+% tables and figures
+\usepackage{tabularray}
+%\usepackage{array} % extend array and tabular environments
+\usepackage{caption} % customize captions in figures and tables (rotating captions, sideways captions, etc)
+%\usepackage{cuted} % allow mixing of \onecolumn and \twocolumn on same page
+\usepackage{multirow} % create tabular cells spanning multiple rows
+%\usepackage{subfigure} % deprecated, support for manipulation of small figures
+%\usepackage{tabularx} % extension of tabular with column designator "x", creates paragraph-like column whose width automatically expands
+%\usepackage{wrapfig} % allows figures or tables to have text wrapped around them
+%\usepackage{booktabs} % better rules
+% dummy text
+%\usepackage{blindtext} % blind text dummy text
+%\usepackage{kantlipsum} % Kant style dummy text
+\usepackage{lipsum} %lorem ipsum dummy text
+% other helpful packages may be booktabs, longtable, longtabu, microtype
+
+\pagestyle{fancy} % sets pagestyle to fancy for fancy headers and footers
+
+% header and footer
+% modern way to set header image
+\renewcommand{\headrulewidth}{0pt} % defines thickness of line under header
+\renewcommand{\footrulewidth}{0pt} % defines thickness of line above header
+\setlength\headheight{80.0pt} % sets height between top margin and header image, effectively moves page contents down
+\addtolength{\textheight}{-80.0pt} % seems to affect the lower height. maybe only works properly if footer numbers enabled?
+\fancyhf{}
+\fancyhead[CE, CO]{\includegraphics[width=\textwidth]{headerImage.png}}
+% footer
+%\fancyfoot[LE,LO]{Article Title Here \\ DOI: }% left footer article title and doi
+%\fancyfoot[CE,CO]{{}} % center footer empty
+%\fancyfoot[RE,RO]{\thepage} % right footer page numbers
+%\pagenumbering{arabic} % arabic (1, 2, 3) numbering in footer
+
+\hypersetup{colorlinks=true,urlcolor=blue} % sets link color to blue
+\urlstyle{same} % sets url typeface to same as rest of text
+
+% set caption and figure to italics, label bold, left align captions, does not transfer to HTML
+\captionsetup{labelfont=bf, font={large, it}, justification=raggedright, singlelinecheck=false}
+\renewcommand\theContinuedFloat{\alph{ContinuedFloat}}
+
+%this next bit is confusing, but essentially changes the width of the abstract. Seems to have been copied from this https://tex.stackexchange.com/questions/151583/how-to-adjust-the-width-of-abstract
+\let\oldabstract\abstract
+\let\oldendabstract\endabstract
+\makeatletter %changes @ catcode to enable modification (in parsep)
+\renewenvironment{abstract} %alters the abstract environment
+{\renewenvironment{quotation}%
+               {\list{}{\addtolength{\leftmargin}{1em} % change this value to add or remove length to the the default ?
+                        \listparindent 1.5em%
+                        \itemindent    \listparindent%
+                        \rightmargin   \leftmargin%
+                        \parsep        \z@ \@plus\p@}%
+                \item\relax}%
+               {\endlist}%
+\oldabstract}
+{\oldendabstract}
+\makeatother %changes @ catcode to disable modification
+
+% checks
+% italics
+% links
+% dashes
+% tildes
+\begin{document}
+
+\title{Ambiguity and Inconsistencies in Mathematics Spoken in the Classroom: The Need for Teacher Training and Rules for Communication of Mathematics}
+
+\author[1]{\large \color{blue} M.D. Isaacson}
+\author[1]{\large \color{blue} S. Srinivasan}
+\author[1]{\large \color{blue} Lyle L. Lloyd}
+
+
+\affil[1]{Purdue University}
+\toappear{}
+
+\maketitle
+\begin{@twocolumnfalse} 
+\begin{abstract}
+\item 
+\begin{large}
+\textit{Mathematics has the potential for being spoken ambiguously. This is problematic for many students, in particular those who have disabilities that inhibit processing of printed material. This paper documents the magnitude of potential ambiguity arising from textbooks and provides a measure of the degree to which potential ambiguity is actualized through teachers’ speech. Inconsistency among teachers in speaking mathematics is also documented. Evidence is provided that teachers are not adequately aware of ambiguity in speaking mathematics and that they believe that they should have training regarding ambiguity in communication of mathematics and how to speak mathematics non-ambiguously.} \\ \\
+ 
+Keywords: MathSpeak, print disabilities, mathematics, math, ambiguity, inconsistency, communication
+
+\end{large}     
+\end{abstract}
+\end{@twocolumnfalse}
+
+%% ABSTRACT
+
+%% AUTHOR INFORMATION
+
+\textbf{*Corresponding Author, M.D. Isaacson}\\
+\href{mailto:isaacsom@purdue.edu}{(isaacsom@purdue.edu)}\\
+\textit{Submitted December 17, 2013}\\
+\textit{Accepted December 17, 2013}\\
+\textit{Published Online December 17, 2013}\\
+\textit{DOI: 10.14448/jsesd.04.0004}\\
+
+\pagebreak
+\clearpage
+\begin{large}
+\section*{INTRODUCTION}
+Spoken mathematics can be ambiguous and problematic for students with print disabilities. Abraham Nemeth, a blind mathematician, developed rules for speaking mathematics non-ambig\-uously. These rules for speaking mathematics are known as Math-Speak and have been tested for their potential to reduce ambiguity (Isaacson, Lloyd, \& Schleppenbach, 2010a). The rules were found to effectively disambiguate spoken mathematic and were easy to learn. Less than 5 minutes of automated computerized training on MathSpeak rules for radicals, fractions, superscripts, and absolute values resulted in close to 100\% accuracy in interpretation of spoken renderings of mathematics.
+
+Despite the availability of rules for speaking mathematics non-ambiguously and the potential for improving math education, many math teachers are unaware of ambiguity in speaking mathematics and that there are rules for speaking mathematics non-ambiguously. The following paper: 1) provides data concerning the magnitude of potential ambiguity; 2) substantiates insufficient awareness of ambiguity in spoken mathematics by math teachers; 3) identifies areas in mathematical expressions which have high probability of being spoken ambiguously; 4) documents inconsistency in speaking mathematics; and 5) supplies evidence that teacher training regarding spoken ambiguity and MathSpeak rules is desired by math teachers.
+
+\subsection*{Origins of Observations}
+Synthetic speech was used by Isaacson et al. (2010a) to test the MathSpeak rules. It was noted that the synthetic speech renderings could be improved if pauses were inserted between spoken elements of mathematical expressions. Isaacson, Srinivasan, Lloyd (2010b) developed an algorithm to insert pauses and improve synthetic speech renderings of mathematics. The algorithm was based on recordings of middle and high school teachers speaking math expressions aloud as if they were presenting them to their class. Valuable observations tangential to the original purpose of the algorithm study arose from the teacher recordings and interactions with the teachers during debriefing sessions. These observations serve as the basis for the present paper.
+
+\subsection*{Potential Magnitude of Ambiguity}
+The mathematical expressions that the teachers read aloud in Isaacson, et al. (2010b) were sampled from textbooks that met Indiana standards. The primary sampling criteria was that the expressions contain potential ambiguity when spoken as typical everyday speech. This textbook sampling procedure found that textbooks have a substantial quantity of mathematical expressions with potential spoken ambiguity. Specifically, 74.90\% of 1527 mathematical expressions sampled from seven textbooks had potential ambiguity. Considering that textbooks are a likely source of material for teachers, there is a high potential for mathematical expressions with ambiguity to be used in the classroom.
+
+The recordings from the Isaacson, et al. (2010b) study of teachers speaking mathematical expressions with potential ambiguity were analyzed for whether or not they were spoken ambiguously. Specifically, 86\% of the expressions with potential ambiguity were spoken ambiguously. In short, the content from which teachers take much of what they teach (textbooks) contains considerable potential ambiguity and when teachers are asked to speak these expressions, they do so in an ambiguous manner. These classroom conditions are particularly problematic for students with print disabilities and are not optimal for those without print disabilities. 
+
+\subsection*{Insufficient Awareness of Ambiguity}
+During debriefing sessions, the math teachers were asked if they were aware of ambiguity in speaking mathematics. Only one teacher reported being aware of ambiguity in speaking mathematics. The primary reaction to learning about ambiguity was surprise.
+
+\subsection*{Areas Where Teachers Frequently Speak Mathematics Ambiguously}
+The teacher recordings from Isaacson, et al. (2010b) were analyzed to determine where ambiguity most frequently arose. Failure to demarcate the beginning and/or the end of a mathematical construct are the primary locations where ambiguity can arise. For example, both of the mathematical expressions in Table 1 are typically spoken ambiguously as “the square root of a plus b.” According to MathSpeak rules, the first expression would be spoken as “start root a plus b end root” and the second expression as “start root a end root plus b.” 
+
+The verbiage, “the square root ...” taken from typical speech of mathematics implicitly indicates the beginning of the radical sign. The failure to indicate the end of the radical in the typical utterance, “the square root of a plus b,” gives rise to ambiguity because it is unclear what is contained within the radical and what is not within the radical.\\
+
+\begin{table}[h]
+\begin{large}
+Expression 1: $\boxed{\sqrt{a+b}}$ \\
+Expression 2: $\boxed{\sqrt{a}+b}$
+\end{large}
+\caption{Mathematical expressions that are frequently spoken ambiguously}
+\end{table}
+
+Implicit indication of the beginning of mathematical constructs was frequently observed in the recording of math teachers. This appears to be a consequence of common everyday speech of mathematics that by happenstance indicates the beginning of a construct rather than a conscious attempt to indicate the beginning of an ambiguous part of a mathematical expression. One exception to implicit indication of the beginning of a mathematical construct involved fractions. Common speaking of fractions does not usually entail utterances indicating the beginning of a fraction. Common verbiage is exemplified by the following example: “a + b over c.” In this example, there is no indication of the beginning or end of a fraction. With the exception of fractions, most ambiguity in speaking mathematics by the teachers arose from failure to demarcate the end of a construct. Knowing high incidence areas of ambiguity can help teachers become aware of those areas and to focus attention on clearly communicating those areas.
+\raggedbottom
+
+\subsection*{Inconsistency in Speaking Mathematics}
+Isaacson, et al. (2010b), the teachers were asked to read some mathematical expressions twice. Recordings of these repeated expressions were analyzed for variation between teachers in speaking the same mathematical expression. The mean number of different spoken renderings of the same expression was four. Considering that there were nine teachers, this is a considerable amount variation. Inconsistency  may increase cognitive load and inhibit processing and learning (Fisk \& Lloyd, 1989; Isaacson \& Quist, 2011; Taylor, Plunkett, \& Nation, 2011). In addition to reducing ambiguity, use of MathSpeak rules will result in consistent speaking of mathematics, which should reduce potential inhibitory influences of inconsistency on information processing and learning.
+
+\subsection*{Teaching Math Teachers about Ambiguity in Spoken Mathematics}
+The first teacher debriefed by Isaacson, et al. (2010b) was surprised at the amount of ambiguity in speaking mathematics and suggested that teacher training programs should be developed to provide instruction regarding ambiguity and how to speak mathematics non-ambiguously. An informal poll was conducted in subsequent debriefing sessions. The informal poll consisted of asking each teacher if they would support teacher education concerning ambiguity in speaking mathematics and how to speak non-ambiguously. Every teacher (N=9) was supportive of such training. 
+
+\section*{CONCLUSION}
+There is considerable potential ambiguity in source material used by teachers. Textbooks are replete with mathematical expressions that can be spoken ambiguously and when teachers are asked to speak them, they do so ambiguously. Although teachers often write mathematics on the blackboard or other media for their class to see, this does not help students with print disabilities who have difficulty processing printed material and rely heavily on spoken words. Ambiguity in spoken mathematics is particularly problematic for them.
+
+As reported in the present paper, many teachers have little awareness of ambiguity in spoken mathematics. Fortunately, there are easy to learn and effective rules for non-ambiguous communication of mathematics. It would be beneficial for teachers to be educated about ambiguity in spoken mathematics and to have training regarding the use of the MathSpeak rules. The teachers in the present study would like to have had training regarding ambiguity and how to speak mathematics non-ambiguously. It is recommended that teacher education programs provide future teachers with training regarding ambiguity in spoken mathematics and how to speak mathematics non-ambiguously through use of the MathSpeak rules.
+
+It was also found that teachers are inconsistent in how they communicate mathematics. Inconsistencies can inhibit information processing and learning. Using the MathSpeak rules will not only reduce ambiguity but will also reduce inconsistency in communication of mathematics. Reducing ambiguity and inconsistency should facilitate communication and learning of mathematics.
+
+\section*{ACKNOWLEDGEMENTS}
+This research was partially supported by an NSF STTR grant IIp-0712199 to gh LLC and Purdue University; however, the contents do not necessarily represent the policy of either agency, and endorsement by the federal government is not to be assumed.
+
+\end{large}
+\clearpage
+\section*{REFERENCES}\par 
+
+\leftskip 0.25in
+\parindent -0.25in 
+%%%
+Fisk, A.D., \& Lloyd, S.J. (1989). The role of stimulus-to-rule consistency in learning rapid application of spatial rules. \textit{Human Factors, 30}, 35-49.
+
+Isaacson, M.D., Lloyd, L.L. \& Schleppenbach, D. (2010a). Increasing STEM accessibility in students with print disabilities through MathSpeak. \textit{Journal of Science Education for Students with Disabilities, 14}, 25-32.
+
+Isaacson, M.D., Srinivasan, S., \& Lloyd, L.L. (2010b). Development of an algorithm for improving quality and information processing capacity of MathSpeak synthetic speech renderings. \textit{Disability and Rehabilitation: Assistive Technology, 5}, 83-93.
+
+Isaacson, M.D. \& Quist, R.W. (2011). Human factors engineering in assistive technology.  In  Wendt, O., Quist, R.W., \& Lloyd, L.L. (Eds.) \textit{Assistive technology:} Principles and applications for communication disorders and special education (pp. 123-173). San Diego, CA: Academic Press
+
+Taylor, J.S.H., Plunkett, K., \& Nation, K. (2011). The influence of consistency, frequency, and semantics on learning to read: An artificial orthography paradigm. \textit{Journal of Experimental Psychology: Learning, Memory, and Cognition, 37}, 60-76.
+
+\end{document}
