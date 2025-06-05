@@ -1,0 +1,266 @@
+\documentclass[11.5pt]{sig-alternate} % sets document style to sig-alternate
+% packages
+% typesetting
+%\usepackage{dirtytalk} % typset quotations easier (\say{stuff})
+\usepackage{hanging} % hanging paragraphs
+\usepackage[defaultlines=3,all]{nowidow} % avoid widows
+\usepackage[pdfpagelabels=false]{hyperref} % produce hypertext links, includes backref and nameref
+\usepackage{xurl} % defines url linebreaks, loads url package
+\usepackage{microtype}
+\usepackage{textgreek}
+%\usepackage{textcomp}
+%\newcommand{\texttildemid}{\raisebox{0.4ex}{\texttildelow}}
+% layout
+\usepackage{enumitem} % control layout of itemize, enumerate, description
+\usepackage{fancyhdr} % control page headers and footers
+\usepackage{float} % improved interface for floating objects
+%\usepackage{multicol} % intermix single and multiple column pages
+% language
+\usepackage[utf8]{inputenc} % accept different input encodings
+\usepackage[english]{babel} % multilanguage support
+% misc
+\usepackage{graphicx} % builds upon graphics package, \includegraphics
+%\usepackage{lastpage} % reference number of pages
+%\usepackage{comment} % exclude portions of text (?)
+\usepackage{xcolor} % color extensions
+\usepackage[backend=biber, style=apa]{biblatex} % sophisticated bibliographies % necessary for HTML to display author info and date on abstract page
+\usepackage{csquotes} % advanced quotations, makes biblatex happy
+\usepackage{authblk} % support for footnote style author/affiliation
+% tables and figures
+\usepackage{tabularray}
+%\usepackage{array} % extend array and tabular environments
+\usepackage{caption} % customize captions in figures and tables (rotating captions, sideways captions, etc)
+%\usepackage{cuted} % allow mixing of \onecolumn and \twocolumn on same page
+\usepackage{multirow} % create tabular cells spanning multiple rows
+%\usepackage{subfigure} % deprecated, support for manipulation of small figures
+%\usepackage{tabularx} % extension of tabular with column designator "x", creates paragraph-like column whose width automatically expands
+%\usepackage{wrapfig} % allows figures or tables to have text wrapped around them
+%\usepackage{booktabs} % better rules
+% dummy text
+%\usepackage{blindtext} % blind text dummy text
+%\usepackage{kantlipsum} % Kant style dummy text
+\usepackage{lipsum} %lorem ipsum dummy text
+% other helpful packages may be booktabs, longtable, longtabu, microtype
+
+\pagestyle{fancy} % sets pagestyle to fancy for fancy headers and footers
+
+% header and footer
+% modern way to set header image
+\renewcommand{\headrulewidth}{0pt} % defines thickness of line under header
+\renewcommand{\footrulewidth}{0pt} % defines thickness of line above header
+\setlength\headheight{80.0pt} % sets height between top margin and header image, effectively moves page contents down
+\addtolength{\textheight}{-80.0pt} % seems to affect the lower height. maybe only works properly if footer numbers enabled?
+\fancyhf{}
+\fancyhead[CE, CO]{\includegraphics[width=\textwidth]{headerImage.png}}
+% footer
+%\fancyfoot[LE,LO]{Article Title Here \\ DOI: }% left footer article title and doi
+%\fancyfoot[CE,CO]{{}} % center footer empty
+%\fancyfoot[RE,RO]{\thepage} % right footer page numbers
+%\pagenumbering{arabic} % arabic (1, 2, 3) numbering in footer
+
+\hypersetup{colorlinks=true,urlcolor=blue} % sets link color to blue
+\urlstyle{same} % sets url typeface to same as rest of text
+
+% set caption and figure to italics, label bold, left align captions, does not transfer to HTML
+\captionsetup{labelfont=bf, font={large, it}, justification=raggedright, singlelinecheck=false}
+\renewcommand\theContinuedFloat{\alph{ContinuedFloat}}
+
+%this next bit is confusing, but essentially changes the width of the abstract. Seems to have been copied from this https://tex.stackexchange.com/questions/151583/how-to-adjust-the-width-of-abstract
+\let\oldabstract\abstract
+\let\oldendabstract\endabstract
+\makeatletter %changes @ catcode to enable modification (in parsep)
+\renewenvironment{abstract} %alters the abstract environment
+{\renewenvironment{quotation}%
+               {\list{}{\addtolength{\leftmargin}{1em} % change this value to add or remove length to the the default ?
+                        \listparindent 1.5em%
+                        \itemindent    \listparindent%
+                        \rightmargin   \leftmargin%
+                        \parsep        \z@ \@plus\p@}%
+                \item\relax}%
+               {\endlist}%
+\oldabstract}
+{\oldendabstract}
+\makeatother %changes @ catcode to disable modification
+
+% checks
+% italics
+% links
+% dashes
+% tildes
+\begin{document}
+
+\title{Increasing the Accessibility of Science for All Students}
+
+\author[1]{\large \color{blue}Samantha Langley - Turnbaugh}
+\author[1]{\large \color{blue}Glenn Wilson}
+\author[1]{\large \color{blue}Lynn Lovewell}
+
+\affil[1]{	University of Southern Maine}
+
+\toappear{}
+%% ABSTRACT
+\maketitle
+\begin{@twocolumnfalse} 
+\begin{abstract}
+\item 
+\textit{This paper evaluates the accessibility of selected field and laboratory high school science
+activities, and provides suggestions for increasing accessibility for students with disabilities. We
+focused on GLOBE (Global Learning Observations to Benefit the Environment) protocols, specifically
+the new Seasons and Biomes investigation currently being developed as part of the GLOBE program.
+Five university students with disabilities majoring in science or technology were recruited to test the GLOBE protocols, and 10 protocols were evaluated for accessibility. Based on our results, we make
+several suggestions with regards to instructions, equipment, safety, outcomes and activity significance that will increase the accessibility of GLOBE and all K-16 science methods}
+\\ \\
+
+\end{abstract}
+\end{@twocolumnfalse}
+
+%% AUTHOR INFORMATION
+
+\textbf{*Corresponding Author,Samantha Langley - Turnbaugh }\\
+\href{mailto:langley@usm.maine.edu}{(langley@usm.maine.edu)} \\
+\textit{Submitted Apr 14 2014 }\\
+\textit{Accepted Apr 14 2014} \\
+\textit{Published online Apr 14 2014} \\
+\textit{DOI: 10.14448/jsesd.02.0001} \\
+\pagebreak
+\clearpage
+\begin{large}
+
+\section*{INTRODUCTION}
+
+Persons with disabilities account for 20\% of the U.S. population, but only make up 7\% of the science and engineering workforce, compared to 14\% of the entire U.S. labor force (National Science Foundation, 2004). The emphasis on (and the physical challenges of) field research in geology, geophysics, meteorology, atmospheric science, oceanography, soil science, planetary science, and environmental science may be one cause of this underrepresentation (Locke, 2005). In addition, there may be a lack of exposure to field sciences in high school as well as a limited awareness of career options (Locke, 2005).
+
+Science classrooms frequently do not provide the instructional supports that students with disabilities need, and there are clear indications that students with disabilities are not being provided with equal opportunity for science learning. Access to science educational materials for persons with disabilities is critical for ensuring a future workforce qualified to address the continuing challenges in environmental applications and research, and to encourage the future participation of persons with disabilities in field sciences. 
+ This project focused on GLOBE (Global Learning Observations to Benefit the Environment) protocols, specifically the new Seasons and Biomes investigation currently being developed as part of the GLOBE program, as a cooperative effort between by the University of Alaska-Fairbanks, International Arctic Research Center (IARC) and the NASA LandSat Data Continuity (LDCM) and Terra Satellite Missions. GLOBE encourages and promotes science in the classroom by providing students with the opportunity to collect scientifically valid measurements in the fields of atmosphere, hydrology, soils, and land cover/phenology and report their data through the Internet. Data from GLOBE students around the world are collected and stored on the GLOBE data archive for use by student and scientists.
+
+Seasons and Biomes is an inquiry and projectbased initiative that monitors seasons, specifically interannual variability, in order to increase understanding of earth systems science. The project focuses on using existing and new GLOBE protocols to monitor seasonal environmental changes that occur in the major earth biomes. Students monitor their own biomes’ seasons through field work, and gain insights into the connections between climate variations, soils, and vegetation phenology. Existing GLOBE monitoring protocols will be used to measure environmental properties including soil and air temperature, soil moisture, precipitation, and phenology. New protocols are also being developed for measurements of freshwater ice, depth of soil freezing, mosquitoes and others relating to specific biomes.
+
+The purpose of this research was to evaluate the accessibility of the Seasons and Biomes protocols for students with disabilities. This research is an important first step in reducing barriers to the participation, retention and advancement of students with disabilities in field science disciplines. In the long-term, this effort should increase the representation of students with disabilities in college science majors, and increase the number of people capable of working in science-related careers.
+
+Although this study was specific to the GLOBE protocols, our results are applicable to all K-16 field and laboratory science activities. 
+
+\section*{METHODOLOGY AND RESEARCH PROCEDURES}
+
+We tested 10 GLOBE protocols (www.globe.gov) for accessibility, including Bud burst, Clouds, Precipitation, Green up/Green down, Soil fertility, Soil particle distribution, Ice phenology, GPS measurement, Soil particle density and Soil pH. Five (5) University of Southern Maine students with disabilities majoring in science or technology were recruited to test the GLOBE protocols. Their disabilities are profiled in Appendix A. The students were asked to review the protocols and collect data. 
+
+They were videotaped and asked to fill out a questionnaire at the end of data collection. 
+
+\section*{RESULTS}
+
+\subsection*{Instructions and Instructional Design and Layout}
+
+All GLOBE protocols (methods) and data sheets need to be formatted using a standard design that is consistent. Students with disabilities, especially those with processing and functioning disabilities have difficulty moving from one protocol to the next when layout and design are not consistent. If protocol designs are consistent then students will have greater success because they are familiar with the design of the exercise, even if they are not familiar with the content. For example, the students who tested the protocols felt that each protocol should begin with a statement that sets the context of the experiment – why are conducting these experiments, or collecting these data important? What will the data be used for? Examples of how these data are used by scientists or other classrooms are very important to set the stage for the experiment. The second item in each protocol should be a vocabulary list, and the third item should be a list of equipment needed, with illustrations. Care should be taken to ensure that the equipment list is complete, but contains no extras. Students with disabilities are often very literal. For example, if a pencil is not included on the list of equipment they will not bring one. Similarly, if there is a piece of equipment on the list that is not needed, they will become very distracted attempting to determine the purpose of the extra equipment. The fourth item in the protocol should be a bulleted list of instructions. Included in the instructions needs to be contingency plans – what to do if a measurement is not as expected, if a piece of equipment fails, etc. All protocols and equipment should consistently use SI units. 
+
+\section*{EQUIPMENT INSTRUCTIONS}
+
+Similarly, care should be taken to ensure that instructions that accompany equipment are consistent with any equipment instructions given in the protocols. If students are expected to use the instructions that accompany the equipment, they should be physically accessible and follow the format discussed below for protocols. One page equipment “cheat sheets” should also be developed and used in place of equipment manuals. Thus, students are only required to understand the relevant equipment use instructions. Also, these cheat sheets should include information on the accuracy and precision of the equipment, such that the students are comfortable with the data they are collecting.
+
+\section*{DATA SHEETS}
+
+The data sheets also need to be consistent between protocols. There should be only one data table per protocol, and only one protocol per data table. Some type of coding/prompt needs to be used such that it is very clear as to when data needs to be recorded, and exactly where it needs to be recorded on the data sheet. Color coding is often useful in these situations, but classroom teachers may not have access to color printers, and some students have difficulties seeing color. Data sheets should have no extra spaces, and should not ask for extra data beyond which is specified in the protocol. Similarly, if a photograph is required as part of the data collection process, the directions need to be very specific regarding the level of detail required in the photograph. Some type of summary data table might also be useful, to assist the students in processing the data collected in its entirety
+
+\section*{PROTOCOL DESIGN}
+
+In designing the protocols care should be taken to avoid wordiness and long dense text passages. Students benefit from bulleted instructions that are clear, but brief, with an explicit workflow. Students with disabilities often get bogged down with long text blocks, and appreciate white space on the page. However, all vocabulary should be clearly defined, and abbreviations should never be used unless accompanied by the full term. Again, students with processing and memory disabilities have difficulties remembering the meanings of abbreviations from one sentence to the next. Using bullets, bold font, colors and graphics are helpful, as long as the use is consistent between protocols. The use of visual cues, such as photographs or graphics to illustrate key concepts, experimental steps or vocabulary is especially helpful. There are standard guidelines for fonts, sizes, colors, contrast, known as \textit{maximum legibility} and also on the use of \textit{plain language}. Maximum legibility is based on specific dimensions of the appearance of written material. Maximum legibility characteristics have been defined for specific dimensions (Table 1) (Thompson, Johnston, and Thurlow, 2002). “Plain language” writing means making choices in the way you write in order to communicate information quickly and efficiently. It is a very useful way to communicate critical, important information to a diversity of people (Brown, 1999). Plain language strategies are presented in Table 2. 
+
+\begin{table*}[tph]
+\caption{Dimensions of Legibility and characteristics of Maximum Legibility (Thompson, Johnston, and Thurlow (2002))}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Dimension} & \textbf{Maximum Legibility Characteristics} \\ \hline
+Contrast & Black type on matte pastel or off-white paper is most favorable for both legibility and eyestrain. \\ \hline
+Type Size & Large type sizes are most effective for young students who are learning to read, students with visual disabilities, and individuals with eye fatigue issues. The legal size for large print texts is 14 point. (Avoid sizes lower than 12 point) \\  \hline
+Spacing & The amount of space between each character can affect legibility. Spacing needs to 
+be wide between both letters and words. Fixed-space fonts seem to be more legible 
+for some readers than proportional-spaced fonts. \\ \hline
+Leading & Leading, the amount of vertical space between lines of type, must be enough to avoid 
+type that looks blurry and has a muddy look. The amount needed varies with type size 
+(e.g., 14-point type needs 3-6 points of leading). \\ \hline
+Typeface & Standard typeface, using upper and lower case, is more readable than italic, slanted, 
+small caps, or all caps. \\ \hline
+Justification & Unjustified text (with staggered right margin) is easier to see and scan than justified text, especially for poor readers. \\ \hline
+Line Length & Optimal length is about 4 inches or 8 to 10 words per line. This length avoids reader fatigue and difficulty locating the beginning of the next line, which causes readers to lose their place. \\
+Blank Space & A general rule is to allow text to occupy only about half of a page. Blank space anchors text on the paper and increases legibility. \\ \hline
+Graphs and Tables & Symbols used on graphs need to be highly discriminable. Labels should be placed directly next to plot lines so that information can be found quickly and not require short-term memory. \\ \hline
+Illustrations & When used, an illustration should be directly next to the question for which it is needed. Because illustrations create numerous visual and distraction challenges, and may interfere with the use of some accommodations (such as magnifiers), they should be used only when they contain information being assessed. \\ \hline
+Response Formats & Response options should include larger circles (for bubble response tests), as well as  multiple other forms of response \\ \hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[thp]
+\caption{Plain Language Strategies (Brown (1999))}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Strategy} & \textbf{Description} \\ \hline
+Reduce excessive length & Reduce wordiness and remove irrelevant material. \\ \hline
+Use common words & Eliminate unusual or low frequency words and replace with common words (e.g., replace “utilize” with “use”). \\ \hline
+Avoid ambiguous words & For example, “crane” should be avoided because it could be a bird 
+or a piece of heavy machinery. \\ \hline
+Avoid irregularly spelled words & Examples of irregularly spelled words are “trough” and “feign.” \\ \hline
+Avoid proper names & Replace proper names with simple common names such as first 
+names. \\ \hline
+Avoid inconsistent naming and graphic conventions & Avoid multiple names for the same concept. Be consistent in the use of typeface. \\ \hline
+Avoid unclear signals about how to direct attention & Well-designed heading and graphic arrangement can convey information about the relative importance of information and order in which it should be considered. \\ \hline
+Mark all questions & Give an obvious and consistent graphic signal (e.g., bullet, letter, 
+number) to indicate separate questions \\ \hline
+\end{tabular}
+\end{table*}
+
+Symbols should also be used in conjunction with any directional commands, such as left, right, east, west. Also, graphic examples should be used for any direction that requires students estimate a visual percentage (eg. \% cloud cover). The addition of graphics and photographs will require careful management to ensure that the protocols and the GLOBE webpage are accessible using standard screen readers. We tested a few of the protocols using a standard screen reader, JAWS (\url{http://www.freedomscientific.com/fs\_products/software\_jaws.asp}), and found that the numbers, equations and graphs were not accessible to students who are blind or have low vision. 
+
+\section*{EQUIPMENT}
+
+In several cases students commented on the ease of use or user friendliness of the equipment. For example, the compass and GPS unit scored very low on ease of use. Traditional compasses, similar to analog clocks are very hard for students with processing disorders to use, and all schools should consider adopting the use of digital compasses. In general, all equipment should be specified as digital, rather than analog. Not only are digital equipment readouts better for students with learning disabilities, they can also be adapted such that voice “announcement” of data is possible, thereby making them accessible to students with visual disabilities. GPS units differ greatly between manufactures’. Therefore, schools should be consistently specify a certain manufacturer and model number, and also develop a detailed instruction sheet on GPS use. The complexity of the GPS units for first time users was very frustrating, and set a negative tone for the remainder of the protocol data collection. Frustration levels are also high if students are forced to deal with English versus metric conversions, so all protocols, data and equipment should consistently use SI units.
+
+Teachers also need to be aware that students with fine and gross motor skill disabilities have problems handling small pieces of equipment. Care should be taken to provide equipment with lanyards and padded cases. Also, most equipment may be purchased in various sizes, and larger is always better for students with motor skill disabilities
+
+\section*{SAFETY}
+
+Safety is an issue with all science activities, and safety issues range from standard safety equipment such as eye protection to working with one or more partners (“buddy system”). Another issue is that of safely and securely handling and transporting field equipment and instrumentation. For example, lanyards should be used for equipment to prevent the dropping and breaking of delicate instruments, and all equipment should have appropriately padded and protective cases in the event that a piece of equipment is dropped.
+
+For students with disabilities, in general, and especially those with motor function disabilities, whether fine motor skills or more profound motor difficulty, it is critical that the students be made to feel comfortable both in terms of their own safety and the safety and security of equipment and instrumentation for which they are responsible. In order to promote and sustain students’ interest in the STEM areas, especially in field-based research, ensuring student safety and comfort should be a top priority
+
+\section*{EXPECTATIONS AND RESULTS}
+
+Successfully working with scientific data is a critical skill. Students like the opportunity to create and use data arrayed in tables. Generating scientific results is very satisfying to the students. It is important to emphasize consistency and accuracy in the results. One issue that has emerged is that of estimation. In the completed protocols, there were results that were significantly out of range (orders of magnitude) from the correct or reasonable result. Students need to be presented some examples and or training regarding estimation and approximation. 
+
+When the students must work in the open natural environment and have no single expectation to bear in mind it is appropriate for the students to be given an overview of the type of result as well as a range or size of the result. Overall, the students need to achieve a focus on the scope of the protocol so they do not get distracted or enmeshed in false starts and or the commitment of significant amounts of time and energy that take them in unproductive activities/directions. 
+\\
+\section*{CONCLUSIONS}
+
+The results of this research provide important first steps in reducing barriers to the participation, retention and advancement of students with disabilities in field science disciplines. Based on the findings from our data, these are steps that can be taken to increase the accessibility of GLOBE protocols for students with disabilities. These suggestions will also help in increasing the accessibility of all K-16 science methods.
+\begin{itemize}
+    \item Instructions and directions need to be consistent, clear, and thoroughly augmented with graphically accurate depictions of the most critical scientific details.
+    \item  Students need explicit introductions and training with the equipment/instrumentation, especially where there are multiple  steps in setup, calibration, and usage.
+    \item  Analog equipment and instrumentation is confusing and should be replaced with a large readout digital instruments.
+    \item  Students need to be guided through the context and expected outcomes of the problem.
+    \item  Students need to be given a detailed overview of safety issues, concerns, and equipment prior to any experiment or activity.
+    \item  Students need an illustrated glossary for all scientific terms and concepts.
+    \item  Students need to be encouraged as to the benefits of these activities in field science and be led to understand the significance of their work and potential contributions to the scientific body of knowledge in the large projects.
+\end{itemize}
+If well-implemented, recommendations from these efforts should increase the representation of students with disabilities in college science majors, and increase the number of people capable of working in science-related careers. 
+
+\section*{ACKNOWLEDGEMENTS}
+
+This research was funded, in part, by a grant from the Maine Space Grant Consortium. The authors would like to thank the University of Southern Maine students, GLOBE staff, and faculty and staff at the University of AlaskaFairbanks, and the staff of the Eastern Alliance in Science, Technology, Engineering and Mathematics (EAST) for their support of and participation in this project. EAST is funded by NSF through the Research in Disabilities Education (RDE) division. 
+
+\section*{APPENDIX A – STUDENT PROFILES}
+
+“Andy” and “Bob” are students with Asperger’s syndrome. Aspergers affects how a person perceives and processes information and manifests itself in sensory, motor, and social functions. They prefer routine work, and are not able to cope well to changes, and disruptions from routine can cause stress and anxiety. Literal interpretation is common. They also exhibit intense and obsessive levels of focus on things of interest and lack the ability to remember a lot of information or how to retrieve that information for its use. 
+
+“Chris” has severe learning disabilities and difficulty with information processing and executive brain functions. Her primary characteristics are academic skills that are not mastered in reading, spelling, math, and writing (Dyslexia, Dyscalculia, Dysgraphia). She is very resilient and creative in inventing adaptive techniques. She has problems with understanding what is read, difficulty in math processes and concepts, and problems putting together a written document. 
+
+“Dan” is documented for ADHD and takes medication to assist in improving his daily functioning ability. He has difficulty with attention or excessive activity, including impulsiveness. He is very inattentive and has difficulty paying attention to details, sustaining attention, following direction, remembering, and controlling excessive energy. 
+
+“Ellen” has mobility impairment with right foot. In general this causes her to be somewhat clumsy and tire easily while standing. Field exercises are more challenging for her than lab activities. 
+
+\end{large}
+\clearpage
+\section*{REFERENCES}\par 
+
+\leftskip 0.25in
+\parindent -0.25in 
+Brown, P. J. (1999). \textit{Findings of the 1999 plain language field test}. University of Delaware, Newark, DE: Delaware Education Research and Development Center. Committee on Labor and Human Resources Report of May 9, 1997.
+
+Thompson, S.J., Johnstone, C.J., and Thurlow, M.L. (2002). \textit{Universal design applied to largescale assessments} (NCEO Synthesis Report 44). Minneapolis, MN: University of Minnesota, National Center on Educational Outcomes.
+\end{document}
