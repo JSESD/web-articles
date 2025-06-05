@@ -1,0 +1,380 @@
+\documentclass[11.5pt]{sig-alternate} % sets document style to sig-alternate
+% packages
+% typesetting
+%\usepackage{dirtytalk} % typset quotations easier (\say{stuff})
+\usepackage{hanging} % hanging paragraphs
+\usepackage[defaultlines=3,all]{nowidow} % avoid widows
+\usepackage[pdfpagelabels=false]{hyperref} % produce hypertext links, includes backref and nameref
+\usepackage{xurl} % defines url linebreaks, loads url package
+\usepackage{microtype}
+\usepackage{textgreek}
+%\usepackage{textcomp}
+%\newcommand{\texttildemid}{\raisebox{0.4ex}{\texttildelow}}
+% layout
+\usepackage{enumitem} % control layout of itemize, enumerate, description
+\usepackage{fancyhdr} % control page headers and footers
+\usepackage{float} % improved interface for floating objects
+%\usepackage{multicol} % intermix single and multiple column pages
+% language
+\usepackage[utf8]{inputenc} % accept different input encodings
+\usepackage[english]{babel} % multilanguage support
+% misc
+\usepackage{graphicx} % builds upon graphics package, \includegraphics
+%\usepackage{lastpage} % reference number of pages
+%\usepackage{comment} % exclude portions of text (?)
+\usepackage{xcolor} % color extensions
+\usepackage[backend=biber, style=apa]{biblatex} % sophisticated bibliographies % necessary for HTML to display author info and date on abstract page
+\usepackage{csquotes} % advanced quotations, makes biblatex happy
+\usepackage{authblk} % support for footnote style author/affiliation
+% tables and figures
+\usepackage{tabularray}
+%\usepackage{array} % extend array and tabular environments
+\usepackage{caption} % customize captions in figures and tables (rotating captions, sideways captions, etc)
+%\usepackage{cuted} % allow mixing of \onecolumn and \twocolumn on same page
+\usepackage{multirow} % create tabular cells spanning multiple rows
+%\usepackage{subfigure} % deprecated, support for manipulation of small figures
+%\usepackage{tabularx} % extension of tabular with column designator "x", creates paragraph-like column whose width automatically expands
+%\usepackage{wrapfig} % allows figures or tables to have text wrapped around them
+%\usepackage{booktabs} % better rules
+% dummy text
+%\usepackage{blindtext} % blind text dummy text
+%\usepackage{kantlipsum} % Kant style dummy text
+\usepackage{lipsum} %lorem ipsum dummy text
+% other helpful packages may be booktabs, longtable, longtabu, microtype
+
+\pagestyle{fancy} % sets pagestyle to fancy for fancy headers and footers
+
+% header and footer
+% modern way to set header image
+\renewcommand{\headrulewidth}{0pt} % defines thickness of line under header
+\renewcommand{\footrulewidth}{0pt} % defines thickness of line above header
+\setlength\headheight{80.0pt} % sets height between top margin and header image, effectively moves page contents down
+\addtolength{\textheight}{-80.0pt} % seems to affect the lower height. maybe only works properly if footer numbers enabled?
+\fancyhf{}
+\fancyhead[CE, CO]{\includegraphics[width=\textwidth]{headerImage.png}}
+% footer
+%\fancyfoot[LE,LO]{Article Title Here \\ DOI: }% left footer article title and doi
+%\fancyfoot[CE,CO]{{}} % center footer empty
+%\fancyfoot[RE,RO]{\thepage} % right footer page numbers
+%\pagenumbering{arabic} % arabic (1, 2, 3) numbering in footer
+
+\hypersetup{colorlinks=true,urlcolor=blue} % sets link color to blue
+\urlstyle{same} % sets url typeface to same as rest of text
+
+% set caption and figure to italics, label bold, left align captions, does not transfer to HTML
+\captionsetup{labelfont=bf, font={large, it}, justification=raggedright, singlelinecheck=false}
+\renewcommand\theContinuedFloat{\alph{ContinuedFloat}}
+
+%this next bit is confusing, but essentially changes the width of the abstract. Seems to have been copied from this https://tex.stackexchange.com/questions/151583/how-to-adjust-the-width-of-abstract
+\let\oldabstract\abstract
+\let\oldendabstract\endabstract
+\makeatletter %changes @ catcode to enable modification (in parsep)
+\renewenvironment{abstract} %alters the abstract environment
+{\renewenvironment{quotation}%
+               {\list{}{\addtolength{\leftmargin}{1em} % change this value to add or remove length to the the default ?
+                        \listparindent 1.5em%
+                        \itemindent    \listparindent%
+                        \rightmargin   \leftmargin%
+                        \parsep        \z@ \@plus\p@}%
+                \item\relax}%
+               {\endlist}%
+\oldabstract}
+{\oldendabstract}
+\makeatother %changes @ catcode to disable modification
+
+% checks
+% italics -
+% links - 
+% dashes -
+% tildes -
+\begin{document}
+
+\title{Teacher Perceptions Regarding Teaching and Learning of Seasonal Change Concepts of Middle School Students with Visual Impairments}
+
+\author[1]{\large \color{blue}Tiffany A. Wild}
+
+\affil[1]{The Ohio State University}
+
+\toappear{}
+%% ABSTRACT
+\maketitle
+\begin{@twocolumnfalse} 
+\begin{abstract}
+\item 
+\textit{This study examines two classroom teachers’ of students with visual impairments perceptions of middle school students with visual impairments learning of seasonal change and the teaching methods used in their classrooms.  These perceptions were compared to data that documented student learning of the science content of seasonal change.  The first teacher taught seasonal change concepts to middle school students with visual impairments using traditional instruction methodologies.  The second teacher taught the same concepts using inquiry-based methodologies.   Both classroom teachers were interviewed in order to probe their thinking about their classroom practices and the strategies they used.  Upon completion of the inquiry-based lessons, the inquiry-based teacher stated that she will continue to utilize these lessons in the future and will not change any lessons. The traditional group teacher stated he would not make any changes but would add only a few units before teaching seasons. Both felt that students learned the reasons for seasons. Data showed that students in the traditional group were not as successful as their peers in the inquiry-based group.}
+\\ \\
+Keywords: inquiry-based science, visual impairments, teacher perceptions, seasonal change
+\end{abstract}
+\end{@twocolumnfalse}
+
+%% AUTHOR INFORMATION
+
+\textbf{*Corresponding Author, Tiffany A. Wild}\\
+\href{mailto:twild@ehe.osu.edu}{(twild@ehe.osu.edu)} \\
+\textit{Submitted Nov 8 2016 }\\
+\textit{Accepted  Jan 3 201} \\
+\textit{Published online Feb 16 2017} \\
+\textit{DOI:10.14448/jsesd.08.0005} \\
+\pagebreak
+\clearpage
+\begin{large}
+
+“To understand teaching from teachers’ perspectives we have to understand the beliefs with which they define their work” (Nespor, 1987, p. 323).  Therefore, teacher beliefs must be examined in order to understand the pedagogical practices as well as beliefs about student learning.   
+
+\section*{TEACHER BELIEFS}
+
+Pajaras (1992) reported that teacher beliefs are personal and unaffected by persuasion.  The beliefs can be formed through chance encounters, an intense experience, and a series of events.  Beliefs include ideas about oneself and about what others are like.  Presumptions are entities that exist beyond the control or knowledge of the individual and are believed by the individual because they are present. 
+	
+ Beliefs have a strong effect on teachers (Pajaras, 1992).  Teachers often teach materials and courses that reflect the values the teacher holds concerning the content area (Nespor, 1987).  These values in turn reflect the energy expended on an activity as well as the manner in which the teacher will expend his or her energy in the classroom.  
+	
+ Beliefs do not require group consensus (Pajaras, 1992).  The teacher does not need to have validity or appropriateness associated with beliefs held.  Beliefs do not require internal consistency either.  The inconsistent nature of the internal belief system reflects the disputable and inflexible nature of the beliefs.
+	
+ Beliefs of teachers ultimately affect their views of education.  According to Levitt (2001, p. 2), “Educational beliefs include beliefs about students and the learning process, about teachers and teaching, about the nature of knowledge, about the roles of schools in society, and about the curriculum.”  Teachers hold beliefs about their own work and subject matter they teach.  Research has shown that science content educators’ beliefs affect the way in which the science curriculum is taught (Levitt, 2001; Roehrig \& Kurse, 2005; Tobin \& Gallagher, 1987; Tsai, 2002).  Specifically, the beliefs a science content educator holds about the nature of science and the teaching and learning of science will determine, to a great extent, the type of science education a child receives. Teachers’ beliefs affect how they teach the science content. Beliefs determine if a teacher uses more traditional instruction with a heavy emphasis on rote memorization and textbook reading or more inquiry based learning approaches with hands-on experiences for the students (Levitt, 2001; Roehrig \& Kruse, 2005; Tsai, 2002).
+
+Likewise, the beliefs held by teachers of students with visual impairments have an impact on the way in which they view their students and how they provide their students with access to the science curriculum. These beliefs also influence the amount of time and energy expended on lessons and different types of concepts as well as how student learning is assessed. Because teachers’ beliefs are so influential on how they teach and assess learning, teachers’ of students with visual impairments beliefs about pedagogy and student learning will be examined in this study.
+
+\section*{INQUIRY-BASED EDUCATION}
+		
+Inquiry-based education in science allows students to engage in scientific activities much like the work of a scientist.  Students utilize thinking processes similar to how a scientist would begin to examine the natural world.  The National Research Council defines inquiry as: 
+
+\begin{quote}
+…diverse ways in which scientists study the natural world and propose explanations based on the evidence…It refers to the activities of students in which they develop knowledge and understanding of scientific ideas, as well as an understanding of how scientists study the natural world (NRC, 1996, p.2).
+\end{quote}
+
+Inquiry education refers to not only science content, but also a way in which to learn and understand science.
+
+\begin{quote}
+Understandings of science inquiry represent how and why scientific knowledge changes in response to new evidence, logical analysis and modified explanations debated within a community of scientists. (NRC, 2000, p. 21)
+\end{quote}
+	
+Results from research that focused on inquiry-based instruction indicate that this type of instruction can be beneficial to students with disabilities (Lynch et al., 2007; Mastropieri, 2005). Inquiry-based instruction techniques can facilitate the efforts of regular education teachers as well as specialists in making appropriate modifications based upon the needs of the student. Fewer behavior problems tend to result from the use of this teaching process (Matropieri, 2005).  
+
+Wild, Paul, \& Kurz (2008), reported that science teachers utilized inquiry-based methodologies in 61.11\% of the classrooms which contained visually impaired students. Inquiry-based methodologies are beneficial and effective to students with visual impairments in the science classroom (Wild \& Trundle, 2010a; 2010b; Wild, Hilson, \& Hobson, 2012).  Since inquiry-based methods have been found to be beneficial to students with disabilities and teacher beliefs regarding pedagogy have been shown to be influential in curriculum strategies, the current study will, in part, examine teacher beliefs of teaching students with visual impairments in an inquiry-based classroom and traditional classroom.  
+
+\section*{PURPOSE}
+
+This study examines 2 classroom teachers’ of students with visual impairments perceptions of student learning and the teaching methods used in their classrooms.  These perceptions were compared to data that documented student learning of the science content related to the cause for seasons.  The first teacher taught seasonal change concepts to middle school students with visual impairments using traditional instruction.  The second teacher taught the same concepts to middle school students with visual impairments using inquiry-based strategies.  The following question guided this research: How do middle school teachers’ of students with visual impairments perceptions of the learning by students with visual impairments compare to their documented learning of the causes of seasons?
+
+\section*{PARTICIPANTS}
+
+ The traditional teacher was also a science educator at a state school for the blind. He taught a class of 4 students; 3 students had parental permission and agreed to participate in interviews related to this study.  Of those students, two were male and one was a female ranging in ages from 13-15 years old.  One student utilized braille as a reading medium, one used large print and the third student read regular print. All were independent travelers, and, of those students, only one used a cane. The educator was certified to teach science in the state where the school was located, but was not a certified educator of the blind. The teacher was pursuing a licensure to become a certified teacher of the visually impaired.  
+ 
+The inquiry-based teacher was a science educator at a state school for the blind. She taught a  7 students however four students had parental consent and agreed to be interviewed for this study.  Of those students, two were female and two were male raging in age from 13-15 years old.  Three of the students utilized braille as a reading medium while the fourth student used large print.  All were independent travelers; 3 of the students used a cane.  The teacher was certified to teach science in the state where the school was located. However, she was not a certified educator of the visually impaired but was also pursuing her licensure to become certified in this area. Thus, the teachers were equivalent in their professional certification and training.
+ 
+\section*{METHODOLOGY}
+
+Both classroom teachers were interviewed in order to probe their thinking about their classroom practices and the strategies they used to teach about seasonal change.  Two interviews were conducted: one pre-instruction and one post-instruction. General questions were asked of the classroom teachers such as: How do you present seasonal change to your students?; What methodologies do you utilize?; What can I expect to see in your classroom as students begin this unit? In order to determine how comfortable the inquiry-based classroom teacher was in utilizing this methodology, a series of questions were asked such as: How do the inquiry-based methodologies compare with what you have done in the past?; How comfortable are you with inquiry-based methodologies?; Would you use the inquiry-based methodology in the future?
+  
+After the initial interview, the teachers taught a unit to their middle school students with visual impairments regarding seasonal change.  The traditional teacher used traditional methods of teaching students a unit about seasonal change.  This teacher relied heavily on textbooks, diagrams, and lecture in order to teach seasonal change concepts.
+
+The inquiry-based teacher used methods in the classroom that reflect inquiry-based learning such as using tactile images of planetary orbit, interpreting graphs to understand temperature changes on Earth at during different points in a calendar year, interpretation of day and night data to understand the differences in the amount of sunlight at various places on Earth at different points in a calendar year, student use of a heat lamp and globe to learn about changes in temperature and light, and conducting surveys of adult and student understanding of seasonal change. Most lesson plans were adapted by the researcher for the teacher from \textit{The Real Reasons for Seasons: Sun-Earth Connections} (Gould, Willard, \& Pompea, 2004); an inquiry-based curriculum.  
+
+All lessons taught by both teachers were observed by a participant observer to insure the fidelity of the implementation, and field notes were taken.
+
+Following the instruction on seasonal change, a post-instruction interview was conducted with each teacher. This allowed the teachers to reflect on the curriculum taught as well as on student learning. General questions were asked such as: Overall, how do you feel the lessons were received by the students?; Overall, do you feel your students learned the topic presented?; Are there any lessons that were not beneficial to the students in your opinion?; Which lessons do you feel were most beneficial?; How do the treatment methodologies compare with what you have done in the past?; What would you change when you teach this topic again in the future? The interview was transcribed and the results analyzed.  
+
+Individual interviews were also conducted with the students in each classroom, pre and post instruction, to determine student learning during the unit.  Teachers’ responses to post-interview questions were compared to student learning.  Areas of consistency and discrepancy between teachers’ post interview responses and actual student learning were noted. \\
+
+\section*{RESULTS}
+
+\subsection*{Results: Teacher Perceptions of Instruction \\
+Traditional Curriculum Teacher: Interview}
+
+The traditional teacher began by explaining to the researcher his definition of teaching.  He explained to the researcher what to expect in his classroom during the teaching about seasonal change.  An excerpt from the interview is presented below. 
+
+\begin{quote}
+Researcher: How do you present seasonal change to your students?
+
+Teacher: Probably in a rather traditional manner.  We go through why the Earth has seasonal changes. We look at, we use models. I have a model of the Earth, the moon, and the sun, that uh…they can actually see or feel what the planet Earth is doing in relation to the moon and sun, and how the Earth tilts on its axis as it goes through its annual, uh… movement around the sun, how it spins on its axis as well to create days.  (Teacher nods and stops talking)
+
+Researcher: O.K. And you talked a little bit about your methodology that you used with models. Do you use any other methodologies in your curriculum?
+
+Teacher: The model that I have, which I don’t have in my room at the moment, is probably my biggest tool that I use.   Sometimes I have the kids hold their…their fists as if the fist was the Earth and/or the Sun so that they can feel by using their hands as to how the Earth moves around the Sun and then I do the same thing with the moon and its movement around the Earth.  
+
+Researcher:  Will you use a textbook, or any handouts, or…
+
+Teacher: Oh yes.  And of course I use the textbooks and the uh…the class that we are working with here has very good…uh, diagrams created in the Braille textbook as well, so that the students can read those Braille diagrams as well as the students who are visual.
+\end{quote}
+ 
+\subsection*{Traditional Teacher: Observation}
+
+The traditional teacher’s account of what was to happen during the instruction was accurate. The teacher relied heavily on textbooks during instruction. He read passages to his students about the causes for seasons. Students answered the questions provided in the textbook, and they looked up definitions to key terms in their texts. The traditional teacher used two 3-D models in the class; one of the Earth in orbit with the Sun while the moon orbited the Earth and a globe.  Students were able to tactually explore each model while the teacher described that the Earth orbited the Sun at an angle. 
+
+What was not described by the teacher was the apparent lack of motivation of his students. The traditional students did not appear to fully participate in the instruction. Many of the students had their heads down and were reminded by the teacher to stay awake in their class. Students were very quiet and reluctant to answer class questions; often mumbling answers.  When completing the textbook assignments, students needed reminding of what page to look at or what specific questions to answer.  
+
+While the account of instruction by the traditional teacher was accurate, he did not describe how students would be reacting to his instructional techniques. 
+
+The interview data were consistent with the observational data. 
+
+\subsection*{Inquiry-Based Teacher Pre-Interview}
+
+The inquiry-based teacher began her interview describing how she would normally teach seasonal change in her classroom followed by her expectation of the new inquiry-based curriculum she was about to use.  She also discussed her comfort levels with using an inquiry-based curriculum. A portion of her interview with the researcher is presented below.
+
+\begin{quote}
+Researcher:  How do you usually present seasonal change to your students?
+
+Teacher:  Typically by using globes and a light source, generally.
+
+Researcher:  Do you rely on a textbook?
+
+Teacher:  Uh, yes, I also use a textbook.  There is, one of the chapters in my junior high textbook goes over seasonal changes, eclipses, the Moon, Sun, Earth relationship.  So I typically use that in addition to some tactile materials and I also have some tactile diagrams that I use. 
+ 
+Researcher: What are some of your expectations [as you begin the inquiry-based unit]?
+
+Teacher:  Well, I think probably my biggest expectation is that, uhm…the kids, some of the kids are going to struggle with the material, the grade level of the material is such that I think it is a little more advanced than some of my students are, even though I know it is geared toward middle school students.  I have to heavily modify things and so that is probably one of the things I am going to have to do with this curriculum. Also it is fairly comprehensive and that looked like it was going to be an issue to me where it looked like I was going to take more time than it would probably typically take in a normal classroom situation in a public school setting.
+ 
+Researcher: How do the inquiry-based methodologies compare with what you have done in the past?
+
+Teacher:  Um...I have used some of this, uh, typically I have used stuff from, some of the stuff from the GEMS series in the past, so I know that is where you got a good chunk of this curriculum.  So…typically I mix that in and I have over the course of the last number of years.
+
+Researcher:  O.K. How comfortable are you with inquiry-based methodologies?
+
+Teacher:  I am fine with that.
+\end{quote}
+
+\subsection*{Observations of Inquiry-Based Teacher}
+ 
+The inquiry-based teacher’s interview indicated that she would typically teach using many of the same methodologies as the traditional teacher in her classroom when teaching seasons to her students: models, textbooks, and tactile diagrams. Observations of this traditional teaching methodology were not made in her classroom. However, for this study, she used an inquiry-based approach with her students. The teacher seemed very comfortable with this teaching methodology as she stated in her interview.  
+
+She stated that she had some fear that her students may struggle with the material and lessons that were developed by the researcher for her students. However, the teacher never let the students know these fears. Each day the inquiry-based teacher would meet with the researcher prior to the beginning of class in order to fully understand all lesson plans and to ensure all materials were available for each lesson.  She taught all lessons as they were prepared by the researcher.  The teacher praised her students for their participation and encouraged them to try to answer all questions she asked as she walked around the room.  Students were provided assistance as needed and asked guiding questions until they were able to complete the task in each lesson.  As an observer in the classroom, the researcher did not know the teacher was concerned that her students would struggle. 
+
+The inquiry-based teacher stated that she was also concerned about the time the lessons would take to teach in her classrooms. Again, this was never shown in her classroom. Students were never rushed through lessons and if time ran out during a particular instructional period, the lesson was picked up the very next day. She even built in extra time in her teaching schedule to accommodate time that may be needed in addition to the scheduled time with the researcher.  
+
+The techniques used in the classroom of the inquiry-based teacher did reflect inquiry-based methodologies.  Lesson plans required students to infer and hypothesize the causes of the seasons by interpreting day and night data as well as temperature data.  Students were also required to participate in a controlled investigation of the Earth’s location in the solar system as well as the Earth’s orbit around the sun.  At the end of the lessons students explained and communicated the scientific reasons for the causes of seasons.  All skills exhibited in the lesson plans made for an inquiry-based curriculum as described by Carin, Bass, and Contant (2005).  Fears of student comprehension of topics and materials as well as time were not evident in her teaching. What was evident was her ease in teaching seasons using inquiry-based methodologies.
+
+\subsection*{Results: Post-Instruction Teacher Interview}
+
+Post-instruction interview questions allowed the teachers to reflect on the curriculum taught as well as student learning.  
+	
+\subsection*{ Traditional Teacher}
+
+The traditional group teacher’s post-instruction interview was very brief. He did not elaborate on many of his answers even though he was given the opportunity through follow-up and probing questions. He indicated in his interview that he felt that the students had learned a lot about seasons from his instruction. He felt that most of them knew the scientific reasons for seasons and had learned it quite well.  The teacher felt that all of his lessons were beneficial to his students. He stated that he might do a little preliminary study of the Earth, oceans, and plate tectonics before teaching about seasons next time. Excerpts from interview transcript follow:
+
+\begin{quote}
+Researcher: Overall how do you feel that the lessons were received by your students?
+
+Teacher: Very well, and I think they learned a lot about the seasons.  Most of them knew the rudiments.
+
+Researcher:  Good, and our next question was overall do you feel your students learned this topic you presented?
+
+Teacher:  I believe they learned it quite well.
+
+Researcher:  And, are there any lessons that were not beneficial in your opinion?
+
+Teacher:  No.  
+
+Researcher:  Which lessons do you feel were most beneficial?  
+
+Teacher: (Pause)…I think all were about equal in there effectiveness to further the kids’  understandings about seasons. 
+
+Researcher: And what would change when you teach this topic in the future if anything?
+
+Teacher:  I might do a little preliminary study of uh…the Earth, the oceans, and the tectonic plate movements before we got into seasons.
+\end{quote}
+
+\subsection*{Traditional Teacher’s Perceptions vs. Document\-ed Student Learning}
+
+The traditional teachers’ perception of his students’ learning was not reflective of the actual learning of his students. The traditional group teacher indicated that he believed his students had learned the material. However, all of the students in the traditional group still had alternative ideas about causes for seasons after instruction (Wild \& Trundle, 2010b).    
+
+\subsection*{Inquiry-Based Teacher}
+
+The post-instruction interview of the inquiry-based group teacher indicated that she felt that the students had learned a lot from the interview.  She indicated that the students enjoyed the lessons and were active participants in each component of the unit.  Her fear about time needed for the unit had changed.  She indicated that the time frame worked for her classroom schedule.  Fears about the lessons being too difficult also changed.  She indicated that the modifications made the curriculum accessible to her students.  Some reservations were expressed regarding student learning.  The teacher felt there might still be some confusion about concepts, but stated that she could see growth in her students.  She expressed to the researcher that she would not change anything when this topic was taught in the future. As a follow-up to a question about teaching in the future, she indicated that she had conducted a research project of her own and had taught the exact same unit to her 8th grade students.  She stated that the students learned a lot from the unit and showed tremendous growth.   The 8th grade class was able to identify all of the causes of seasons by the end of the unit.  In addition, this teacher also taught the lesson regarding orbits with her high school class that was learning about orbits of the planets in our solar system. Again, she saw similar results.   Portions of the transcript from her interview are presented below.
+
+\subsection*{Post-Instruction Interview: Inquiry-Based Teacher}
+
+\begin{quote}
+Researcher:  Overall how do you feel the lessons were received by the students?
+
+Teacher:  I think they really enjoyed them.  I think they participated, you got full participation from most of the kids and I think that they…it brought concrete examples to some abstract concepts, so I think that was good for them…and I think they seemed to really enjoy them so…
+
+Researcher:  Do you feel your students learned the topic?
+
+Teacher:  I think for the most part.  I think there is still a little confusion there, but for the most part I think that when you look at the results of the survey compared to the beginning there was definite growth.  
+
+Researcher:  Do you feel there were any lessons that were not beneficial?
+
+Teacher:  No, I don’t think there were any that were not beneficial with the modifications we made, they were all very…we were able to get through the material in a time frame that made sense and I thought that all of the lessons hit the major points that you needed to hit so…
+\end{quote}
+
+\subsection*{Inquiry-Based Teacher’s Perceptions vs. Documented Student Learning}
+	 
+The inquiry-based teacher’s perception of student learning reflected the actual student learning. Students were able to discuss and demonstrate a scientific understanding of seasons.  According to the data, the student participants did not perceive confusion regarding concepts related to reasons for seasons; however, not all students in her class were participants in this study (Wild \& Trundle, 2010b).  Therefore, it is not known if confusion existed for these students who were not interviewed.
+
+\section*{SUMMARY OF TEACHER PERCEPTIONS}
+
+The traditional group teacher accurately described the instructional techniques that he would use in the classroom; use of textbooks, 3-D models, and lectures. These techniques were observed by the researcher.  However, the researcher also observed an apparent lack of student motivation in the classroom that the traditional teacher did not comment on in his pre-instruction or post-instruction interview. 
+
+In the post-instruction interview, the traditional teacher commented on his perceptions of student learning.  His perceptions of his students’ learning were not reflective of the actual learning of his students. The traditional group teacher indicated that he believed his students had learned the material. However, all of the students in the traditional group still had alternative ideas about causes for seasons after instruction.
+
+The inquiry-based teacher described her teaching techniques used in her classroom in the past as well as her fears with new curriculum. Her traditional techniques of teaching were never observed by the researcher. The fears she spoke of were never apparent in her classroom during the current study. Her teaching was fluid and allowed students ample time to explore the materials used in her teaching. 
+
+In the post-instruction interview of the inquiry-based teacher, she talked about her perceptions of student learning which reflected the actual student learning. Students were able to discuss and demonstrate a scientific understanding of seasons.
+
+\section*{DISCUSSION AND CONCLUSION}
+
+Both teachers’ perceptions reflect the literature regarding teacher perceptions. Pajaras (1992) reported that teacher beliefs are personal and unaffected by persuasion.  The beliefs can be formed through chance encounters, an intense experience, and a series of events.  Beliefs include ideas about the person and about what others are like.  Presumptions are entities that exist beyond the control or conceptual understanding of the individual and are believed by the individual because they are present. Students in the traditional classroom were interacting with the materials and answering the questions of the teacher; therefore, the teacher appeared to have presumed that the students had learned the concepts due to the series of events present in his classroom as described by Pajaras (1992).  Similarly, the inquiry-based classroom teacher appeared to have made the same presumptions due to the series of events present in her classroom during instruction.
+
+Upon completion of the inquiry-based lessons, the inquiry-based teacher stated that she will continue to utilize these lessons in the future and will not change any lessons. The traditional group teacher stated he would not make any changes but would add only a few units before teaching seasons. Both felt that students learned the reasons for seasons. Data showed that students in the traditional group were not as successful as their peers in the inquiry-based group.
+
+\section*{LIMITATIONS}
+ 
+ This study is limited by the number of participants.  This study was conducted with a very low incidence disability group and represents 100\% of the available population of middle school science teachers at each school.  Only two teachers’ beliefs were examined in this study.  However, both teachers had similar teaching backgrounds as presented above.  
+
+The same teacher did not teach both the comparison group curriculum and the inquiry-based curriculum. Both teachers were experienced state licensed science educators and were pursuing a licensure for teaching students with visual impairments.  Quality of teaching was not examined for this study.  However, both teachers covered the reasons for seasons during their instruction and were observed by the researcher to ensure fidelity of instruction.
+
+The curriculum taught by the inquiry-based group involved approximately triple the instructional time of the comparison group. However, inquiry-based instruction takes longer and is a component of the instructional methodology chosen by the researcher. Beck, Czerniak, and Lumpe (2000) acknowledge that time can be a factor when teaching utilizing constructivist inquiry approaches.  However, they suggest that once teachers are able to see the benefits utilizing this teaching methodology for their students, they are more apt to adapt this methodology and less likely to worry about the time difference; as evident by the response of the inquiry-based teacher.   
+
+\section*{FUTURE RESEARCH AND IMPLICATIONS}
+	
+This study is unique in accessing science teachers’ beliefs of teaching students with visual impairments.  While this study focused on science educators from residential schools, science educators in public schools who teach students with visual impairments should be studied as well.  The current study showed that teachers’ perception of their students’ learning was not always reflective of student learning.  Teachers must ensure that students in their science classrooms are accurately learning science content and not just copying answers from a textbook to show student learning.  A teacher may believe that his/her students have learned material, but further assessment should be used to determine if true learning and understanding has occurred.  Future research should examine science educator beliefs and the impact those beliefs have on student learning in the science classroom.
+
+\section*{ACKNOWLEDGMENT}
+ 
+The author would like to acknowledge Dr. Kathy Cabe Trundle, Assosciate Professor at The Ohio State University, for her assistance with this research.
+
+\section*{BIOGRAPHICAL STATEMENT}
+
+Dr. Tiffany Wild \href{mailto:twild@ehe.osu.edu}{(twild@ehe.osu.edu)}, began her education career as a middle school science and math teacher. Her interest in visual impairment began when students with visual impairments were placed in her classroom without any support. Those students inspired Dr. Wild to become a certified teacher of students with visual impairments (TVI). As a TVI, she has worked as a teacher’s aide for students with visual impairments in an early learning center and as an itinerant teacher for Project PAVE. Dr. Wild was awarded a prestigious doctoral fellowship with the National Center for Leadership in Visual Impairments to pursue her doctoral degree and her dissertation was awarded the “Dissertation of the Year” by the Council for Exceptional Children’s Division on Visual impairment.
+
+As a current researcher for science education for students with visual impairments, Dr. Wild has published and presented both nationally and internationally. It is through her research endeavors that she has been asked to be a co-founding member of the National Center for STEM Education for students with visual impairments, complete research on national STEM programming for the National Federation of the Blind, invitations to present at national, state, and local conventions, and work with members of the department of education in Ghana to provide science education for students with visual impairments in a country that currently does not
+provide science education for their students who are visually impaired.
+
+\end{large}
+\clearpage
+\section*{REFERENCES}\par 
+
+\leftskip 0.25in
+\parindent -0.25in 
+
+Beck, J., Czernaik, C., \& Lumpe, A.  (2000).  An exploratory study of teachers’ beliefs regarding the implementation of constructivism in their classroom.  \textit{Journal of Science Teacher Education, 11}(4), 323-343.
+
+Carin, A., Bass, J., Contant, T.  (2005).  \textit{Methods for Teaching Science as Inquiry}.  (9th ed.).  Upper Sadder River, NJ: Pearson Merrill Prentice Hall.
+
+Gould, A., Willard, C., \& Pompea, S.  (2004).  \textit{The Real Reasons for Seasons: Sun-Earth Connections}.  Lawrence Hall of Science, University of California at Berkeley.
+
+Levitt, K.  (2001).  An analysis of elementary teachers’ beliefs regarding the teaching and learning of science.  \textit{Science Education, 86}, 1-22.
+
+Mastropieri, M. (2005).  Margo Mastropieri on science education and students with disabilities.  In Carin, A., Bass, J., \& Contant, T.  (Eds.), \textit{Teaching Science as Inquiry} (pp. 287-288).  Upper Saddle River, New Jersey: Pearson Merrill Prentice Hall.
+
+National Research Council.  (1996).  \textit{National Science Education Standards: A Guide for Teaching and Learning}.  Washington, DC: National Academy Press.
+
+Nespor, J.  (1987).  The role of beliefs in the practice of teaching.  \textit{Journal of Curriculum Studies, 19}(4), 317-328.
+
+Pajaras, F.  (1992).  Teachers’ beliefs and educational research: Cleaning up a messy construct. \textit{Review of Educational Research, 62}(3), 307-332.
+
+Roehrig, G., \& Kruse, R.  (2005).  The role of teachers’ beliefs and knowledge in the 	adoption of a reform-based curriculum. \textit{School Science and Mathematics, 105}(8), 412-422.
+
+Tobin, K., \& Gallagher, J.  (1987).  What happens in high school science.  \textit{Journal of 	Curriculum Studies, 19}(6), 549-560.
+
+Tsai, C.  (2002).  Nested epistemologies: science teachers’ beliefs of teaching, learning, 	and science. \textit{ International Journal of Science Education, 24}(3), 771-783.
+
+Wild, T., Paul, P., \& Kurz, N. (2008, July).  \textit{Curriculum Standards, Pedagogical Practices, Inclusion, Assessment, and Collaboration with Science Content Educators Implementing Science Education for Students with Visual Impairments}.  Paper present at the biannual international meeting of the Association for 	Education and Rehabilitation of the Blind and Visually Impaired, Chicago, IL.
+
+Wild, T. \& Trundle, K. (April, 2010a).  Talking turkey: Teaching about America’s greatest conservation story with children with visual impairments.  \textit{Journal of Visual Impairment \& Blindness, 104}(4), 198-201.
+
+Wild, T.  \& Trundle, K. (February, 2010b).  Conceptual understandings of seasonal change by middle school students with visual impairments. \textit{Journal of Visual Impairment \& Blindness, 104}(2), 107-108.
+
+Wild, T., Hilson, M., \& Hobson, S.  (April, 2012).  \textit{Elementary Students’ with Visual Impairments Conceptual Understanding of Sound}.  Paper presented at the 2012 annual international meeting of the Council for Exceptional Children, Denver, Colorado.
+
+
+\end{document}
